@@ -1,0 +1,88 @@
+<p>
+The background-repeat CSS property defines how background images are repeated. A background image can be repeated along the horizontal axis, the vertical axis, both axes, or not repeated at all.
+</p>
+
+<pre style="font-family: Andale Mono, Lucida Console, Monaco, fixed, monospace; color: #000000; background-color: #eee;font-size: 12px;border: 1px dashed #999999;line-height: 14px;padding: 5px; overflow: auto; width: 100%"><code>/* One-value syntax */
+background-repeat: repeat-x;
+background-repeat: repeat-y;
+background-repeat: repeat;
+background-repeat: space;
+background-repeat: round;
+background-repeat: no-repeat;
+
+/* Two-value syntax: horizontal &#124; vertical */
+background-repeat: repeat space;
+background-repeat: repeat repeat;
+background-repeat: round space;
+background-repeat: no-repeat round;
+
+background-repeat: inherit;
+
+</code></pre>
+
+<table class="table table-striped table-bordered table-condensed">
+
+    <tr>
+        <td>Syntax</td>
+        <td>repeat-x | repeat-y | [repeat | space | round | no-repeat]{1,2} |initial|inherit </td>
+    </tr>
+    <tr>
+        <td>JavaScript syntax</td>
+        <td>object.style.backgroundRepeat="repeat-x"</td>
+    </tr>
+    <tr>
+        <td>Initial value</td>
+        <td>repeat </td>
+    </tr>
+    <tr>
+        <td>Applies to</td>
+        <td>all elements. It also applies to ::first-letter and ::first-line. </td>
+    </tr>
+    <tr>
+        <td>Inherited</td>
+        <td>no </td>
+    </tr>
+    <tr>
+        <td>Percentages</td>
+        <td>-</td>
+    </tr>
+
+    <tr>
+        <td>Computed value</td>
+        <td>a list, each item consisting of two keywords, one per dimension</td>
+    </tr>
+    <tr>
+        <td>Animatable</td>
+        <td>no</td>
+    </tr>
+    <tr>
+        <td>Version:</td>
+        <td>CSS1</td>
+    </tr>
+
+
+</table>
+
+<ul>
+    <li><h4>repeat-x</h4>
+        The background image will be repeated only horizontally
+    </li>
+    <li><h4>repeat-y</h4>
+        The background image will be repeated only vertically
+    </li>
+    <li><h4>repeat</h4>
+        The background image will be repeated both vertically and horizontally. This is default
+    </li>
+    <li><h4>space</h4>
+        The image is repeated as much as possible without clipping. The first and last images are pinned to either side of the element, and whitespace is distributed evenly between the images. The background-position property is ignored unless only one image can be displayed without clipping. The only case where clipping happens using space is when there isn't enough room to display one image.
+    </li>
+    <li><h4>round</h4>
+        As the allowed space increases in size, the repeated images will stretch (leaving no gaps) until there is room for another one to be added. When the next image is added, all of the current ones compress to allow room. Example: An image with an original width of 260px, repeated three times, might stretch until each repetition is 300px wide, and then another image will be added. They will then compress to 225px.
+    </li>
+    <li><h4>no-repeat</h4>
+        The image is not repeated (and hence the background image painting area will not necessarily be entirely covered). The position of the non-repeated background image is defined by the background-position CSS property.
+    </li>
+    
+</ul>
+
+

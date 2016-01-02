@@ -1,0 +1,80 @@
+<p>
+The font-variant-position CSS property controls the usage of alternate glyphs of 
+smaller size positioned as superscript or subscript regarding the baseline of the 
+font, which is set unchanged. These glyphs are likely to be used in &lt;sub&gt; and &lt;sup&gt; elements.
+</p>
+<p>
+When the usage of these alternate glyphs is activated, if one character in the run doesn't have such typographically enhanced glyph, the whole set of characters of the run is rendered using a fallback method, synthesizing these glyphs.
+</p>
+<p>
+These alternate glyphs share the same em-box and the same baseline as the rest of the font. They are merely graphically enhanced but have no effect on the line-height and other box characteristics.
+</p>
+
+<pre style="font-family: Andale Mono, Lucida Console, Monaco, fixed, monospace; color: #000000; background-color: #eee;font-size: 12px;border: 1px dashed #999999;line-height: 14px;padding: 5px; overflow: auto; width: 100%"><code>Syntax
+
+font-variant-position: normal;
+font-variant-position: sub;
+font-variant-position: super;
+
+/* Global values */
+font-variant-position: inherit;
+font-variant-position: initial;
+font-variant-position: unset;
+</code></pre>
+<table class="table table-striped table-bordered table-condensed">
+
+    <tr>
+        <td>Syntax</td>
+        <td>normal | sub | super </td>
+    </tr>
+    <tr>
+        <td>JavaScript syntax</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Initial value</td>
+        <td>normal </td>
+    </tr>
+    <tr>
+        <td>Applies to</td>
+        <td> </td>
+    </tr>
+    <tr>
+        <td>Inherited</td>
+        <td> </td>
+    </tr>
+    <tr>
+        <td>Percentages</td>
+        <td></td>
+    </tr>
+
+    <tr>
+        <td>Computed value</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Animatable</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Version:</td>
+        <td></td>
+    </tr>
+
+
+</table>
+
+<ul>
+    <li><h4>normal</h4>
+    This keyword leads to the deactivation of the use of such alternate glyphs.
+    </li>
+    <li><h4>sub</h4>
+    This keyword forces the use of subscript alternate glyphs. If, in a given run, one such glyph is not available for a character, the whole characters in the run is rendered using synthesized appropriate glyphs.
+    </li>
+    <li><h4>super</h4>
+    This keyword forces the use of superscript alternate glyphs. If, in a given run, one such glyph is not available for a character, the whole characters in the run is rendered using synthesized appropriate glyphs.
+    </li>
+    
+</ul>
+
+

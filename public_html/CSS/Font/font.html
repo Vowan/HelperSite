@@ -1,0 +1,147 @@
+<p>
+    The font CSS property is either a shorthand property for setting font-style, font-variant, font-weight, font-size, line-height and font-family, or a way to set the element's font to a system font, using specific keywords.
+</p>
+<p>
+    As with any shorthand CSS properties, the values which are not set in it are set to their individual initial values, eventually overriding values previously set using non-shorthand properties.  
+</p>
+<p>
+    Note: There are a few caveats when using the CSS font shorthand. If these conditions are not met, the property is invalid and is entirely ignored.
+<ul>
+    <li>Except when using a keyword, it is mandatory to define the value of both the font-size and the font-family properties.
+    <li> Not all values of font-variant are allowed. Only the values defined in CSS 2.1 are allowed, that is normal and small-caps.
+    <li> Though not directly settable by font, the values of font-stretch, font-size-adjust and font-kerning are also reset to their initial values.
+    <li>The order of the values is not completely free: font-style, font-variant and font-weight must be defined, if any, before the font-size value. The line-height value must be defined immediately after the font-size, preceded by a mandatory /. Finally the font-family is mandatory and must be the last value defined (inherit value does not work).
+</ul>
+
+</p>
+
+<pre style="font-family: Andale Mono, Lucida Console, Monaco, fixed, monospace; color: #000000; background-color: #eee;font-size: 12px;border: 1px dashed #999999;line-height: 14px;padding: 5px; overflow: auto; width: 100%"><code>/* size &#124; family */
+font: 2em &quot;Open Sans&quot;, sans-serif;
+
+/* style &#124; size &#124; family */
+font: italic 2em &quot;Open Sans&quot;, sans-serif;
+
+/* style &#124; variant &#124; weight &#124; size/line-height &#124; family */
+font: italic small-caps bolder 16px/3 cursive;
+
+/* style &#124; variant &#124; weight &#124; stretch &#124; size/line-height &#124; family */
+font: italic small-caps bolder condensed 16px/3 cursive;
+
+/* The font used in system dialogs */
+font: message-box;
+font: icon;
+
+/* Global values */
+font: inherit;
+font: initial;
+font: unset;
+</code></pre>
+
+<table class="table table-striped table-bordered table-condensed">
+
+    <tr>
+        <td>Syntax</td>
+        <td>font-style font-variant font-weight font-size/line-height font-family|caption|icon|menu|message-box|small-caption|status-bar|initial|inherit </td>
+    </tr>
+    <tr>
+        <td>JavaScript syntax</td>
+        <td>object.style.font="italic small-caps bold 12px arial,sans-serif"</td>
+    </tr>
+    <tr>
+        <td>Initial value</td>
+        <td>as each of the properties of the shorthand:
+            <ul>
+                <li>font-style: normal
+                <li>font-variant: normal
+                <li>font-weight: normal
+                <li>font-stretch: normal
+                <li>font-size: medium
+                <li>line-height: normal
+                <li>font-family: depends on user agent
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td>Applies to</td>
+        <td> </td>
+    </tr>
+    <tr>
+        <td>Inherited</td>
+        <td> </td>
+    </tr>
+    <tr>
+        <td>Percentages</td>
+        <td>as each of the properties of the shorthand:
+            <ul>
+                <li>
+                    font-size: refer to the parent element's font size
+                <li> line-height: refer to the font size of the element itself
+            </ul>
+        </td>
+    </tr>
+
+    <tr>
+        <td>Computed value</td>
+        <td>as each of the properties of the shorthand:
+            <ul>
+                <li>
+                    font-style: as specified
+                <li> font-variant: as specified
+                <li>font-weight: the keyword or the numerical value as specified, with bolder and lighter transformed to the real value
+                <li>font-stretch: as specified
+                <li>font-size: as specified, but with relative lengths converted into absolute lengths
+                <li>line-height: for percentage and length values, the absolute length, otherwise as specified
+                <li>font-family: as specified
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td>Animatable</td>
+        <td>as each of the properties of the shorthand:
+            <ul>
+                <li>
+                    font-style: no
+                <li>font-variant: no
+                <li>font-weight: yes, as a font weight
+                <li>font-stretch: yes, as a font stretch
+                <li>font-size: yes, as a length
+                <li>line-height: yes, as a number, a length
+                <li>font-family: no
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td>Version:</td>
+        <td>CSS1</td>
+    </tr>
+
+
+</table>
+<p>
+    Instead of specifying individual longhand properties, a keyword can be used to represent a specific system font: 
+</p>
+
+
+<ul>
+    <li><h4>caption</h4>
+        The font used for captioned controls (e.g., buttons, drop-downs, etc.).
+    </li>
+    <li><h4>icon</h4>
+        The font used to label icons.
+    </li>
+    <li><h4>menu</h4>
+        The font used in menus (e.g., dropdown menus and menu lists).
+    </li>
+    <li><h4>message-box</h4>
+        The font used in dialog boxes.
+    </li>
+    <li><h4>small-caption</h4>
+        The font used for labeling small controls.
+    </li>
+    <li><h4>status-bar</h4>
+        The font used in window status bars.
+    </li>
+    
+</ul>
+
+

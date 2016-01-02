@@ -1,0 +1,118 @@
+<p>
+    The font-variant-ligatures CSS property controls which ligatures and contextual forms are used in textual content of the elements it applies to. This leads to more harmonized forms in the resulting text.
+</p>
+
+<pre style="font-family: Andale Mono, Lucida Console, Monaco, fixed, monospace; color: #000000; background-color: #eee;font-size: 12px;border: 1px dashed #999999;line-height: 14px;padding: 5px; overflow: auto; width: 100%"><code>Syntax
+
+font-variant-ligatures: normal;
+font-variant-ligatures: none;
+font-variant-ligatures: common-ligatures;           /* &lt;common-lig-values&gt; */
+font-variant-ligatures: no-common-ligatures;        /* &lt;common-lig-values&gt; */
+font-variant-ligatures: discretionary-ligatures;    /* &lt;discretionary-lig-values&gt; */
+font-variant-ligatures: no-discretionary-ligatures; /* &lt;discretionary-lig-values&gt; */
+font-variant-ligatures: historical-ligatures;       /* &lt;historical-lig-values&gt; */
+font-variant-ligatures: no-historical-ligatures;    /* &lt;historical-lig-values&gt; */
+font-variant-ligatures: contextual;                 /* &lt;contextual-alt-values&gt; */
+font-variant-ligatures: no-contextual;              /* &lt;contextual-alt-values&gt; */
+font-variant-ligatures: contextual;                 /* &lt;no-historical-ligatures&gt; &lt;common-ligatures&gt; */
+
+/* Global values */
+font-variant-ligatures: inherit;
+font-variant-ligatures: initial;
+font-variant-ligatures: unset;
+</code></pre>
+
+<table class="table table-striped table-bordered table-condensed">
+
+    <tr>
+        <td>Syntax</td>
+        <td>
+            <pre class="source-code"><code>normal &#124; none &#124; [ &lt;common-lig-values&gt; &#124;&#124; &lt;discretionary-lig-values&gt; &#124;&#124; &lt;historical-lig-values&gt; &#124;&#124; &lt;contextual-alt-values&gt; ]
+
+where 
+&lt;common-lig-values&gt; = [ common-ligatures &#124; no-common-ligatures ]
+&lt;discretionary-lig-values&gt; = [ discretionary-ligatures &#124; no-discretionary-ligatures ]
+&lt;historical-lig-values&gt; = [ historical-ligatures &#124; no-historical-ligatures ]
+&lt;contextual-alt-values&gt; = [ contextual &#124; no-contextual ]
+</code></pre>
+        </td>
+    </tr>
+    <tr>
+        <td>JavaScript syntax</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Initial value</td>
+        <td> normal</td>
+    </tr>
+    <tr>
+        <td>Applies to</td>
+        <td> </td>
+    </tr>
+    <tr>
+        <td>Inherited</td>
+        <td>yes </td>
+    </tr>
+    <tr>
+        <td>Percentages</td>
+        <td></td>
+    </tr>
+
+    <tr>
+        <td>Computed value</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Animatable</td>
+        <td>no</td>
+    </tr>
+    <tr>
+        <td>Version:</td>
+        <td></td>
+    </tr>
+
+
+</table>
+
+<ul>
+    <li><h4>normal</h4>
+        This keyword leads to the activation of the usual ligatures and contextual forms needed for correct rendering. The ligatures and forms activated depend on the font, language and kind of script. This is the default value.
+    </li>
+    <li><h4>none</h4>
+        This keyword specifies that all ligatures and contextual forms are disabled, even common ones.
+    </li>
+    <li><h4>common-lig-values</h4>
+        These values control the most common ligatures, like for fi, ffi, th or similar. They correspond to the OpenType values liga and clig. Two values are possible:
+        <ul>
+            <li>common-ligatures activating these ligatures. Note that the keyword normal activates these ligatures.
+            <li>no-common-ligatures deactivating these ligatures.
+        </ul>
+    </li>
+    <li><h4>discretionary-lig-values</h4>
+        These values control specific ligatures, specific to the font and defined by the type designer. They correspond to the OpenType values dlig. Two values are possible:
+        <ul>
+            <li>
+                discretionary-ligatures activating these ligatures.
+            <li>no-discretionary-ligatures deactivating the ligatures. Note that the keyword normal usually deactivates these ligatures.
+        </ul>
+    </li>
+    <li><h4>historical-lig-values</h4>
+        These values control the ligatures used historically, in old books, like the German tz digraph being displayed ß. They correspond to the OpenType values hlig. Two values are possible:
+        <ul>
+            <li>
+                historical-ligatures activating these ligatures.
+            <li>no-historical-ligatures deactivating the ligatures. Note that the keyword normal usually deactivates these ligatures.
+        </ul>
+    </li>
+    <li><h4>contextual-alt-values</h4>
+        These values control whether letters adapt to their context—that is, whether they adapt to the surrounding letters. These values correspond to the OpenType values calt. Two values are possible:
+        <ul>
+            <li>
+                contextual specifies that the contextual alternates are to be used. Note that the keyword normal usually activates these ligatures too.
+            <li>no-contextual prevents their use.
+        </ul>
+    </li>
+
+</ul>
+
+

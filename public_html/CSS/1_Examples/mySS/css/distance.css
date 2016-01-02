@@ -1,0 +1,34 @@
+.set-distance dl.infos dd span:after {
+    content: 'From Sun'; }
+
+.set-distance #sun dl.infos dd span:after {
+    content: 'From Earth'; }
+
+.set-distance #sun dl.infos dd:after {
+    content: '149,598,262 km'; }
+
+.set-distance #mercury dl.infos dd:after {
+    content: '57,909,227 km'; }
+
+.set-distance #venus dl.infos dd:after {
+    content: '108,209,475 km'; }
+
+.set-distance #earth dl.infos dd:after {
+    content: '149,598,262 km'; }
+
+.set-distance #mars dl.infos dd:after {
+    content: '227,943,824 km'; }
+
+.set-distance #jupiter dl.infos dd:after {
+    content: '778,340,821 km'; }
+
+.set-distance #saturn dl.infos dd:after {
+    content: '1,426,666,422 km'; }
+
+.set-distance #uranus dl.infos dd:after {
+    content: '2,870,658,186 km'; }
+
+.set-distance #neptune dl.infos dd:after {
+    content: '4,498,396,441 km'; }
+
+

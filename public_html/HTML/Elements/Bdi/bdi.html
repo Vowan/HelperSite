@@ -1,0 +1,26 @@
+<p>
+The HTML &lt;bdi&gt; Element (or Bi-Directional Isolation Element) isolates a span of 
+    text that might be formatted in a different direction from other text outside it.<br>
+
+This element is useful when embedding text with an unknown directionality, from a 
+database for example, inside text with a fixed directionality.
+</p>
+<h3>Attributes</h3>
+Like all other HTML elements, this element has the global attributes, with a slight 
+semantic difference: the dir attribute is not inherited. If not set, its default 
+value is the auto which let the browser decide the direction based on the element's 
+content.
+<h4>Notes</h4>
+<ul>
+    <li><h4></h4>
+        Though the same visual effect can be achieved using the CSS rule unicode-bidi: 
+        isolate on a &lt;span&gt; or another text-formatting element, the semantic meaning 
+        is only conveyed by the &lt;bdi&gt; element. Especially, browsers are allowed to 
+        ignore CSS styling. In such a case, the text would still be correctly displayed 
+        using the HTML element, but will become garbage when using the CSS styling to 
+        convey semantic.
+    </li>
+    
+</ul>
+
+

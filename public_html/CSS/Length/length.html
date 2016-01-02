@@ -1,0 +1,114 @@
+<p>
+    The &lt;length&gt; CSS data type denotes distance measurements. It is a &lt;number&gt; immediately 
+    followed by a length unit (px, em, pc, in, mm, …). Like for any CSS dimension, 
+    there is no space between the unit literal and the number. The length unit is 
+    optional after the &lt;number&gt; 0
+</p>
+
+<h4>Font-relative lengths</h4>
+<ul>
+    <li><h4>em</h4>
+        This unit represents the calculated font-size of the element. If used on the 
+        font-size property itself, it represents the inherited font-size of the element.<br>
+
+        This unit is often used to create scalable layouts, which keep the vertical rhythm of 
+        the page, even when the user changes the size of the fonts. The CSS properties 
+        line-height, 
+        font-size, margin-bottom and margin-top often has a value expressed in em.
+    </li>
+    <li><h4>ex</h4>
+        This unit represents the x-height of the element's font. On fonts with the 'x' 
+        letter, this is generally the height of lowercase letters in the font; 1ex ≈ 0.5em 
+        in many fonts
+    </li>
+    <li><h4>ch</h4>
+        This unit represents the width, or more precisely the advance measure, of the glyph '0' 
+        (zero, the Unicode character U+0030) in the element's font.
+    </li>
+    <li><h4>rem</h4>
+        This unit represents the font-size of the root element (e.g. the font-size of 
+        the &lt;html&gt; element). When used on the font-size on this root element, it represents 
+        its initial value.<br>
+This unit is practical in creating perfectly scalable layout. If not supported by the 
+targeted browsers, such layout can be achieved using the em unit, though this is slightly 
+more complex.
+    </li>
+
+</ul>
+
+<h4>Viewport-percentage lengths</h4>
+<p>
+    Viewport-percentage lengths defined a length relatively to the size of viewport, that 
+    is the visible portion of the document. Only Gecko-based browsers are updating the viewport 
+    values dynamically, when the size of the viewport is modified (by modifying the size of 
+    the window on a desktop computer or by turning the device on a phone or a tablet).
+</p>
+<ul>
+    <li><h4>vh</h4>
+        1/100th of the height of the viewport.
+    </li>
+    <li><h4>vw</h4>
+        1/100th of the width of the viewport.
+    </li>
+    <li><h4>vmin</h4>
+        1/100th of the minimum value between the height and the width of the viewport.
+    </li>
+    <li><h4>vmax</h4>
+        1/100th of the maximum value between the height and the width of the viewport.
+    </li>
+</ul>
+<h4>Absolute length units</h4>
+<p>For low-dpi devices, the unit px represents the physical reference pixel and the 
+    others are defined relative to it. Thus, 1in is defined as 96px which equals 72pt. 
+    The consequence of this definition is that on such devices, length described in inches (in), 
+    centimeters (cm), millimeters (mm) doesn't necessary match the length of the physical unit
+    with the same name.
+    
+</p>
+<p>
+    For high-dpi devices, inches (in), centimeters (cm), millimeters (mm) are defined as 
+    their physical counterparts. Therefore the px unit is defined relative to them (1/96 of 1 inch).
+</p>
+<ul>
+    <li><h4>px</h4>
+        Relative to the viewing device.
+For screen display, typically one device pixel (dot) of the display.
+For printers and very high resolution screens one CSS pixel implies multiple device pixels, 
+so that the number of pixel per inch stays around 96.
+    </li>
+    <li><h4>mm</h4>
+        One millimeter.
+    </li>
+    <li><h4>cm</h4>
+        One centimeter (10 millimeters).
+    </li>
+    <li><h4>in</h4>
+        One inch (2.54 centimeters).
+    </li>
+    <li><h4>pt</h4>
+        One point (which is 1/72 of an inch).
+    </li>
+    <li><h4>pc</h4>
+        One pica (which is 12 points).
+    </li>
+    <li><h4>mozmm</h4>
+        An experimental unit which attempts to render at exactly one millimeter 
+        regardless of the size or resolution of the display. This is rarely actually 
+        what you want, but may be useful in particular for mobile devices.
+    </li>
+</ul>
+
+<h4> Some specific examples: </h4>
+<ul>
+    <li>
+       1in is always 96px, 
+    </li>
+    <li>
+        3pt is always 4px,
+    </li>
+    <li>
+        25.4mm is always 96px.
+    </li>
+</ul>
+
+

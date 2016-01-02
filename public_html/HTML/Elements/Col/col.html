@@ -1,0 +1,51 @@
+<p>
+    The HTML Table Column Element (&lt;col&gt;) defines a column within a table and is used 
+for defining common semantics on all common cells. It is generally found within a 
+&lt;colgroup&gt; element.
+</p>
+<p>
+    This element allows styling columns using CSS, but only a few attributes will
+    have an effect on the column (see the CSS 2.1 specification for a list).
+</p>
+<h3>Attributes</h3>
+This element includes the global attributes.
+<ul>
+    <li><h4>align <mark>Obsolete since HTML5</mark></h4>
+        This enumerated attribute specifies how horizontal alignment of each column cell content will be handled. Possible values are:
+        <ul>
+            <li>left, aligning the content to the left of the cell
+            <li> center, centering the content in the cell
+            <li>right, aligning the content to the right of the cell
+            <li>justify, inserting spaces into the textual content so that the content is 
+                justified in the cell
+            <li>char, aligning the textual content on a special character with a minimal 
+                offset, defined by the char and charoff attributes Unimplemented (see bug 2212).
+        </ul>
+    </li>
+    <li><h4>bgcolor</h4>This attribute defines the background color of each cell of the column. 
+        It is one of the 6-digit hexadecimal code as defined in sRGB, prefixed by a '#'.
+        One of the sixteen predefined color strings may be used: 
+    </li>
+    <li><h4>charoff <mark>Obsolete since HTML5</mark></h4>
+        This attribute is used to indicate the number of characters to offset the 
+        column data from the alignment characters specified by the char attribute. 
+    </li>
+    <li><h4>span <mark>Obsolete since HTML5</mark></h4>
+        This attribute specifies the vertical alignment of the text within each cell of the column. Possible values for this attribute are:
+
+    baseline, which will put the text as close to the bottom of the cell as it is possible, but align it on the baseline of the characters instead of the bottom of them. If characters are all of the size, this has the same effect as bottom.
+    bottom, which will put the text as close to the bottom of the cell as it is possible;
+    middle, which will center the text in the cell;
+    and top, which will put the text as close to the top of the cell as it is possible.
+
+    </li>
+    <li><h4>width <mark>Obsolete since HTML5</mark></h4>
+        This attribute specifies a default width for each column in the current column 
+        group. In addition to the standard pixel and percentage values, this attribute 
+        might take the special form 0*, which means that the width of each column in the
+        group should be the minimum width necessary to hold the column's contents. Relative
+        widths such as 0.5* also can be used.
+    </li>
+</ul>
+
+

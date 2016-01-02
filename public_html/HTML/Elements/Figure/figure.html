@@ -1,0 +1,53 @@
+<p>
+The HTML &lt;figure&gt; element represents self-contained content, frequently with a 
+    caption (&lt;figcaption&gt;), and is typically referenced as a single unit. While 
+it is related to the main flow, its position is independent of the main flow. 
+Usually this is an image, an illustration, a diagram, a code snippet, or a schema 
+that is referenced in the main text, but that can be moved to another page or to 
+an appendix without affecting the main flow.
+</p>
+<h3>Attributes</h3>
+This element includes the global attributes.
+<p4>Usage notes: </p4>
+<ul>
+    <li><h4></h4>Being a sectioning root, the outline of the content of the 
+        &lt;figure&gt; element is excluded from the main outline of the document.
+    </li>
+    <li><h4></h4>A caption can be associated with the &lt;figure&gt; element by inserting 
+            a &lt;figcaption&gt; inside it (as the first or the last child).
+    </li>
+</ul>
+
+<h4>Example</h4>
+<pre style="font-family: Andale Mono, Lucida Console, Monaco, fixed, monospace; color: #000000; background-color: #eee;font-size: 12px;border: 1px dashed #999999;line-height: 14px;padding: 5px; overflow: auto; width: 100%"><code>&lt;figure&gt;
+  &lt;figcaption&gt;Get browser details using navigator&lt;/figcaption&gt;
+  &lt;pre&gt;
+function NavigatorExample() {
+  var txt;
+  txt = &quot;Browser CodeName: &quot; + navigator.appCodeName;
+  txt+= &quot;Browser Name: &quot; + navigator.appName;
+  txt+= &quot;Browser Version: &quot; + navigator.appVersion ;
+  txt+= &quot;Cookies Enabled: &quot; + navigator.cookieEnabled;
+  txt+= &quot;Platform: &quot; + navigator.platform;
+  txt+= &quot;User-agent header: &quot; + navigator.userAgent;
+}            
+  &lt;/pre&gt;
+&lt;/figure&gt;
+</code></pre>
+
+<figure>
+  <figcaption>Get browser details using navigator</figcaption>
+  <pre>
+function NavigatorExample() {
+  var txt;
+  txt = "Browser CodeName: " + navigator.appCodeName;
+  txt+= "Browser Name: " + navigator.appName;
+  txt+= "Browser Version: " + navigator.appVersion ;
+  txt+= "Cookies Enabled: " + navigator.cookieEnabled;
+  txt+= "Platform: " + navigator.platform;
+  txt+= "User-agent header: " + navigator.userAgent;
+}            
+  </pre>
+</figure>
+
+

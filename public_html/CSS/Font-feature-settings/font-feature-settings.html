@@ -1,0 +1,91 @@
+<p>
+    The font-feature-settings CSS property gives you control over advanced typographic features in OpenType fonts.
+</p>
+
+<div>
+    <p>
+        Note: Whenever possible, Web authors should use the font-variant shorthand property or an associated longhand property, font-variant-ligatures, font-variant-caps, font-variant-east-asian, font-variant-alternates, font-variant-numeric or font-variant-position.
+    </p>
+    <p>
+        This property is a low-level feature designed to handle special cases where no other way to enable or access an OpenType font feature exists. 
+    </p>
+    <p>
+        In particular, this CSS property shouldn't be used to enable small caps.
+    </p>
+</div>
+
+<pre style="font-family: Andale Mono, Lucida Console, Monaco, fixed, monospace; color: #000000; background-color: #eee;font-size: 12px;border: 1px dashed #999999;line-height: 14px;padding: 5px; overflow: auto; width: 100%"><code>/* Use the default settings */
+font-feature-settings: normal;
+
+/* Set values for OpenType feature tags */
+font-feature-settings: &quot;smcp&quot;;
+font-feature-settings: &quot;smcp&quot; on;
+font-feature-settings: &quot;swsh&quot; 2;
+font-feature-settings: &quot;smcp&quot;, &quot;swsh&quot; 2;
+
+/* Global values */
+font-feature-settings: inherit;
+font-feature-settings: initial;
+font-feature-settings: unset;
+</code></pre>
+
+<table class="table table-striped table-bordered table-condensed">
+
+    <tr>
+        <td>Syntax</td>
+        <td>
+            normal | &lt;feature-tag-value&gt;#<br>
+
+            where 
+            &lt;feature-tag-value> = &lt;string&gt; [ &lt;integer&gt; | on | off ]?
+        </td>
+    </tr>
+    <tr>
+        <td>JavaScript syntax</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Initial value</td>
+        <td>normal </td>
+    </tr>
+    <tr>
+        <td>Applies to</td>
+        <td> </td>
+    </tr>
+    <tr>
+        <td>Inherited</td>
+        <td>yes </td>
+    </tr>
+    <tr>
+        <td>Percentages</td>
+        <td></td>
+    </tr>
+
+    <tr>
+        <td>Computed value</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Animatable</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Version:</td>
+        <td></td>
+    </tr>
+
+
+</table>
+
+<ul>
+    <li><h4>normal</h4>
+        Text is laid out using default settings.
+    </li>
+    <li><h4>feature-tag-value</h4>
+        When rendering text, the list of OpenType feature tag value is passed to the text layout engine to enable or disable font features. The tag is always a string> of 4 ASCII characters. If it has more or less characters or contains characters outside the U+20 - U+7E codepoint range, the whole property is invalid.
+        The value is a positive integer. The two keywords on and off are synonyms for 1 and 0 respectively. If no value is set, the default is 1. For non-Boolean OpenType features (e.g. stylistic alternates), the value implies a particular glyph to be selected; for Boolean values, it is a switch.
+    </li>
+
+</ul>
+
+

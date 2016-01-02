@@ -1,0 +1,100 @@
+<p>
+The font-variant-caps CSS property controls the usage of alternate glyphs for capital letters. Scripts can have capital letter glyphs of different sizes, the normal uppercase glyphs, small capital glyphs, and petite capital glyphs. This property controls which alternate glyphs to use.
+</p>
+<p>
+If petite capital glyphs are not present in the font, small capital glyphs are used. If these are not present, the browser synthesizes them from the uppercase glyphs. Note that some caseless characters, like punctuation marks, may have such special glyphs: they are designed to better match the characters around them. Nevertheless synthetic small capitals glyphs are never synthesized for caseless character.
+</p>
+<p>
+The values takes into account language-specific case mapping rules, like:
+<ul>
+    
+    <li> In Turkic languages, like Turkish (tr), Azerbaijani (az), Crimean Tatar (crh), Volga Tatar (tt), and Bashkir (ba), there are two kinds of i, with and without the dot, and two case pairings: i/İ and ı/I.
+    <li>In German (de), the ß becomes SS in uppercase.
+    <li>In Greek (el), vowels lose their accent when the whole word is in uppercase (ά/Α), except for the disjunctive eta (ή/Ή). Also, diphthongs with an accent on the first vowel lose the accent and gain a diacritic on the second vowel (άι/ΑΪ).
+</ul>
+</p>
+<pre style="font-family: Andale Mono, Lucida Console, Monaco, fixed, monospace; color: #000000; background-color: #eee;font-size: 12px;border: 1px dashed #999999;line-height: 14px;padding: 5px; overflow: auto; width: 100%"><code>Syntax
+
+font-variant-caps: normal;
+font-variant-caps: small-caps;
+font-variant-caps: all-small-caps;
+font-variant-caps: petite-caps;
+font-variant-caps: all-petite-caps;
+font-variant-caps: unicase;
+font-variant-caps: titling-caps;
+
+/* Global values */
+font-variant-caps: inherit;
+font-variant-caps: initial;
+font-variant-caps: unset;
+</code></pre>
+
+<table class="table table-striped table-bordered table-condensed">
+
+    <tr>
+        <td>Syntax</td>
+        <td>normal | small-caps | all-small-caps | petite-caps | all-petite-caps | unicase | titling-caps </td>
+    </tr>
+    <tr>
+        <td>JavaScript syntax</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Initial value</td>
+        <td> normal</td>
+    </tr>
+    <tr>
+        <td>Applies to</td>
+        <td> </td>
+    </tr>
+    <tr>
+        <td>Inherited</td>
+        <td>yes </td>
+    </tr>
+    <tr>
+        <td>Percentages</td>
+        <td></td>
+    </tr>
+
+    <tr>
+        <td>Computed value</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Animatable</td>
+        <td>no</td>
+    </tr>
+    <tr>
+        <td>Version:</td>
+        <td></td>
+    </tr>
+
+
+</table>
+
+<ul>
+    <li><h4>normal</h4>
+    This keyword leads to the deactivation of the use of such alternate glyphs.
+    </li>
+    <li><h4>small-caps</h4>
+    This keyword forces the use of small capitals letters for lower case characters. It corresponds to the OpenType value smcp; if the font doesn't support them, it synthesizes the glyphs.
+    </li>
+    <li><h4>all-small-caps</h4>
+    This keyword forces the use of small capital letters for lower case characters. It corresponds to the OpenType values smcp and c2sc; if the font doesn't support them, it synthesizes the glyphs.
+    </li>
+    <li><h4>petite-caps</h4>
+    This keyword forces the use of petite capital letters for lower case characters. It corresponds to the OpenType value pcap; if the font doesn't support them, small caps glyphs are used instead.
+    </li>
+    <li><h4>all-petite-caps</h4>
+    This keyword forces the use of petite capital letters for lower case characters. It corresponds to the OpenType values pcap and c2pc; if the font doesn't support them, small caps glyphs are used instead.
+    </li>
+    </li>
+    <li><h4>unicase</h4>
+    This keyword forces the use of small capital letters for upper case characters. It corresponds to the OpenType value unic; if the font doesn't support them, small caps glyphs are used for the upper case characters instead.
+    </li>
+    <li><h4>titling-caps</h4>
+    This keyword forces the use of special capitals for titling, for both lower and uppercase letters. Regular uppercase glyphs are usually designed to be rendered with lowercase glyphs: they tend to appear too bold when a long run of text use such glyphs. The special glyphs used here are designed not to produce this effect. This keyword corresponds to the OpenType value titl; if the font doesn't support it, the keyword has no visible action.
+    </li>
+</ul>
+
+

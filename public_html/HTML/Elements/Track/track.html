@@ -1,0 +1,64 @@
+<p>
+    The HTML &lt;track&gt; element is used as a child of the media elements—&lt;audio&gt; and &lt;video&gt;. 
+    It lets you specify timed text tracks (or time-based data), for example to automatically 
+    handle subtitles. The tracks are formatted in WebVTT format (.vtt files) — Web Video 
+    Text Tracks.
+</p>
+<p>
+    The type of data that track adds to the media is set in the kind attribute, which 
+    can take values of subtitles, captions, descriptions, chapters or metadata. The 
+    element points to a source file containing timed text that the browser exposes when 
+    the user requests additional data.
+</p>
+<p>
+    A media element cannot have more than one track with the same kind, srclang, and label.
+</p>
+<h3>Attributes</h3>
+This element includes the global attributes.
+<ul>
+    <li><h4>default</h4>This attribute indicates that the track should be enabled unless the user's preferences indicate that another track is more appropriate. This may only be used on one track element per media element.
+    </li>
+    <li><h4>kind</h4>
+
+        How the text track is meant to be used. If omitted the default kind is subtitles. The following keywords are allowed:
+        <ul>
+            <li>subtitles
+                <ul>
+                    <li>Subtitles provide translation of content that cannot be understood by the viewer. For example dialogue or text that is not English in an English language film.
+                    <li>Subtitles may contain additional content, usually extra background information. For example the text at the beginning of the Star Wars films, or the date, time, and location of a scene.
+                </ul>
+            </li>
+            <li>captions
+                <ul>
+                    <li>Closed captions provide a transcription and possibly a translation of audio.
+                    <li>It may include important non-verbal information such as music cues or sound effects. It may indicate the cue's source (e.g. music, text, character).
+                    <li>Suitable for users who are deaf or when the sound is muted.
+                </ul>
+            </li>
+            <li> descriptions
+                <ul>
+                    <li>Textual description of the video content.
+                    <li>Suitable for users who are blind or where the video cannot be seen.
+                </ul>
+            </li>
+            <li>chapters
+                <ul>
+                    <li>Chapter titles are intended to be used when the user is navigating the media resource.
+                        metadata
+                    <li>Tracks used by scripts. Not visible to the user.
+                </ul>
+            </li>
+        </ul>
+
+    </li>
+    <li><h4>label</h4>A user-readable title of the text track which is used by the browser when listing available text tracks.
+    </li>
+    <li><h4>src</h4>
+        Address of the track (.vtt file). Must be a valid URL. This attribute must be defined.
+    </li>
+    <li><h4>srclang</h4>
+        Language of the track text data. It must be a valid BCP 47 language tag. If the kind attribute is set to subtitles, then srclang must be defined
+    </li>
+</ul>
+
+

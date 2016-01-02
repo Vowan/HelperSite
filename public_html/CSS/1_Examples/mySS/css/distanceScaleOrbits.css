@@ -1,0 +1,56 @@
+.scale-d #mercury.orbit {
+    width: 44.74176em;
+    height: 44.74176em;
+    margin-top: -22.37088em;
+    margin-left: -22.37088em; }
+
+.scale-d #venus.orbit {
+    width: 47.35737em;
+    height: 47.35737em;
+    margin-top: -23.67869em;
+    margin-left: -23.67869em; }
+
+.scale-d #earth.orbit {
+    width: 49.50959em;
+    height: 49.50959em;
+    margin-top: -24.75479em;
+    margin-left: -24.75479em; }
+
+.scale-d #mars.orbit {
+    width: 53.58356em;
+    height: 53.58356em;
+    margin-top: -26.79178em;
+    margin-left: -26.79178em; }
+
+.scale-d #jupiter.orbit {
+    width: 82.2042em;
+    height: 82.2042em;
+    margin-top: -41.1021em;
+    margin-left: -41.1021em; }
+
+.scale-d #saturn.orbit {
+    width: 115.91713em;
+    height: 115.91713em;
+    margin-top: -57.95857em;
+    margin-left: -57.95857em; }
+
+.scale-d #uranus.orbit {
+    width: 191.00471em;
+    height: 191.00471em;
+    margin-top: -95.50235em;
+    margin-left: -95.50235em; }
+
+.scale-d #neptune.orbit {
+    width: 275.64709em;
+    height: 275.64709em;
+    margin-top: -137.82355em;
+    margin-left: -137.82355em; }
+
+/* Moon */
+.scale-d #earth .orbit {
+    width: 1em;
+    height: 1em;
+    margin-top: -0.5em;
+    margin-left: -0.5em; }
+
+

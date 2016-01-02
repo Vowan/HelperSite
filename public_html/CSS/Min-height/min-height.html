@@ -1,0 +1,84 @@
+<p>
+The min-height property is used to set the minimum height of a given element. It 
+prevents the used value of the height property from becoming smaller than the value 
+specified for min-height.
+</p>
+<p>
+    The value of min-height overrides both max-height and height.
+</p>
+<h4>Formal syntax</h4>
+How to read CSS syntax.<br>
+<p>
+&lt;length&gt; | &lt;percentage&gt; | auto | max-content | min-content | fit-content | fill-available
+</p>
+
+<table class="table table-striped table-bordered table-condensed">
+    <tr>
+        <td>Initial value</td>
+        <td>0 </td>
+    </tr>
+    <tr>
+        <td>Applies to</td>
+        <td>all elements but non-replaced inline elements, table columns, and column groups </td>
+    </tr>
+    <tr>
+        <td>Inherited</td>
+        <td>no </td>
+    </tr>
+    <tr>
+        <td>Percentages</td>
+        <td>The percentage is calculated with respect to the height of the generated box's containing block. If the height of the containing block is not specified explicitly (i.e., it depends on content height), and this element is not absolutely positioned, the percentage value is treated as 0.</td>
+    </tr>
+    <tr>
+        <td>Media</td>
+        <td>visual</td>
+    </tr>
+    <tr>
+        <td>Computed value</td>
+        <td>the percentage as specified or the absolute length</td>
+    </tr>
+    <tr>
+        <td>Animatable</td>
+        <td>yes, as a length, percentage or calc(); when both values are lengths, they are interpolated as lengths; when both values are percentages, they are interpolated as percentages; otherwise, both values are converted into a calc() function that is the sum of a length and a percentage (each possibly zero), and these calc() functions have each half interpolated as real numbers. </td>
+    </tr>
+    <tr>
+        <td>Canonical order</td>
+        <td>the unique non-ambiguous order defined by the formal grammar</td>
+    </tr>
+</table>
+
+<ul>
+    <li><h4>
+            <button id="length" type="class" class="btn btn-default submodal btn-sm" data-toggle="tooltip" 
+                    data-placement="sup" title=""></button>
+
+
+        </h4>
+        The fixed minimum height. See &lt;length&gt; for possible units. Negative values 
+            make the declaration invalid.
+       
+    </li>
+    <li><h4>
+            <button id="percentage" type="class" class="btn btn-default submodal btn-sm" data-toggle="tooltip" 
+                    data-placement="sup" title=""></button>
+
+        </h4>
+        The fixed minimum height expressed as a &lt;percentage&gt; of containing block's height. 
+            Negative values make the declaration invalid.
+    </li>
+    <li><h4>max-content  <mark>experimental</mark></h4>
+        The intrinsic preferred height.
+    </li>
+    <li><h4>min-content <mark>experimental</mark></h4>
+        The intrinsic minimum height.
+    </li>
+    <li><h4>fill-available <mark>experimental</mark></h4>
+        The containing block height minus horizontal margin, border and padding. Some browsers 
+        implement an ancient name for this keyword, available.
+    </li>
+    <li><h4>fit-content <mark>experimental</mark></h4>
+        According CSS3 Box, this is a synonym of min-content. CSS3 Sizing defines a more complex algorithm, but no browser implements it, even in an experimental way.
+    </li>
+</ul>
+
+

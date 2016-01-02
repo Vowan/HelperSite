@@ -1,0 +1,46 @@
+<p>
+The HTML &lt;ol&gt; Element (or HTML Ordered List Element) represents an ordered list of 
+    items. Typically, ordered-list items are displayed with a preceding numbering,
+    which can be of any form, like numerals, letters or Romans numerals or even 
+    simple bullets. This numbered style is not defined in the HTML description of 
+    the page, but in its associated CSS, using the list-style-type property.<br>
+
+There is no limitation to the depth and overlap of lists defined with the &lt;ol&gt; and &lt;ul&gt; elements.
+</p>
+<h3>Attributes</h3>
+This element includes the global attributes.
+<ul>
+    <li><h4>compact</h4>Note: Do not use this attribute, as it has been deprecated: 
+        the &lt;ol&gt; element should be styled using CSS. To give an effect similar to 
+            the compact attribute, the CSS property line-height can be used with a value of 80%.
+    </li>
+    <li><h4>reversed <mark>HTML5</mark></h4>This Boolean attribute specifies that the items of the 
+        item are specified in the reverse order, i.e. that the least important 
+        one is listed first.
+    </li>
+    <li><h4>start<mark>HTML5</mark></h4>This integer attribute specifies the start value for numbering 
+        the individual list items. Although the ordering type of list elements might 
+        be Roman numerals, such as XXXI, or letters, the value of start is always 
+        represented as a number. To start numbering elements from the letter "C", 
+        use &lt;ol start="3"&gt;.
+    </li>
+    <li><h4>type</h4>
+        Indicates the numbering type:<br>
+
+    'a' indicates lowercase letters,<br>
+    'A' indicates uppercase letters,<br>
+    'i' indicates lowercase Roman numerals,<br>
+    'I' indicates uppercase Roman numerals,<br>
+    and '1' indicates numbers (default).<br>
+
+The type set is used for the entire list unless a different type attribute is used 
+within an enclosed &lt;li&gt; element.
+        <p>Note: This attribute was deprecated in HTML4, but reintroduced in HTML5. 
+            Unless the value of the list number matters (e.g. in legal or technical 
+            documents where items are to be referenced by their number/letter), the 
+            CSS list-style-type property should be used instead.</p>
+    </li>
+    
+</ul>
+
+

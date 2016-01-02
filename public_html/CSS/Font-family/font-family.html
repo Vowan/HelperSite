@@ -1,0 +1,108 @@
+<p>
+    The font-family CSS property lets you specify a prioritized list of font family names and/or generic family names for the selected element. Values are separated by a comma to indicate that they are alternatives. The browser will select the first font on the list that is installed on the computer or that can be downloaded using a @font-face at-rule.
+</p>
+<p>
+    Web authors should always add at least one generic family in a font-family list, since there's no guarantee that a specific font is installed on the computer or can be downloaded using a @font-face at-rule. The generic family lets the browser select an acceptable fallback font when needed.  
+</p>
+
+<p>
+    Note: The font-family property specifies a list of fonts, from highest priority to lowest. Font selection does not simply stop at the first font named in the list that is on the user's system. Rather, font selection is done one character at a time, so that if an available font does not have a glyph that can display a character needed, the later available fonts are tried. However, this doesn't work in Internet Explorer 6 or earlier.
+</p>
+<pre style="font-family: Andale Mono, Lucida Console, Monaco, fixed, monospace; color: #000000; background-color: #eee;font-size: 12px;border: 1px dashed #999999;line-height: 14px;padding: 5px; overflow: auto; width: 100%"><code>/* A font family name and a generic family name */
+font-family: Gill Sans Extrabold, sans-serif;
+font-family: &quot;Goudy Bookletter 1911&quot;, sans-serif;
+
+/* A generic family name only */
+font-family: serif;
+font-family: sans-serif;
+font-family: monospace;
+font-family: cursive;
+font-family: fantasy;
+
+/* Global values */
+font-family: inherit;
+font-family: inherit;
+font-family: unset;
+</code></pre>
+
+
+<table class="table table-striped table-bordered table-condensed">
+
+    <tr>
+        <td>Syntax</td>
+        <td>font | initial | inherit </td>
+    </tr>
+    <tr>
+        <td>JavaScript syntax</td>
+        <td>object.style.fontFamily="Verdana,sans-serif"</td>
+    </tr>
+    <tr>
+        <td>Initial value</td>
+        <td> </td>
+    </tr>
+    <tr>
+        <td>Applies to</td>
+        <td> </td>
+    </tr>
+    <tr>
+        <td>Inherited</td>
+        <td> yes</td>
+    </tr>
+    <tr>
+        <td>Percentages</td>
+        <td></td>
+    </tr>
+
+    <tr>
+        <td>Computed value</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Animatable</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Version:</td>
+        <td>CSS1</td>
+    </tr>
+
+
+</table>
+
+<ul>
+    <li><h4>family-name</h4>
+        The name of a font family. For example, "Times" and "Helvetica" are font families. Font family names containing whitespace should be quoted.
+    </li>
+    <li><h4>generic-name</h4>
+        Generic font families are a fallback mechanism, a means of preserving some of the style sheet author's intent when none of the specified fonts are available. Generic family names are keywords and must not be quoted. A generic font family should be the last item in the list of font family names. The following keywords are defined:
+        <ul>
+            <li><h4>serif</h4>
+                Glyphs have finishing strokes, flared or tapering ends, or have actual serifed endings.
+                E.g. Lucida Bright, Lucida Fax, Palatino, "Palatino Linotype", Palladio, "URW Palladio", serif.
+            </li>
+
+            <li><h4>sans-serif</h4>
+                Glyphs have stroke endings that are plain.
+                E.g. "Open Sans", "Fira Sans", "Lucida Sans", "Lucida Sans Unicode", "Trebuchet MS", "Liberation Sans", "Nimbus Sans L", sans-serif.
+            </li>
+
+            <li><h4>monospace</h4>
+                All glyphs have the same fixed width.
+                E.g. "Fira Mono", "DejaVu Sans Mono", Menlo, Consolas, "Liberation Mono", Monaco, "Lucida Console", monospace.
+            </li>
+
+            <li><h4>cursive</h4>
+                Glyphs in cursive fonts generally have either joining strokes or other cursive characteristics beyond those of italic typefaces. The glyphs are partially or completely connected, and the result looks more like handwritten pen or brush writing than printed letterwork.
+                E.g. "Brush Script MT", "Brush Script Std", "Lucida Calligraphy", "Lucida Handwriting", "Apple Chancery", cursive.
+            </li>
+
+            <li><h4>fantasy</h4>
+                Fantasy fonts are primarily decorative fonts that contain playful representations of characters.
+                E.g. Papyrus, Herculanum, Party LET, Curlz MT, Harrington, fantasy.
+            </li>
+
+        </ul>
+
+</ul>
+
+

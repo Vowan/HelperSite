@@ -1,0 +1,72 @@
+<p>
+The font-size-adjust CSS property specifies that font size should be chosen based on the height of lowercase letters rather than the height of capital letters. This is useful since the legibility of fonts, especially at small sizes, is determined more by the size of lowercase letters than by the size of capital letters.
+</p>
+<p>
+Legibility can become an issue when the first-choice font-family is unavailable and its replacement has a significantly different aspect ratio (the ratio of the size of lowercase letters to the size of the font).
+</p>
+<p>
+
+</p>
+
+
+<table class="table table-striped table-bordered table-condensed">
+
+    <tr>
+        <td>Syntax</td>
+        <td>none | number </td>
+    </tr>
+    <tr>
+        <td>JavaScript syntax</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Initial value</td>
+        <td>none </td>
+    </tr>
+    <tr>
+        <td>Applies to</td>
+        <td> </td>
+    </tr>
+    <tr>
+        <td>Inherited</td>
+        <td> </td>
+    </tr>
+    <tr>
+        <td>Percentages</td>
+        <td></td>
+    </tr>
+
+    <tr>
+        <td>Computed value</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Animatable</td>
+        <td>yes, as a number</td>
+    </tr>
+    <tr>
+        <td>Version:</td>
+        <td></td>
+    </tr>
+
+
+</table>
+
+<ul>
+    <li><h4>none</h4>
+    Choose the size of the font based only on the font-size property.
+    </li>
+    <li><h4>number</h4>
+
+
+    Choose the size of the font so that its lowercase letters (as determined by the x-height of the font) are the specified number times the font-size.
+
+    The number specified should generally be the aspect ratio (ratio of x-height to font size) of the first choice font-family. This means that the first choice font, when available, will appear the same size in browsers, whether or not they support font-size-adjust.
+
+    0 yields text of zero height (hidden text). Note that some old browsers, like Firefox prior version 40, treated 0 as none.
+
+    </li>
+    
+</ul>
+
+

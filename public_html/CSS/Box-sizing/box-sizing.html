@@ -1,0 +1,64 @@
+<p>
+The box-sizing property is used to alter the default CSS box model used to calculate widths and heights of elements. It is possible to use this property to emulate the behavior of browsers that do not correctly support the CSS box model specification.
+</p>
+<h4>Formal syntax</h4>
+How to read CSS syntax.<br>
+<p>
+    content-box | border-box
+</p>
+
+<table class="table table-striped table-bordered table-condensed">
+    <tr>
+        <td>Initial value</td>
+        <td>content-box </td>
+    </tr>
+    <tr>
+        <td>Applies to</td>
+        <td>all elements that accept width or height </td>
+    </tr>
+    <tr>
+        <td>Inherited</td>
+        <td>no </td>
+    </tr>
+    <tr>
+        <td>Percentages</td>
+        <td>-</td>
+    </tr>
+    <tr>
+        <td>Media</td>
+        <td>visual</td>
+    </tr>
+    <tr>
+        <td>Computed value</td>
+        <td>as specified</td>
+    </tr>
+    <tr>
+        <td>Animatable</td>
+        <td>no</td>
+    </tr>
+    <tr>
+        <td>Canonical order</td>
+        <td>the unique non-ambiguous order defined by the formal grammar</td>
+    </tr>
+</table>
+
+<ul>
+    <li><h4>content-box</h4>
+        This is the default style as specified by the CSS standard. The width and 
+        height properties are measured including only the content, but not the padding, 
+        border or margin. Note: Padding, border & margin will be outside of the box e.g. 
+        IF .box {width: 350px}; THEN you apply {border: 10px solid black;} RESULT 
+        {rendered in the browser} .box {width: 370px;}
+    </li>
+    <li><h4>border-box</h4>
+        The width and height properties include the padding and border, but not the margin. 
+        This is the box model used by Internet Explorer when the document is in Quirks mode. 
+        Note that padding and border will be inside of the box e.g.  .box {width: 350px; 
+        border: 10px solid black;} lead to a box rendered in the browser of width: 350px. 
+        The content box can't be negative and is floored to 0 making it impossible to use
+        border-box to make the element disappear.
+    </li>
+    
+</ul>
+
+

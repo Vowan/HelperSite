@@ -1,0 +1,73 @@
+<p>
+The font-language-override CSS property controls the usage of language-specific glyphs in a typeface.
+</p>
+<p>
+By default, browsers use the HTML global attribute lang to determine the language of the text contained in an element; with this information, they use special glyphs designed for that language. For example, a lot of font have a special character for the digraph fi, making the dot on the i merge with the previous character. This ligature should not be used when displaying turkic language as they have two i (i and ı), one with a dot and one dotless: using the ligature would transform a dotted i in a dotless i.
+</p>
+<p>
+Sometimes the author want to override this language: like if the typeface doesn't know about the azeri language, that, like the turkish one, has a dotless i. In that case, the font-language-override can be used to force the use of the turkish glyphs, better suited for azeri than the default one.
+</p>
+
+<pre style="font-family: Andale Mono, Lucida Console, Monaco, fixed, monospace; color: #000000; background-color: #eee;font-size: 12px;border: 1px dashed #999999;line-height: 14px;padding: 5px; overflow: auto; width: 100%"><code>font-language-override: normal
+font-language-override: &quot;TRK&quot;
+
+/* Global values */
+font-language-override: initial
+font-language-override: inherit
+font-language-override: unset
+</code></pre>
+
+<table class="table table-striped table-bordered table-condensed">
+
+    <tr>
+        <td>Syntax</td>
+        <td> normal | &lt;string&gt;</td>
+    </tr>
+    <tr>
+        <td>JavaScript syntax</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Initial value</td>
+        <td> normal</td>
+    </tr>
+    <tr>
+        <td>Applies to</td>
+        <td> </td>
+    </tr>
+    <tr>
+        <td>Inherited</td>
+        <td>yes </td>
+    </tr>
+    <tr>
+        <td>Percentages</td>
+        <td></td>
+    </tr>
+
+    <tr>
+        <td>Computed value</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Animatable</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Version:</td>
+        <td></td>
+    </tr>
+
+
+</table>
+
+<ul>
+    <li><h4>normal</h4>
+        This keyword forces the browser to use glyphs defined for the given language in the font.
+    </li>
+    <li><h4>&lt;string&gt;</h4>
+        This keyword forces the browser to use the language defined by the string. The values are the OpenType language system strings.
+    </li>
+    
+</ul>
+
+

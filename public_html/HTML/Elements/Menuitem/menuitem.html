@@ -1,0 +1,60 @@
+<p>
+    The HTML &lt;menuitem&gt; element represents a command that a user is able to invoke 
+    through a popup menu. This includes context menus, as well as menus that might 
+    be attached to a menu button.
+</p>
+<p>
+    A command can either be defined explicitly, with a textual label and optional icon 
+    to describe its appearance, or alternatively as an indirect command whose behavior 
+    is defined by a separate element. Commands can also optionally include a checkbox or 
+    be grouped to share radio buttons. (Menu items for indirect commands gain checkboxes 
+    or radio buttons when defined against elements &lt;input type="checkbox"&gt; and 
+    &lt;input type="radio"&gt;.)
+</p>
+<h3>Attributes</h3>
+This element includes the global attributes.
+<ul>
+    <li><h4>checked</h4>
+        Boolean attribute which indicates whether the command is selected. May only 
+        be used when the type attribute is checkbox or radio.
+    </li>
+    <li><h4>command</h4>
+        Specifies the ID of a separate element, indicating a command to be invoked 
+        indirectly. May not be used within a menu item that also includes the attributes
+        checked, disabled, icon, label, radiogroup or type.
+
+    </li>
+    <li><h4>default</h4>
+        This Boolean attribute indicates use of the same command as the menu's subject 
+        element (such as a button or input).
+    </li>
+    <li><h4>disabled</h4>
+        Boolean attribute which indicates that the command is not available in the 
+        current state. Note that disabled is distinct from hidden; the disabled 
+        attribute is appropriate in any context where a change in circumstances 
+        might render the command relevant.
+
+    </li>
+    <li><h4>icon</h4>
+        Image URL, used to provide a picture to represent the command.
+    </li>
+    <li><h4>label</h4>
+        The name of the command as shown to the user. Required when a command attribute is not present.
+    </li>
+    <li><h4>radiogroup</h4>
+        This attribute specifies the name of a group of commands to be toggled as radio buttons 
+        when selected. May only be used where the type attribute is radio.
+    </li>
+    <li><h4>type</h4>
+        This attribute indicates the kind of command, and can be one of three values.
+        <ul>
+            <li>command: A regular command with an associated action. This is the missing value default.
+            <li> checkbox: Represents a command that can be toggled between two different states.
+            <li>radio: Represent one selection from a group of commands that can be toggled as radio buttons.
+        </ul>
+    </li>
+    <li><h4></h4>
+    </li>
+</ul>
+
+

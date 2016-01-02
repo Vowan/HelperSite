@@ -1,0 +1,29 @@
+.set-size dl.infos dd span:after {
+    content: 'Equatorial Circumference'; }
+
+.set-size #sun dl.infos dd:after {
+    content: '4,370,005 km'; }
+
+.set-size #mercury dl.infos dd:after {
+    content: '15,329 km'; }
+
+.set-size #venus dl.infos dd:after {
+    content: '38,024 km'; }
+
+.set-size #earth dl.infos dd:after {
+    content: '40,030 km'; }
+
+.set-size #mars dl.infos dd:after {
+    content: '21,296 km'; }
+
+.set-size #jupiter dl.infos dd:after {
+    content: '439,263 km'; }
+
+.set-size #saturn dl.infos dd:after {
+    content: '365,882 km'; }
+
+.set-size #uranus dl.infos dd:after {
+    content: '159,354 km'; }
+
+.set-size #neptune dl.infos dd:after {
+    content: '154,704 km'; }

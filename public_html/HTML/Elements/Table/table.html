@@ -1,0 +1,132 @@
+<p>
+    The HTML Table Element (&lt;table&gt;) represents data in two dimensions or more.
+</p>
+<h4>Note:</h4> 
+<p>
+    Prior to the creation of CSS, HTML &lt;table&gt; elements were often used as a 
+    method for page layout. This usage has been discouraged since HTML 4, and the 
+<table> element should not be used for layout purposes. However, HTML emails 
+    are an exception, where tables are still commonly used for layout purposes.
+</p>
+<h3>Attributes</h3>
+This element includes the global attributes.
+<ul>
+    <li><h4>align <mark>(deprecated)</mark></h4>
+        This enumerated attribute indicates how the table must be aligned in regard of the
+        containing document. It may have the following values:
+        <ul>
+            <li>left, meaning that the table is to be displayed to the left of the document;
+            <li>center, meaning that the table is to be displayed centered in the document;
+            <li>right, meaning that the table is to be displayed to the right of the document.
+        </ul>
+    </li>
+    <li><h4>bgcolor <mark>(deprecated)</mark></h4>
+        This attribute defines the background color of the table and its content. It 
+        is one of the 6-digit hexadecimal code as defined in sRGB, prefixed by a '#'.
+        One of the sixteen predefined color strings may be used: 
+    </li>
+    <li><h4>border <mark>(deprecated)</mark></h4>
+        This integer attribute defines, in pixels, the size of the frame surrounding the table. 
+        If set to 0, it implies that the frame attribute is set to void.
+        <p>
+            <strong>Usage note:</strong> Do not use this attribute, as it has been deprecated and 
+            the &lt;table&gt; 
+            element should be styled using CSS. To give an effect similar to the border attribute, 
+            the CSS properties border, border-color, border-width and border-style should be used.
+        </p>
+    </li>
+    <li><h4>cellpadding <mark>(deprecated)</mark></h4>
+        This attribute defines the space between the content of a cell and the border, 
+        displayed or not, of it. If it is a pixel length, this pixel-sized space will be 
+        applied on all four sides; if it is a percentage length, the content will be 
+        centered and the total vertical space (top and bottom) will represent this 
+        percentage. The same is true for the total horizontal space (left and right). 
+        <p>
+            <strong>Usage note:</strong> Do not use this attribute, as it has been deprecated 
+            and the &lt;table&gt; element should be styled using CSS. To give an effect similar to 
+            the cellpadding attribute, use the CSS property border-collapse with the value 
+            collapse on the &lt;table&gt; element itself, and the property padding on the <td>.
+        </p>
+        </li>
+    <li><h4>cellspacing <mark>(deprecated)</mark></h4>
+        This attribute defines the size, in percentage or in pixels, of the space between 
+        two cells (both horizontally and vertically), between the top of the table and the 
+        cells of the first row, the left of the table and the first column, the right of 
+        the table and the last column and the bottom of the table and the last row. 
+        <p>
+            <strong>Usage note:</strong> Do not use this attribute, as it has been 
+            deprecated and the <table> element should be styled using CSS. To give an 
+            effect similar to the cellspacing attribute, use the CSS property border-spacing 
+            on the &lt;table&gt; element itself.
+            </p>
+    </li>
+    <li><h4>frame <mark>(deprecated)</mark></h4>
+        This enumerated attribute defines which side of the frame surrounding the 
+        table must be displayed. It may have the following values:
+        <p>
+            <strong>Usage note:</strong> Do not use this attribute, as it has been deprecated 
+            and the &lt;table&gt; element should be styled using CSS. To give an effect similar to 
+            the frame attribute, use the CSS properties border-style and border-width.
+        </p>
+    </li>
+    <li><h4>rules <mark>(deprecated)</mark></h4>
+        This enumerated attribute defines where rules, i.e. lines, should appear in a table. 
+        It can have the following values:
+        <ul>
+    </li>none, which indicates the no rules will be displayed; it is the default value;
+    </li>groups, which will make the rules to be displayed between row groups (defined by 
+    the &lt;thead&gt;, &lt;tbody&gt; and &lt;tfoot&gt; elements) and between column groups (defined by the 
+    &lt;col&gt; and &lt;colgroup&gt; elements) only;
+    </li>rows, which will make the rules to be displayed between rows;
+    </li>columns, which will make the rules to be displayed between columns;
+    </li>all, which wil make the rules to be displayed between rows and columns.
+    <p>
+        <strong>Usage note:</strong> 
+        The styling of the rules is browser-dependant and cannot be modified.
+        Do not use this attribute, as it has been deprecated and the rules should be defined and styled 
+        using CSS. Use the CSS property border on the adequate &lt;thead&gt;, &lt;tbody&gt;, 
+        &lt;tfoot&gt;, 
+        &lt;col&gt; or 
+        &lt;colgroup&gt; elements.
+
+    </p>
+</ul>
+</li>
+<li><h4>summary <mark>(deprecated)</mark></h4>
+    This attribute defines an alternative text use to describe the table in user-agent 
+    unable to display it. Typically, it contents a description of it to allow visually 
+    impaired people, like blind people browsing the web using Braille screen, to get 
+    the information in it. If the information added in this attribute may also be useful 
+    for non-visually impaired people, consider using the &lt;caption&gt; instead. The summary 
+    attribute is not mandatory and may be omitted when a &lt;caption&gt; element fulfills its role. 
+    <p>
+        <strong>Usage note:</strong> Do not use this attribute, as it has been deprecated. 
+        Instead, use one of these way of describing a table:
+    <ul>
+        <li> In prose, surrounding the table (this is the less semantic-conveying way of doing it).
+        <li>In the table's &lt;caption&gt; element.
+        <li>In a &lt;details&gt; element, inside the table's &lt;caption&gt; element.
+        <li>Include the &lt;table&gt; element in a &lt;figure&gt; element and add the description in prose next 
+            to it.
+        <li>Include the &lt;table&gt; element in a &lt;figure&gt; element and add the description in prose 
+            inside 
+            a &lt;figcaption&gt; element.
+        <li>Adjust the table so that such description is no more needed, by using &lt;th&gt; and
+            &lt;thead&gt; e        lements for example.
+    </ul>
+    </p>
+
+</li>
+<li><h4>width <mark>(deprecated)</mark></h4>
+    This attribute defines the width of the table. It may either be a pixel length or a 
+    percentage value, representing the percentage of the width of its container that the 
+    table should use. 
+    <p>
+        <strong>Usage note:</strong> Do not use this attribute, as it has been deprecated 
+        and the rules should be defined and styled using CSS. Use the CSS property width 
+        instead.
+    </p>
+</li>
+</ul>
+
+

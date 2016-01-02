@@ -1,0 +1,38 @@
+<p>
+    The HTML &lt;menu&gt; element represents a group of commands that a user can perform or activate. 
+    This includes both list menus, which might appear across the top of a screen, as well 
+    as context menus, such as those that might appear underneath a button after it has been clicked.
+    <strong>Usage note:</strong> The &lt;menu&gt; and &lt;ul&gt; elements both represent an unordered list 
+    of items. 
+    The key difference is that &lt;ul&gt; primarily contains items for display, whilst
+    &lt;menu&gt; is intended for interactive items, to act on.
+
+    <strong>Notes: </strong>This element was deprecated in HTML4, but reintroduced in HTML5.1 
+    (still working draft).")}}. This document describes current Firefox implementation. 
+    Type 'list' is likely to change to 'toolbar' and 'context' to 'popup' according to 
+    HTML5.1 working draft.")}}
+</p>
+<h3>Attributes</h3>
+This element includes the global attributes.
+<ul>
+    <li><h4>label</h4>
+        The name of the menu as shown to the user. Used within nested menus, to 
+        provide a label through which the submenu can be accessed. Must only be 
+        specified when the parent element is a &lt;menu&gt; in the context menu state.
+    </li>
+    <li><h4>type</h4>
+        This attribute indicates the kind of menu being declared, and can be one of two values.
+        <ul>
+            <li>context: The context menu state, which represents a group of commands activated through 
+                another element. This might be through the menu attribute of a &lt;button&gt;, or an element 
+                with a contextmenu attribute. When nesting &lt;menu&gt; elements directly within one another,
+                this is the missing value default if the parent is already in this state.
+            <li> list: The list menu state, which represents a series of commands for user interaction. This
+                is the missing value default, except where the parent element is a &lt;menu&gt; in the context 
+                menu state.
+        </ul>
+    </li>
+
+</ul>
+
+

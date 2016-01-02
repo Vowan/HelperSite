@@ -1,0 +1,53 @@
+<p>
+The @font-feature-values CSS at-rule allows authors to use a common name in font-variant-alternates for feature activated differently in OpenType. It allows to simplify the CSS when using several fonts.
+</p>
+<pre style="font-family: Andale Mono, Lucida Console, Monaco, fixed, monospace; color: #000000; background-color: #eee;font-size: 12px;border: 1px dashed #999999;line-height: 14px;padding: 5px; overflow: auto; width: 100%"><code>@font-feature-values Font One { /* How to activate nice-style in Font One */
+  @styleset {
+    nice-style: 12;
+  }
+}
+ 
+@font-feature-values Font Two { /* How to activate nice-style in Font Two */
+  @styleset {
+    nice-style: 4;
+  }
+} 
+
+&#8230;
+
+.nice-look { font-variant-alternates: styleset(nice-style); } /* Independent of the font */
+</code></pre>
+
+
+
+<ul>
+    <li><h4>@swash</h4>
+        Specifies a feature name that will work with the swash() functional notation of font-variant-alternates. A swash feature value definition allows only one value: ident1: 2 is valid when ident2: 2 4 isn't.
+
+    </li>
+    <li><h4>@annotation</h4>
+Specifies a feature name that will work with the annotation() functional notation of font-variant-alternates. An annotation feature value definition allows only one value: ident1: 2 is valid when ident2: 2 4 isn't.
+    </li>
+    <li><h4>@ornaments</h4>
+    Specifies a feature name that will work with the ornaments() functional notation of font-variant-alternates. An ornaments feature value definition allows only one value: ident1: 2 is valid when ident2: 2 4 isn't.
+    </li>
+    <li><h4>@stylistic</h4>
+Specifies a feature name that will work with the stylistic() functional notation of font-variant-alternates. A stylistice feature value definition allows only one value: ident1: 2 is valid when ident2: 2 4 isn't.
+    </li>
+    <li><h4>@styleset</h4>
+    Specifies a feature name that will work with the styleset() functional notation of font-variant-alternates. A stylset feature value definition allows and illimited amount of values: ident1: 2 4 12 1maps to the OpenType values ss02, ss04, ss12, ss01. Note that values higher than 99 are valid, but doesn't map to any OpenType values and are ignored.
+    </li>
+     <li><h4>@character-variant</h4>
+    Specifies a feature name that will work with the character-variant() functional notation of font-variant-alternates. A character-variant feature value definition allows one or two values: ident1: 2  maps to cv02=1 and ident2: 2 4 maps to cv02)4 and ident2: 2 4 5 isn't valid.
+    </li>
+    
+</ul>
+
+<pre style="font-family: Andale Mono, Lucida Console, Monaco, fixed, monospace; color: #000000; background-color: #eee;font-size: 12px;border: 1px dashed #999999;line-height: 14px;padding: 5px; overflow: auto; width: 100%"><code>@font-feature-values &lt;font-family&gt; {
+  [ @swash &#124; @ornaments &#124; @annotation &#124; @stylistic &#124; @styleset &#124; @character-variant
+    {
+      [ &lt;IDENT&gt;: &lt;integer&gt;+ ]?
+    }
+  ]?
+}
+</code></pre>

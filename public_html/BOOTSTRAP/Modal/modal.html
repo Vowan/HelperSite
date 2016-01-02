@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Modal Plugin</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../../bower_components/bootstrap/dist/css/bootstrap.css">
+        
+        <script src="../../bower_components/jquery/dist/jquery.js"></script>
+        <script src="../../bower_components/bootstrap/js/modal.js"></script>
+        <style>
+            body {
+                padding-top: 50px;
+                padding-bottom: 20px;
+            }
+            
+            body {
+                /*  position: relative;*/
+            }
+
+            #firstColmn{
+                padding: 0px;
+            }
+            .affix {
+                top:60px;
+
+            }
+
+            .affix-top{
+                padding-right: 0px;
+            }
+
+            .affix-bottom{
+                position: absolute;
+            }
+            div.col-sm-9 div {
+                /* height: 250px;*/
+                font-size: 28px;
+
+
+            }
+
+
+
+            #section3 {color: #fff; background-color: #ff9800;}
+            #section41 {color: #fff; background-color: #00bcd4;}
+            #section42 {color: #fff; background-color: #009688;}
+
+            @media screen and (max-width: 810px) {
+                #section1, #section2, #section3, #section41, #section42  {
+                    /* margin-left: 150px;*/
+                }
+            }
+        </style>
+
+    </head>
+    <body data-spy="scroll" data-target="#myScrollspy" data-offset="250">
+        
+        <header id="page_header">
+            <nav id="mainNav" class="navbar navbar-inverse navbar-fixed-top"> </nav>
+            <nav id="secondNav" class="navbar navbar-default" role="navigation"></nav>
+        </header>
+        
+        <div class="container-fluid  panel text-center" >
+            <h1 class="">Плагин Modal</h1>
+            <p>Позволяет открыть дополнительное окно с элементами аннимации</p>
+        </div>
+
+        <section class="container">
+            <div class="row">
+                <nav class="col-sm-3" id="modelSideNav"></nav>
+                <article id="mainArticle" class="col-sm-9">   </article>  
+            </div>
+        </section>
+
+
+
+
+        
+        
+        <script>
+            $(function () {
+
+                $("#mainNav").load("../../A_Site/Headers/mainHeader.html");
+                $("#secondNav").load("modalNav.html");
+                $("#modelSideNav").load("modelSideNav.html");
+                $("#mainArticle").load("modelMainArticle.html");
+            });
+        </script>
+        
+        <script src="../../bower_components/bootstrap/js/collapse.js"></script>
+        <script src="../../bower_components/bootstrap/js/affix.js"></script>
+        <script src="../../bower_components/bootstrap/js/alert.js"></script>
+        <script src="../../bower_components/bootstrap/js/button.js"></script>
+        <script src="../../bower_components/bootstrap/js/carousel.js"></script>
+        <script src="../../bower_components/bootstrap/js/dropdown.js"></script>
+        
+        <script src="../../bower_components/bootstrap/js/popover.js"></script>
+        <script src="../../bower_components/bootstrap/js/scrollspy.js"></script>
+        <script src="../../bower_components/bootstrap/js/tab.js"></script>
+        <script src="../../bower_components/bootstrap/js/tooltip.js"></script>
+        <script src="../../bower_components/bootstrap/js/transition.js"></script>
+
+
+        <script src="../../js/main.js"></script>
+
+
+
+
+
+    </body>
+</html>

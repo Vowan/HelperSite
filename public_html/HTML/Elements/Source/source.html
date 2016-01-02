@@ -1,0 +1,52 @@
+<p>
+    The HTML &lt;source&gt; element is used to specify multiple media resources for 
+    &lt;picture&gt;, &lt;audio&gt;and &lt;video&gt; elements. It is an empty element. It is commonly 
+    used to serve the same media in multiple formats supported by different browsers.
+</p>
+<h3>Attributes</h3>
+This element includes the global attributes.
+<ul>
+    <li><h4>sizes <mark>experimental</mark></h4>
+        Is a list of source sizes that describes the final rendered width of the 
+        image represented by the source. Each source size consists of a comma-separated 
+        list of media condition-length pairs. This information is used by the browser to 
+        determine, before laying the page out, which image defined in srcset to use.
+        The sizes attribute has an effect only when the &lt;source> element is the direct child of 
+        a &lt;picture&gt; element.
+    </li>
+    <li><h4>src</h4>
+        Required for &lt;audio&gt; and &lt;video&gt;, address of the media resource. The value of 
+        this attribute is ignored when the &lt;source&gt; element is placed inside a &lt;picture&gt; element.
+    </li>
+    <li><h4>srcset</h4>
+        A list of one or more strings separated by commas indicating a set of possible images 
+        represented by the source for the browser to use. Each string is composed of:
+        <ol>
+            <li>one URL to an image,
+            <li>a width descriptor, that is a positive integer directly followed by 'w'. The default 
+                value, if missing, is the infinity.
+            <li>a pixel density descriptor, that is a positive floating number directly followed by 
+                'x'. The default value, if missing, is 1x.
+        </ol>
+        Each string in the list must have at least a width descriptor or a pixel density descriptor 
+        to be valid. Among the list, there must be only one string containing the same tuple of width 
+        descriptor and pixel density descriptor.
+        The browser chooses the most adequate image to display at a given point of time.
+        The srcset attribute has an effect only when the &lt;source&gt; element is the direct child of a 
+        &lt;picture&gt; element.
+    </li>
+    <li><h4>type</h4>
+
+        The MIME-type of the resource, optionally with a codecs parameter. See RFC 4281 
+        for information about how to specify codecs.
+    </li>
+    <li><h4>media</h4>
+        Media query of the resource's intended media; this should be used only in a 
+        &lt;picture&gt; element.
+    </li>
+</ul>
+<p>
+    If the type attribute isn't specified, the media's type is retrieved from the server and checked to see if Gecko can handle it; if it can't be rendered, the next source is checked. If the type attribute is specified, it's compared against the types Gecko can play, and if it's not recognized, the server doesn't even get queried; instead, the next source element is checked at once.
+</p>
+
+

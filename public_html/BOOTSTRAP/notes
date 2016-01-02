@@ -1,0 +1,263 @@
+
+The difference between .css( "height" ) and .height() is that the latter returns a 
+unit-less pixel value (for example, 400) while the former returns a value with units 
+intact (for example, 400px). The .height() method is recommended when an element's height 
+needs to be used in a mathematical calculation.
+
+.scrollTop()
+
+The vertical scroll position is the same as the number of pixels that are hidden 
+from view above the scrollable area. If the scroll bar is at the very top, or if 
+the element is not scrollable, this number will be 0.
+
+The .offset() method allows us to retrieve the current position of an element relative 
+to the document. Contrast this with .position(), which retrieves the current position 
+relative to the offset parent. When positioning a new element on top of an existing one 
+for global manipulation (in particular, for implementing drag-and-drop), .offset() is more useful.
+
+.offset() returns an object containing the properties top and left.
+
+// AFFIX DATA-API
+  // ==============
+
+  $(window).on('load', function () {                                 ------ 1
+      
+    $('[data-spy="affix"]').each(function () {                       ------ 2
+      var $spy = $(this)                                             ---------2.1
+      
+      var data = $spy.data()
+
+      data.offset = data.offset || {}
+
+      if (data.offsetBottom) data.offset.bottom = data.offsetBottom
+      if (data.offsetTop)    data.offset.top    = data.offsetTop
+
+      $spy.affix(data)
+    })
+  })
+
+1. Регистрируется  на событие о  полной загрузке объекта  window, при возникновении
+которого  выполняет аномнимную функцию
+
+2. С помощью селектора выбирает все елементы, у которых присутствует пользовательский
+атрибут  data-spy="affix". С помощью функции each() производит для каждого выбранного элемента
+следующие действия:
+    2.1. Создает из элемента объект JQuery
+    2.2. Извлекает из объекта пользовательские данные в виде отдельного объекта
+    2.3. Проверяет на наличие свойства offset у объекта данных. Если такого свойства
+        нет, то ему присваивается новый пустой объект
+    2.4. Проверяет на наличие свойства offsetBottom у объекта данных. Это свойство автоматически
+         будет создано браузером если у элемента имеется атрибут data-offset-bottom. В
+         положительном случае объекту offset из объекта данных будет добавлено 
+         свойство bottom, значение которого будет равно значению атрибута
+    2.5. Проверяет на наличие свойства offsetTop у объекта данных. Это свойство автоматически
+         будет создано браузером если у элемента имеется атрибут data-offset-top. В
+         положительном случае объекту offset из объекта данных будет добавлено 
+         свойство top, значение которого будет равно значению атрибута
+         
+    2.6. Запускает на элементе функцию affix(data) с выше сформированными данными
+
+$.fn.affix = function (option) {
+   
+    var test =   this.each(function () {
+      var $this   = $(this)
+      var data    = $this.data('bs.affix')
+      var options = typeof option == 'object' && option
+
+      if (!data) $this.data('bs.affix', (data = new Affix(this, options)))
+      if (typeof option == 'string') data[option]()
+    })
+      
+    return test;
+  }
+
+3. Функция affix запускается для всех элементов из объекта JQuery, так как 
+    внутри имеет конструкцию this.each(), которая 
+    3.1. считывает  из пользовательских  данных элемента  значение свойства 'bs.affix'
+    3.2. проверяет является ли параметр функции option объектом - если да, то перезаписывает
+         его в переменную options
+    3.3. Если свойство 'bs.affix' в пользовательских данных отсутствует в него
+         записывается новый объект Affix, в конструктор которого передается сам элемент
+         и переданные при вызове функции affix опции
+    3.7. Если опции функции affix являются строкой то функция попытается выполнить 
+         команду data[option](), то есть запустить функцию по данной ссылке
+
+
+
+4.  Объект Affix создается через функцию-конструктор 
+  // AFFIX CLASS DEFINITION
+  // ======================
+
+  var Affix = function (element, options) {
+    this.options = $.extend({}, Affix.DEFAULTS, options)
+    this.$window = $(window)
+      .on('scroll.bs.affix.data-api', $.proxy(this.checkPosition, this))
+      .on('click.bs.affix.data-api',  $.proxy(this.checkPositionWithEventLoop, this))
+
+    this.$element     = $(element)
+    this.affixed      =
+    this.unpin        =
+    this.pinnedOffset = null
+
+    this.checkPosition()
+  }
+
+  Affix.RESET = 'affix affix-top affix-bottom'
+
+  Affix.DEFAULTS = {
+    offset: 0
+  }
+
+  Affix.prototype.getPinnedOffset = function () {
+    if (this.pinnedOffset) return this.pinnedOffset
+    this.$element.removeClass(Affix.RESET).addClass('affix')
+    var scrollTop = this.$window.scrollTop()
+    var position  = this.$element.offset()
+    return (this.pinnedOffset = position.top - scrollTop)
+  }
+
+  Affix.prototype.checkPositionWithEventLoop = function () {
+    setTimeout($.proxy(this.checkPosition, this), 1)
+  }
+
+  Affix.prototype.checkPosition = function () {
+    if (!this.$element.is(':visible')) return
+
+    var scrollHeight = $(document).height()
+    var scrollTop    = this.$window.scrollTop()
+    var position     = this.$element.offset()
+    var offset       = this.options.offset
+    var offsetTop    = offset.top
+    var offsetBottom = offset.bottom
+
+    if (this.affixed == 'top') position.top += scrollTop
+
+    if (typeof offset != 'object')         offsetBottom = offsetTop = offset
+    if (typeof offsetTop == 'function')    offsetTop    = offset.top(this.$element)
+    if (typeof offsetBottom == 'function') offsetBottom = offset.bottom(this.$element)
+
+    var affix = this.unpin   != null && (scrollTop + this.unpin <= position.top) ? false :
+                offsetBottom != null && (position.top + this.$element.height() >= scrollHeight - offsetBottom) ? 'bottom' :
+                offsetTop    != null && (scrollTop <= offsetTop) ? 'top' : false
+
+    if (this.affixed === affix) return
+    if (this.unpin) this.$element.css('top', '')
+
+    var affixType = 'affix' + (affix ? '-' + affix : '')
+    var e         = $.Event(affixType + '.bs.affix')
+
+    this.$element.trigger(e)
+
+    if (e.isDefaultPrevented()) return
+
+    this.affixed = affix
+    this.unpin = affix == 'bottom' ? this.getPinnedOffset() : null
+
+    this.$element
+      .removeClass(Affix.RESET)
+      .addClass(affixType)
+      .trigger($.Event(affixType.replace('affix', 'affixed')))
+
+    if (affix == 'bottom') {
+      this.$element.offset({ top: scrollHeight - offsetBottom - this.$element.height() })
+    }
+  }
+    
+    4.7. Происходит замена начальных опций с полученными
+    4.8. Объект JS window переводится в объект JQuery и к нему добавляются два
+        слушателя событий  scroll и click. К событиям добавляются пространства времен
+        для того, чтобы события легко можно было отцепить, отделив их от других 
+        событий. В качестве колбэков выступают методы самого объекта Affix. При их вы-
+        зове из слушателя this будет указывать на элемент, к которому слушатель события
+        прицеплен. Чтобы вернуть указатель this на объект Affix использован медод
+        $.proxy,    который в JQuery выполняет функции аналогичные Function.prototype.bind,
+        то есть явно задает this при выполнении функции
+    4.9. При конструировании объекта Affix сразу вызывается его метод checkPosition, который
+        затем прямо вызывается только при наступлении события scroll
+        
+        4.9.1. Метод checkPosition сначала проверяет видимость на экране полученного
+                элемента, и сразу завершает свою работу при ее отсутствии
+        4.9.2. Вычисляет высоту документа
+        4.9.3. Вычисляет высоту прокрутки окна - количество пикселей документа в высоту,
+               которое вышло из поля зрения
+        4.9.4. Вычисляет текущую позицию элемента по отношению к документу, при этом возвращая
+               объект, который содержит свойства top и left
+
+
+// SCROLLSPY DATA-API
+  // ==================
+
+  $(window).on('load', function () {
+    $('[data-spy="scroll"]').each(function () {
+      var $spy = $(this)
+      $spy.scrollspy($spy.data())
+    })
+  })
+
+-  Регистрируется под событие 'load' на объекте window. При возникновении которого
+    создает объект JQuery из всех элементов, имеющих атрибут data-spy="scroll". Для
+    каждого выбраного элемента запускает функцию scrollspy() с пользовательскими
+    данными этого элемента 
+
+ 
+$.fn.scrollspy = function (option) {
+    return this.each(function () {
+      var $this   = $(this)
+      var data    = $this.data('bs.scrollspy')
+      var options = typeof option == 'object' && option
+
+      if (!data) $this.data('bs.scrollspy', (data = new ScrollSpy(this, options)))
+      if (typeof option == 'string') data[option]()
+    })
+  }
+
+- Функция scrollspy() для каждого элемента проверяет наличие в пользовательских 
+данных свойства 'bs.scrollspy'. При отсутствии создает указанное свойство со значением
+в ввиде нового объекта ScrollSpy(), в конструктор которого в качесте параметра  передается
+ссылка на обрабатываемый элемент, а также false или параметр самой функции 
+scrollspy() в случае, если он  является объектом. В случае если переданный функции
+scrollspy() параметр является строкой, она пытается запустить функцию, возможно 
+находящуюся в контейнере  data с ключом в виде данной строки
+
+- При создании объекту ScrollSpy добавляются следующие свойства
+    - href изначально не определено
+    - process ссылка на прокси от одноименной функции из объекта прототипа,
+      (данный прокси исполняет исходную функцию в контексте самого объекта
+      ScrollSpy)  
+    - $element в случае если переданый конструктору в качестве параметра
+      элемент является 'body', то данное свойство принимает значение $(window). В 
+      других случаях принимает значение $(element)
+    - $body  объект 'body', конвертованный в соответствующий объект объект JQuery
+    - $scrollElement дополнительная ссылка на $element
+    - options переданые конструктору в качестве параметра опции, совмешенные с 
+      предустановленными значениями с помощью функции $.extend()
+    - selector строка, состоящая из значения атрибута data-target, которое передано
+      через опции, и дополненная символьным фрагментом ' .nav li > a'
+    - offsets пустой объект JQuery
+    - targets пустой объект JQuery
+
+    - в конструкторе при создании объекта ScrollSpy выполняется метод прототипа 
+      refresh(), в котором
+        -   определяется символьная переменная offsetMethod, которой присваевается
+            значение 'offset' в случае, когда первое свойство  JQuery объекта 
+            $element ровняется window, - и значение 'position' во всех остальных случаях
+        -   свойства offsets и targets устанавливаюся в пустые объекты $([])
+        -   определяется свойство self и устанавливается в виде ссылки 
+            на объект ScrollSpy
+        -   определяется переменная $targets, для чего выбираются из объекта $body
+            все элементы, удовлетворяющие селектору selector. Затем по каждому элементу
+            выполняется процедура map(), с помощью которой создается  объект JQuery
+            состоящий из двоэлементных массивов. В первый элемент такого массива 
+            записывается текущая ордината вершины элемента заданного атрибутом 
+            data-target или в его отсутствие атрибутом 'href', к которой может быть 
+            добалено значение отступа $(window) при
+            прокрутке от верха Документа. Если элемент прокрутки не является $(window),
+            то никакое значение не добавляется. Во второй элемент массива записывается
+            значение атрибута     data-target или в его отсутствие атрибута 'href'
+        -   Полученные массивы сортируются по величине первого элемента
+        -   Затем первые элементы массивов записываются в объект offsets, а вторые - 
+            в объект targets
+    - в конструкторе при создании объекта ScrollSpy выполняется метод прототипа process
+        -   создается локальная переменная scrollTop, которой присваивается значение суммы
+            величины прокрутки  и отступа
+        -   создается локальная переменная scrollHeight, которой присваивается значение

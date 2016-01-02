@@ -67,6 +67,24 @@
                                         $('#subModal').modal('show');
                                     });
                         });
+                        $('.example').text(function () {
+                            var id = $(this).attr("id");
+                            return id;
+                        }).click(function () {
+
+                            var id = $(this).attr("id");
+
+                          //  var idF = id.substr(0, 1).toUpperCase() + id.substr(1);
+                            var path = "http://localhost:8383/myTutorSite/CSS/"
+                                    + idF + "/" + id + ".html";
+
+//console.log(path);
+                            $('#qq').load(path,
+                                    function (e) {
+                                        $("#tt").text(id);
+                                        $('#subModal').modal('show');
+                                    });
+                        });
                     });
 
 

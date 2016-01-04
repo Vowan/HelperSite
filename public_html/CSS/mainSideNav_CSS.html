@@ -1,5 +1,6 @@
 <ul id="fix" class="nav nav-pills nav-stacked" data-spy="affix" data-offset-top="205">
-    <li><a href="#section1">Box Model</a></li>
+    <li><a href="#section1">Basic Box Model</a></li>
+    <li><a href="#section6">Flexible Box Model</a></li>
     <li><a href="#section2">Animations</a></li>
     <li><a href="#section3">Transitions</a></li>
     <li><a href="#section4">Transforms</a></li>
@@ -38,6 +39,10 @@
         $("[href='#section5']").click(function (e) {
             e.preventDefault();
             $("#attrArticle").load("http://localhost:8383/myTutorSite/CSS/Font/fontMainArticle.html");
+        });
+        $("[href='#section6']").click(function (e) {
+            e.preventDefault();
+            $("#attrArticle").load("http://localhost:8383/myTutorSite/CSS/FlexBoxModel/flexBoxMainArticle.html");
         });
     });
 </script>

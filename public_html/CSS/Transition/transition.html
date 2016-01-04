@@ -1,6 +1,13 @@
 <p>
-    The transition CSS property is a shorthand property for transition-property, transition-duration, transition-timing-function, and transition-delay. It enables you to define the transition between two states of an element. Different states may be defined using pseudo-classes like :hover or :active or dynamically set using JavaScript.
+    The transition CSS property is a shorthand property for transition-property, 
+    transition-duration, transition-timing-function, and transition-delay. 
+    It enables you to define the transition between two states of an element. 
+    Different states may be defined using pseudo-classes like :hover or :active or
+    dynamically set using JavaScript.
 </p>
+
+<button id="example1" type="class" class="btn btn-default btn-success example btn-sm" data-toggle="tooltip" 
+                    data-placement="sup" title=""></button>
 
 <pre style="font-family: Andale Mono, Lucida Console, Monaco, fixed, monospace; color: #000000; background-color: #eee;font-size: 12px;border: 1px dashed #999999;line-height: 14px;padding: 5px; overflow: auto; width: 100%"><code>/* Apply to 1 property */
 /* property name &#124; duration */
@@ -28,7 +35,10 @@ transition: unset;
 
     <tr>
         <td>Syntax</td>
-        <td> property duration timing-function delay|initial|inherit
+        <td> [transition-property: none | all | property | initial | inherit] 
+            [transition-duration: time | initial | inherit] 
+            [transition-timing-function: ease | linear | ease-in | ease-out | ease-in-out | cubic-bezier() | initial | inherit] 
+            [transition-delay: time | initial | inherit ] | initial | inherit
             </td>
     </tr>
     <tr>
@@ -83,4 +93,6 @@ transition: unset;
 
 
 </table>
+
+
 

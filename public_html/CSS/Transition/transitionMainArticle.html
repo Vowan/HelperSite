@@ -2,15 +2,14 @@
 
 <button id="transition" type="class" class="btn btn-default  btn-sm btn-sm" data-toggle="tooltip" 
         data-placement="sup" title=""></button>
-<button id="transition-delay" type="class" class="btn btn-default  btn-sm btn-sm" data-toggle="tooltip" 
+<button id="transition-property" type="class" class="btn btn-default  btn-sm btn-sm" data-toggle="tooltip" 
         data-placement="sup" title=""></button>
 <button id="transition-duration" type="class" class="btn btn-default  btn-sm btn-sm" data-toggle="tooltip" 
         data-placement="sup" title=""></button>
-<button id="transition-property" type="class" class="btn btn-default  btn-sm btn-sm" data-toggle="tooltip" 
-        data-placement="sup" title=""></button>
 <button id="transition-timing-function" type="class" class="btn btn-default  btn-sm btn-sm" data-toggle="tooltip" 
         data-placement="sup" title=""></button>
-
+<button id="transition-delay" type="class" class="btn btn-default  btn-sm btn-sm" data-toggle="tooltip" 
+        data-placement="sup" title=""></button>
 
 
 
@@ -47,6 +46,25 @@
                             var id = $(this).attr("id");
 
                             var idF = id.substr(0, 1).toUpperCase() + id.substr(1);
+                            var path = "http://localhost:8383/myTutorSite/CSS/"
+                                    + idF + "/" + id + ".html";
+
+//console.log(path);
+                            $('#qq').load(path,
+                                    function (e) {
+                                        $("#tt").text(id);
+                                        $('#subModal').modal('show');
+                                    });
+                        });
+                        
+                        $('.example').text(function () {
+                            var id = $(this).attr("id");
+                            return id;
+                        }).click(function () {
+
+                            var id = $(this).attr("id");
+
+                            //  var idF = id.substr(0, 1).toUpperCase() + id.substr(1);
                             var path = "http://localhost:8383/myTutorSite/CSS/"
                                     + idF + "/" + id + ".html";
 

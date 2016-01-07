@@ -1,0 +1,71 @@
+<p>
+    The CSS justify-content property defines how the browser distributes space between and around flex items along the main-axis of their container.
+</p>
+<p>
+    The alignment is done after the lengths and auto margins are applied, meaning that, if there is at least one flexible element, with flex-grow different from 0, it will have no effect as there won't be any available space.
+</p>
+
+
+
+<table class="table table-striped table-bordered table-condensed">
+
+    <tr>
+        <td>Syntax</td>
+        <td>flex-start | flex-end | center | space-between | space-around </td>
+    </tr>
+    <tr>
+        <td>JavaScript syntax</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Initial value</td>
+        <td>flex-start </td>
+    </tr>
+    <tr>
+        <td>Applies to</td>
+        <td> </td>
+    </tr>
+    <tr>
+        <td>Inherited</td>
+        <td> </td>
+    </tr>
+    <tr>
+        <td>Percentages</td>
+        <td></td>
+    </tr>
+
+    <tr>
+        <td>Computed value</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Animatable</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Version:</td>
+        <td></td>
+    </tr>
+
+
+</table>
+
+<ul>
+    <li><h4>flex-start</h4>
+        The flex items are packed starting from the main-start. Margins of the first flex item is flushed with the main-start edge of the line and each following flex item is flushed with the preceding.
+    </li>
+    <li><h4>flex-end</h4>
+        The flex items are packed starting from the main-end. The margin edge of the last flex item is flushed with the main-end edge of the line and each preceding flex item is flushed with the following.
+    </li>
+    <li><h4>center</h4>
+        The flex items are packed toward the center of the line. The flex items are flushed with each other and aligned in the center of the line. Space between the main-start edge of the line and first item and between main-end and the last item of the line is the same.
+    </li>
+    <li><h4>space-between</h4>
+        Flex items are evenly distributed along the line. The spacing is done such as the space between two adjacent items is the same. Main-start edge and main-end edge are flushed with respectively first and last flex item edges.
+    </li>
+    <li><h4>space-around</h4>
+        Flex items are evenly distributed so that the space between two adjacent items is the same. The empty space before the first and after the last items equals half of the space between two adjacent items.
+    </li>
+</ul>
+
+

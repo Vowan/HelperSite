@@ -1,16 +1,149 @@
-<!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-<html>
-    <head>
-        <title>TODO supply a title</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
-        <div>Flex write content</div>
-    </body>
-</html>
+<h4>Flexible Box Layout</h4>
+
+<button id="align-content" type="class" class="btn btn-default  btn-sm btn-sm" data-toggle="tooltip" 
+        data-placement="sup" title="Specifies the alignment between the lines inside a flexible container when the items do not use all available space"></button>
+<button id="align-items" type="class" class="btn btn-default  btn-sm btn-sm" data-toggle="tooltip" 
+        data-placement="sup" title="Specifies the alignment for items inside a flexible container"></button>
+<button id="align-self" type="class" class="btn btn-default  btn-sm btn-sm" data-toggle="tooltip" 
+        data-placement="sup" title="Specifies the alignment for selected items inside a flexible container"></button>
+<button id="flex" type="class" class="btn btn-default  btn-sm btn-sm" data-toggle="tooltip" 
+        data-placement="sup" title="Specifies the length of the item, relative to the rest"></button>
+<button id="flex-basis" type="class" class="btn btn-default  btn-sm btn-sm" data-toggle="tooltip" 
+        data-placement="sup" title="Specifies the initial length of a flexible item"></button>
+<button id="flex-direction" type="class" class="btn btn-default  btn-sm btn-sm" data-toggle="tooltip" 
+        data-placement="sup" title="Specifies the direction of the flexible items"></button>
+<button id="flex-flow" type="class" class="btn btn-default  btn-sm btn-sm" data-toggle="tooltip" 
+        data-placement="sup" title="A shorthand property for the flex-direction and the flex-wrap properties"></button>
+<button id="flex-grow" type="class" class="btn btn-default  btn-sm btn-sm" data-toggle="tooltip" 
+        data-placement="sup" title="Specifies how much the item will grow relative to the rest"></button>
+<button id="flex-shrink" type="class" class="btn btn-default  btn-sm btn-sm" data-toggle="tooltip" 
+        data-placement="sup" title="Specifies how the item will shrink relative to the rest"></button>
+<button id="flex-wrap" type="class" class="btn btn-default  btn-sm btn-sm" data-toggle="tooltip" 
+        data-placement="sup" title="Specifies whether the flexible items should wrap or not"></button>
+<button id="justify-content" type="class" class="btn btn-default  btn-sm btn-sm" data-toggle="tooltip" 
+        data-placement="sup" title="Specifies the alignment between the items inside a flexible container when the items do not use all available space"></button>
+<button id="order" type="class" class="btn btn-default  btn-sm btn-sm" data-toggle="tooltip" 
+        data-placement="sup" title="Sets the order of the flexible item, relative to the rest"></button>
+
+
+<p>
+    In order to make a HTML element to be a flexbox container we use CSS
+    <strong style="color: #F00">display</strong> property with the value <strong style="color: #F00">flex</strong>
+</p>
+<!-- HTML generated using hilite.me --><div style="background: #ffffff;  overflow:auto;width:auto;font-size:.4em;"><table><tr><td><pre style="margin: 0; line-height: 125%">1</pre></td><td><pre style="margin: 0; line-height: 125%">.flexbox { display: flex;}
+</pre></td></tr></table></div>
+
+<p data-height="200" data-theme-id="0" data-slug-hash="BjpEgp" data-default-tab="result" data-user="Vowan" class='codepen'>See the Pen <a href='http://codepen.io/Vowan/pen/BjpEgp/'>flexbox</a> by Vowan (<a href='http://codepen.io/Vowan'>@Vowan</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+
+
+
+
+
+
+
+<script>
+
+
+
+    $(function () {
+
+        $.getScript("http://localhost:8383/myTutorSite/bower_components/bootstrap/js/modal.js");
+
+        $("button").text(function () {
+            var id = $(this).attr("id");
+            return id;
+        }).click(function () {
+
+            var id = $(this).attr("id");
+
+            var idF = id.substr(0, 1).toUpperCase() + id.substr(1);
+            var path = "http://localhost:8383/myTutorSite/CSS/"
+                    + idF + "/" + id + ".html";
+//console.log(path);
+
+            $('.modal-body').load(path,
+                    function (e) {
+                        $(".modal-title").text(id);
+                        $('#server_msg_modal').modal('show');
+
+                        $('.submodal').text(function () {
+                            var id = $(this).attr("id");
+                            return id;
+                        }).click(function () {
+
+                            var id = $(this).attr("id");
+
+                            var idF = id.substr(0, 1).toUpperCase() + id.substr(1);
+                            var path = "http://localhost:8383/myTutorSite/CSS/"
+                                    + idF + "/" + id + ".html";
+
+//console.log(path);
+                            $('#qq').load(path,
+                                    function (e) {
+                                        $("#tt").text(id);
+                                        $('#subModal').modal('show');
+                                    });
+                        });
+                        $('.example').text(function () {
+                            var id = $(this).attr("id");
+                            return id;
+                        }).click(function () {
+
+                            var id = $(this).attr("id");
+
+                          //  var idF = id.substr(0, 1).toUpperCase() + id.substr(1);
+                            var path = "http://localhost:8383/myTutorSite/CSS/"
+                                    + idF + "/" + id + ".html";
+
+//console.log(path);
+                            $('#qq').load(path,
+                                    function (e) {
+                                        $("#tt").text(id);
+                                        $('#subModal').modal('show');
+                                    });
+                        });
+                    });
+
+
+        });
+
+        $("button").hover(
+                function () {
+                    $("#browsers").append($("<span id='qqq'> ***</span>"));
+                }, function () {
+            $("#browsers").find("span[id='qqq']").remove();
+        });
+
+
+
+    });
+</script>
+
+<div class="modal fade bs-example-modal-lg" id="server_msg_modal">
+    <div class="modal-dialog  modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Modal title</h4>
+            </div>
+            <div class="modal-body">
+                <p>Modal body</p>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<div class="modal fade bs-example-modal-lg" id="subModal">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 id="tt" class="modal-title">Modal title</h4>
+            </div>
+            <div id="qq" class="modal-body">
+                <p>Modal body</p>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

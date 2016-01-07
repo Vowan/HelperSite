@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css"
+    </head>
+    <body>
+
+        <section class="container">
+            <div class="row">
+
+                <article id="attrArticle" class="col-xs-6">
+
+
+                    <div id="textProp" class="textProp panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Element with text</h3>
+
+                        </div>
+                        <div class="panel-body">
+                            <textarea name="textarea" rows="5" cols="50">This text is styled with the text formatting properties. The heading uses the text-align, text-transform, and color properties. The paragraph is indented, aligned, and the space between characters is specified. The underline is removed from this "Try it yourself" link.
+
+                            </textarea>
+                        </div>
+                    </div>
+
+                    <div id="code" class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">CSS text properties</h3>
+                        </div>
+                        <div class="panel-body">
+                            <div id="tAlignCSS">text-align:&ThinSpace;<span class="val"></span>;</div>
+                            <div id="tIndentCSS">text-indent:&ThinSpace;<span class="val"></span>;</div>
+
+                        </div>
+
+                    </div>
+                    <div id="elem" class="well">
+                        <h5>CSS  flex  element&ThinSpace;</h5>
+
+                    </div>
+
+
+                </article>
+                <article id="browsers" class="col-xs-6" style="font-size: 0.6em;">
+
+                    <div id="tAlign" class="btn-group" role="group">
+                        <button id="taButton" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span id="taText" >left</span> 
+                            <span class="caret"></span>
+                        </button>
+                        <label for="taButton">text-align</label>
+                        <ul class="dropdown-menu">
+                            <li><a href="#" title="qqqq">left</a></li>
+                            <li><a href="#">right</a></li>
+                            <li><a href="#" title="qqqq">center</a></li>
+                            <li><a href="#">justify</a></li>
+                            <li><a href="#" title="qqqq">initial</a></li>
+                            <li><a href="#" title="qqqq">inherit</a></li>
+                           
+                        </ul>
+                    </div>
+                    <div id="tIndent" class="btn-group" role="group">
+                        <button id="tiButton" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span id="tiText" >0px</span> 
+                            <span class="caret"></span>
+                        </button>
+                        <label for="tiButton">text-indent</label>
+                        <ul class="dropdown-menu">
+                            <li><a href="#" title="qqqq">10px</a></li>
+                            <li><a href="#">50px</a></li>
+                            <li><a href="#" title="qqqq">1cm</a></li>
+                            <li><a href="#">5cm</a></li>
+                            <li><a href="#">10%</a></li>
+                            <li><a href="#">50%</a></li>
+                        </ul>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+        <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+        <script src='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js'></script>
+        <script>
+            $(function () {
+                $("#tAlign a").click(function (event) {
+                    event.preventDefault();
+                    var text = $(this).text();
+                    $("#taText").text(text);
+                    $("#textProp textarea").css("text-align", function () {
+                        return text;
+                    });
+                    $("#tAlignCSS .val").text(function () {
+                        return text;
+                    });
+                });
+
+                $("#tIndent a").click(function (event) {
+                    event.preventDefault();
+                    var text = $(this).text();
+                    $("#tiText").text(text);
+                    $("#textProp textarea").css("text-indent", function () {
+                        return text;
+                    });
+                    $("#tIndentCSS .val").text(function () {
+                        return text;
+                    });
+                });
+            });
+
+
+
+        </script>
+
+    </body>
+</html>

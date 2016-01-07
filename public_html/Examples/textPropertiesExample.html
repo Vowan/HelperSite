@@ -9,9 +9,45 @@ and open the template in the editor.
         <title>TODO supply a title</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css"
+        <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
+        <script src="../bower_components/angular/angular.js"></script>
+        <script src="../js/controllers.js"></script>
+        <style>
+            .flexBox{
+                display: flex;
+
+                justify-content:space-between;
+
+                background-color: #d5d5d5;
+
+            }
+
+            .flex-item {
+                display: flex;
+
+                flex-direction:column;
+                justify-content:space-between;
+                align-content:center;
+                align-items:center;
+
+                background: #00bfff;
+
+                height: 35px;
+            }
+            .flex-p{
+                margin: 0;
+                padding: 0;
+            }
+            
+            .img-rounded{
+                background-color: #00bfff;
+                position: relative;
+                top: -10px;
+                left: 10px;
+            }
+        </style>
     </head>
-    <body>
+    <body ng-app="tutorApp" ng-controller="browserCtrl">
 
         <section class="container">
             <div class="row">
@@ -38,6 +74,14 @@ and open the template in the editor.
                         <div class="panel-body">
                             <div id="tAlignCSS">text-align:&ThinSpace;<span class="val"></span>;</div>
                             <div id="tIndentCSS">text-indent:&ThinSpace;<span class="val"></span>;</div>
+                            <div id="tDecorationCSS">text-decoration:&ThinSpace;<span class="val"></span>;</div>
+                            <div id="tTtransformCSS">text-transform:&ThinSpace;<span class="val"></span>;</div>
+                            <div id="wSpaceCSS">white-space:&ThinSpace;<span class="val"></span>;</div>
+                            <div id="wBreakCSS">word-break:&ThinSpace;<span class="val"></span>;</div>
+                            <div id="wSpacingCSS">word-spacing:&ThinSpace;<span class="val"></span>;</div>
+                            <div id="wWrapCSS">word-wrap:&ThinSpace;<span class="val"></span>;</div>
+                            <div id="lSpacingCSS">letter-spacing:&ThinSpace;<span class="val"></span>;</div>
+                            <div id="lHeightCSS">line-height:&ThinSpace;<span class="val"></span>;</div>
 
                         </div>
 
@@ -51,10 +95,11 @@ and open the template in the editor.
                 </article>
                 <article id="browsers" class="col-xs-6" style="font-size: 0.6em;">
 
-                    <div id="tAlign" class="btn-group" role="group">
+                    <div ng-mouseenter="browserSupport('text-align')" ng-mouseleave="def()" id="tAlign" class="btn-group" role="group">
                         <button id="taButton" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <span id="taText" >left</span> 
                             <span class="caret"></span>
+                            <span class="img-rounded">1</span>
                         </button>
                         <label for="taButton">text-align</label>
                         <ul class="dropdown-menu">
@@ -64,13 +109,14 @@ and open the template in the editor.
                             <li><a href="#">justify</a></li>
                             <li><a href="#" title="qqqq">initial</a></li>
                             <li><a href="#" title="qqqq">inherit</a></li>
-                           
+
                         </ul>
                     </div>
-                    <div id="tIndent" class="btn-group" role="group">
+                    <div ng-mouseenter="browserSupport('text-indent')" ng-mouseleave="def()" id="tIndent" class="btn-group" role="group">
                         <button id="tiButton" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <span id="tiText" >0px</span> 
                             <span class="caret"></span>
+                            <span class="img-rounded">1</span>
                         </button>
                         <label for="tiButton">text-indent</label>
                         <ul class="dropdown-menu">
@@ -82,38 +128,362 @@ and open the template in the editor.
                             <li><a href="#">50%</a></li>
                         </ul>
                     </div>
+                    <div ng-mouseenter="browserSupport('text-decoration')" ng-mouseleave="def()" id="tDecoration" class="btn-group" role="group">
+                        <button id="tdButton" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span id="tdText" >none</span> 
+                            <span class="caret"></span>
+                            <span class="img-rounded">1/3</span>
+                        </button>
+                        <label for="tdButton">text-decoration</label>
+                        <ul class="dropdown-menu">
+                            <li><a href="#" title="qqqq">none</a></li>
+                            <li><a href="#">underline</a></li>
+                            <li><a href="#" title="qqqq">line-through</a></li>
+                            <li><a href="#" title="qqqq">initial</a></li>
+                            <li><a href="#" title="qqqq">inherit</a></li>
+                        </ul>
+                    </div>
+                    <div ng-mouseenter="browserSupport('text-transform')" ng-mouseleave="def()" id="tTransform" class="btn-group" role="group">
+                        <button id="ttButton" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span id="ttText" >none</span> 
+                            <span class="caret"></span>
+                            <span class="img-rounded">1</span>
+                        </button>
+                        <label for="ttButton">text-transform</label>
+                        <ul class="dropdown-menu">
+                            <li><a href="#" title="qqqq">none</a></li>
+                            <li><a href="#">capitalize</a></li>
+                            <li><a href="#" title="qqqq">uppercase</a></li>
+                            <li><a href="#" title="qqqq">lowercase</a></li>
+                            <li><a href="#" title="qqqq">initial</a></li>
+                            <li><a href="#" title="qqqq">inherit</a></li>
+                        </ul>
+                    </div>
+                    <div ng-mouseenter="browserSupport('white-space')" ng-mouseleave="def()" id="wSpace" class="btn-group" role="group">
+                        <button id="wsButton" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span id="wsText" >none</span> 
+                            <span class="caret"></span>
+                            <span class="img-rounded">1</span>
+                        </button>
+                        <label for="wsButton">white-space</label>
+                        <ul class="dropdown-menu">
+                            <li><a href="#" title="qqqq">normal</a></li>
+                            <li><a href="#">nowrap</a></li>
+                            <li><a href="#" title="qqqq">pre</a></li>
+                            <li><a href="#" title="qqqq">pre-line</a></li>
+                            <li><a href="#" title="qqqq">pre-wrap</a></li>
+                            <li><a href="#" title="qqqq">initial</a></li>
+
+                        </ul>
+                    </div>
+                    <div ng-mouseenter="browserSupport('word-break')" ng-mouseleave="def()" id="wBreak" class="btn-group" role="group">
+                        <button id="wbButton" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span id="wbText" >normal</span> 
+                            <span class="caret"></span>
+                            <span class="img-rounded">3</span>
+                        </button>
+                        <label for="wbButton">word-break</label>
+                        <ul class="dropdown-menu">
+                            <li><a href="#" title="Default value. Break words according to their usual rules">
+                                    normal</a></li>
+                            <li><a href="#" title="Lines may break between any two letters">
+                                    break-all</a></li>
+                            <li><a href="#" title="Breaks are prohibited between pairs of letters">
+                                    keep-all</a></li>
+                            <li><a href="#" title="Sets this property to its default value.">
+                                    initial</a></li>
+                            <li><a href="#" title="Inherits this property from its parent element.">
+                                    inherit</a></li>
+                        </ul>
+                    </div>
+                    <div ng-mouseenter="browserSupport('word-spacing')" ng-mouseleave="def()" id="wSpacing" class="btn-group" role="group">
+                        <button id="wspButton" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span id="wspText" >normal</span> 
+                            <span class="caret"></span>
+                             <span class="img-rounded">1</span>
+                        </button>
+                        <label for="wspButton">word-spacing</label>
+                        <ul class="dropdown-menu">
+                            <li><a href="#" 
+                                   title="Defines normal space between words (0.25em) . This is default">
+                                    normal</a></li>
+                            <li><a href="#" title="Defines an additional space between words (in px, pt, cm, em, etc). Negative values are allowed">
+                                    1px</a></li>
+                            <li><a href="#" title="Defines an additional space between words (in px, pt, cm, em, etc). Negative values are allowed">
+                                    5px</a></li>
+                            <li><a href="#" title="Defines an additional space between words (in px, pt, cm, em, etc). Negative values are allowed">
+                                    -1px</a></li>
+                            <li><a href="#" title="Defines an additional space between words (in px, pt, cm, em, etc). Negative values are allowed">
+                                    -5px</a></li>
+                            <li><a href="#" title="Defines an additional space between words (in px, pt, cm, em, etc). Negative values are allowed">
+                                    2cm</a></li>
+                            <li><a href="#" title="Sets this property to its default value.">
+                                    initial</a></li>
+                            <li><a href="#" title="Inherits this property from its parent element.">
+                                    inherit</a></li>
+                        </ul>
+                    </div>
+                    <div ng-mouseenter="browserSupport('word-wrap')" ng-mouseleave="def()" id="wWrap" class="btn-group" role="group">
+                        <button id="wwButton" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span id="wwText" >normal</span> 
+                            <span class="caret"></span>
+                             <span class="img-rounded">3</span>
+                        </button>
+                        <label for="wspButton">word-wrap</label>
+                        <ul class="dropdown-menu">
+                            <li><a href="#" 
+                                   title="Break words only at allowed break points">
+                                    normal</a></li>
+                            <li><a href="#" title="Allows unbreakable words to be broken">
+                                    break-word</a></li>
+                            <li><a href="#" title="Sets this property to its default value.">
+                                    initial</a></li>
+                            <li><a href="#" title="Inherits this property from its parent element.">
+                                    inherit</a></li>
+                        </ul>
+                    </div>
+                    <div ng-mouseenter="browserSupport('letter-spacing')" ng-mouseleave="def()"  id="lSpacing" class="btn-group" role="group">
+                        <button id="lsButton" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span id="lsText" >normal</span> 
+                            <span class="caret"></span>
+                             <span class="img-rounded">1</span>
+                        </button>
+                        <label for="lsButton">letter-spacing</label>
+                        <ul class="dropdown-menu">
+                            <li><a href="#" 
+                                   title="Defines normal space between words (0.25em) . This is default">
+                                    normal</a></li>
+                            <li><a href="#" title="Defines an additional space between letters (in px, pt, cm, em, etc). Negative values are allowed">
+                                    1px</a></li>
+                            <li><a href="#" title="Defines an additional space between letters (in px, pt, cm, em, etc). Negative values are allowed">
+                                    5px</a></li>
+                            <li><a href="#" title="Defines an additional space between letters (in px, pt, cm, em, etc). Negative values are allowed">
+                                    -1px</a></li>
+                            <li><a href="#" title="Defines an additional space between letters (in px, pt, cm, em, etc). Negative values are allowed">
+                                    -5px</a></li>
+                            <li><a href="#" title="Defines an additional space between letters (in px, pt, cm, em, etc). Negative values are allowed">
+                                    2cm</a></li>
+                            <li><a href="#" title="Sets this property to its default value.">
+                                    initial</a></li>
+                            <li><a href="#" title="Inherits this property from its parent element.">
+                                    inherit</a></li>
+                        </ul>
+                    </div>
+                    <div ng-mouseenter="browserSupport('line-height')" ng-mouseleave="def()" id="lHeight" class="btn-group" role="group">
+                        <button   id="lsButton" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span id="lhText" >normal</span> 
+                            <span class="caret"></span>
+                             <span class="img-rounded">1</span>
+                        </button>
+                        <label for="lhButton">line-height</label>
+                        <ul class="dropdown-menu">
+                            <li><a href="#" 
+                                   title="Defines normal space between words (0.25em) . This is default">
+                                    normal</a></li>
+                            <li><a href="#" title="A number that will be multiplied with the current font size to set the line height">
+                                    1</a></li>
+                            <li><a href="#" title="A number that will be multiplied with the current font size to set the line height">
+                                    3</a></li>       
+
+
+                            <li><a href="#" title="A fixed line height in px, pt, cm, etc.">
+                                    1px</a></li>
+                            <li><a href="#" title="A fixed line height in px, pt, cm, etc.">
+                                    5px</a></li>
+                            <li><a href="#" title="A line height in percent of the current font size">
+                                    50%</a></li>
+                            <li><a href="#" title="A line height in percent of the current font size">
+                                    100%</a></li>
+                            <li><a href="#" title="A line height in percent of the current font size">
+                                    200%</a></li>
+                            <li><a href="#" title="Sets this property to its default value.">
+                                    initial</a></li>
+                            <li><a href="#" title="Inherits this property from its parent element.">
+                                    inherit</a></li>
+                        </ul>
+                    </div>
                 </article>
 
             </div>
         </section>
+        <nav class="navbar navbar-default navbar-fixed-bottom">
+            <div class="container-fluid flexBox">
+
+                <div class="flex-item">
+                    <p  class="flex-p">Chrome</p>
+                    <p  class="flex-p">{{chrome}}</p>
+                </div>
+                <div class="flex-item">
+                    <p  class="flex-p">Firefox</p>
+                    <p  class="flex-p">{{firefox}}</p>
+                </div>
+                <div class="flex-item">
+                    <p  class="flex-p">IExplorer</p>
+                    <p  class="flex-p">{{iExplorer}}</p>
+                </div>
+                <div class="flex-item">
+                    <p  class="flex-p">Opera</p>
+                    <p  class="flex-p">{{Opera}}</p>
+                </div>
+                <div class="flex-item">
+                    <p  class="flex-p">Safari</p>
+                    <p  class="flex-p">{{safari}}</p>
+                </div>
+
+                <div class="flex-item">
+                    <p  class="flex-p">Safari Mobile</p>
+                    <p  class="flex-p">{{safariMobile}}</p>
+                </div>
+                <div class="flex-item">
+                    <p  class="flex-p">Opera Mini</p>
+                    <p  class="flex-p">{{operaMobile}}</p>
+                </div>
+                <div class="flex-item">
+                    <p  class="flex-p">Android</p>
+                    <p  class="flex-p">{{android}}</p>
+                </div>
+                <div class="flex-item">
+                    <p  class="flex-p">FFoxMobile</p>
+                    <p  class="flex-p">{{firefoxMobile}}</p>
+                </div>
+                <div class="flex-item">
+                    <p  class="flex-p">IEPhone</p>
+                    <p  class="flex-p">{{iePhone}}</p>
+                </div>
+            </div>
+        </nav>
+
         <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
         <script src='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js'></script>
         <script>
-            $(function () {
-                $("#tAlign a").click(function (event) {
-                    event.preventDefault();
-                    var text = $(this).text();
-                    $("#taText").text(text);
-                    $("#textProp textarea").css("text-align", function () {
-                        return text;
-                    });
-                    $("#tAlignCSS .val").text(function () {
-                        return text;
-                    });
-                });
+                                $(function () {
+                                    $("#tAlign a").click(function (event) {
+                                        event.preventDefault();
+                                        var text = $(this).text();
+                                        $("#taText").text(text);
+                                        $("#textProp textarea").css("text-align", function () {
+                                            return text;
+                                        });
+                                        $("#tAlignCSS .val").text(function () {
+                                            return text;
+                                        });
+                                    });
 
-                $("#tIndent a").click(function (event) {
-                    event.preventDefault();
-                    var text = $(this).text();
-                    $("#tiText").text(text);
-                    $("#textProp textarea").css("text-indent", function () {
-                        return text;
-                    });
-                    $("#tIndentCSS .val").text(function () {
-                        return text;
-                    });
-                });
-            });
+                                    $("#tIndent a").click(function (event) {
+                                        event.preventDefault();
+                                        var text = $(this).text();
+                                        $("#tiText").text(text);
+                                        $("#textProp textarea").css("text-indent", function () {
+                                            return text;
+                                        });
+                                        $("#tIndentCSS .val").text(function () {
+                                            return text;
+                                        });
+                                    });
+
+                                    $("#tDecoration a").click(function (event) {
+                                        event.preventDefault();
+                                        var text = $(this).text();
+                                        $("#tdText").text(text);
+                                        $("#textProp textarea").css("text-decoration", function () {
+                                            return text;
+                                        });
+                                        $("#tDecorationCSS .val").text(function () {
+                                            return text;
+                                        });
+                                    });
+
+                                    $("#tTransform a").click(function (event) {
+                                        event.preventDefault();
+                                        var text = $(this).text();
+                                        $("#ttText").text(text);
+                                        $("#textProp textarea").css("text-transform", function () {
+                                            return text;
+                                        });
+                                        $("#tTtransformCSS .val").text(function () {
+                                            return text;
+                                        });
+                                    });
+
+                                    $("#wSpace a").click(function (event) {
+                                        event.preventDefault();
+                                        var text = $(this).text();
+                                        $("#wsText").text(text);
+                                        $("#textProp textarea").css("white-space", function () {
+                                            return text;
+                                        });
+                                        $("#wSpaceCSS .val").text(function () {
+                                            return text;
+                                        });
+                                    });
+
+                                    $("#wBreak a").click(function (event) {
+                                        event.preventDefault();
+                                        var text = $(this).text();
+                                        $("#wbText").text(text);
+                                        $("#textProp textarea").css("word-break", function () {
+                                            return text;
+                                        });
+                                        $("#wBreakCSS .val").text(function () {
+                                            return text;
+                                        });
+                                    });
+
+                                    $("#wSpacing a").click(function (event) {
+                                        event.preventDefault();
+                                        var text = $(this).text();
+                                        $("#wspText").text(text);
+                                        $("#textProp textarea").css("word-spacing", function () {
+                                            return text;
+                                        });
+                                        $("#wSpacingCSS .val").text(function () {
+                                            return text;
+                                        });
+                                    });
+
+                                    $("#wWrap a").click(function (event) {
+                                        event.preventDefault();
+                                        var text = $(this).text();
+                                        $("#wwText").text(text);
+                                        $("#textProp textarea").css("word-wrap", function () {
+                                            return text;
+                                        });
+                                        $("#wWrapCSS .val").text(function () {
+                                            return text;
+                                        });
+                                    });
+
+                                    $("#lSpacing a").click(function (event) {
+                                        event.preventDefault();
+                                        var text = $(this).text();
+                                        $("#lsText").text(text);
+                                        $("#textProp textarea").css("letter-spacing", function () {
+                                            return text;
+                                        });
+                                        $("#lSpacingCSS .val").text(function () {
+                                            return text;
+                                        });
+                                    });
+                                    $("#lHeight a").click(function (event) {
+                                        event.preventDefault();
+                                        var text = $(this).text();
+                                        $("#lhText").text(text);
+                                        $("#textProp textarea").css("line-height", function () {
+                                            return text;
+                                        });
+                                        $("#lHeightCSS .val").text(function () {
+                                            return text;
+                                        });
+                                    });
+
+                                });
+
+                                $("button").hover(
+                                        function () {
+                                            $("#browsers").append($("<span id='qqq'> ***</span>"));
+                                        }, function () {
+                                    $("#browsers").find("span[id='qqq']").remove();
+                                });
 
 
 

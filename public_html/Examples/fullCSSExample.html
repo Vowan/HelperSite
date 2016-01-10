@@ -1,0 +1,1065 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../bower_components/jquery-ui-1.11.4.custom/jquery-ui.css">
+        <link rel="stylesheet" href="../bower_components/jquery-ui-1.11.4.custom/jquery-ui.theme.css">
+        <script src="../bower_components/angular/angular.js"></script>
+        <script src="../js/controllers.js"></script>
+        <style>
+            .flexBox{
+                display: flex;
+
+                justify-content:space-between;
+
+                background-color: #d5d5d5;
+
+            }
+
+            .flex-item {
+                display: flex;
+
+                flex-direction:column;
+                justify-content:space-between;
+                align-content:center;
+                align-items:center;
+
+                background: #00bfff;
+
+                height: 35px;
+            }
+            .flex-p{
+                margin: 0;
+                padding: 0;
+            }
+
+            .img-rounded{
+                background-color: #00bfff;
+                position: relative;
+                top: -10px;
+                left: 10px;
+            }
+            /***************************************************************/          
+
+
+            body{
+                margin: 0;
+                padding: 0;
+                font-size: 100%;
+            }
+
+            .contentArea {
+
+
+                margin: 10px 15px 20px 25px;
+                padding: 10px;
+
+                background-color: blue;
+                background-image: url('../img/green.png'), url('../img/red.png');
+
+                background-clip: content-box, padding-box;
+                background-origin: content-box, padding-box;
+
+
+                font-size: 0.9em;
+                z-index: 5;
+            }
+            .paddingArea {
+                margin: 0;
+                padding: 0;
+
+
+                z-index: 4;
+            }
+
+            .myFix{
+                position: fixed;
+                margin: 0px;
+                padding: 0px;
+                background-image: url('../img/yellow.png');
+                background-clip: content-box;
+                background-origin: content-box;
+                width: 400px;
+                height: 400px;
+                z-index: 0;
+                opacity: 0.9;
+            }
+            .container, .row, #attrArticle, #textProp{
+                opacity: 0.9; 
+                z-index: 1;
+            }
+            .col-xs-3{
+                padding: 5px;
+            }
+            .zeroMP{
+                margin: 0px;
+                padding: 0px;
+            }
+
+
+
+        </style>
+    </head>
+    <body ng-app="tutorApp" ng-controller="browserCtrl">
+
+        <div class="myFix">
+
+        </div>
+
+        <section class="container-fluid">
+            <div class="row">
+
+                <article id="attrArticle" class="col-xs-6">
+
+
+                    <div id="textProp" class="textProp panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Element with text</h3>
+
+                        </div>
+                        <div class="panel-body">
+                            <div class="paddingArea">
+                                <textarea class="contentArea" name="textarea" rows="5" cols="50">
+This text is styled with the text formatting properties. The heading uses the text-align, text-transform, and color properties. The paragraph is indented, aligned, and the space between characters is specified. The underline is removed from this "Try it yourself" link.
+
+                                </textarea>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div id="code" class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">CSS text properties</h3>
+                        </div>
+                        <div class="panel-body">
+                            <div id="tAlignCSS">text-align:&ThinSpace;<span class="val"></span>;</div>
+                            <div id="tIndentCSS">text-indent:&ThinSpace;<span class="val"></span>;</div>
+                            <div id="tDecorationCSS">text-decoration:&ThinSpace;<span class="val"></span>;</div>
+                            <div id="tTtransformCSS">text-transform:&ThinSpace;<span class="val"></span>;</div>
+                            <div id="wSpaceCSS">white-space:&ThinSpace;<span class="val"></span>;</div>
+                            <div id="wBreakCSS">word-break:&ThinSpace;<span class="val"></span>;</div>
+                            <div id="wSpacingCSS">word-spacing:&ThinSpace;<span class="val"></span>;</div>
+                            <div id="wWrapCSS">word-wrap:&ThinSpace;<span class="val"></span>;</div>
+                            <div id="lSpacingCSS">letter-spacing:&ThinSpace;<span class="val"></span>;</div>
+                            <div id="lHeightCSS">line-height:&ThinSpace;<span class="val"></span>;</div>
+                            <div id="hyphensCSS">hyphens:&ThinSpace;<span class="val"></span>;</div>
+                            <div id="taLastCSS">text-align-last:&ThinSpace;<span class="val"></span>;</div>
+                            <div id="tShadowCSS">text-shadow:&ThinSpace;<span class="val"></span>;</div>
+
+
+
+                        </div>
+
+                    </div>
+
+
+
+                </article>
+                <article id="browsers" class="col-xs-6" style="font-size: 0.6em;">
+
+                    <h5>Dimentions</h5>
+                    <div class="row">
+                        <div class="col-xs-6"  style="height: 20px;">
+
+                            <div class="row zeroMP">
+                                <div class="col-xs-9 zeroMP">
+                                    <label  for="boxWidth" style="display: inline">Width:</label>
+                                    <input type="text" id="boxWidth" readonly style="width: 10px; border:0; color:#f6931f; font-weight:bold;"><br>
+                                    <div id="sliderBoxWidth" style="width: 100%" ></div>
+                                </div>
+                                <div class="col-xs-3" style="margin: 0px; padding: 5px 3px 0px 0px">
+                                    <select name="radius" id="selectWidth" class="zeroMP" style="width: 100%">
+                                        <option value="px" selected="selected" title="px">px</option>
+                                        <option value="mm">mm</option>
+                                        <option value="cm">cm</option>
+                                        <option value="em">em</option>
+                                        <option value="rem">rem</option>
+                                        <option value="%">%</option>
+                                    </select>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-xs-6" style="height: 20px;">
+                            <div class="row">
+                                <div class="col-xs-9">
+                                    <label  for="boxHeight" style="display: inline">Height:</label>
+                                    <input type="text" id="boxHeight" readonly style="width: 10px; border:0; color:#f6931f; font-weight:bold;"><br>
+                                    <div id="sliderBoxHeight" ></div>
+                                </div>
+                                <div class="col-xs-3">
+                                    <select name="radius" id="selectHeight" class="zeroMP" style="width: 80%">
+                                        <option value="px" selected="selected" title="px">px</option>
+                                        <option value="mm">mm</option>
+                                        <option value="cm">cm</option>
+                                        <option value="em">em</option>
+                                        <option value="rem">rem</option>
+                                        <option value="%">%</option>
+                                    </select>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="row">
+                        <div class="col-xs-3 zeroMP">
+                            <div class="row zeroMP">
+                                <div class="col-xs-9 zeroMP">
+                                    <label  for="boxPaddingTop" style="display: inline">padding-top:</label>
+                                    <input type="text" id="boxPaddingTop" readonly style="width: 10px; border:0; color:#f6931f; font-weight:bold;"><br>
+                                    <div id="sliderPaddingTop" style="width: 100%" ></div>
+                                </div>
+                                <div class="col-xs-3" style="margin: 0px; padding: 5px 3px 0px 0px">
+                                    <select name="radius" id="selectPaddingTop" class="zeroMP" style="width: 100%">
+                                        <option value="px" selected="selected" title="px">px</option>
+                                        <option value="mm">mm</option>
+                                        <option value="cm">cm</option>
+                                        <option value="em">em</option>
+                                        <option value="rem">rem</option>
+                                        <option value="%">%</option>
+                                    </select>
+                                </div>
+
+                            </div>
+
+
+                        </div>
+                        <div class="col-xs-3 zeroMP">
+
+                            <div class="row zeroMP">
+                                <div class="col-xs-9 zeroMP">
+                                    <label  for="boxPaddingRight" style="display: inline">padding-right:</label>
+                                    <input type="text" id="boxPaddingRight" readonly style="width: 10px; border:0; color:#f6931f; font-weight:bold;"><br>
+                                    <div id="sliderPaddingRight" style="width: 100%" ></div>
+                                </div>
+                                <div class="col-xs-3" style="margin: 0px; padding: 5px 3px 0px 0px">
+                                    <select name="radius" id="selectPaddingRight" class="zeroMP" style="width: 100%">
+                                        <option value="px" selected="selected" title="px">px</option>
+                                        <option value="mm">mm</option>
+                                        <option value="cm">cm</option>
+                                        <option value="em">em</option>
+                                        <option value="rem">rem</option>
+                                        <option value="%">%</option>
+                                    </select>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-xs-3 zeroMP">
+                            <div class="row zeroMP">
+                                <div class="col-xs-9 zeroMP">
+                                    <label  for="boxPaddingBottom" style="display: inline">padding-bottom:</label>
+                                    <input type="text" id="boxPaddingBottom" readonly style="width: 10px; border:0; color:#f6931f; font-weight:bold;"><br>
+                                    <div id="sliderPaddingBottom" style="width: 100%" ></div>
+                                </div>
+                                <div class="col-xs-3" style="margin: 0px; padding: 5px 3px 0px 0px">
+                                    <select name="radius" id="selectPaddingBottom" class="zeroMP" style="width: 100%">
+                                        <option value="px" selected="selected" title="px">px</option>
+                                        <option value="mm">mm</option>
+                                        <option value="cm">cm</option>
+                                        <option value="em">em</option>
+                                        <option value="rem">rem</option>
+                                        <option value="%">%</option>
+                                    </select>
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <div class="col-xs-3 zeroMP">
+                            <div class="row zeroMP">
+                                <div class="col-xs-9 zeroMP">
+                                    <label  for="boxPaddingLeft" style="display: inline">padding-left:</label>
+                                    <input type="text" id="boxPaddingLeft" readonly style="width: 10px; border:0; color:#f6931f; font-weight:bold;"><br>
+                                    <div id="sliderPaddingLeft" style="width: 100%" ></div>
+                                </div>
+                                <div class="col-xs-3" style="margin: 0px; padding: 5px 3px 0px 0px">
+                                    <select name="radius" id="selectPaddingLeft" class="zeroMP" style="width: 100%">
+                                        <option value="px" selected="selected" title="px">px</option>
+                                        <option value="mm">mm</option>
+                                        <option value="cm">cm</option>
+                                        <option value="em">em</option>
+                                        <option value="rem">rem</option>
+                                        <option value="%">%</option>
+                                    </select>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-3 zeroMP">
+
+                            <div class="row zeroMP">
+                                <div class="col-xs-9 zeroMP">
+                                    <label  for="boxMarginTop" style="display: inline">margin-top:</label>
+                                    <input type="text" id="boxMarginTop" readonly style="width: 10px; border:0; color:#f6931f; font-weight:bold;"><br>
+                                    <div id="sliderMarginTop" style="width: 100%" ></div>
+                                </div>
+                                <div class="col-xs-3" style="margin: 0px; padding: 5px 3px 0px 0px">
+                                    <select name="radius" id="selectMarginTop" class="zeroMP" style="width: 100%">
+                                        <option value="px" selected="selected" title="px">px</option>
+                                        <option value="mm">mm</option>
+                                        <option value="cm">cm</option>
+                                        <option value="em">em</option>
+                                        <option value="rem">rem</option>
+                                        <option value="%">%</option>
+                                    </select>
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <div class="col-xs-3 zeroMP">
+
+                            <div class="row zeroMP">
+                                <div class="col-xs-9 zeroMP">
+                                    <label  for="boxMarginRight" style="display: inline">margin-right:</label>
+                                    <input type="text" id="boxMarginRight" readonly style="width: 10px; border:0; color:#f6931f; font-weight:bold;"><br>
+                                    <div id="sliderMarginRight" style="width: 100%" ></div>
+                                </div>
+                                <div class="col-xs-3" style="margin: 0px; padding: 5px 3px 0px 0px">
+                                    <select name="radius" id="selectMarginRight" class="zeroMP" style="width: 100%">
+                                        <option value="px" selected="selected" title="px">px</option>
+                                        <option value="mm">mm</option>
+                                        <option value="cm">cm</option>
+                                        <option value="em">em</option>
+                                        <option value="rem">rem</option>
+                                        <option value="%">%</option>
+                                    </select>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-xs-3 zeroMP">
+                            <div class="row zeroMP">
+                                <div class="col-xs-9 zeroMP">
+                                    <label  for="boxMarginBottom" style="display: inline">margin-bottom:</label>
+                                    <input type="text" id="boxMarginBottom" readonly style="width: 10px; border:0; color:#f6931f; font-weight:bold;"><br>
+                                    <div id="sliderMarginBottom" style="width: 100%" ></div>
+                                </div>
+                                <div class="col-xs-3" style="margin: 0px; padding: 5px 3px 0px 0px">
+                                    <select name="radius" id="selectMarginBottom" class="zeroMP" style="width: 100%">
+                                        <option value="px" selected="selected" title="px">px</option>
+                                        <option value="mm">mm</option>
+                                        <option value="cm">cm</option>
+                                        <option value="em">em</option>
+                                        <option value="rem">rem</option>
+                                        <option value="%">%</option>
+                                    </select>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-xs-3 zeroMP">
+
+                            <div class="row zeroMP">
+                                <div class="col-xs-9 zeroMP">
+                                    <label  for="boxMarginLeft" style="display: inline">margin-left:</label>
+                                    <input type="text" id="boxMarginLeft" readonly style="width: 10px; border:0; color:#f6931f; font-weight:bold;"><br>
+                                    <div id="sliderMarginLeft" style="width: 100%" ></div>
+                                </div>
+                                <div class="col-xs-3" style="margin: 0px; padding: 5px 3px 0px 0px">
+                                    <select name="radius" id="selectMarginLeft" class="zeroMP" style="width: 100%">
+                                        <option value="px" selected="selected" title="px">px</option>
+                                        <option value="mm">mm</option>
+                                        <option value="cm">cm</option>
+                                        <option value="em">em</option>
+                                        <option value="rem">rem</option>
+                                        <option value="%">%</option>
+                                    </select>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="row">
+                        <div class="col-xs-3 zeroMP">
+
+                            <div class="row zeroMP">
+                                <div class="col-xs-9 zeroMP">
+                                    <label  for="boxBorderTopWidth" style="display: inline">border-top-width:</label>
+                                    <input type="text" id="boxBorderTopWidth" readonly style="width: 10px; border:0; color:#f6931f; font-weight:bold;"><br>
+                                    <div id="sliderBorderTopWidth" style="width: 100%" ></div>
+                                </div>
+                                <div class="col-xs-3" style="margin: 0px; padding: 5px 3px 0px 0px">
+                                    <select name="radius" id="selectBorderTopWidth" class="zeroMP" style="width: 100%">
+                                        <option value="px" selected="selected" title="px">px</option>
+                                        <option value="mm">mm</option>
+                                        <option value="cm">cm</option>
+                                        <option value="em">em</option>
+                                        <option value="rem">rem</option>
+                                        <option value="%">%</option>
+                                    </select>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-xs-3 zeroMP">
+
+                            <div class="row zeroMP">
+                                <div class="col-xs-9 zeroMP">
+                                    <label  for="boxBorderRightWidth" style="display: inline">border-right-width:</label>
+                                    <input type="text" id="boxBorderRightWidth" readonly style="width: 10px; border:0; color:#f6931f; font-weight:bold;"><br>
+                                    <div id="sliderBorderRightWidth" style="width: 100%" ></div>
+                                </div>
+                                <div class="col-xs-3" style="margin: 0px; padding: 5px 3px 0px 0px">
+                                    <select name="radius" id="selectBorderRightWidth" class="zeroMP" style="width: 100%">
+                                        <option value="px" selected="selected" title="px">px</option>
+                                        <option value="mm">mm</option>
+                                        <option value="cm">cm</option>
+                                        <option value="em">em</option>
+                                        <option value="rem">rem</option>
+                                        <option value="%">%</option>
+                                    </select>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-xs-3 zeroMP">
+
+                            <div class="row zeroMP">
+                                <div class="col-xs-9 zeroMP">
+                                    <label  for="boxBorderBottomWidth" style="display: inline">border-bottom-width:</label>
+                                    <input type="text" id="boxBorderBottomWidth" readonly style="width: 10px; border:0; color:#f6931f; font-weight:bold;"><br>
+                                    <div id="sliderBorderBottomWidth" style="width: 100%" ></div>
+                                </div>
+                                <div class="col-xs-3" style="margin: 0px; padding: 5px 3px 0px 0px">
+                                    <select name="radius" id="selectBorderBottomWidth" class="zeroMP" style="width: 100%">
+                                        <option value="px" selected="selected" title="px">px</option>
+                                        <option value="mm">mm</option>
+                                        <option value="cm">cm</option>
+                                        <option value="em">em</option>
+                                        <option value="rem">rem</option>
+                                        <option value="%">%</option>
+                                    </select>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-xs-3 zeroMP">
+
+                            <div class="row zeroMP">
+                                <div class="col-xs-9 zeroMP">
+                                    <label  for="boxBorderLeftWidth" style="display: inline">border-left-width:</label>
+                                    <input type="text" id="boxBorderLeftWidth" readonly style="width: 10px; border:0; color:#f6931f; font-weight:bold;"><br>
+                                    <div id="sliderBorderLeftWidth" style="width: 100%" ></div>
+                                </div>
+                                <div class="col-xs-3" style="margin: 0px; padding: 5px 3px 0px 0px">
+                                    <select name="radius" id="selectBorderLeftWidth" class="zeroMP" style="width: 100%">
+                                        <option value="px" selected="selected" title="px">px</option>
+                                        <option value="mm">mm</option>
+                                        <option value="cm">cm</option>
+                                        <option value="em">em</option>
+                                        <option value="rem">rem</option>
+                                        <option value="%">%</option>
+                                    </select>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </article> 
+
+            </div>
+        </section>
+
+
+        <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+        <script src="../bower_components/jquery-ui-1.11.4.custom/jquery-ui.js"></script>
+
+
+        <script src='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js'></script>
+        <script>
+                var widthD = "px", widthSlider = {};
+                var boxVisual = function () {
+                    var offset = $(".contentArea").offset();
+                    var height = $(".contentArea").outerHeight(true);
+                    var width = $(".contentArea").outerWidth(true);
+                    var marginTop = parseFloat($(".contentArea").css("margin-top"));
+                    var marginLeft = parseFloat($(".contentArea").css("margin-left"));
+
+                    console.log("left  " + offset.left + " top " + offset.top);
+
+                    $(".myFix").offset({top: offset.top - marginTop, left: offset.left - marginLeft});
+                    $(".myFix").height(height).width(width);
+                }
+
+                var boxHW = function (property, params) {
+                    var obj = {}, xxx = {};
+                    switch (property) {
+                        case"Width":
+                            obj.min = 0;
+                            obj.max = 400;
+                            obj.step = 10;
+                            obj.value = 200;
+                            break;
+                        case"Height":
+                            obj.min = 0;
+                            obj.max = 400;
+                            obj.step = 10;
+                            obj.value = 200;
+                            break;
+                        case"mm":
+                            obj.min = 0;
+                            obj.max = 150;
+                            obj.step = 10;
+                            obj.value = 50;
+                            break;
+                        case"em":
+                            obj.min = 0;
+                            obj.max = 50;
+                            obj.step = 1;
+                            obj.value = 25;
+                            break;
+                        case"rem":
+                            obj.min = 0;
+                            obj.max = 50;
+                            obj.step = 1;
+                            obj.value = 25;
+                            break;
+                        case"%":
+                            obj.min = 0;
+                            obj.max = 100;
+                            obj.step = 5;
+                            obj.value = 50;
+                            break;
+                    }
+                    xxx = params || obj;
+                    
+                    var sliderBox = "#sliderBox" + property;
+                    var prop = property.toLowerCase();
+                    var boxProp = "#box" + property;
+
+                    $(sliderBox).slider({
+                        range: "min",
+                        min: xxx.min,
+                        max: xxx.max,
+                        step: xxx.step,
+                        value: xxx.value,
+                        slide: function (event, ui) {
+                            $(boxProp).val(ui.value);
+                            $(".contentArea").css(prop, ui.value + widthD);
+                            $(".contentArea").trigger("boxChange");
+                        }
+                    });
+                    $(boxProp).val($(sliderBox).slider("value"));
+
+                    return obj;
+                }
+
+                $(function () {
+
+                    boxVisual();
+                    boxHW("Width");
+                    boxHW("Height");
+                    $(window).on("scroll resize", function () {
+                        boxVisual();
+                    });
+
+
+
+                    /*********************************Custom event******************************************************/
+
+                    $(".contentArea").on("boxChange", function () {
+                        boxVisual();
+                    })
+                    /*********************************Width slider******************************************************/
+
+
+
+                    $("#selectWidth").selectmenu({
+                        change: function (event, data) {
+                            var objD = {};
+                            widthD = data.item.value;
+                            switch (widthD) {
+                                case"px":
+                                    objD.min = 0;
+                                    objD.max = 400;
+                                    objD.step = 10;
+                                    objD.value = 200;
+                                    break;
+                                case"cm":
+                                    objD.min = 0;
+                                    objD.max = 10;
+                                    objD.step = 1;
+                                    objD.value = 5;
+                                    break;
+                                case"mm":
+                                    objD.min = 0;
+                                    objD.max = 150;
+                                    objD.step = 10;
+                                    objD.value = 50;
+                                    break;
+                                case"em":
+                                    objD.min = 0;
+                                    objD.max = 50;
+                                    objD.step = 1;
+                                    objD.value = 25;
+                                    break;
+                                case"rem":
+                                    objD.min = 0;
+                                    objD.max = 50;
+                                    objD.step = 1;
+                                    objD.value = 25;
+                                    break;
+                                case"%":
+                                    objD.min = 0;
+                                    objD.max = 100;
+                                    objD.step = 5;
+                                    objD.value = 50;
+                                    break;
+                            }
+                            
+                            boxHW("Width",objD);
+                        }
+                    });
+
+
+
+
+
+
+
+                    /*********************************Hight slider******************************************************/
+                    
+                    $("#selectHeight").selectmenu({
+                        change: function (event, data) {
+                            var objD = {};
+                            widthD = data.item.value;
+                            switch (widthD) {
+                                case"px":
+                                    objD.min = 0;
+                                    objD.max = 400;
+                                    objD.step = 10;
+                                    objD.value = 200;
+                                    break;
+                                case"cm":
+                                    objD.min = 0;
+                                    objD.max = 10;
+                                    objD.step = 1;
+                                    objD.value = 5;
+                                    break;
+                                case"mm":
+                                    objD.min = 0;
+                                    objD.max = 150;
+                                    objD.step = 10;
+                                    objD.value = 50;
+                                    break;
+                                case"em":
+                                    objD.min = 0;
+                                    objD.max = 50;
+                                    objD.step = 1;
+                                    objD.value = 25;
+                                    break;
+                                case"rem":
+                                    objD.min = 0;
+                                    objD.max = 50;
+                                    objD.step = 1;
+                                    objD.value = 25;
+                                    break;
+                                case"%":
+                                    objD.min = 0;
+                                    objD.max = 100;
+                                    objD.step = 5;
+                                    objD.value = 50;
+                                    break;
+                            }
+                            
+                            boxHW("Height",objD);
+                        }
+                    });
+
+
+                  
+                    /*********************************PaddingTop slider******************************************************/
+
+                    $("#sliderPaddingTop").slider({
+                        range: "min",
+                        min: 0,
+                        max: 30,
+                        step: 1,
+                        value: 10,
+                        slide: function (event, ui) {
+                            $("#boxPaddingTop").val(ui.value);
+                            $(".contentArea").css("padding-top", ui.value + "px");
+
+                            $(".contentArea").trigger("boxChange");
+                        }
+                    });
+                    $("#boxPaddingTop").val($("#sliderPaddingTop").slider("value"));
+                    /*********************************PaddingRight slider******************************************************/
+
+                    $("#sliderPaddingRight").slider({
+                        range: "min",
+                        min: 0,
+                        max: 30,
+                        step: 1,
+                        value: 10,
+                        slide: function (event, ui) {
+                            $("#boxPaddingRight").val(ui.value);
+                            $(".contentArea").css("padding-right", ui.value + "px");
+
+                            $(".contentArea").trigger("boxChange");
+                        }
+                    });
+                    $("#boxPaddingRight").val($("#sliderPaddingRight").slider("value"));
+                    /*********************************PaddingBottom slider******************************************************/
+
+                    $("#sliderPaddingBottom").slider({
+                        range: "min",
+                        min: 0,
+                        max: 30,
+                        step: 1,
+                        value: 10,
+                        slide: function (event, ui) {
+                            $("#boxPaddingBottom").val(ui.value);
+                            $(".contentArea").css("padding-bottom", ui.value + "px");
+
+                            $(".contentArea").trigger("boxChange");
+                        }
+                    });
+                    $("#boxPaddingBottom").val($("#sliderPaddingBottom").slider("value"));
+
+                    /*********************************PaddingLeft slider******************************************************/
+
+                    $("#sliderPaddingLeft").slider({
+                        range: "min",
+                        min: 0,
+                        max: 30,
+                        step: 1,
+                        value: 10,
+                        slide: function (event, ui) {
+                            $("#boxPaddingLeft").val(ui.value);
+                            $(".contentArea").css("padding-left", ui.value + "px");
+
+                            $(".contentArea").trigger("boxChange");
+                        }
+                    });
+                    $("#boxPaddingLeft").val($("#sliderPaddingLeft").slider("value"));
+
+                    /*********************************MarginTop slider******************************************************/
+
+                    $("#sliderMarginTop").slider({
+                        range: "min",
+                        min: 0,
+                        max: 30,
+                        step: 1,
+                        value: 10,
+                        slide: function (event, ui) {
+                            $("#boxMarginTop").val(ui.value);
+                            $(".contentArea").css("margin-top", ui.value + "px");
+
+                            $(".contentArea").trigger("boxChange");
+                        }
+                    });
+                    $("#boxMarginTop").val($("#sliderMarginTop").slider("value"));
+
+                    /*********************************MarginRight slider******************************************************/
+
+                    $("#sliderMarginRight").slider({
+                        range: "min",
+                        min: 0,
+                        max: 30,
+                        step: 1,
+                        value: 10,
+                        slide: function (event, ui) {
+                            $("#boxMarginRight").val(ui.value);
+                            $(".contentArea").css("margin-right", ui.value + "px");
+
+                            $(".contentArea").trigger("boxChange");
+                        }
+                    });
+                    $("#boxMarginRight").val($("#sliderMarginRight").slider("value"));
+
+                    /*********************************MarginBottom slider******************************************************/
+
+                    $("#sliderMarginBottom").slider({
+                        range: "min",
+                        min: 0,
+                        max: 30,
+                        step: 1,
+                        value: 10,
+                        slide: function (event, ui) {
+                            $("#boxMarginBottom").val(ui.value);
+                            $(".contentArea").css("margin-bottom", ui.value + "px");
+
+                            $(".contentArea").trigger("boxChange");
+                        }
+                    });
+                    $("#boxMarginBottom").val($("#sliderMarginBottom").slider("value"));
+
+                    /*********************************MarginLeft slider******************************************************/
+
+                    $("#sliderMarginLeft").slider({
+                        range: "min",
+                        min: 0,
+                        max: 30,
+                        step: 1,
+                        value: 10,
+                        slide: function (event, ui) {
+                            $("#boxMarginLeft").val(ui.value);
+                            $(".contentArea").css("margin-left", ui.value + "px");
+
+                            $(".contentArea").trigger("boxChange");
+                        }
+                    });
+                    $("#boxMarginLeft").val($("#sliderMarginLeft").slider("value"));
+
+
+                    /*********************************BorderTopWidth slider******************************************************/
+
+                    $("#sliderBorderTopWidth").slider({
+                        range: "min",
+                        min: 0,
+                        max: 30,
+                        step: 1,
+                        value: 10,
+                        slide: function (event, ui) {
+                            $("#boxBorderTopWidth").val(ui.value);
+                            $(".contentArea").css("border-top-width", ui.value + "px");
+
+                            $(".contentArea").trigger("boxChange");
+                        }
+                    });
+                    $("#boxBorderTopWidth").val($("#sliderBorderTopWidth").slider("value"));
+
+                    /*********************************BorderRightWidth slider******************************************************/
+
+                    $("#sliderBorderRightWidth").slider({
+                        range: "min",
+                        min: 0,
+                        max: 30,
+                        step: 1,
+                        value: 10,
+                        slide: function (event, ui) {
+                            $("#boxBorderRightWidth").val(ui.value);
+                            $(".contentArea").css("border-right-width", ui.value + "px");
+
+                            $(".contentArea").trigger("boxChange");
+                        }
+                    });
+                    $("#boxBorderRightWidth").val($("#sliderBorderRightWidth").slider("value"));
+
+                    /*********************************BorderBottomWidth slider******************************************************/
+
+                    $("#sliderBorderBottomWidth").slider({
+                        range: "min",
+                        min: 0,
+                        max: 30,
+                        step: 1,
+                        value: 10,
+                        slide: function (event, ui) {
+                            $("#boxBorderBottomWidth").val(ui.value);
+                            $(".contentArea").css("border-bottom-width", ui.value + "px");
+
+                            $(".contentArea").trigger("boxChange");
+                        }
+                    });
+                    $("#boxBorderBottomWidth").val($("#sliderBorderBottomWidth").slider("value"));
+
+                    /*********************************BorderLeftWidth slider******************************************************/
+
+                    $("#sliderBorderLeftWidth").slider({
+                        range: "min",
+                        min: 0,
+                        max: 30,
+                        step: 1,
+                        value: 10,
+                        slide: function (event, ui) {
+                            $("#boxBorderLeftWidth").val(ui.value);
+                            $(".contentArea").css("border-left-width", ui.value + "px");
+
+                            $(".contentArea").trigger("boxChange");
+                        }
+                    });
+                    $("#boxBorderLeftWidth").val($("#sliderBorderLeftWidth").slider("value"));
+
+
+
+                    /***************************************************************************************************/
+
+                });
+                /***************************************************************************************************/
+
+                $(function () {
+
+                    $("#tsSubmmit").click(function () {
+
+                        var props = " " + $(tsCPicker).val() + " " + $(tsXPicker).val() +
+                                "px " + $(tsYPicker).val() + "px " + $(tsBRPicker).val() + "px ";
+                        $("#tShadowCSS .val").text(function () {
+                            return props;
+                        });
+                        $("#textProp textarea").css("text-shadow", function () {
+                            return props;
+                        });
+                    });
+                    $("#tAlign a").click(function (event) {
+                        event.preventDefault();
+                        var text = $(this).text();
+                        $("#taText").text(text);
+                        $("#textProp textarea").css("text-align", function () {
+                            return text;
+                        });
+                        $("#tAlignCSS .val").text(function () {
+                            return text;
+                        });
+                    });
+                    $("#tIndent a").click(function (event) {
+                        event.preventDefault();
+                        var text = $(this).text();
+                        $("#tiText").text(text);
+                        $("#textProp textarea").css("text-indent", function () {
+                            return text;
+                        });
+                        $("#tIndentCSS .val").text(function () {
+                            return text;
+                        });
+                    });
+                    $("#tDecoration a").click(function (event) {
+                        event.preventDefault();
+                        var text = $(this).text();
+                        $("#tdText").text(text);
+                        $("#textProp textarea").css("text-decoration", function () {
+                            return text;
+                        });
+                        $("#tDecorationCSS .val").text(function () {
+                            return text;
+                        });
+                    });
+                    $("#tTransform a").click(function (event) {
+                        event.preventDefault();
+                        var text = $(this).text();
+                        $("#ttText").text(text);
+                        $("#textProp textarea").css("text-transform", function () {
+                            return text;
+                        });
+                        $("#tTtransformCSS .val").text(function () {
+                            return text;
+                        });
+                    });
+                    $("#wSpace a").click(function (event) {
+                        event.preventDefault();
+                        var text = $(this).text();
+                        $("#wsText").text(text);
+                        $("#textProp textarea").css("white-space", function () {
+                            return text;
+                        });
+                        $("#wSpaceCSS .val").text(function () {
+                            return text;
+                        });
+                    });
+                    $("#wBreak a").click(function (event) {
+                        event.preventDefault();
+                        var text = $(this).text();
+                        $("#wbText").text(text);
+                        $("#textProp textarea").css("word-break", function () {
+                            return text;
+                        });
+                        $("#wBreakCSS .val").text(function () {
+                            return text;
+                        });
+                    });
+                    $("#wSpacing a").click(function (event) {
+                        event.preventDefault();
+                        var text = $(this).text();
+                        $("#wspText").text(text);
+                        $("#textProp textarea").css("word-spacing", function () {
+                            return text;
+                        });
+                        $("#wSpacingCSS .val").text(function () {
+                            return text;
+                        });
+                    });
+                    $("#wWrap a").click(function (event) {
+                        event.preventDefault();
+                        var text = $(this).text();
+                        $("#wwText").text(text);
+                        $("#textProp textarea").css("word-wrap", function () {
+                            return text;
+                        });
+                        $("#wWrapCSS .val").text(function () {
+                            return text;
+                        });
+                    });
+                    $("#lSpacing a").click(function (event) {
+                        event.preventDefault();
+                        var text = $(this).text();
+                        $("#lsText").text(text);
+                        $("#textProp textarea").css("letter-spacing", function () {
+                            return text;
+                        });
+                        $("#lSpacingCSS .val").text(function () {
+                            return text;
+                        });
+                    });
+                    $("#lHeight a").click(function (event) {
+                        event.preventDefault();
+                        var text = $(this).text();
+                        $("#lhText").text(text);
+                        $("#textProp textarea").css("line-height", function () {
+                            return text;
+                        });
+                        $("#lHeightCSS .val").text(function () {
+                            return text;
+                        });
+                    });
+                    $("#hyphens a").click(function (event) {
+                        event.preventDefault();
+                        var text = $(this).text();
+                        $("#hyText").text(text);
+                        $("#textProp textarea").css("hyphens", function () {
+                            return text;
+                        });
+                        $("#hyphensCSS .val").text(function () {
+                            return text;
+                        });
+                    });
+                    $("#taLast a").click(function (event) {
+                        event.preventDefault();
+                        var text = $(this).text();
+                        $("#talText").text(text);
+                        $("#textProp textarea").css("text-align-last", function () {
+                            return text;
+                        });
+                        console.log(text);
+                        $("#taLastCSS .val").text(function () {
+                            return text;
+                        });
+                    });
+                    $("#tShadow a").click(function (event) {
+                        event.preventDefault();
+                        var text = $(this).text();
+                        $("#tsText").text(text);
+                        $("#textProp textarea").css("text-shadow", function () {
+                            return text;
+                        });
+                        console.log(text);
+                        $("#tShadowCSS .val").text(function () {
+                            return text;
+                        });
+                    });
+                });
+        </script>
+
+    </body>
+</html>

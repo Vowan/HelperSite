@@ -486,8 +486,8 @@ This text is styled with the text formatting properties. The heading uses the te
                             <div class="row zeroMP">
                                 <div class="col-xs-8 zeroMP">
                                     <label  for="boxBorderTopLeftRadiusH" style="display: inline">border-top-left-radius:</label>
-                                    <input type="text" id="BorderTopLeftRadiusH" readonly style="width: 10px; border:0; color:#f6931f; font-weight:bold;"><br>
-                                    <input type="text" id="BorderTopLeftRadiusV" readonly style="width: 10px; border:0; color:#f6931f; font-weight:bold;"><br>
+                                    <input type="text" id="BorderTopLeftRadiusH" readonly style="display: inline; width: 10px; border:0; color:#f6931f; font-weight:bold;">
+                                    <input type="text" id="BorderTopLeftRadiusV" readonly style="display: inline; width: 10px; border:0; color:#f6931f; font-weight:bold;">
 
                                     <div id="sliderBoxBorderTopLeftRadiusH" style="width: 100%" ></div>
                                     <div id="sliderBoxBorderTopLeftRadiusV" style="width: 100%" ></div>
@@ -517,12 +517,55 @@ This text is styled with the text formatting properties. The heading uses the te
 
                             <div class="row zeroMP">
                                 <div class="col-xs-8 zeroMP">
-                                    <label  for="boxBorderRightWidth" style="display: inline">border-right-width:</label>
-                                    <input type="text" id="boxBorderRightWidth" readonly style="width: 10px; border:0; color:#f6931f; font-weight:bold;"><br>
-                                    <div id="sliderBoxBorderRightWidth" style="width: 100%" ></div>
+                                    <label  for="boxBorderTopRightRadiusH" style="display: inline">border-top-right-radius:</label>
+                                    <input type="text" id="BorderTopRightRadiusH" readonly style="display: inline; width: 10px; border:0; color:#f6931f; font-weight:bold;">
+                                    <input type="text" id="BorderTopRightRadiusV" readonly style="display: inline; width: 10px; border:0; color:#f6931f; font-weight:bold;">
+
+                                    <div id="sliderBoxBorderTopRightRadiusH" style="width: 100%" ></div>
+                                    <div id="sliderBoxBorderTopRightRadiusV" style="width: 100%" ></div>
                                 </div>
                                 <div class="col-xs-4" style="margin: 0px; padding: 5px 3px 0px 0px">
-                                    <select name="radius" id="selectBorderRightWidth" class="zeroMP" style="width: 100%">
+                                    <select name="radius" id="selectBorderTopRightRadiusH" class="zeroMP" style="width: 100%">
+                                        <option value="px" selected="selected" title="px">px</option>
+                                        <option value="mm">mm</option>
+                                        <option value="cm">cm</option>
+                                        <option value="em">em</option>
+                                        <option value="rem">rem</option>
+                                        <option value="%">%</option>
+                                    </select>
+                                    <select name="radius" id="selectBorderTopRightRadiusV" class="zeroMP" style="width: 100%">
+                                        <option value="px" selected="selected" title="px">px</option>
+                                        <option value="mm">mm</option>
+                                        <option value="cm">cm</option>
+                                        <option value="em">em</option>
+                                        <option value="rem">rem</option>
+                                        <option value="%">%</option>
+                                    </select>
+                                </div>
+                           
+
+                            </div>
+                        </div>
+                        <div class="col-xs-3 zeroMP">
+
+                                <div class="col-xs-8 zeroMP">
+                                    <label  for="boxBorderBottomRightRadiusH" style="display: inline">border-bottom-right-radius:</label>
+                                    <input type="text" id="BorderBottomRightRadiusH" readonly style="display: inline; width: 10px; border:0; color:#f6931f; font-weight:bold;">
+                                    <input type="text" id="BorderBottomRightRadiusV" readonly style="display: inline; width: 10px; border:0; color:#f6931f; font-weight:bold;">
+
+                                    <div id="sliderBoxBorderBottomRightRadiusH" style="width: 100%" ></div>
+                                    <div id="sliderBoxBorderBottomRightRadiusV" style="width: 100%" ></div>
+                                </div>
+                                <div class="col-xs-4" style="margin: 0px; padding: 5px 3px 0px 0px">
+                                    <select name="radius" id="selectBorderBottomRightRadiusH" class="zeroMP" style="width: 100%">
+                                        <option value="px" selected="selected" title="px">px</option>
+                                        <option value="mm">mm</option>
+                                        <option value="cm">cm</option>
+                                        <option value="em">em</option>
+                                        <option value="rem">rem</option>
+                                        <option value="%">%</option>
+                                    </select>
+                                    <select name="radius" id="selectBorderBottomRightRadiusV" class="zeroMP" style="width: 100%">
                                         <option value="px" selected="selected" title="px">px</option>
                                         <option value="mm">mm</option>
                                         <option value="cm">cm</option>
@@ -532,18 +575,20 @@ This text is styled with the text formatting properties. The heading uses the te
                                     </select>
                                 </div>
 
-                            </div>
                         </div>
                         <div class="col-xs-3 zeroMP">
 
                             <div class="row zeroMP">
                                 <div class="col-xs-8 zeroMP">
-                                    <label  for="boxBorderBottomWidth" style="display: inline">border-bottom-width:</label>
-                                    <input type="text" id="boxBorderBottomWidth" readonly style="width: 10px; border:0; color:#f6931f; font-weight:bold;"><br>
-                                    <div id="sliderBoxBorderBottomWidth" style="width: 100%" ></div>
+                                    <label  for="boxBorderBottomLeftRadiusH" style="display: inline">border-bottom-left-radius:</label>
+                                    <input type="text" id="BorderBottomLeftRadiusH" readonly style="display: inline; width: 10px; border:0; color:#f6931f; font-weight:bold;">
+                                    <input type="text" id="BorderBottomLeftRadiusV" readonly style="display: inline; width: 10px; border:0; color:#f6931f; font-weight:bold;">
+
+                                    <div id="sliderBoxBorderBottomLeftRadiusH" style="width: 100%" ></div>
+                                    <div id="sliderBoxBorderBottomLeftRadiusV" style="width: 100%" ></div>
                                 </div>
                                 <div class="col-xs-4" style="margin: 0px; padding: 5px 3px 0px 0px">
-                                    <select name="radius" id="selectBorderBottomWidth" class="zeroMP" style="width: 100%">
+                                    <select name="radius" id="selectBorderBottomLeftRadiusH" class="zeroMP" style="width: 100%">
                                         <option value="px" selected="selected" title="px">px</option>
                                         <option value="mm">mm</option>
                                         <option value="cm">cm</option>
@@ -551,20 +596,7 @@ This text is styled with the text formatting properties. The heading uses the te
                                         <option value="rem">rem</option>
                                         <option value="%">%</option>
                                     </select>
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class="col-xs-3 zeroMP">
-
-                            <div class="row zeroMP">
-                                <div class="col-xs-8 zeroMP">
-                                    <label  for="boxBorderLeftWidth" style="display: inline">border-left-width:</label>
-                                    <input type="text" id="boxBorderLeftWidth" readonly style="width: 10px; border:0; color:#f6931f; font-weight:bold;"><br>
-                                    <div id="sliderBoxBorderLeftWidth" style="width: 100%" ></div>
-                                </div>
-                                <div class="col-xs-4" style="margin: 0px; padding: 5px 3px 0px 0px">
-                                    <select name="radius" id="selectBorderLeftWidth" class="zeroMP" style="width: 100%">
+                                    <select name="radius" id="selectBorderBottomLeftRadiusV" class="zeroMP" style="width: 100%">
                                         <option value="px" selected="selected" title="px">px</option>
                                         <option value="mm">mm</option>
                                         <option value="cm">cm</option>
@@ -733,11 +765,11 @@ This text is styled with the text formatting properties. The heading uses the te
                 this.myDefaults_1 = {min: 0, max: 10, step: 1, value: "20", unit: "px", sliderElem: "", boxProp: ""};
 
                 this.paramsTop = top || this.myDefaults;
-                this.paramsRight = right || this.myDefaults_1;
+                this.paramsRight = right || this.myDefaults;
                 this.paramsBottom = bottom || this.myDefaults;
                 this.paramsLeft = left || this.myDefaults;
 
-
+               
 
                 this.sliderTop = $(that.paramsTop.sliderElem).slider({
                     range: "min",
@@ -758,6 +790,9 @@ This text is styled with the text formatting properties. The heading uses the te
                         $(".contentArea").trigger("boxChange");
                     }
                 });
+                
+                 $(that.paramsTop.boxProp).val($(that.paramsTop.sliderElem).slider("value"));
+                
                 this.sliderRight = $(that.paramsRight.sliderElem).slider({
                     range: "min",
                     min: that.paramsRight.min,
@@ -775,6 +810,9 @@ This text is styled with the text formatting properties. The heading uses the te
                         $(".contentArea").trigger("boxChange");
                     }
                 });
+                
+                 $(that.paramsRight.boxProp).val($(that.paramsRight.sliderElem).slider("value"));
+                
 
                 this.sliderBottom = $(that.paramsBottom.sliderElem).slider({
                     range: "min",
@@ -784,7 +822,7 @@ This text is styled with the text formatting properties. The heading uses the te
                     value: that.paramsBottom.value,
                     slide: function (event, ui) {
                         $(that.paramsBottom.boxProp).val(ui.value);
-                        that.paramsTop.value = ui.value;
+                        that.paramsBottom.value = ui.value;
                         $(".contentArea").css(prop,
                                 that.paramsTop.value + that.paramsTop.unit +" "
                                 + that.paramsRight.value + that.paramsRight.unit + " "
@@ -802,7 +840,7 @@ This text is styled with the text formatting properties. The heading uses the te
                     value: that.paramsLeft.value,
                     slide: function (event, ui) {
                         $(that.paramsLeft.boxProp).val(ui.value);
-                        that.paramsTop.value = ui.value;
+                        that.paramsLeft.value = ui.value;
                         $(".contentArea").css(prop,
                                 that.paramsTop.value + that.paramsTop.unit + " "
                                 + that.paramsRight.value + that.paramsRight.unit + " "
@@ -812,11 +850,7 @@ This text is styled with the text formatting properties. The heading uses the te
                     }
                 });
 
-                this.init = function (top, right, bottom, left) {
-
-
-
-                }
+                
             }
 
 
@@ -845,19 +879,234 @@ This text is styled with the text formatting properties. The heading uses the te
                     boxVisual();
                 });
 
-                var proba = new myWww("border-top-left-radius", Top = {
+                var LeftTop = new myWww("border-top-left-radius", Top = {
                     min: 0, max: 20, step: 1, value: 5, unit: "px",
                     sliderElem: "#sliderBoxBorderTopLeftRadiusH", boxProp: "#BorderTopLeftRadiusH"},
-                Right = {
+                                                                   Right = {
                     min: 0, max: 20, step: 1, value: 5, unit: "px",
                     sliderElem: "#sliderBoxBorderTopLeftRadiusV", boxProp: "#BorderTopLeftRadiusV"}
+                );
         
-        );
+                var TopRight = new myWww("border-top-right-radius", Top = {
+                    min: 0, max: 20, step: 1, value: 5, unit: "px",
+                    sliderElem: "#sliderBoxBorderTopRightRadiusH", boxProp: "#BorderTopRightRadiusH"},
+                                                                   Right = {
+                    min: 0, max: 20, step: 1, value: 5, unit: "px",
+                    sliderElem: "#sliderBoxBorderTopRightRadiusV", boxProp: "#BorderTopRightRadiusV"}
+                );
+        
+                var BottomRight = new myWww("border-bottom-right-radius", Top = {
+                    min: 0, max: 20, step: 1, value: 5, unit: "px",
+                    sliderElem: "#sliderBoxBorderBottomRightRadiusH", boxProp: "#BorderBottomRightRadiusH"},
+                                                                   Right = {
+                    min: 0, max: 20, step: 1, value: 5, unit: "px",
+                    sliderElem: "#sliderBoxBorderBottomRightRadiusV", boxProp: "#BorderBottomRightRadiusV"}
+                );
+        
+                var BottomLeft = new myWww("border-bottom-left-radius", Top = {
+                    min: 0, max: 20, step: 1, value: 5, unit: "px",
+                    sliderElem: "#sliderBoxBorderBottomLeftRadiusH", boxProp: "#BorderBottomLeftRadiusH"},
+                                                                   Right = {
+                    min: 0, max: 20, step: 1, value: 5, unit: "px",
+                    sliderElem: "#sliderBoxBorderBottomLeftRadiusV", boxProp: "#BorderBottomLeftRadiusV"}
+                );
+
+
+           
                 /*********************************Custom event******************************************************/
 
                 $(".contentArea").on("boxChange", function () {
                     boxVisual();
+                    
                 })
+                /*********************************BorderLeftTopRadius sliders******************************************************/
+
+                $("#selectBorderTopLeftRadiusH").selectmenu({
+                    change: function (event, data) {
+                        var objD = {};
+                        var units = data.item.value;
+                        switch (units) {
+                            case"px":
+                                objD.min = 0;  objD.max = 40; objD.step = 1; objD.value = 20; break;
+                            case"cm":
+                                objD.min = 0; objD.max = 2; objD.step =0.01;  objD.value = 1; break;
+                            case"mm":
+                                objD.min = 0; objD.max = 20; objD.step = 0.1; objD.value = 1; break;
+                            case"em": 
+                                objD.min = 0; objD.max = 10; objD.step = 0.1; objD.value = 2.5; break;
+                            case"rem": objD.min = 0; objD.max = 10; objD.step = 0.1;  objD.value = 2.5; break;
+                            case"%": objD.min = 0; objD.max = 20; objD.step = 1; objD.value = 10; break;
+                        }
+
+                         LeftTop.paramsTop.unit=units;
+                         $("#sliderBoxBorderTopLeftRadiusH").slider( "option", { min: objD.min, max: objD.max, step: objD.step, value: objD.value } );
+                    }
+                });
+                
+                $("#selectBorderTopLeftRadiusV").selectmenu({
+                    change: function (event, data) {
+                        var objD = {};
+                        var units = data.item.value;
+                        switch (units) {
+                            case"px":
+                                objD.min = 0;  objD.max = 40; objD.step = 1; objD.value = 20; break;
+                            case"cm":
+                                objD.min = 0; objD.max = 2; objD.step =0.01;  objD.value = 1; break;
+                            case"mm":
+                                objD.min = 0; objD.max = 20; objD.step = 0.1; objD.value = 1; break;
+                            case"em": 
+                                objD.min = 0; objD.max = 10; objD.step = 0.1; objD.value = 2.5; break;
+                            case"rem": objD.min = 0; objD.max = 10; objD.step = 0.1;  objD.value = 2.5; break;
+                            case"%": objD.min = 0; objD.max = 20; objD.step = 1; objD.value = 10; break;
+                        }
+
+                         LeftTop.paramsRight.unit=units;
+                         $("#sliderBoxBorderTopLeftRadiusV").slider( "option", { min: objD.min, max: objD.max, step: objD.step, value: objD.value } );
+                    }
+                });
+                
+                /*********************************BorderTopRightRadius sliders******************************************************/
+
+                $("#selectBorderTopRightRadiusH").selectmenu({
+                    change: function (event, data) {
+                        var objD = {};
+                        var units = data.item.value;
+                        switch (units) {
+                            case"px":
+                                objD.min = 0;  objD.max = 40; objD.step = 1; objD.value = 20; break;
+                            case"cm":
+                                objD.min = 0; objD.max = 2; objD.step =0.01;  objD.value = 1; break;
+                            case"mm":
+                                objD.min = 0; objD.max = 20; objD.step = 0.1; objD.value = 1; break;
+                            case"em": 
+                                objD.min = 0; objD.max = 10; objD.step = 0.1; objD.value = 2.5; break;
+                            case"rem": objD.min = 0; objD.max = 10; objD.step = 0.1;  objD.value = 2.5; break;
+                            case"%": objD.min = 0; objD.max = 20; objD.step = 1; objD.value = 10; break;
+                        }
+
+                         TopRight.paramsTop.unit=units;
+                         $("#sliderBoxBorderTopRightRadiusH").slider( "option", { min: objD.min, max: objD.max, step: objD.step, value: objD.value } );
+                    }
+                });
+                
+                $("#selectBorderTopRightRadiusV").selectmenu({
+                    change: function (event, data) {
+                        var objD = {};
+                        var units = data.item.value;
+                        switch (units) {
+                            case"px":
+                                objD.min = 0;  objD.max = 40; objD.step = 1; objD.value = 20; break;
+                            case"cm":
+                                objD.min = 0; objD.max = 2; objD.step =0.01;  objD.value = 1; break;
+                            case"mm":
+                                objD.min = 0; objD.max = 20; objD.step = 0.1; objD.value = 1; break;
+                            case"em": 
+                                objD.min = 0; objD.max = 10; objD.step = 0.1; objD.value = 2.5; break;
+                            case"rem": objD.min = 0; objD.max = 10; objD.step = 0.1;  objD.value = 2.5; break;
+                            case"%": objD.min = 0; objD.max = 20; objD.step = 1; objD.value = 10; break;
+                        }
+
+                         TopRight.paramsRight.unit=units;
+                         $("#sliderBoxBorderTopRightRadiusV").slider( "option", { min: objD.min, max: objD.max, step: objD.step, value: objD.value } );
+                    }
+                });
+                
+                 /*********************************BorderBottomRightRadius sliders******************************************************/
+
+                $("#selectBorderBottomRightRadiusH").selectmenu({
+                    change: function (event, data) {
+                        var objD = {};
+                        var units = data.item.value;
+                        switch (units) {
+                            case"px":
+                                objD.min = 0;  objD.max = 40; objD.step = 1; objD.value = 20; break;
+                            case"cm":
+                                objD.min = 0; objD.max = 2; objD.step =0.01;  objD.value = 1; break;
+                            case"mm":
+                                objD.min = 0; objD.max = 20; objD.step = 0.1; objD.value = 1; break;
+                            case"em": 
+                                objD.min = 0; objD.max = 10; objD.step = 0.1; objD.value = 2.5; break;
+                            case"rem": objD.min = 0; objD.max = 10; objD.step = 0.1;  objD.value = 2.5; break;
+                            case"%": objD.min = 0; objD.max = 20; objD.step = 1; objD.value = 10; break;
+                        }
+
+                         BottomRight.paramsTop.unit=units;
+                         $("#sliderBoxBorderBottomRightRadiusH").slider( "option", { min: objD.min, max: objD.max, step: objD.step, value: objD.value } );
+                    }
+                });
+                
+                $("#selectBorderBottomRightRadiusV").selectmenu({
+                    change: function (event, data) {
+                        var objD = {};
+                        var units = data.item.value;
+                        switch (units) {
+                            case"px":
+                                objD.min = 0;  objD.max = 40; objD.step = 1; objD.value = 20; break;
+                            case"cm":
+                                objD.min = 0; objD.max = 2; objD.step =0.01;  objD.value = 1; break;
+                            case"mm":
+                                objD.min = 0; objD.max = 20; objD.step = 0.1; objD.value = 1; break;
+                            case"em": 
+                                objD.min = 0; objD.max = 10; objD.step = 0.1; objD.value = 2.5; break;
+                            case"rem": objD.min = 0; objD.max = 10; objD.step = 0.1;  objD.value = 2.5; break;
+                            case"%": objD.min = 0; objD.max = 20; objD.step = 1; objD.value = 10; break;
+                        }
+
+                         BottomRight.paramsRight.unit=units;
+                         $("#sliderBoxBorderBottomRightRadiusV").slider( "option", { min: objD.min, max: objD.max, step: objD.step, value: objD.value } );
+                    }
+                });
+                
+                 /*********************************BorderBottomLeftRadius sliders******************************************************/
+
+                $("#selectBorderBottomLeftRadiusH").selectmenu({
+                    change: function (event, data) {
+                        var objD = {};
+                        var units = data.item.value;
+                        switch (units) {
+                            case"px":
+                                objD.min = 0;  objD.max = 40; objD.step = 1; objD.value = 20; break;
+                            case"cm":
+                                objD.min = 0; objD.max = 2; objD.step =0.01;  objD.value = 1; break;
+                            case"mm":
+                                objD.min = 0; objD.max = 20; objD.step = 0.1; objD.value = 1; break;
+                            case"em": 
+                                objD.min = 0; objD.max = 10; objD.step = 0.1; objD.value = 2.5; break;
+                            case"rem": objD.min = 0; objD.max = 10; objD.step = 0.1;  objD.value = 2.5; break;
+                            case"%": objD.min = 0; objD.max = 20; objD.step = 1; objD.value = 10; break;
+                        }
+
+                         BottomLeft.paramsTop.unit=units;
+                         $("#sliderBoxBorderBottomLeftRadiusH").slider( "option", { min: objD.min, max: objD.max, step: objD.step, value: objD.value } );
+                    }
+                });
+                
+                $("#selectBorderBottomLeftRadiusV").selectmenu({
+                    change: function (event, data) {
+                        var objD = {};
+                        var units = data.item.value;
+                        switch (units) {
+                            case"px":
+                                objD.min = 0;  objD.max = 40; objD.step = 1; objD.value = 20; break;
+                            case"cm":
+                                objD.min = 0; objD.max = 2; objD.step =0.01;  objD.value = 1; break;
+                            case"mm":
+                                objD.min = 0; objD.max = 20; objD.step = 0.1; objD.value = 1; break;
+                            case"em": 
+                                objD.min = 0; objD.max = 10; objD.step = 0.1; objD.value = 2.5; break;
+                            case"rem": objD.min = 0; objD.max = 10; objD.step = 0.1;  objD.value = 2.5; break;
+                            case"%": objD.min = 0; objD.max = 20; objD.step = 1; objD.value = 10; break;
+                        }
+
+                         BottomLeft.paramsRight.unit=units;
+                         $("#sliderBoxBorderBottomLeftRadiusV").slider( "option", { min: objD.min, max: objD.max, step: objD.step, value: objD.value } );
+                    }
+                });
+                
+                
+                
+                
+                
                 /*********************************Width slider******************************************************/
 
 

@@ -12,8 +12,7 @@ and open the template in the editor.
         <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
         <link rel="stylesheet" href="../bower_components/jquery-ui-1.11.4.custom/jquery-ui.css">
         <link rel="stylesheet" href="../bower_components/jquery-ui-1.11.4.custom/jquery-ui.theme.css">
-        <script src="../bower_components/angular/angular.js"></script>
-        <script src="../js/controllers.js"></script>
+
         <style>
             .flexBox{
                 display: flex;
@@ -57,6 +56,8 @@ and open the template in the editor.
             }
 
             .contentArea {
+
+                <!--   border-top-left-radius: 10px 20px; -->
 
 
                 margin: 10px 15px 20px 25px;
@@ -108,7 +109,7 @@ and open the template in the editor.
 
         </style>
     </head>
-    <body ng-app="tutorApp" ng-controller="browserCtrl">
+    <body>
 
         <div class="myFix">
 
@@ -216,12 +217,12 @@ This text is styled with the text formatting properties. The heading uses the te
                     <div class="row">
                         <div class="col-xs-3 zeroMP">
                             <div class="row zeroMP">
-                                <div class="col-xs-9 zeroMP">
+                                <div class="col-xs-8 zeroMP">
                                     <label  for="boxPaddingTop" style="display: inline">padding-top:</label>
                                     <input type="text" id="boxPaddingTop" readonly style="width: 10px; border:0; color:#f6931f; font-weight:bold;"><br>
-                                    <div id="sliderPaddingTop" style="width: 100%" ></div>
+                                    <div id="sliderBoxPaddingTop" style="width: 100%" ></div>
                                 </div>
-                                <div class="col-xs-3" style="margin: 0px; padding: 5px 3px 0px 0px">
+                                <div class="col-xs-4" style="margin: 0px; padding: 5px 3px 0px 0px">
                                     <select name="radius" id="selectPaddingTop" class="zeroMP" style="width: 100%">
                                         <option value="px" selected="selected" title="px">px</option>
                                         <option value="mm">mm</option>
@@ -239,12 +240,12 @@ This text is styled with the text formatting properties. The heading uses the te
                         <div class="col-xs-3 zeroMP">
 
                             <div class="row zeroMP">
-                                <div class="col-xs-9 zeroMP">
+                                <div class="col-xs-8 zeroMP">
                                     <label  for="boxPaddingRight" style="display: inline">padding-right:</label>
                                     <input type="text" id="boxPaddingRight" readonly style="width: 10px; border:0; color:#f6931f; font-weight:bold;"><br>
-                                    <div id="sliderPaddingRight" style="width: 100%" ></div>
+                                    <div id="sliderBoxPaddingRight" style="width: 100%" ></div>
                                 </div>
-                                <div class="col-xs-3" style="margin: 0px; padding: 5px 3px 0px 0px">
+                                <div class="col-xs-4" style="margin: 0px; padding: 5px 3px 0px 0px">
                                     <select name="radius" id="selectPaddingRight" class="zeroMP" style="width: 100%">
                                         <option value="px" selected="selected" title="px">px</option>
                                         <option value="mm">mm</option>
@@ -261,12 +262,12 @@ This text is styled with the text formatting properties. The heading uses the te
 
                         <div class="col-xs-3 zeroMP">
                             <div class="row zeroMP">
-                                <div class="col-xs-9 zeroMP">
+                                <div class="col-xs-8 zeroMP">
                                     <label  for="boxPaddingBottom" style="display: inline">padding-bottom:</label>
                                     <input type="text" id="boxPaddingBottom" readonly style="width: 10px; border:0; color:#f6931f; font-weight:bold;"><br>
-                                    <div id="sliderPaddingBottom" style="width: 100%" ></div>
+                                    <div id="sliderBoxPaddingBottom" style="width: 100%" ></div>
                                 </div>
-                                <div class="col-xs-3" style="margin: 0px; padding: 5px 3px 0px 0px">
+                                <div class="col-xs-4" style="margin: 0px; padding: 5px 3px 0px 0px">
                                     <select name="radius" id="selectPaddingBottom" class="zeroMP" style="width: 100%">
                                         <option value="px" selected="selected" title="px">px</option>
                                         <option value="mm">mm</option>
@@ -282,12 +283,12 @@ This text is styled with the text formatting properties. The heading uses the te
                         </div>
                         <div class="col-xs-3 zeroMP">
                             <div class="row zeroMP">
-                                <div class="col-xs-9 zeroMP">
+                                <div class="col-xs-8 zeroMP">
                                     <label  for="boxPaddingLeft" style="display: inline">padding-left:</label>
                                     <input type="text" id="boxPaddingLeft" readonly style="width: 10px; border:0; color:#f6931f; font-weight:bold;"><br>
-                                    <div id="sliderPaddingLeft" style="width: 100%" ></div>
+                                    <div id="sliderBoxPaddingLeft" style="width: 100%" ></div>
                                 </div>
-                                <div class="col-xs-3" style="margin: 0px; padding: 5px 3px 0px 0px">
+                                <div class="col-xs-4" style="margin: 0px; padding: 5px 3px 0px 0px">
                                     <select name="radius" id="selectPaddingLeft" class="zeroMP" style="width: 100%">
                                         <option value="px" selected="selected" title="px">px</option>
                                         <option value="mm">mm</option>
@@ -306,12 +307,12 @@ This text is styled with the text formatting properties. The heading uses the te
                         <div class="col-xs-3 zeroMP">
 
                             <div class="row zeroMP">
-                                <div class="col-xs-9 zeroMP">
+                                <div class="col-xs-8 zeroMP">
                                     <label  for="boxMarginTop" style="display: inline">margin-top:</label>
                                     <input type="text" id="boxMarginTop" readonly style="width: 10px; border:0; color:#f6931f; font-weight:bold;"><br>
-                                    <div id="sliderMarginTop" style="width: 100%" ></div>
+                                    <div id="sliderBoxMarginTop" style="width: 100%" ></div>
                                 </div>
-                                <div class="col-xs-3" style="margin: 0px; padding: 5px 3px 0px 0px">
+                                <div class="col-xs-4" style="margin: 0px; padding: 5px 3px 0px 0px">
                                     <select name="radius" id="selectMarginTop" class="zeroMP" style="width: 100%">
                                         <option value="px" selected="selected" title="px">px</option>
                                         <option value="mm">mm</option>
@@ -328,12 +329,12 @@ This text is styled with the text formatting properties. The heading uses the te
                         <div class="col-xs-3 zeroMP">
 
                             <div class="row zeroMP">
-                                <div class="col-xs-9 zeroMP">
+                                <div class="col-xs-8 zeroMP">
                                     <label  for="boxMarginRight" style="display: inline">margin-right:</label>
                                     <input type="text" id="boxMarginRight" readonly style="width: 10px; border:0; color:#f6931f; font-weight:bold;"><br>
-                                    <div id="sliderMarginRight" style="width: 100%" ></div>
+                                    <div id="sliderBoxMarginRight" style="width: 100%" ></div>
                                 </div>
-                                <div class="col-xs-3" style="margin: 0px; padding: 5px 3px 0px 0px">
+                                <div class="col-xs-4" style="margin: 0px; padding: 5px 3px 0px 0px">
                                     <select name="radius" id="selectMarginRight" class="zeroMP" style="width: 100%">
                                         <option value="px" selected="selected" title="px">px</option>
                                         <option value="mm">mm</option>
@@ -348,12 +349,12 @@ This text is styled with the text formatting properties. The heading uses the te
                         </div>
                         <div class="col-xs-3 zeroMP">
                             <div class="row zeroMP">
-                                <div class="col-xs-9 zeroMP">
+                                <div class="col-xs-8 zeroMP">
                                     <label  for="boxMarginBottom" style="display: inline">margin-bottom:</label>
                                     <input type="text" id="boxMarginBottom" readonly style="width: 10px; border:0; color:#f6931f; font-weight:bold;"><br>
-                                    <div id="sliderMarginBottom" style="width: 100%" ></div>
+                                    <div id="sliderBoxMarginBottom" style="width: 100%" ></div>
                                 </div>
-                                <div class="col-xs-3" style="margin: 0px; padding: 5px 3px 0px 0px">
+                                <div class="col-xs-4" style="margin: 0px; padding: 5px 3px 0px 0px">
                                     <select name="radius" id="selectMarginBottom" class="zeroMP" style="width: 100%">
                                         <option value="px" selected="selected" title="px">px</option>
                                         <option value="mm">mm</option>
@@ -369,12 +370,12 @@ This text is styled with the text formatting properties. The heading uses the te
                         <div class="col-xs-3 zeroMP">
 
                             <div class="row zeroMP">
-                                <div class="col-xs-9 zeroMP">
+                                <div class="col-xs-8 zeroMP">
                                     <label  for="boxMarginLeft" style="display: inline">margin-left:</label>
                                     <input type="text" id="boxMarginLeft" readonly style="width: 10px; border:0; color:#f6931f; font-weight:bold;"><br>
-                                    <div id="sliderMarginLeft" style="width: 100%" ></div>
+                                    <div id="sliderBoxMarginLeft" style="width: 100%" ></div>
                                 </div>
-                                <div class="col-xs-3" style="margin: 0px; padding: 5px 3px 0px 0px">
+                                <div class="col-xs-4" style="margin: 0px; padding: 5px 3px 0px 0px">
                                     <select name="radius" id="selectMarginLeft" class="zeroMP" style="width: 100%">
                                         <option value="px" selected="selected" title="px">px</option>
                                         <option value="mm">mm</option>
@@ -395,12 +396,12 @@ This text is styled with the text formatting properties. The heading uses the te
                         <div class="col-xs-3 zeroMP">
 
                             <div class="row zeroMP">
-                                <div class="col-xs-9 zeroMP">
+                                <div class="col-xs-8 zeroMP">
                                     <label  for="boxBorderTopWidth" style="display: inline">border-top-width:</label>
                                     <input type="text" id="boxBorderTopWidth" readonly style="width: 10px; border:0; color:#f6931f; font-weight:bold;"><br>
-                                    <div id="sliderBorderTopWidth" style="width: 100%" ></div>
+                                    <div id="sliderBoxBorderTopWidth" style="width: 100%" ></div>
                                 </div>
-                                <div class="col-xs-3" style="margin: 0px; padding: 5px 3px 0px 0px">
+                                <div class="col-xs-4" style="margin: 0px; padding: 5px 3px 0px 0px">
                                     <select name="radius" id="selectBorderTopWidth" class="zeroMP" style="width: 100%">
                                         <option value="px" selected="selected" title="px">px</option>
                                         <option value="mm">mm</option>
@@ -416,12 +417,12 @@ This text is styled with the text formatting properties. The heading uses the te
                         <div class="col-xs-3 zeroMP">
 
                             <div class="row zeroMP">
-                                <div class="col-xs-9 zeroMP">
+                                <div class="col-xs-8 zeroMP">
                                     <label  for="boxBorderRightWidth" style="display: inline">border-right-width:</label>
                                     <input type="text" id="boxBorderRightWidth" readonly style="width: 10px; border:0; color:#f6931f; font-weight:bold;"><br>
-                                    <div id="sliderBorderRightWidth" style="width: 100%" ></div>
+                                    <div id="sliderBoxBorderRightWidth" style="width: 100%" ></div>
                                 </div>
-                                <div class="col-xs-3" style="margin: 0px; padding: 5px 3px 0px 0px">
+                                <div class="col-xs-4" style="margin: 0px; padding: 5px 3px 0px 0px">
                                     <select name="radius" id="selectBorderRightWidth" class="zeroMP" style="width: 100%">
                                         <option value="px" selected="selected" title="px">px</option>
                                         <option value="mm">mm</option>
@@ -437,12 +438,12 @@ This text is styled with the text formatting properties. The heading uses the te
                         <div class="col-xs-3 zeroMP">
 
                             <div class="row zeroMP">
-                                <div class="col-xs-9 zeroMP">
+                                <div class="col-xs-8 zeroMP">
                                     <label  for="boxBorderBottomWidth" style="display: inline">border-bottom-width:</label>
                                     <input type="text" id="boxBorderBottomWidth" readonly style="width: 10px; border:0; color:#f6931f; font-weight:bold;"><br>
-                                    <div id="sliderBorderBottomWidth" style="width: 100%" ></div>
+                                    <div id="sliderBoxBorderBottomWidth" style="width: 100%" ></div>
                                 </div>
-                                <div class="col-xs-3" style="margin: 0px; padding: 5px 3px 0px 0px">
+                                <div class="col-xs-4" style="margin: 0px; padding: 5px 3px 0px 0px">
                                     <select name="radius" id="selectBorderBottomWidth" class="zeroMP" style="width: 100%">
                                         <option value="px" selected="selected" title="px">px</option>
                                         <option value="mm">mm</option>
@@ -458,12 +459,12 @@ This text is styled with the text formatting properties. The heading uses the te
                         <div class="col-xs-3 zeroMP">
 
                             <div class="row zeroMP">
-                                <div class="col-xs-9 zeroMP">
+                                <div class="col-xs-8 zeroMP">
                                     <label  for="boxBorderLeftWidth" style="display: inline">border-left-width:</label>
                                     <input type="text" id="boxBorderLeftWidth" readonly style="width: 10px; border:0; color:#f6931f; font-weight:bold;"><br>
-                                    <div id="sliderBorderLeftWidth" style="width: 100%" ></div>
+                                    <div id="sliderBoxBorderLeftWidth" style="width: 100%" ></div>
                                 </div>
-                                <div class="col-xs-3" style="margin: 0px; padding: 5px 3px 0px 0px">
+                                <div class="col-xs-4" style="margin: 0px; padding: 5px 3px 0px 0px">
                                     <select name="radius" id="selectBorderLeftWidth" class="zeroMP" style="width: 100%">
                                         <option value="px" selected="selected" title="px">px</option>
                                         <option value="mm">mm</option>
@@ -477,6 +478,107 @@ This text is styled with the text formatting properties. The heading uses the te
                             </div>
                         </div>
                     </div>
+
+                    <!-------------------------------------Border radius-------------------------------------------------------->
+                    <div class="row">
+                        <div class="col-xs-3 zeroMP">
+
+                            <div class="row zeroMP">
+                                <div class="col-xs-8 zeroMP">
+                                    <label  for="boxBorderTopLeftRadiusH" style="display: inline">border-top-left-radius:</label>
+                                    <input type="text" id="BorderTopLeftRadiusH" readonly style="width: 10px; border:0; color:#f6931f; font-weight:bold;"><br>
+                                    <input type="text" id="BorderTopLeftRadiusV" readonly style="width: 10px; border:0; color:#f6931f; font-weight:bold;"><br>
+
+                                    <div id="sliderBoxBorderTopLeftRadiusH" style="width: 100%" ></div>
+                                    <div id="sliderBoxBorderTopLeftRadiusV" style="width: 100%" ></div>
+                                </div>
+                                <div class="col-xs-4" style="margin: 0px; padding: 5px 3px 0px 0px">
+                                    <select name="radius" id="selectBorderTopLeftRadiusH" class="zeroMP" style="width: 100%">
+                                        <option value="px" selected="selected" title="px">px</option>
+                                        <option value="mm">mm</option>
+                                        <option value="cm">cm</option>
+                                        <option value="em">em</option>
+                                        <option value="rem">rem</option>
+                                        <option value="%">%</option>
+                                    </select>
+                                    <select name="radius" id="selectBorderTopLeftRadiusV" class="zeroMP" style="width: 100%">
+                                        <option value="px" selected="selected" title="px">px</option>
+                                        <option value="mm">mm</option>
+                                        <option value="cm">cm</option>
+                                        <option value="em">em</option>
+                                        <option value="rem">rem</option>
+                                        <option value="%">%</option>
+                                    </select>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-xs-3 zeroMP">
+
+                            <div class="row zeroMP">
+                                <div class="col-xs-8 zeroMP">
+                                    <label  for="boxBorderRightWidth" style="display: inline">border-right-width:</label>
+                                    <input type="text" id="boxBorderRightWidth" readonly style="width: 10px; border:0; color:#f6931f; font-weight:bold;"><br>
+                                    <div id="sliderBoxBorderRightWidth" style="width: 100%" ></div>
+                                </div>
+                                <div class="col-xs-4" style="margin: 0px; padding: 5px 3px 0px 0px">
+                                    <select name="radius" id="selectBorderRightWidth" class="zeroMP" style="width: 100%">
+                                        <option value="px" selected="selected" title="px">px</option>
+                                        <option value="mm">mm</option>
+                                        <option value="cm">cm</option>
+                                        <option value="em">em</option>
+                                        <option value="rem">rem</option>
+                                        <option value="%">%</option>
+                                    </select>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-xs-3 zeroMP">
+
+                            <div class="row zeroMP">
+                                <div class="col-xs-8 zeroMP">
+                                    <label  for="boxBorderBottomWidth" style="display: inline">border-bottom-width:</label>
+                                    <input type="text" id="boxBorderBottomWidth" readonly style="width: 10px; border:0; color:#f6931f; font-weight:bold;"><br>
+                                    <div id="sliderBoxBorderBottomWidth" style="width: 100%" ></div>
+                                </div>
+                                <div class="col-xs-4" style="margin: 0px; padding: 5px 3px 0px 0px">
+                                    <select name="radius" id="selectBorderBottomWidth" class="zeroMP" style="width: 100%">
+                                        <option value="px" selected="selected" title="px">px</option>
+                                        <option value="mm">mm</option>
+                                        <option value="cm">cm</option>
+                                        <option value="em">em</option>
+                                        <option value="rem">rem</option>
+                                        <option value="%">%</option>
+                                    </select>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-xs-3 zeroMP">
+
+                            <div class="row zeroMP">
+                                <div class="col-xs-8 zeroMP">
+                                    <label  for="boxBorderLeftWidth" style="display: inline">border-left-width:</label>
+                                    <input type="text" id="boxBorderLeftWidth" readonly style="width: 10px; border:0; color:#f6931f; font-weight:bold;"><br>
+                                    <div id="sliderBoxBorderLeftWidth" style="width: 100%" ></div>
+                                </div>
+                                <div class="col-xs-4" style="margin: 0px; padding: 5px 3px 0px 0px">
+                                    <select name="radius" id="selectBorderLeftWidth" class="zeroMP" style="width: 100%">
+                                        <option value="px" selected="selected" title="px">px</option>
+                                        <option value="mm">mm</option>
+                                        <option value="cm">cm</option>
+                                        <option value="em">em</option>
+                                        <option value="rem">rem</option>
+                                        <option value="%">%</option>
+                                    </select>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!--------------------------------------------------------------------------------------------->
+
                 </article> 
 
             </div>
@@ -489,576 +591,955 @@ This text is styled with the text formatting properties. The heading uses the te
 
         <script src='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js'></script>
         <script>
-                var widthD = "px", widthSlider = {};
-                var boxVisual = function () {
-                    var offset = $(".contentArea").offset();
-                    var height = $(".contentArea").outerHeight(true);
-                    var width = $(".contentArea").outerWidth(true);
-                    var marginTop = parseFloat($(".contentArea").css("margin-top"));
-                    var marginLeft = parseFloat($(".contentArea").css("margin-left"));
+            var widthD = "px", widthSlider = {};
+            var boxVisual = function () {
+                var offset = $(".contentArea").offset();
+                var height = $(".contentArea").outerHeight(true);
+                var width = $(".contentArea").outerWidth(true);
+                var marginTop = parseFloat($(".contentArea").css("margin-top"));
+                var marginLeft = parseFloat($(".contentArea").css("margin-left"));
+                console.log("left  " + offset.left + " top " + offset.top);
+                $(".myFix").offset({top: offset.top - marginTop, left: offset.left - marginLeft});
+                $(".myFix").height(height).width(width);
+            }
 
-                    console.log("left  " + offset.left + " top " + offset.top);
-
-                    $(".myFix").offset({top: offset.top - marginTop, left: offset.left - marginLeft});
-                    $(".myFix").height(height).width(width);
+            var boxHW = function (property, params) {
+                var obj = {}, xxx = {}, prop;
+                switch (property) {
+                    case"Width":
+                        obj.min = 0;
+                        obj.max = 400;
+                        obj.step = 10;
+                        obj.value = 200;
+                        prop = "width";
+                        break;
+                    case"Height":
+                        obj.min = 0;
+                        obj.max = 400;
+                        obj.step = 10;
+                        obj.value = 200;
+                        prop = "height";
+                        break;
+                    case"PaddingTop":
+                        obj.min = 0;
+                        obj.max = 40;
+                        obj.step = 1;
+                        obj.value = 20;
+                        prop = "padding-top";
+                        break;
+                    case"PaddingRight":
+                        obj.min = 0;
+                        obj.max = 40;
+                        obj.step = 1;
+                        obj.value = 20;
+                        prop = "padding-right";
+                        break;
+                    case"PaddingBottom":
+                        obj.min = 0;
+                        obj.max = 40;
+                        obj.step = 1;
+                        obj.value = 20;
+                        prop = "padding-bottom";
+                        break;
+                    case"PaddingLeft":
+                        obj.min = 0;
+                        obj.max = 40;
+                        obj.step = 1;
+                        obj.value = 20;
+                        prop = "padding-left";
+                        break;
+                    case"MarginTop":
+                        obj.min = 0;
+                        obj.max = 40;
+                        obj.step = 1;
+                        obj.value = 20;
+                        prop = "margin-top";
+                        break;
+                    case"MarginRight":
+                        obj.min = 0;
+                        obj.max = 40;
+                        obj.step = 1;
+                        obj.value = 20;
+                        prop = "margin-right";
+                        break;
+                    case"MarginBottom":
+                        obj.min = 0;
+                        obj.max = 40;
+                        obj.step = 1;
+                        obj.value = 20;
+                        prop = "margin-bottom";
+                        break;
+                    case"MarginLeft":
+                        obj.min = 0;
+                        obj.max = 40;
+                        obj.step = 1;
+                        obj.value = 20;
+                        prop = "margin-left";
+                        break;
+                    case"BorderTopWidth":
+                        obj.min = 0;
+                        obj.max = 40;
+                        obj.step = 1;
+                        obj.value = 20;
+                        prop = "border-top-width";
+                        break;
+                    case"BorderRightWidth":
+                        obj.min = 0;
+                        obj.max = 40;
+                        obj.step = 1;
+                        obj.value = 20;
+                        prop = "border-right-width";
+                        break;
+                    case"BorderBottomWidth":
+                        obj.min = 0;
+                        obj.max = 40;
+                        obj.step = 1;
+                        obj.value = 20;
+                        prop = "border-bottom-width";
+                        break;
+                    case"BorderLeftWidth":
+                        obj.min = 0;
+                        obj.max = 40;
+                        obj.step = 1;
+                        obj.value = 20;
+                        prop = "border-left-width";
+                        break;
                 }
-
-                var boxHW = function (property, params) {
-                    var obj = {}, xxx = {};
-                    switch (property) {
-                        case"Width":
-                            obj.min = 0;
-                            obj.max = 400;
-                            obj.step = 10;
-                            obj.value = 200;
-                            break;
-                        case"Height":
-                            obj.min = 0;
-                            obj.max = 400;
-                            obj.step = 10;
-                            obj.value = 200;
-                            break;
-                        case"mm":
-                            obj.min = 0;
-                            obj.max = 150;
-                            obj.step = 10;
-                            obj.value = 50;
-                            break;
-                        case"em":
-                            obj.min = 0;
-                            obj.max = 50;
-                            obj.step = 1;
-                            obj.value = 25;
-                            break;
-                        case"rem":
-                            obj.min = 0;
-                            obj.max = 50;
-                            obj.step = 1;
-                            obj.value = 25;
-                            break;
-                        case"%":
-                            obj.min = 0;
-                            obj.max = 100;
-                            obj.step = 5;
-                            obj.value = 50;
-                            break;
+                xxx = params || obj;
+                var sliderBox = "#sliderBox" + property;
+                //var prop = property.toLowerCase();
+                var boxProp = "#box" + property;
+                $(sliderBox).slider({
+                    range: "min",
+                    min: xxx.min,
+                    max: xxx.max,
+                    step: xxx.step,
+                    value: xxx.value,
+                    slide: function (event, ui) {
+                        $(boxProp).val(ui.value);
+                        $(".contentArea").css(prop, ui.value + widthD);
+                        $(".contentArea").trigger("boxChange");
                     }
-                    xxx = params || obj;
-                    
-                    var sliderBox = "#sliderBox" + property;
-                    var prop = property.toLowerCase();
-                    var boxProp = "#box" + property;
+                });
+                $(boxProp).val($(sliderBox).slider("value"));
+                return obj;
+            }
 
-                    $(sliderBox).slider({
-                        range: "min",
-                        min: xxx.min,
-                        max: xxx.max,
-                        step: xxx.step,
-                        value: xxx.value,
-                        slide: function (event, ui) {
-                            $(boxProp).val(ui.value);
-                            $(".contentArea").css(prop, ui.value + widthD);
-                            $(".contentArea").trigger("boxChange");
-                        }
-                    });
-                    $(boxProp).val($(sliderBox).slider("value"));
+            var myWww = function (prop, top, right, bottom, left) {
 
-                    return obj;
+                var that = this;
+
+                this.myDefaults = {min: 0, max: 10, step: 1, value: "", unit: "", sliderElem: "", boxProp: ""};
+                this.myDefaults_1 = {min: 0, max: 10, step: 1, value: "20", unit: "px", sliderElem: "", boxProp: ""};
+
+                this.paramsTop = top || this.myDefaults;
+                this.paramsRight = right || this.myDefaults_1;
+                this.paramsBottom = bottom || this.myDefaults;
+                this.paramsLeft = left || this.myDefaults;
+
+
+
+                this.sliderTop = $(that.paramsTop.sliderElem).slider({
+                    range: "min",
+                    min: that.paramsTop.min,
+                    max: that.paramsTop.max,
+                    step: that.paramsTop.step,
+                    value: that.paramsTop.value,
+                    slide: function (event, ui) {
+                        $(that.paramsTop.boxProp).val(ui.value);
+                        that.paramsTop.value = ui.value;
+                        
+                                             
+                        $(".contentArea").css(prop,
+                                that.paramsTop.value + that.paramsTop.unit +" "
+                                + that.paramsRight.value + that.paramsRight.unit+" "
+                                + that.paramsBottom.value + that.paramsBottom.unit+" "
+                                + that.paramsLeft.value + that.paramsLeft.unit);
+                        $(".contentArea").trigger("boxChange");
+                    }
+                });
+                this.sliderRight = $(that.paramsRight.sliderElem).slider({
+                    range: "min",
+                    min: that.paramsRight.min,
+                    max: that.paramsRight.max,
+                    step: that.paramsRight.step,
+                    value: that.paramsRight.value,
+                    slide: function (event, ui) {
+                        $(that.paramsRight.boxProp).val(ui.value);
+                        that.paramsRight.value = ui.value;
+                        $(".contentArea").css(prop,
+                                that.paramsTop.value + that.paramsTop.unit + " "
+                                + that.paramsRight.value + that.paramsRight.unit + " "
+                                + that.paramsBottom.value + that.paramsBottom.unit+ " "
+                                + that.paramsLeft.value + that.paramsLeft.unit);
+                        $(".contentArea").trigger("boxChange");
+                    }
+                });
+
+                this.sliderBottom = $(that.paramsBottom.sliderElem).slider({
+                    range: "min",
+                    min: that.paramsBottom.min,
+                    max: that.paramsBottom.max,
+                    step: that.paramsBottom.step,
+                    value: that.paramsBottom.value,
+                    slide: function (event, ui) {
+                        $(that.paramsBottom.boxProp).val(ui.value);
+                        that.paramsTop.value = ui.value;
+                        $(".contentArea").css(prop,
+                                that.paramsTop.value + that.paramsTop.unit +" "
+                                + that.paramsRight.value + that.paramsRight.unit + " "
+                                + that.paramsBottom.value + that.paramsBottom.unit + " "
+                                + that.paramsLeft.value + that.paramsLeft.unit);
+                        $(".contentArea").trigger("boxChange");
+                    }
+                });
+
+                this.sliderLeft = $(that.paramsLeft.sliderElem).slider({
+                    range: "min",
+                    min: that.paramsLeft.min,
+                    max: that.paramsLeft.max,
+                    step: that.paramsLeft.step,
+                    value: that.paramsLeft.value,
+                    slide: function (event, ui) {
+                        $(that.paramsLeft.boxProp).val(ui.value);
+                        that.paramsTop.value = ui.value;
+                        $(".contentArea").css(prop,
+                                that.paramsTop.value + that.paramsTop.unit + " "
+                                + that.paramsRight.value + that.paramsRight.unit + " "
+                                + that.paramsBottom.value + that.paramsBottom.unit + " "
+                                + that.paramsLeft.value + that.paramsLeft.unit);
+                        $(".contentArea").trigger("boxChange");
+                    }
+                });
+
+                this.init = function (top, right, bottom, left) {
+
+
+
                 }
+            }
 
-                $(function () {
 
+
+
+
+
+            $(function () {
+
+                boxVisual();
+                boxHW("Width");
+                boxHW("Height");
+                boxHW("PaddingTop");
+                boxHW("PaddingRight");
+                boxHW("PaddingBottom");
+                boxHW("PaddingLeft");
+                boxHW("MarginTop");
+                boxHW("MarginRight");
+                boxHW("MarginBottom");
+                boxHW("MarginLeft");
+                boxHW("BorderTopWidth");
+                boxHW("BorderRightWidth");
+                boxHW("BorderBottomWidth");
+                boxHW("BorderLeftWidth");
+                $(window).on("scroll resize", function () {
                     boxVisual();
-                    boxHW("Width");
-                    boxHW("Height");
-                    $(window).on("scroll resize", function () {
-                        boxVisual();
-                    });
+                });
+
+                var proba = new myWww("border-top-left-radius", Top = {
+                    min: 0, max: 20, step: 1, value: 5, unit: "px",
+                    sliderElem: "#sliderBoxBorderTopLeftRadiusH", boxProp: "#BorderTopLeftRadiusH"},
+                Right = {
+                    min: 0, max: 20, step: 1, value: 5, unit: "px",
+                    sliderElem: "#sliderBoxBorderTopLeftRadiusV", boxProp: "#BorderTopLeftRadiusV"}
+        
+        );
+                /*********************************Custom event******************************************************/
+
+                $(".contentArea").on("boxChange", function () {
+                    boxVisual();
+                })
+                /*********************************Width slider******************************************************/
 
 
 
-                    /*********************************Custom event******************************************************/
-
-                    $(".contentArea").on("boxChange", function () {
-                        boxVisual();
-                    })
-                    /*********************************Width slider******************************************************/
-
-
-
-                    $("#selectWidth").selectmenu({
-                        change: function (event, data) {
-                            var objD = {};
-                            widthD = data.item.value;
-                            switch (widthD) {
-                                case"px":
-                                    objD.min = 0;
-                                    objD.max = 400;
-                                    objD.step = 10;
-                                    objD.value = 200;
-                                    break;
-                                case"cm":
-                                    objD.min = 0;
-                                    objD.max = 10;
-                                    objD.step = 1;
-                                    objD.value = 5;
-                                    break;
-                                case"mm":
-                                    objD.min = 0;
-                                    objD.max = 150;
-                                    objD.step = 10;
-                                    objD.value = 50;
-                                    break;
-                                case"em":
-                                    objD.min = 0;
-                                    objD.max = 50;
-                                    objD.step = 1;
-                                    objD.value = 25;
-                                    break;
-                                case"rem":
-                                    objD.min = 0;
-                                    objD.max = 50;
-                                    objD.step = 1;
-                                    objD.value = 25;
-                                    break;
-                                case"%":
-                                    objD.min = 0;
-                                    objD.max = 100;
-                                    objD.step = 5;
-                                    objD.value = 50;
-                                    break;
-                            }
-                            
-                            boxHW("Width",objD);
+                $("#selectWidth").selectmenu({
+                    change: function (event, data) {
+                        var objD = {};
+                        widthD = data.item.value;
+                        switch (widthD) {
+                            case"px":
+                                objD.min = 0;
+                                objD.max = 400;
+                                objD.step = 10;
+                                objD.value = 200;
+                                break;
+                            case"cm":
+                                objD.min = 0;
+                                objD.max = 10;
+                                objD.step = 1;
+                                objD.value = 5;
+                                break;
+                            case"mm":
+                                objD.min = 0;
+                                objD.max = 150;
+                                objD.step = 10;
+                                objD.value = 50;
+                                break;
+                            case"em":
+                                objD.min = 0;
+                                objD.max = 50;
+                                objD.step = 1;
+                                objD.value = 25;
+                                break;
+                            case"rem":
+                                objD.min = 0;
+                                objD.max = 50;
+                                objD.step = 1;
+                                objD.value = 25;
+                                break;
+                            case"%":
+                                objD.min = 0;
+                                objD.max = 100;
+                                objD.step = 5;
+                                objD.value = 50;
+                                break;
                         }
-                    });
 
+                        boxHW("Width", objD);
+                    }
+                });
+                /*********************************Hight slider******************************************************/
 
-
-
-
-
-
-                    /*********************************Hight slider******************************************************/
-                    
-                    $("#selectHeight").selectmenu({
-                        change: function (event, data) {
-                            var objD = {};
-                            widthD = data.item.value;
-                            switch (widthD) {
-                                case"px":
-                                    objD.min = 0;
-                                    objD.max = 400;
-                                    objD.step = 10;
-                                    objD.value = 200;
-                                    break;
-                                case"cm":
-                                    objD.min = 0;
-                                    objD.max = 10;
-                                    objD.step = 1;
-                                    objD.value = 5;
-                                    break;
-                                case"mm":
-                                    objD.min = 0;
-                                    objD.max = 150;
-                                    objD.step = 10;
-                                    objD.value = 50;
-                                    break;
-                                case"em":
-                                    objD.min = 0;
-                                    objD.max = 50;
-                                    objD.step = 1;
-                                    objD.value = 25;
-                                    break;
-                                case"rem":
-                                    objD.min = 0;
-                                    objD.max = 50;
-                                    objD.step = 1;
-                                    objD.value = 25;
-                                    break;
-                                case"%":
-                                    objD.min = 0;
-                                    objD.max = 100;
-                                    objD.step = 5;
-                                    objD.value = 50;
-                                    break;
-                            }
-                            
-                            boxHW("Height",objD);
+                $("#selectHeight").selectmenu({
+                    change: function (event, data) {
+                        var objD = {};
+                        widthD = data.item.value;
+                        switch (widthD) {
+                            case"px":
+                                objD.min = 0;
+                                objD.max = 400;
+                                objD.step = 10;
+                                objD.value = 200;
+                                break;
+                            case"cm":
+                                objD.min = 0;
+                                objD.max = 10;
+                                objD.step = 1;
+                                objD.value = 5;
+                                break;
+                            case"mm":
+                                objD.min = 0;
+                                objD.max = 150;
+                                objD.step = 10;
+                                objD.value = 50;
+                                break;
+                            case"em":
+                                objD.min = 0;
+                                objD.max = 50;
+                                objD.step = 1;
+                                objD.value = 25;
+                                break;
+                            case"rem":
+                                objD.min = 0;
+                                objD.max = 50;
+                                objD.step = 1;
+                                objD.value = 25;
+                                break;
+                            case"%":
+                                objD.min = 0;
+                                objD.max = 100;
+                                objD.step = 5;
+                                objD.value = 50;
+                                break;
                         }
-                    });
+
+                        boxHW("Height", objD);
+                    }
+                });
+                /*********************************PaddingTop slider******************************************************/
 
 
-                  
-                    /*********************************PaddingTop slider******************************************************/
-
-                    $("#sliderPaddingTop").slider({
-                        range: "min",
-                        min: 0,
-                        max: 30,
-                        step: 1,
-                        value: 10,
-                        slide: function (event, ui) {
-                            $("#boxPaddingTop").val(ui.value);
-                            $(".contentArea").css("padding-top", ui.value + "px");
-
-                            $(".contentArea").trigger("boxChange");
+                $("#selectPaddingTop").selectmenu({
+                    change: function (event, data) {
+                        var objD = {};
+                        widthD = data.item.value;
+                        switch (widthD) {
+                            case"px":
+                                objD.min = 0;
+                                objD.max = 40;
+                                objD.step = 1;
+                                objD.value = 20;
+                                break;
+                            case"cm":
+                                objD.min = 0;
+                                objD.max = 1;
+                                objD.step = 0.01;
+                                objD.value = 0.5;
+                                break;
+                            case"mm":
+                                objD.min = 0;
+                                objD.max = 10;
+                                objD.step = 0.1;
+                                objD.value = 5;
+                                break;
+                            case"em":
+                                objD.min = 0;
+                                objD.max = 2;
+                                objD.step = 0.01;
+                                objD.value = 1;
+                                break;
+                            case"rem":
+                                objD.min = 0;
+                                objD.max = 2;
+                                objD.step = 0.01;
+                                objD.value = 1;
+                                break;
+                            case"%":
+                                objD.min = 0;
+                                objD.max = 20;
+                                objD.step = 0.1;
+                                objD.value = 10;
+                                break;
                         }
-                    });
-                    $("#boxPaddingTop").val($("#sliderPaddingTop").slider("value"));
-                    /*********************************PaddingRight slider******************************************************/
 
-                    $("#sliderPaddingRight").slider({
-                        range: "min",
-                        min: 0,
-                        max: 30,
-                        step: 1,
-                        value: 10,
-                        slide: function (event, ui) {
-                            $("#boxPaddingRight").val(ui.value);
-                            $(".contentArea").css("padding-right", ui.value + "px");
+                        boxHW("PaddingTop", objD);
+                    }
+                });
+                /*********************************PaddingRight slider******************************************************/
 
-                            $(".contentArea").trigger("boxChange");
+                $("#selectPaddingRight").selectmenu({
+                    change: function (event, data) {
+                        var objD = {};
+                        widthD = data.item.value;
+                        switch (widthD) {
+                            case"px":
+                                objD.min = 0;
+                                objD.max = 40;
+                                objD.step = 1;
+                                objD.value = 20;
+                                break;
+                            case"cm":
+                                objD.min = 0;
+                                objD.max = 1;
+                                objD.step = 0.01;
+                                objD.value = 0.5;
+                                break;
+                            case"mm":
+                                objD.min = 0;
+                                objD.max = 10;
+                                objD.step = 0.1;
+                                objD.value = 5;
+                                break;
+                            case"em":
+                                objD.min = 0;
+                                objD.max = 2;
+                                objD.step = 0.01;
+                                objD.value = 1;
+                                break;
+                            case"rem":
+                                objD.min = 0;
+                                objD.max = 2;
+                                objD.step = 0.01;
+                                objD.value = 1;
+                                break;
+                            case"%":
+                                objD.min = 0;
+                                objD.max = 20;
+                                objD.step = 0.1;
+                                objD.value = 10;
+                                break;
                         }
-                    });
-                    $("#boxPaddingRight").val($("#sliderPaddingRight").slider("value"));
-                    /*********************************PaddingBottom slider******************************************************/
 
-                    $("#sliderPaddingBottom").slider({
-                        range: "min",
-                        min: 0,
-                        max: 30,
-                        step: 1,
-                        value: 10,
-                        slide: function (event, ui) {
-                            $("#boxPaddingBottom").val(ui.value);
-                            $(".contentArea").css("padding-bottom", ui.value + "px");
+                        boxHW("PaddingRight", objD);
+                    }
+                });
+                /*********************************PaddingBottom slider******************************************************/
 
-                            $(".contentArea").trigger("boxChange");
+                $("#selectPaddingBottom").selectmenu({
+                    change: function (event, data) {
+                        var objD = {};
+                        widthD = data.item.value;
+                        switch (widthD) {
+                            case"px":
+                                objD.min = 0;
+                                objD.max = 40;
+                                objD.step = 1;
+                                objD.value = 20;
+                                break;
+                            case"cm":
+                                objD.min = 0;
+                                objD.max = 1;
+                                objD.step = 0.01;
+                                objD.value = 0.5;
+                                break;
+                            case"mm":
+                                objD.min = 0;
+                                objD.max = 10;
+                                objD.step = 0.1;
+                                objD.value = 5;
+                                break;
+                            case"em":
+                                objD.min = 0;
+                                objD.max = 2;
+                                objD.step = 0.01;
+                                objD.value = 1;
+                                break;
+                            case"rem":
+                                objD.min = 0;
+                                objD.max = 2;
+                                objD.step = 0.01;
+                                objD.value = 1;
+                                break;
+                            case"%":
+                                objD.min = 0;
+                                objD.max = 20;
+                                objD.step = 0.1;
+                                objD.value = 10;
+                                break;
                         }
-                    });
-                    $("#boxPaddingBottom").val($("#sliderPaddingBottom").slider("value"));
 
-                    /*********************************PaddingLeft slider******************************************************/
+                        boxHW("PaddingBottom", objD);
+                    }
+                });
+                /*********************************PaddingLeft slider******************************************************/
 
-                    $("#sliderPaddingLeft").slider({
-                        range: "min",
-                        min: 0,
-                        max: 30,
-                        step: 1,
-                        value: 10,
-                        slide: function (event, ui) {
-                            $("#boxPaddingLeft").val(ui.value);
-                            $(".contentArea").css("padding-left", ui.value + "px");
-
-                            $(".contentArea").trigger("boxChange");
+                $("#selectPaddingLeft").selectmenu({
+                    change: function (event, data) {
+                        var objD = {};
+                        widthD = data.item.value;
+                        switch (widthD) {
+                            case"px":
+                                objD.min = 0;
+                                objD.max = 40;
+                                objD.step = 1;
+                                objD.value = 20;
+                                break;
+                            case"cm":
+                                objD.min = 0;
+                                objD.max = 1;
+                                objD.step = 0.01;
+                                objD.value = 0.5;
+                                break;
+                            case"mm":
+                                objD.min = 0;
+                                objD.max = 10;
+                                objD.step = 0.1;
+                                objD.value = 5;
+                                break;
+                            case"em":
+                                objD.min = 0;
+                                objD.max = 2;
+                                objD.step = 0.01;
+                                objD.value = 1;
+                                break;
+                            case"rem":
+                                objD.min = 0;
+                                objD.max = 2;
+                                objD.step = 0.01;
+                                objD.value = 1;
+                                break;
+                            case"%":
+                                objD.min = 0;
+                                objD.max = 20;
+                                objD.step = 0.1;
+                                objD.value = 10;
+                                break;
                         }
-                    });
-                    $("#boxPaddingLeft").val($("#sliderPaddingLeft").slider("value"));
 
-                    /*********************************MarginTop slider******************************************************/
+                        boxHW("PaddingLeft", objD);
+                    }
+                });
+                /*********************************MarginTop slider******************************************************/
 
-                    $("#sliderMarginTop").slider({
-                        range: "min",
-                        min: 0,
-                        max: 30,
-                        step: 1,
-                        value: 10,
-                        slide: function (event, ui) {
-                            $("#boxMarginTop").val(ui.value);
-                            $(".contentArea").css("margin-top", ui.value + "px");
-
-                            $(".contentArea").trigger("boxChange");
+                $("#selectMarginTop").selectmenu({
+                    change: function (event, data) {
+                        var objD = {};
+                        widthD = data.item.value;
+                        switch (widthD) {
+                            case"px":
+                                objD.min = 0;
+                                objD.max = 40;
+                                objD.step = 1;
+                                objD.value = 20;
+                                break;
+                            case"cm":
+                                objD.min = 0;
+                                objD.max = 1;
+                                objD.step = 0.01;
+                                objD.value = 0.5;
+                                break;
+                            case"mm":
+                                objD.min = 0;
+                                objD.max = 10;
+                                objD.step = 0.1;
+                                objD.value = 5;
+                                break;
+                            case"em":
+                                objD.min = 0;
+                                objD.max = 2;
+                                objD.step = 0.01;
+                                objD.value = 1;
+                                break;
+                            case"rem":
+                                objD.min = 0;
+                                objD.max = 2;
+                                objD.step = 0.01;
+                                objD.value = 1;
+                                break;
+                            case"%":
+                                objD.min = 0;
+                                objD.max = 20;
+                                objD.step = 0.1;
+                                objD.value = 10;
+                                break;
                         }
-                    });
-                    $("#boxMarginTop").val($("#sliderMarginTop").slider("value"));
 
-                    /*********************************MarginRight slider******************************************************/
+                        boxHW("MarginTop", objD);
+                    }
+                });
+                /*********************************MarginRight slider******************************************************/
 
-                    $("#sliderMarginRight").slider({
-                        range: "min",
-                        min: 0,
-                        max: 30,
-                        step: 1,
-                        value: 10,
-                        slide: function (event, ui) {
-                            $("#boxMarginRight").val(ui.value);
-                            $(".contentArea").css("margin-right", ui.value + "px");
-
-                            $(".contentArea").trigger("boxChange");
+                $("#selectMarginRight").selectmenu({
+                    change: function (event, data) {
+                        var objD = {};
+                        widthD = data.item.value;
+                        switch (widthD) {
+                            case"px":
+                                objD.min = 0;
+                                objD.max = 40;
+                                objD.step = 1;
+                                objD.value = 20;
+                                break;
+                            case"cm":
+                                objD.min = 0;
+                                objD.max = 1;
+                                objD.step = 0.01;
+                                objD.value = 0.5;
+                                break;
+                            case"mm":
+                                objD.min = 0;
+                                objD.max = 10;
+                                objD.step = 0.1;
+                                objD.value = 5;
+                                break;
+                            case"em":
+                                objD.min = 0;
+                                objD.max = 2;
+                                objD.step = 0.01;
+                                objD.value = 1;
+                                break;
+                            case"rem":
+                                objD.min = 0;
+                                objD.max = 2;
+                                objD.step = 0.01;
+                                objD.value = 1;
+                                break;
+                            case"%":
+                                objD.min = 0;
+                                objD.max = 20;
+                                objD.step = 0.1;
+                                objD.value = 10;
+                                break;
                         }
-                    });
-                    $("#boxMarginRight").val($("#sliderMarginRight").slider("value"));
 
-                    /*********************************MarginBottom slider******************************************************/
+                        boxHW("MarginRight", objD);
+                    }
+                });
+                /*********************************MarginBottom slider******************************************************/
 
-                    $("#sliderMarginBottom").slider({
-                        range: "min",
-                        min: 0,
-                        max: 30,
-                        step: 1,
-                        value: 10,
-                        slide: function (event, ui) {
-                            $("#boxMarginBottom").val(ui.value);
-                            $(".contentArea").css("margin-bottom", ui.value + "px");
-
-                            $(".contentArea").trigger("boxChange");
+                $("#selectMarginBottom").selectmenu({
+                    change: function (event, data) {
+                        var objD = {};
+                        widthD = data.item.value;
+                        switch (widthD) {
+                            case"px":
+                                objD.min = 0;
+                                objD.max = 40;
+                                objD.step = 1;
+                                objD.value = 20;
+                                break;
+                            case"cm":
+                                objD.min = 0;
+                                objD.max = 1;
+                                objD.step = 0.01;
+                                objD.value = 0.5;
+                                break;
+                            case"mm":
+                                objD.min = 0;
+                                objD.max = 10;
+                                objD.step = 0.1;
+                                objD.value = 5;
+                                break;
+                            case"em":
+                                objD.min = 0;
+                                objD.max = 2;
+                                objD.step = 0.01;
+                                objD.value = 1;
+                                break;
+                            case"rem":
+                                objD.min = 0;
+                                objD.max = 2;
+                                objD.step = 0.01;
+                                objD.value = 1;
+                                break;
+                            case"%":
+                                objD.min = 0;
+                                objD.max = 20;
+                                objD.step = 0.1;
+                                objD.value = 10;
+                                break;
                         }
-                    });
-                    $("#boxMarginBottom").val($("#sliderMarginBottom").slider("value"));
 
-                    /*********************************MarginLeft slider******************************************************/
+                        boxHW("MarginBottom", objD);
+                    }
+                });
+                /*********************************MarginLeft slider******************************************************/
 
-                    $("#sliderMarginLeft").slider({
-                        range: "min",
-                        min: 0,
-                        max: 30,
-                        step: 1,
-                        value: 10,
-                        slide: function (event, ui) {
-                            $("#boxMarginLeft").val(ui.value);
-                            $(".contentArea").css("margin-left", ui.value + "px");
-
-                            $(".contentArea").trigger("boxChange");
+                $("#selectMarginLeft").selectmenu({
+                    change: function (event, data) {
+                        var objD = {};
+                        widthD = data.item.value;
+                        switch (widthD) {
+                            case"px":
+                                objD.min = 0;
+                                objD.max = 40;
+                                objD.step = 1;
+                                objD.value = 20;
+                                break;
+                            case"cm":
+                                objD.min = 0;
+                                objD.max = 1;
+                                objD.step = 0.01;
+                                objD.value = 0.5;
+                                break;
+                            case"mm":
+                                objD.min = 0;
+                                objD.max = 10;
+                                objD.step = 0.1;
+                                objD.value = 5;
+                                break;
+                            case"em":
+                                objD.min = 0;
+                                objD.max = 2;
+                                objD.step = 0.01;
+                                objD.value = 1;
+                                break;
+                            case"rem":
+                                objD.min = 0;
+                                objD.max = 2;
+                                objD.step = 0.01;
+                                objD.value = 1;
+                                break;
+                            case"%":
+                                objD.min = 0;
+                                objD.max = 20;
+                                objD.step = 0.1;
+                                objD.value = 10;
+                                break;
                         }
-                    });
-                    $("#boxMarginLeft").val($("#sliderMarginLeft").slider("value"));
 
+                        boxHW("MarginLeft", objD);
+                    }
+                });
+                /*********************************BorderTopWidth slider******************************************************/
 
-                    /*********************************BorderTopWidth slider******************************************************/
-
-                    $("#sliderBorderTopWidth").slider({
-                        range: "min",
-                        min: 0,
-                        max: 30,
-                        step: 1,
-                        value: 10,
-                        slide: function (event, ui) {
-                            $("#boxBorderTopWidth").val(ui.value);
-                            $(".contentArea").css("border-top-width", ui.value + "px");
-
-                            $(".contentArea").trigger("boxChange");
+                $("#selectBorderTopWidth").selectmenu({
+                    change: function (event, data) {
+                        var objD = {};
+                        widthD = data.item.value;
+                        switch (widthD) {
+                            case"px":
+                                objD.min = 0;
+                                objD.max = 40;
+                                objD.step = 1;
+                                objD.value = 20;
+                                break;
+                            case"cm":
+                                objD.min = 0;
+                                objD.max = 1;
+                                objD.step = 0.01;
+                                objD.value = 0.5;
+                                break;
+                            case"mm":
+                                objD.min = 0;
+                                objD.max = 10;
+                                objD.step = 0.1;
+                                objD.value = 5;
+                                break;
+                            case"em":
+                                objD.min = 0;
+                                objD.max = 2;
+                                objD.step = 0.01;
+                                objD.value = 1;
+                                break;
+                            case"rem":
+                                objD.min = 0;
+                                objD.max = 2;
+                                objD.step = 0.01;
+                                objD.value = 1;
+                                break;
+                            case"%":
+                                objD.min = 0;
+                                objD.max = 20;
+                                objD.step = 0.1;
+                                objD.value = 10;
+                                break;
                         }
-                    });
-                    $("#boxBorderTopWidth").val($("#sliderBorderTopWidth").slider("value"));
 
-                    /*********************************BorderRightWidth slider******************************************************/
+                        boxHW("BorderTopWidth", objD);
+                    }
+                });
+                /*********************************BorderRightWidth slider******************************************************/
 
-                    $("#sliderBorderRightWidth").slider({
-                        range: "min",
-                        min: 0,
-                        max: 30,
-                        step: 1,
-                        value: 10,
-                        slide: function (event, ui) {
-                            $("#boxBorderRightWidth").val(ui.value);
-                            $(".contentArea").css("border-right-width", ui.value + "px");
-
-                            $(".contentArea").trigger("boxChange");
+                $("#selectBorderRightWidth").selectmenu({
+                    change: function (event, data) {
+                        var objD = {};
+                        widthD = data.item.value;
+                        switch (widthD) {
+                            case"px":
+                                objD.min = 0;
+                                objD.max = 40;
+                                objD.step = 1;
+                                objD.value = 20;
+                                break;
+                            case"cm":
+                                objD.min = 0;
+                                objD.max = 1;
+                                objD.step = 0.01;
+                                objD.value = 0.5;
+                                break;
+                            case"mm":
+                                objD.min = 0;
+                                objD.max = 10;
+                                objD.step = 0.1;
+                                objD.value = 5;
+                                break;
+                            case"em":
+                                objD.min = 0;
+                                objD.max = 2;
+                                objD.step = 0.01;
+                                objD.value = 1;
+                                break;
+                            case"rem":
+                                objD.min = 0;
+                                objD.max = 2;
+                                objD.step = 0.01;
+                                objD.value = 1;
+                                break;
+                            case"%":
+                                objD.min = 0;
+                                objD.max = 20;
+                                objD.step = 0.1;
+                                objD.value = 10;
+                                break;
                         }
-                    });
-                    $("#boxBorderRightWidth").val($("#sliderBorderRightWidth").slider("value"));
 
-                    /*********************************BorderBottomWidth slider******************************************************/
+                        boxHW("BorderRightWidth", objD);
+                    }
+                });
+                /*********************************BorderBottomWidth slider******************************************************/
 
-                    $("#sliderBorderBottomWidth").slider({
-                        range: "min",
-                        min: 0,
-                        max: 30,
-                        step: 1,
-                        value: 10,
-                        slide: function (event, ui) {
-                            $("#boxBorderBottomWidth").val(ui.value);
-                            $(".contentArea").css("border-bottom-width", ui.value + "px");
-
-                            $(".contentArea").trigger("boxChange");
+                $("#selectBorderBottomWidth").selectmenu({
+                    change: function (event, data) {
+                        var objD = {};
+                        widthD = data.item.value;
+                        switch (widthD) {
+                            case"px":
+                                objD.min = 0;
+                                objD.max = 40;
+                                objD.step = 1;
+                                objD.value = 20;
+                                break;
+                            case"cm":
+                                objD.min = 0;
+                                objD.max = 1;
+                                objD.step = 0.01;
+                                objD.value = 0.5;
+                                break;
+                            case"mm":
+                                objD.min = 0;
+                                objD.max = 10;
+                                objD.step = 0.1;
+                                objD.value = 5;
+                                break;
+                            case"em":
+                                objD.min = 0;
+                                objD.max = 2;
+                                objD.step = 0.01;
+                                objD.value = 1;
+                                break;
+                            case"rem":
+                                objD.min = 0;
+                                objD.max = 2;
+                                objD.step = 0.01;
+                                objD.value = 1;
+                                break;
+                            case"%":
+                                objD.min = 0;
+                                objD.max = 20;
+                                objD.step = 0.1;
+                                objD.value = 10;
+                                break;
                         }
-                    });
-                    $("#boxBorderBottomWidth").val($("#sliderBorderBottomWidth").slider("value"));
 
-                    /*********************************BorderLeftWidth slider******************************************************/
+                        boxHW("BorderBottomWidth", objD);
+                    }
+                });
+                /*********************************BorderLeftWidth slider******************************************************/
 
-                    $("#sliderBorderLeftWidth").slider({
-                        range: "min",
-                        min: 0,
-                        max: 30,
-                        step: 1,
-                        value: 10,
-                        slide: function (event, ui) {
-                            $("#boxBorderLeftWidth").val(ui.value);
-                            $(".contentArea").css("border-left-width", ui.value + "px");
 
-                            $(".contentArea").trigger("boxChange");
+                $("#selectBorderLeftWidth").selectmenu({
+                    change: function (event, data) {
+                        var objD = {};
+                        widthD = data.item.value;
+                        switch (widthD) {
+                            case"px":
+                                objD.min = 0;
+                                objD.max = 40;
+                                objD.step = 1;
+                                objD.value = 20;
+                                break;
+                            case"cm":
+                                objD.min = 0;
+                                objD.max = 1;
+                                objD.step = 0.01;
+                                objD.value = 0.5;
+                                break;
+                            case"mm":
+                                objD.min = 0;
+                                objD.max = 10;
+                                objD.step = 0.1;
+                                objD.value = 5;
+                                break;
+                            case"em":
+                                objD.min = 0;
+                                objD.max = 2;
+                                objD.step = 0.01;
+                                objD.value = 1;
+                                break;
+                            case"rem":
+                                objD.min = 0;
+                                objD.max = 2;
+                                objD.step = 0.01;
+                                objD.value = 1;
+                                break;
+                            case"%":
+                                objD.min = 0;
+                                objD.max = 20;
+                                objD.step = 0.1;
+                                objD.value = 10;
+                                break;
                         }
-                    });
-                    $("#boxBorderLeftWidth").val($("#sliderBorderLeftWidth").slider("value"));
 
-
-
-                    /***************************************************************************************************/
-
+                        boxHW("BorderLeftWidth", objD);
+                    }
                 });
                 /***************************************************************************************************/
 
-                $(function () {
+            });
+            /***************************************************************************************************/
 
-                    $("#tsSubmmit").click(function () {
 
-                        var props = " " + $(tsCPicker).val() + " " + $(tsXPicker).val() +
-                                "px " + $(tsYPicker).val() + "px " + $(tsBRPicker).val() + "px ";
-                        $("#tShadowCSS .val").text(function () {
-                            return props;
-                        });
-                        $("#textProp textarea").css("text-shadow", function () {
-                            return props;
-                        });
-                    });
-                    $("#tAlign a").click(function (event) {
-                        event.preventDefault();
-                        var text = $(this).text();
-                        $("#taText").text(text);
-                        $("#textProp textarea").css("text-align", function () {
-                            return text;
-                        });
-                        $("#tAlignCSS .val").text(function () {
-                            return text;
-                        });
-                    });
-                    $("#tIndent a").click(function (event) {
-                        event.preventDefault();
-                        var text = $(this).text();
-                        $("#tiText").text(text);
-                        $("#textProp textarea").css("text-indent", function () {
-                            return text;
-                        });
-                        $("#tIndentCSS .val").text(function () {
-                            return text;
-                        });
-                    });
-                    $("#tDecoration a").click(function (event) {
-                        event.preventDefault();
-                        var text = $(this).text();
-                        $("#tdText").text(text);
-                        $("#textProp textarea").css("text-decoration", function () {
-                            return text;
-                        });
-                        $("#tDecorationCSS .val").text(function () {
-                            return text;
-                        });
-                    });
-                    $("#tTransform a").click(function (event) {
-                        event.preventDefault();
-                        var text = $(this).text();
-                        $("#ttText").text(text);
-                        $("#textProp textarea").css("text-transform", function () {
-                            return text;
-                        });
-                        $("#tTtransformCSS .val").text(function () {
-                            return text;
-                        });
-                    });
-                    $("#wSpace a").click(function (event) {
-                        event.preventDefault();
-                        var text = $(this).text();
-                        $("#wsText").text(text);
-                        $("#textProp textarea").css("white-space", function () {
-                            return text;
-                        });
-                        $("#wSpaceCSS .val").text(function () {
-                            return text;
-                        });
-                    });
-                    $("#wBreak a").click(function (event) {
-                        event.preventDefault();
-                        var text = $(this).text();
-                        $("#wbText").text(text);
-                        $("#textProp textarea").css("word-break", function () {
-                            return text;
-                        });
-                        $("#wBreakCSS .val").text(function () {
-                            return text;
-                        });
-                    });
-                    $("#wSpacing a").click(function (event) {
-                        event.preventDefault();
-                        var text = $(this).text();
-                        $("#wspText").text(text);
-                        $("#textProp textarea").css("word-spacing", function () {
-                            return text;
-                        });
-                        $("#wSpacingCSS .val").text(function () {
-                            return text;
-                        });
-                    });
-                    $("#wWrap a").click(function (event) {
-                        event.preventDefault();
-                        var text = $(this).text();
-                        $("#wwText").text(text);
-                        $("#textProp textarea").css("word-wrap", function () {
-                            return text;
-                        });
-                        $("#wWrapCSS .val").text(function () {
-                            return text;
-                        });
-                    });
-                    $("#lSpacing a").click(function (event) {
-                        event.preventDefault();
-                        var text = $(this).text();
-                        $("#lsText").text(text);
-                        $("#textProp textarea").css("letter-spacing", function () {
-                            return text;
-                        });
-                        $("#lSpacingCSS .val").text(function () {
-                            return text;
-                        });
-                    });
-                    $("#lHeight a").click(function (event) {
-                        event.preventDefault();
-                        var text = $(this).text();
-                        $("#lhText").text(text);
-                        $("#textProp textarea").css("line-height", function () {
-                            return text;
-                        });
-                        $("#lHeightCSS .val").text(function () {
-                            return text;
-                        });
-                    });
-                    $("#hyphens a").click(function (event) {
-                        event.preventDefault();
-                        var text = $(this).text();
-                        $("#hyText").text(text);
-                        $("#textProp textarea").css("hyphens", function () {
-                            return text;
-                        });
-                        $("#hyphensCSS .val").text(function () {
-                            return text;
-                        });
-                    });
-                    $("#taLast a").click(function (event) {
-                        event.preventDefault();
-                        var text = $(this).text();
-                        $("#talText").text(text);
-                        $("#textProp textarea").css("text-align-last", function () {
-                            return text;
-                        });
-                        console.log(text);
-                        $("#taLastCSS .val").text(function () {
-                            return text;
-                        });
-                    });
-                    $("#tShadow a").click(function (event) {
-                        event.preventDefault();
-                        var text = $(this).text();
-                        $("#tsText").text(text);
-                        $("#textProp textarea").css("text-shadow", function () {
-                            return text;
-                        });
-                        console.log(text);
-                        $("#tShadowCSS .val").text(function () {
-                            return text;
-                        });
-                    });
-                });
         </script>
 
     </body>

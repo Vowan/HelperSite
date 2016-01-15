@@ -118,7 +118,7 @@ and open the template in the editor.
         <section class="container-fluid">
             <div class="row">
 
-                <article id="attrArticle" class="col-xs-6">
+                <article id="attrArticle" class="col-xs-5">
 
 
                     <div id="textProp" class="textProp panel panel-default">
@@ -165,7 +165,7 @@ This text is styled with the text formatting properties. The heading uses the te
 
 
                 </article>
-                <article id="browsers" class="col-xs-6" style="font-size: 0.6em;">
+                <article id="browsers" class="col-xs-7" style="font-size: 0.6em;">
 
                     <h5>Dimentions</h5>
                     <div class="row">
@@ -542,38 +542,38 @@ This text is styled with the text formatting properties. The heading uses the te
                                         <option value="%">%</option>
                                     </select>
                                 </div>
-                           
+
 
                             </div>
                         </div>
                         <div class="col-xs-3 zeroMP">
 
-                                <div class="col-xs-8 zeroMP">
-                                    <label  for="boxBorderBottomRightRadiusH" style="display: inline">border-bottom-right-radius:</label>
-                                    <input type="text" id="BorderBottomRightRadiusH" readonly style="display: inline; width: 10px; border:0; color:#f6931f; font-weight:bold;">
-                                    <input type="text" id="BorderBottomRightRadiusV" readonly style="display: inline; width: 10px; border:0; color:#f6931f; font-weight:bold;">
+                            <div class="col-xs-8 zeroMP">
+                                <label  for="boxBorderBottomRightRadiusH" style="display: inline">border-bottom-right-radius:</label>
+                                <input type="text" id="BorderBottomRightRadiusH" readonly style="display: inline; width: 10px; border:0; color:#f6931f; font-weight:bold;">
+                                <input type="text" id="BorderBottomRightRadiusV" readonly style="display: inline; width: 10px; border:0; color:#f6931f; font-weight:bold;">
 
-                                    <div id="sliderBoxBorderBottomRightRadiusH" style="width: 100%" ></div>
-                                    <div id="sliderBoxBorderBottomRightRadiusV" style="width: 100%" ></div>
-                                </div>
-                                <div class="col-xs-4" style="margin: 0px; padding: 5px 3px 0px 0px">
-                                    <select name="radius" id="selectBorderBottomRightRadiusH" class="zeroMP" style="width: 100%">
-                                        <option value="px" selected="selected" title="px">px</option>
-                                        <option value="mm">mm</option>
-                                        <option value="cm">cm</option>
-                                        <option value="em">em</option>
-                                        <option value="rem">rem</option>
-                                        <option value="%">%</option>
-                                    </select>
-                                    <select name="radius" id="selectBorderBottomRightRadiusV" class="zeroMP" style="width: 100%">
-                                        <option value="px" selected="selected" title="px">px</option>
-                                        <option value="mm">mm</option>
-                                        <option value="cm">cm</option>
-                                        <option value="em">em</option>
-                                        <option value="rem">rem</option>
-                                        <option value="%">%</option>
-                                    </select>
-                                </div>
+                                <div id="sliderBoxBorderBottomRightRadiusH" style="width: 100%" ></div>
+                                <div id="sliderBoxBorderBottomRightRadiusV" style="width: 100%" ></div>
+                            </div>
+                            <div class="col-xs-4" style="margin: 0px; padding: 5px 3px 0px 0px">
+                                <select name="radius" id="selectBorderBottomRightRadiusH" class="zeroMP" style="width: 100%">
+                                    <option value="px" selected="selected" title="px">px</option>
+                                    <option value="mm">mm</option>
+                                    <option value="cm">cm</option>
+                                    <option value="em">em</option>
+                                    <option value="rem">rem</option>
+                                    <option value="%">%</option>
+                                </select>
+                                <select name="radius" id="selectBorderBottomRightRadiusV" class="zeroMP" style="width: 100%">
+                                    <option value="px" selected="selected" title="px">px</option>
+                                    <option value="mm">mm</option>
+                                    <option value="cm">cm</option>
+                                    <option value="em">em</option>
+                                    <option value="rem">rem</option>
+                                    <option value="%">%</option>
+                                </select>
+                            </div>
 
                         </div>
                         <div class="col-xs-3 zeroMP">
@@ -609,1187 +609,2744 @@ This text is styled with the text formatting properties. The heading uses the te
                             </div>
                         </div>
                     </div>
-                    <!--------------------------------------------------------------------------------------------->
+                    <!-----------------------------------------Border style---------------------------------------------------->
+                    <div class="row">
+                        <div class="col-xs-3 zeroMP " style="padding: 4px;">
+                            <label  for="selectBorderTopStyle" style="display: inline">border-top-style:</label>
 
-                </article> 
+                            <select name="radius" id="selectBorderTopStyle" class="zeroMP" style=" width: 100%">
+                                <option value="none" selected="selected" title="none">none</option>
+                                <option value="hidden">hidden</option>
+                                <option value="dotted">dotted</option>
+                                <option value="dashed">dashed</option>
+                                <option value="solid">solid</option>
+                                <option value="double">double</option>
+                                <option value="groove">groove</option>
+                                <option value="ridge">ridge</option>
+                                <option value="inset">inset</option>
+                                <option value="inset">outset</option>
+                            </select>
 
+                        </div>
+                        <div class="col-xs-3 zeroMP " style="padding: 4px;">
+                            <label  for="selectBorderRightStyle" style="display: inline">border-right-style:</label>
+
+                            <select name="radius" id="selectBorderRightStyle" class="zeroMP" style=" width: 100%">
+                                <option value="none" selected="selected" title="none">none</option>
+                                <option value="hidden">hidden</option>
+                                <option value="dotted">dotted</option>
+                                <option value="dashed">dashed</option>
+                                <option value="solid">solid</option>
+                                <option value="double">double</option>
+                                <option value="groove">groove</option>
+                                <option value="ridge">ridge</option>
+                                <option value="inset">inset</option>
+                                <option value="inset">outset</option>
+                            </select>
+                        </div>
+
+                        <div class="col-xs-3 zeroMP " style="padding: 4px;">
+                            <label  for="selectBorderBottomStyle" style="display: inline">border-bottom-style:</label>
+
+                            <select name="radius" id="selectBorderBottomStyle" class="zeroMP" style=" width: 100%">
+                                <option value="none" selected="selected" title="none">none</option>
+                                <option value="hidden">hidden</option>
+                                <option value="dotted">dotted</option>
+                                <option value="dashed">dashed</option>
+                                <option value="solid">solid</option>
+                                <option value="double">double</option>
+                                <option value="groove">groove</option>
+                                <option value="ridge">ridge</option>
+                                <option value="inset">inset</option>
+                                <option value="inset">outset</option>
+                            </select>
+                        </div>
+                        <div class="col-xs-3 zeroMP " style="padding: 4px;">
+                            <label  for="selectBorderLeftStyle" style="display: inline">border-left-style:</label>
+
+                            <select name="radius" id="selectBorderLeftStyle" class="zeroMP" style=" width: 100%">
+                                <option value="none" selected="selected" title="none">none</option>
+                                <option value="hidden">hidden</option>
+                                <option value="dotted">dotted</option>
+                                <option value="dashed">dashed</option>
+                                <option value="solid">solid</option>
+                                <option value="double">double</option>
+                                <option value="groove">groove</option>
+                                <option value="ridge">ridge</option>
+                                <option value="inset">inset</option>
+                                <option value="inset">outset</option>
+                            </select>
+                        </div>
+
+                    </div>
+
+                    <!------------------------------------------Border color--------------------------------------------------->
+                    <div class="row">
+                        <div class="col-xs-3 zeroMP " style="padding: 4px;">
+                            <label  for="selectBorderTopColor" style="display: inline">border-top-color:</label>
+
+                            <input type="color" name="selectBorderTopColor">
+
+                        </div>
+                        <div class="col-xs-3 zeroMP " style="padding: 4px;">
+                            <label  for="selectBorderRightColor" style="display: inline">border-right-color:</label>
+
+                            <input type="color" name="selectBorderRightColor">
+
+                        </div>
+
+                        <div class="col-xs-3 zeroMP " style="padding: 4px;">
+                            <label  for="selectBorderBottomColor" style="display: inline">border-bottom-color:</label>
+
+                            <input type="color" name="selectBorderBottomColor" style="width: 35px;">
+
+                        </div>
+                        <div class="col-xs-3 zeroMP " style="padding: 2px;">
+                            <label  for="selectBorderLeftColor" style="display: inline">border-left-color:</label>
+
+                            <input type="color" name="selectBorderLeftColor">
+
+                        </div>
+
+                    </div>
+                    <!-------------------------------------Border image-------------------------------------------------------->
+                    <div class="row">
+                        <div class="col-xs-6 zeroMP " style="padding: 4px;">
+                            <label  for="selectBorderImageSource" style="display: inline">border-image-source:</label>
+
+                            <input type="file" name="selectBorderImageSource">
+
+                        </div>
+                        <div class="col-xs-6 zeroMP " style="padding: 4px;">
+                            <label  for="selectBorderImageRepeat" style="display: inline">border-image-repeat:</label>
+
+                            <select name="radius" id="selectBorderImageRepeat" class="zeroMP" style=" width: 100%">
+                                <option value="stretch" selected="selected" title="stretch">stretch</option>
+                                <option value="repeat">repeat</option>
+                                <option value="round">round</option>
+                                <option value="space">space</option>
+                            </select>
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12" style="padding-left: 0px;">
+                            <label  for="boxBorderImageSliceT" style="display: inline">border-image-slice:</label>
+                            <input type="checkbox" name="fill" > 
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-3 zeroMP ">  
+                            <div class="row zeroMP">
+                                <div class="col-xs-2" style="padding: 0px; width:10px;"> 
+                                    <input type="text" id="BorderImageSliceT" readonly style=" width:10px; border:0; color:#f6931f; font-weight:bold;">
+                                </div>
+
+                                <div class="col-xs-6 zeroMP " style="padding: 1px;"> 
+
+                                    <div id="sliderBoxBorderImageSliceT" style="width: 100%; " ></div>
+                                    <span>top</span>
+                                </div>
+                                <div class="col-xs-4 zeroMP " style="padding: 1px; width:37px"> 
+                                    <select name="radius" id="selectBorderImageSliceT" class="zeroMP" style="">
+                                        <option value="">number</option>
+                                        <option value="%">%</option>
+                                    </select>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-xs-3 zeroMP " >        
+                            <div class="row zeroMP">
+                                <div class="col-xs-2" style="padding:  0px; width:10px;"> 
+                                    <input type="text" id="BorderImageSliceR" readonly style=" width: 10px; border:0; color:#f6931f; font-weight:bold;">
+                                </div>
+                                <div class="col-xs-5 zeroMP " style="padding: 1px;"> 
+
+                                    <div id="sliderBoxBorderImageSliceR" style="width: 100%; " ></div>
+                                    <span>right</span>
+                                </div>
+                                <div class="col-xs-5 zeroMP " style="padding: 1px; width:37px"> 
+                                    <select name="radius" id="selectBorderImageSliceR" class="zeroMP" style="">
+                                        <option value="">number</option>
+                                        <option value="%">%</option>
+                                    </select>
+                                </div> 
+                            </div>
+                        </div>        
+                        <div class="col-xs-3 zeroMP ">        
+
+                            <div class="row zeroMP">
+                                <div class="col-xs-2" style="padding:  0px; width:10px;"> 
+                                    <input type="text" id="BorderImageSliceB" readonly style=" width: 10px; border:0; color:#f6931f; font-weight:bold;">
+                                </div>
+                                <div class="col-xs-5 zeroMP " style="padding: 1px;"> 
+
+                                    <div id="sliderBoxBorderImageSliceB" style="width: 100%; " ></div>
+                                    <span>bottom</span>
+                                </div>
+                                <div class="col-xs-5 zeroMP " style="padding: 1px; width:37px"> 
+                                    <select name="radius" id="selectBorderImageSliceB" class="zeroMP" style="">
+                                        <option value="">number</option>
+                                        <option value="%">%</option>
+                                    </select>
+                                </div> 
+                            </div>
+
+                        </div>        
+                        <div class="col-xs-3 zeroMP ">        
+                            <div class="row zeroMP">
+                                <div class="col-xs-2" style="padding:  0px; width:10px;"> 
+                                    <input type="text" id="BorderImageSliceL" readonly style=" width: 10px; border:0; color:#f6931f; font-weight:bold;">
+                                </div>
+                                <div class="col-xs-5 zeroMP " style="padding: 1px;"> 
+
+                                    <div id="sliderBoxBorderImageSliceL" style="width: 100%; " ></div>
+                                    <span>bottom</span>
+                                </div>
+                                <div class="col-xs-5 zeroMP " style="padding: 1px; width:37px"> 
+                                    <select name="radius" id="selectBorderImageSliceL" class="zeroMP" style="">
+                                        <option value="">number</option>
+                                        <option value="%">%</option>
+                                    </select>
+                                </div> 
+                            </div>
+
+                        </div> 
+
+                    </div>
+                    <!---------------------------------------BorderImageWidth------------------------->
+                    <div class="row">
+                        <div class="col-xs-12" style="padding-left: 0px;">
+                            <label  for="boxBorderImageWidth" style="display: inline">border-image-width:</label>
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-3 zeroMP">        
+                            <div class="row zeroMP">
+                                <div class="col-xs-2" style="padding:  0px; width:10px;"> 
+                                    <input type="text" id="BorderImageWidthT" readonly style=" width: 10px; border:0; color:#f6931f; font-weight:bold;">
+                                </div>
+                                <div class="col-xs-5 zeroMP " style="padding: 1px;"> 
+
+                                    <div id="sliderBoxBorderImageWidthT" style="width: 100%; " ></div>
+                                    <span>top</span>
+                                </div>
+                                <div class="col-xs-5 zeroMP " style="padding: 1px; width:37px"> 
+                                    <select name="radius" id="selectBorderImageWidthT" class="zeroMP" style="">
+                                        <option value="px" selected="selected" title="px">px</option>
+                                        <option value="mm">mm</option>
+                                        <option value="cm">cm</option>
+                                        <option value="em">em</option>
+                                        <option value="rem">rem</option>
+                                        <option value="%">%</option>
+                                        <option value="">number</option>
+                                        <option value="auto">auto</option>
+                                    </select>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-xs-3 zeroMP">        
+                            <div class="row zeroMP">
+                                <div class="col-xs-2" style="padding:  0px; width:10px;"> 
+                                    <input type="text" id="BorderImageWidthR" readonly style=" width: 10px; border:0; color:#f6931f; font-weight:bold;">
+                                </div>
+                                <div class="col-xs-5 zeroMP " style="padding: 1px;"> 
+
+                                    <div id="sliderBoxBorderImageWidthR" style="width: 100%; " ></div>
+                                    <span>right</span>
+                                </div>
+                                <div class="col-xs-5 zeroMP " style="padding: 1px; width:37px"> 
+                                    <select name="radius" id="selectBorderImageWidthR" class="zeroMP" style="">
+                                        <option value="px" selected="selected" title="px">px</option>
+                                        <option value="mm">mm</option>
+                                        <option value="cm">cm</option>
+                                        <option value="em">em</option>
+                                        <option value="rem">rem</option>
+                                        <option value="%">%</option>
+                                        <option value="">number</option>
+                                        <option value="auto">auto</option>
+                                    </select>
+                                </div> 
+                            </div>
+                        </div>
+
+                        <div class="col-xs-3 zeroMP">        
+                            <div class="row zeroMP">
+                                <div class="col-xs-2" style="padding:  0px; width:10px;"> 
+                                    <input type="text" id="BorderImageWidthB" readonly style=" width: 10px; border:0; color:#f6931f; font-weight:bold;">
+                                </div>
+                                <div class="col-xs-5 zeroMP " style="padding: 1px;"> 
+
+                                    <div id="sliderBoxBorderImageWidthB" style="width: 100%; " ></div>
+                                    <span>bottom</span>
+                                </div>
+                                <div class="col-xs-5 zeroMP " style="padding: 1px; width:37px"> 
+                                    <select name="radius" id="selectBorderImageWidthB" class="zeroMP" style="">
+                                        <option value="px" selected="selected" title="px">px</option>
+                                        <option value="mm">mm</option>
+                                        <option value="cm">cm</option>
+                                        <option value="em">em</option>
+                                        <option value="rem">rem</option>
+                                        <option value="%">%</option>
+                                        <option value="">number</option>
+                                        <option value="auto">auto</option>
+                                    </select>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-xs-3 zeroMP">        
+                            <div class="row zeroMP">
+                                <div class="col-xs-2" style="padding:  0px; width:10px;"> 
+                                    <input type="text" id="BorderImageWidthL" readonly style=" width: 10px; border:0; color:#f6931f; font-weight:bold;">
+                                </div>
+                                <div class="col-xs-5 zeroMP " style="padding: 1px;"> 
+
+                                    <div id="sliderBoxBorderImageWidthL" style="width: 100%; " ></div>
+                                    <span>left</span>
+                                </div>
+                                <div class="col-xs-5 zeroMP " style="padding: 1px; width:37px"> 
+                                    <select name="radius" id="selectBorderImageWidthL" class="zeroMP" style="">
+                                        <option value="px" selected="selected" title="px">px</option>
+                                        <option value="mm">mm</option>
+                                        <option value="cm">cm</option>
+                                        <option value="em">em</option>
+                                        <option value="rem">rem</option>
+                                        <option value="%">%</option>
+                                        <option value="">number</option>
+                                        <option value="auto">auto</option>
+                                    </select>
+                                </div> 
+                            </div>
+                        </div>
+
+                    </div> 
+                    <!---------------------------------------BorderImageOutset------------------------->
+                    <div class="row">
+                        <div class="col-xs-12" style="padding-left: 0px;">
+                            <label  for="boxBorderImageOutset" style="display: inline">border-image-outset:</label>
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-3 zeroMP">        
+                            <div class="row zeroMP">
+                                <div class="col-xs-2" style="padding:  0px; width:10px;"> 
+                                    <input type="text" id="BorderImageOutsetT" readonly style=" width: 10px; border:0; color:#f6931f; font-weight:bold;">
+                                </div>
+                                <div class="col-xs-5 zeroMP " style="padding: 1px;"> 
+
+                                    <div id="sliderBoxBorderImageOutsetT" style="width: 100%; " ></div>
+                                    <span>top</span>
+                                </div>
+                                <div class="col-xs-5 zeroMP " style="padding: 1px; width:37px"> 
+                                    <select name="radius" id="selectBorderImageOutsetT" class="zeroMP" style="">
+                                        <option value="px" selected="selected" title="px">px</option>
+                                        <option value="mm">mm</option>
+                                        <option value="cm">cm</option>
+                                        <option value="em">em</option>
+                                        <option value="rem">rem</option>
+                                        <option value="%">%</option>
+                                        <option value="">number</option>
+                                        <option value="auto">auto</option>
+                                    </select>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-xs-3 zeroMP">        
+                            <div class="row zeroMP">
+                                <div class="col-xs-2" style="padding:  0px; width:10px;"> 
+                                    <input type="text" id="BorderImageOutsetR" readonly style=" width: 10px; border:0; color:#f6931f; font-weight:bold;">
+                                </div>
+                                <div class="col-xs-5 zeroMP " style="padding: 1px;"> 
+
+                                    <div id="sliderBoxBorderImageOutsetR" style="width: 100%; " ></div>
+                                    <span>right</span>
+                                </div>
+                                <div class="col-xs-5 zeroMP " style="padding: 1px; width:37px"> 
+                                    <select name="radius" id="selectBorderImageOutsetR" class="zeroMP" style="">
+                                        <option value="px" selected="selected" title="px">px</option>
+                                        <option value="mm">mm</option>
+                                        <option value="cm">cm</option>
+                                        <option value="em">em</option>
+                                        <option value="rem">rem</option>
+                                        <option value="%">%</option>
+                                        <option value="">number</option>
+                                        <option value="auto">auto</option>
+                                    </select>
+                                </div> 
+                            </div>
+                        </div>
+
+                        <div class="col-xs-3 zeroMP">        
+                            <div class="row zeroMP">
+                                <div class="col-xs-2" style="padding:  0px; width:10px;"> 
+                                    <input type="text" id="BorderImageOutsetB" readonly style=" width: 10px; border:0; color:#f6931f; font-weight:bold;">
+                                </div>
+                                <div class="col-xs-5 zeroMP " style="padding: 1px;"> 
+
+                                    <div id="sliderBoxBorderImageOutsetB" style="width: 100%; " ></div>
+                                    <span>bottom</span>
+                                </div>
+                                <div class="col-xs-5 zeroMP " style="padding: 1px; width:37px"> 
+                                    <select name="radius" id="selectBorderImageOutsetB" class="zeroMP" style="">
+                                        <option value="px" selected="selected" title="px">px</option>
+                                        <option value="mm">mm</option>
+                                        <option value="cm">cm</option>
+                                        <option value="em">em</option>
+                                        <option value="rem">rem</option>
+                                        <option value="%">%</option>
+                                        <option value="">number</option>
+                                        <option value="auto">auto</option>
+                                    </select>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-xs-3 zeroMP">        
+                            <div class="row zeroMP">
+                                <div class="col-xs-2" style="padding:  0px; width:10px;"> 
+                                    <input type="text" id="BorderImageOutsetL" readonly style=" width: 10px; border:0; color:#f6931f; font-weight:bold;">
+                                </div>
+                                <div class="col-xs-5 zeroMP " style="padding: 1px;"> 
+
+                                    <div id="sliderBoxBorderImageOutsetL" style="width: 100%; " ></div>
+                                    <span>left</span>
+                                </div>
+                                <div class="col-xs-5 zeroMP " style="padding: 1px; width:37px"> 
+                                    <select name="radius" id="selectBorderImageOutsetL" class="zeroMP" style="">
+                                        <option value="px" selected="selected" title="px">px</option>
+                                        <option value="mm">mm</option>
+                                        <option value="cm">cm</option>
+                                        <option value="em">em</option>
+                                        <option value="rem">rem</option>
+                                        <option value="%">%</option>
+                                        <option value="">number</option>
+                                        <option value="auto">auto</option>
+                                    </select>
+                                </div> 
+                            </div>
+                        </div>
+
+                    </div> 
+
+
+                    <!--------------------------------BoxBackground------------------------------------------------------------->
+                    <div class="row">
+                        <div class="col-xs-3" style="padding-left: 0px;">
+                            <label  for="boxBackground" style="display: inline">background-image:</label>
+
+                            <div class="row zeroMP">
+
+                                <div class="col-xs-6 zeroMP " style="padding: 1px;"> 
+                                    <input type="checkbox" name="noBackground">
+                                    <label  for="noBackground" style="display: inline">none:</label>
+
+                                </div>
+                                <div class="col-xs-6 zeroMP " style="padding: 1px; width:37px"> 
+                                    <select name="radius" id="selectBackgroundImage" class="zeroMP" style="">
+                                        <option value="bimg1" selected="selected" title="bimg1">BImage1</option>
+                                        <option value="bimg2">BImage2</option>
+                                        <option value="bimg3">BImage3</option>
+                                        <option value="bimg4">BImage4</option>
+
+                                    </select>
+                                </div> 
+                            </div>
+
+                        </div>
+                        <div class="col-xs-3" style="padding-left: 0px;">
+                            <label  for="boxBackgroundOrigin" style="display: inline">background-origin:</label>
+                            <select name="radius" id="selectBackgroundOrigin" class="zeroMP" style="">
+                                <option value="content-box" selected="selected" title="content-box">content-box</option>
+                                <option value="padding-box">padding-box</option>
+                                <option value="border-box">border-box</option>
+                            </select>
+
+                        </div>
+                        <div class="col-xs-3" style="padding-left: 0px;">
+                            <label  for="boxBackgroundClip" style="display: inline">background-clip:</label>
+                            <select name="radius" id="selectBackgroundClip" class="zeroMP" style="">
+                                <option value="content-box" selected="selected" title="content-box">content-box</option>
+                                <option value="padding-box">padding-box</option>
+                                <option value="border-box">border-box</option>
+                            </select>
+
+                        </div>
+                        <div class="col-xs-3" style="padding-left: 0px;">
+                            <label  for="boxBackgroundAttachment" style="display: inline">background-attachment:</label>
+                            <select name="radius" id="selectBackgroundAttachment" class="zeroMP" style="">
+                                <option value="scroll" selected="selected" title="scroll">scroll</option>
+                                <option value="fixed">fixed</option>
+                                <option value="local">local</option>
+                            </select>
+                        </div>
+                    </div>
             </div>
-        </section>
+
+        </div>
+        <!--------------------------------------------------------------------------------------------->
+    </article> 
+
+</div>
+</section>
 
 
-        <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-        <script src="../bower_components/jquery-ui-1.11.4.custom/jquery-ui.js"></script>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src="../bower_components/jquery-ui-1.11.4.custom/jquery-ui.js"></script>
 
 
-        <script src='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js'></script>
-        <script>
-            var widthD = "px", widthSlider = {};
-            var boxVisual = function () {
-                var offset = $(".contentArea").offset();
-                var height = $(".contentArea").outerHeight(true);
-                var width = $(".contentArea").outerWidth(true);
-                var marginTop = parseFloat($(".contentArea").css("margin-top"));
-                var marginLeft = parseFloat($(".contentArea").css("margin-left"));
-                console.log("left  " + offset.left + " top " + offset.top);
-                $(".myFix").offset({top: offset.top - marginTop, left: offset.left - marginLeft});
-                $(".myFix").height(height).width(width);
+<script src='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js'></script>
+<script>
+    var widthD = "px", widthSlider = {};
+    var boxVisual = function () {
+        var offset = $(".contentArea").offset();
+        var height = $(".contentArea").outerHeight(true);
+        var width = $(".contentArea").outerWidth(true);
+        var marginTop = parseFloat($(".contentArea").css("margin-top"));
+        var marginLeft = parseFloat($(".contentArea").css("margin-left"));
+        console.log("left  " + offset.left + " top " + offset.top);
+        $(".myFix").offset({top: offset.top - marginTop, left: offset.left - marginLeft});
+        $(".myFix").height(height).width(width);
+    }
+
+    var boxHW = function (property, params) {
+        var obj = {}, xxx = {}, prop;
+        switch (property) {
+            case"Width":
+                obj.min = 0;
+                obj.max = 400;
+                obj.step = 10;
+                obj.value = 200;
+                prop = "width";
+                break;
+            case"Height":
+                obj.min = 0;
+                obj.max = 400;
+                obj.step = 10;
+                obj.value = 200;
+                prop = "height";
+                break;
+            case"PaddingTop":
+                obj.min = 0;
+                obj.max = 40;
+                obj.step = 1;
+                obj.value = 20;
+                prop = "padding-top";
+                break;
+            case"PaddingRight":
+                obj.min = 0;
+                obj.max = 40;
+                obj.step = 1;
+                obj.value = 20;
+                prop = "padding-right";
+                break;
+            case"PaddingBottom":
+                obj.min = 0;
+                obj.max = 40;
+                obj.step = 1;
+                obj.value = 20;
+                prop = "padding-bottom";
+                break;
+            case"PaddingLeft":
+                obj.min = 0;
+                obj.max = 40;
+                obj.step = 1;
+                obj.value = 20;
+                prop = "padding-left";
+                break;
+            case"MarginTop":
+                obj.min = 0;
+                obj.max = 40;
+                obj.step = 1;
+                obj.value = 20;
+                prop = "margin-top";
+                break;
+            case"MarginRight":
+                obj.min = 0;
+                obj.max = 40;
+                obj.step = 1;
+                obj.value = 20;
+                prop = "margin-right";
+                break;
+            case"MarginBottom":
+                obj.min = 0;
+                obj.max = 40;
+                obj.step = 1;
+                obj.value = 20;
+                prop = "margin-bottom";
+                break;
+            case"MarginLeft":
+                obj.min = 0;
+                obj.max = 40;
+                obj.step = 1;
+                obj.value = 20;
+                prop = "margin-left";
+                break;
+            case"BorderTopWidth":
+                obj.min = 0;
+                obj.max = 40;
+                obj.step = 1;
+                obj.value = 20;
+                prop = "border-top-width";
+                break;
+            case"BorderRightWidth":
+                obj.min = 0;
+                obj.max = 40;
+                obj.step = 1;
+                obj.value = 20;
+                prop = "border-right-width";
+                break;
+            case"BorderBottomWidth":
+                obj.min = 0;
+                obj.max = 40;
+                obj.step = 1;
+                obj.value = 20;
+                prop = "border-bottom-width";
+                break;
+            case"BorderLeftWidth":
+                obj.min = 0;
+                obj.max = 40;
+                obj.step = 1;
+                obj.value = 20;
+                prop = "border-left-width";
+                break;
+        }
+        xxx = params || obj;
+        var sliderBox = "#sliderBox" + property;
+        //var prop = property.toLowerCase();
+        var boxProp = "#box" + property;
+        $(sliderBox).slider({
+            range: "min",
+            min: xxx.min,
+            max: xxx.max,
+            step: xxx.step,
+            value: xxx.value,
+            slide: function (event, ui) {
+                $(boxProp).val(ui.value);
+                $(".contentArea").css(prop, ui.value + widthD);
+                $(".contentArea").trigger("boxChange");
             }
+        });
+        $(boxProp).val($(sliderBox).slider("value"));
+        return obj;
+    }
 
-            var boxHW = function (property, params) {
-                var obj = {}, xxx = {}, prop;
-                switch (property) {
-                    case"Width":
-                        obj.min = 0;
-                        obj.max = 400;
-                        obj.step = 10;
-                        obj.value = 200;
-                        prop = "width";
-                        break;
-                    case"Height":
-                        obj.min = 0;
-                        obj.max = 400;
-                        obj.step = 10;
-                        obj.value = 200;
-                        prop = "height";
-                        break;
-                    case"PaddingTop":
-                        obj.min = 0;
-                        obj.max = 40;
-                        obj.step = 1;
-                        obj.value = 20;
-                        prop = "padding-top";
-                        break;
-                    case"PaddingRight":
-                        obj.min = 0;
-                        obj.max = 40;
-                        obj.step = 1;
-                        obj.value = 20;
-                        prop = "padding-right";
-                        break;
-                    case"PaddingBottom":
-                        obj.min = 0;
-                        obj.max = 40;
-                        obj.step = 1;
-                        obj.value = 20;
-                        prop = "padding-bottom";
-                        break;
-                    case"PaddingLeft":
-                        obj.min = 0;
-                        obj.max = 40;
-                        obj.step = 1;
-                        obj.value = 20;
-                        prop = "padding-left";
-                        break;
-                    case"MarginTop":
-                        obj.min = 0;
-                        obj.max = 40;
-                        obj.step = 1;
-                        obj.value = 20;
-                        prop = "margin-top";
-                        break;
-                    case"MarginRight":
-                        obj.min = 0;
-                        obj.max = 40;
-                        obj.step = 1;
-                        obj.value = 20;
-                        prop = "margin-right";
-                        break;
-                    case"MarginBottom":
-                        obj.min = 0;
-                        obj.max = 40;
-                        obj.step = 1;
-                        obj.value = 20;
-                        prop = "margin-bottom";
-                        break;
-                    case"MarginLeft":
-                        obj.min = 0;
-                        obj.max = 40;
-                        obj.step = 1;
-                        obj.value = 20;
-                        prop = "margin-left";
-                        break;
-                    case"BorderTopWidth":
-                        obj.min = 0;
-                        obj.max = 40;
-                        obj.step = 1;
-                        obj.value = 20;
-                        prop = "border-top-width";
-                        break;
-                    case"BorderRightWidth":
-                        obj.min = 0;
-                        obj.max = 40;
-                        obj.step = 1;
-                        obj.value = 20;
-                        prop = "border-right-width";
-                        break;
-                    case"BorderBottomWidth":
-                        obj.min = 0;
-                        obj.max = 40;
-                        obj.step = 1;
-                        obj.value = 20;
-                        prop = "border-bottom-width";
-                        break;
-                    case"BorderLeftWidth":
-                        obj.min = 0;
-                        obj.max = 40;
-                        obj.step = 1;
-                        obj.value = 20;
-                        prop = "border-left-width";
-                        break;
-                }
-                xxx = params || obj;
-                var sliderBox = "#sliderBox" + property;
-                //var prop = property.toLowerCase();
-                var boxProp = "#box" + property;
-                $(sliderBox).slider({
-                    range: "min",
-                    min: xxx.min,
-                    max: xxx.max,
-                    step: xxx.step,
-                    value: xxx.value,
-                    slide: function (event, ui) {
-                        $(boxProp).val(ui.value);
-                        $(".contentArea").css(prop, ui.value + widthD);
-                        $(".contentArea").trigger("boxChange");
-                    }
-                });
-                $(boxProp).val($(sliderBox).slider("value"));
-                return obj;
+    var myWww = function (prop, top, right, bottom, left) {
+
+        var that = this;
+
+        this.myDefaults = {min: 0, max: 10, step: 1, value: "", unit: "", sliderElem: "", boxProp: ""};
+        this.myDefaults_1 = {min: 0, max: 10, step: 1, value: "20", unit: "px", sliderElem: "", boxProp: ""};
+
+        this.paramsTop = top || this.myDefaults;
+        this.paramsRight = right || this.myDefaults;
+        this.paramsBottom = bottom || this.myDefaults;
+        this.paramsLeft = left || this.myDefaults;
+
+
+
+        this.sliderTop = $(that.paramsTop.sliderElem).slider({
+            range: "min",
+            min: that.paramsTop.min,
+            max: that.paramsTop.max,
+            step: that.paramsTop.step,
+            value: that.paramsTop.value,
+            slide: function (event, ui) {
+                $(that.paramsTop.boxProp).val(ui.value);
+                that.paramsTop.value = ui.value;
+
+
+                $(".contentArea").css(prop,
+                        that.paramsTop.value + that.paramsTop.unit + " "
+                        + that.paramsRight.value + that.paramsRight.unit + " "
+                        + that.paramsBottom.value + that.paramsBottom.unit + " "
+                        + that.paramsLeft.value + that.paramsLeft.unit);
+                $(".contentArea").trigger("boxChange");
             }
+        });
 
-            var myWww = function (prop, top, right, bottom, left) {
+        $(that.paramsTop.boxProp).val($(that.paramsTop.sliderElem).slider("value"));
 
-                var that = this;
-
-                this.myDefaults = {min: 0, max: 10, step: 1, value: "", unit: "", sliderElem: "", boxProp: ""};
-                this.myDefaults_1 = {min: 0, max: 10, step: 1, value: "20", unit: "px", sliderElem: "", boxProp: ""};
-
-                this.paramsTop = top || this.myDefaults;
-                this.paramsRight = right || this.myDefaults;
-                this.paramsBottom = bottom || this.myDefaults;
-                this.paramsLeft = left || this.myDefaults;
-
-               
-
-                this.sliderTop = $(that.paramsTop.sliderElem).slider({
-                    range: "min",
-                    min: that.paramsTop.min,
-                    max: that.paramsTop.max,
-                    step: that.paramsTop.step,
-                    value: that.paramsTop.value,
-                    slide: function (event, ui) {
-                        $(that.paramsTop.boxProp).val(ui.value);
-                        that.paramsTop.value = ui.value;
-                        
-                                             
-                        $(".contentArea").css(prop,
-                                that.paramsTop.value + that.paramsTop.unit +" "
-                                + that.paramsRight.value + that.paramsRight.unit+" "
-                                + that.paramsBottom.value + that.paramsBottom.unit+" "
-                                + that.paramsLeft.value + that.paramsLeft.unit);
-                        $(".contentArea").trigger("boxChange");
-                    }
-                });
-                
-                 $(that.paramsTop.boxProp).val($(that.paramsTop.sliderElem).slider("value"));
-                
-                this.sliderRight = $(that.paramsRight.sliderElem).slider({
-                    range: "min",
-                    min: that.paramsRight.min,
-                    max: that.paramsRight.max,
-                    step: that.paramsRight.step,
-                    value: that.paramsRight.value,
-                    slide: function (event, ui) {
-                        $(that.paramsRight.boxProp).val(ui.value);
-                        that.paramsRight.value = ui.value;
-                        $(".contentArea").css(prop,
-                                that.paramsTop.value + that.paramsTop.unit + " "
-                                + that.paramsRight.value + that.paramsRight.unit + " "
-                                + that.paramsBottom.value + that.paramsBottom.unit+ " "
-                                + that.paramsLeft.value + that.paramsLeft.unit);
-                        $(".contentArea").trigger("boxChange");
-                    }
-                });
-                
-                 $(that.paramsRight.boxProp).val($(that.paramsRight.sliderElem).slider("value"));
-                
-
-                this.sliderBottom = $(that.paramsBottom.sliderElem).slider({
-                    range: "min",
-                    min: that.paramsBottom.min,
-                    max: that.paramsBottom.max,
-                    step: that.paramsBottom.step,
-                    value: that.paramsBottom.value,
-                    slide: function (event, ui) {
-                        $(that.paramsBottom.boxProp).val(ui.value);
-                        that.paramsBottom.value = ui.value;
-                        $(".contentArea").css(prop,
-                                that.paramsTop.value + that.paramsTop.unit +" "
-                                + that.paramsRight.value + that.paramsRight.unit + " "
-                                + that.paramsBottom.value + that.paramsBottom.unit + " "
-                                + that.paramsLeft.value + that.paramsLeft.unit);
-                        $(".contentArea").trigger("boxChange");
-                    }
-                });
-
-                this.sliderLeft = $(that.paramsLeft.sliderElem).slider({
-                    range: "min",
-                    min: that.paramsLeft.min,
-                    max: that.paramsLeft.max,
-                    step: that.paramsLeft.step,
-                    value: that.paramsLeft.value,
-                    slide: function (event, ui) {
-                        $(that.paramsLeft.boxProp).val(ui.value);
-                        that.paramsLeft.value = ui.value;
-                        $(".contentArea").css(prop,
-                                that.paramsTop.value + that.paramsTop.unit + " "
-                                + that.paramsRight.value + that.paramsRight.unit + " "
-                                + that.paramsBottom.value + that.paramsBottom.unit + " "
-                                + that.paramsLeft.value + that.paramsLeft.unit);
-                        $(".contentArea").trigger("boxChange");
-                    }
-                });
-
-                
+        this.sliderRight = $(that.paramsRight.sliderElem).slider({
+            range: "min",
+            min: that.paramsRight.min,
+            max: that.paramsRight.max,
+            step: that.paramsRight.step,
+            value: that.paramsRight.value,
+            slide: function (event, ui) {
+                $(that.paramsRight.boxProp).val(ui.value);
+                that.paramsRight.value = ui.value;
+                $(".contentArea").css(prop,
+                        that.paramsTop.value + that.paramsTop.unit + " "
+                        + that.paramsRight.value + that.paramsRight.unit + " "
+                        + that.paramsBottom.value + that.paramsBottom.unit + " "
+                        + that.paramsLeft.value + that.paramsLeft.unit);
+                $(".contentArea").trigger("boxChange");
             }
+        });
+
+        $(that.paramsRight.boxProp).val($(that.paramsRight.sliderElem).slider("value"));
+
+
+        this.sliderBottom = $(that.paramsBottom.sliderElem).slider({
+            range: "min",
+            min: that.paramsBottom.min,
+            max: that.paramsBottom.max,
+            step: that.paramsBottom.step,
+            value: that.paramsBottom.value,
+            slide: function (event, ui) {
+                $(that.paramsBottom.boxProp).val(ui.value);
+                that.paramsBottom.value = ui.value;
+                $(".contentArea").css(prop,
+                        that.paramsTop.value + that.paramsTop.unit + " "
+                        + that.paramsRight.value + that.paramsRight.unit + " "
+                        + that.paramsBottom.value + that.paramsBottom.unit + " "
+                        + that.paramsLeft.value + that.paramsLeft.unit);
+                $(".contentArea").trigger("boxChange");
+            }
+        });
+
+        this.sliderLeft = $(that.paramsLeft.sliderElem).slider({
+            range: "min",
+            min: that.paramsLeft.min,
+            max: that.paramsLeft.max,
+            step: that.paramsLeft.step,
+            value: that.paramsLeft.value,
+            slide: function (event, ui) {
+                $(that.paramsLeft.boxProp).val(ui.value);
+                that.paramsLeft.value = ui.value;
+                $(".contentArea").css(prop,
+                        that.paramsTop.value + that.paramsTop.unit + " "
+                        + that.paramsRight.value + that.paramsRight.unit + " "
+                        + that.paramsBottom.value + that.paramsBottom.unit + " "
+                        + that.paramsLeft.value + that.paramsLeft.unit);
+                $(".contentArea").trigger("boxChange");
+            }
+        });
+
+
+    }
 
 
 
 
 
 
-            $(function () {
+    $(function () {
 
-                boxVisual();
-                boxHW("Width");
-                boxHW("Height");
-                boxHW("PaddingTop");
-                boxHW("PaddingRight");
-                boxHW("PaddingBottom");
-                boxHW("PaddingLeft");
-                boxHW("MarginTop");
-                boxHW("MarginRight");
-                boxHW("MarginBottom");
-                boxHW("MarginLeft");
-                boxHW("BorderTopWidth");
-                boxHW("BorderRightWidth");
-                boxHW("BorderBottomWidth");
-                boxHW("BorderLeftWidth");
-                $(window).on("scroll resize", function () {
-                    boxVisual();
-                });
+        boxVisual();
+        boxHW("Width");
+        boxHW("Height");
+        boxHW("PaddingTop");
+        boxHW("PaddingRight");
+        boxHW("PaddingBottom");
+        boxHW("PaddingLeft");
+        boxHW("MarginTop");
+        boxHW("MarginRight");
+        boxHW("MarginBottom");
+        boxHW("MarginLeft");
+        boxHW("BorderTopWidth");
+        boxHW("BorderRightWidth");
+        boxHW("BorderBottomWidth");
+        boxHW("BorderLeftWidth");
+        $(window).on("scroll resize", function () {
+            boxVisual();
+        });
 
-                var LeftTop = new myWww("border-top-left-radius", Top = {
-                    min: 0, max: 20, step: 1, value: 5, unit: "px",
-                    sliderElem: "#sliderBoxBorderTopLeftRadiusH", boxProp: "#BorderTopLeftRadiusH"},
-                                                                   Right = {
+        var LeftTop = new myWww("border-top-left-radius", Top = {
+            min: 0, max: 20, step: 1, value: 5, unit: "px",
+            sliderElem: "#sliderBoxBorderTopLeftRadiusH", boxProp: "#BorderTopLeftRadiusH"},
+                Right = {
                     min: 0, max: 20, step: 1, value: 5, unit: "px",
                     sliderElem: "#sliderBoxBorderTopLeftRadiusV", boxProp: "#BorderTopLeftRadiusV"}
-                );
-        
-                var TopRight = new myWww("border-top-right-radius", Top = {
-                    min: 0, max: 20, step: 1, value: 5, unit: "px",
-                    sliderElem: "#sliderBoxBorderTopRightRadiusH", boxProp: "#BorderTopRightRadiusH"},
-                                                                   Right = {
+        );
+
+        var TopRight = new myWww("border-top-right-radius", Top = {
+            min: 0, max: 20, step: 1, value: 5, unit: "px",
+            sliderElem: "#sliderBoxBorderTopRightRadiusH", boxProp: "#BorderTopRightRadiusH"},
+                Right = {
                     min: 0, max: 20, step: 1, value: 5, unit: "px",
                     sliderElem: "#sliderBoxBorderTopRightRadiusV", boxProp: "#BorderTopRightRadiusV"}
-                );
-        
-                var BottomRight = new myWww("border-bottom-right-radius", Top = {
-                    min: 0, max: 20, step: 1, value: 5, unit: "px",
-                    sliderElem: "#sliderBoxBorderBottomRightRadiusH", boxProp: "#BorderBottomRightRadiusH"},
-                                                                   Right = {
+        );
+
+        var BottomRight = new myWww("border-bottom-right-radius", Top = {
+            min: 0, max: 20, step: 1, value: 5, unit: "px",
+            sliderElem: "#sliderBoxBorderBottomRightRadiusH", boxProp: "#BorderBottomRightRadiusH"},
+                Right = {
                     min: 0, max: 20, step: 1, value: 5, unit: "px",
                     sliderElem: "#sliderBoxBorderBottomRightRadiusV", boxProp: "#BorderBottomRightRadiusV"}
-                );
-        
-                var BottomLeft = new myWww("border-bottom-left-radius", Top = {
-                    min: 0, max: 20, step: 1, value: 5, unit: "px",
-                    sliderElem: "#sliderBoxBorderBottomLeftRadiusH", boxProp: "#BorderBottomLeftRadiusH"},
-                                                                   Right = {
+        );
+
+        var BottomLeft = new myWww("border-bottom-left-radius", Top = {
+            min: 0, max: 20, step: 1, value: 5, unit: "px",
+            sliderElem: "#sliderBoxBorderBottomLeftRadiusH", boxProp: "#BorderBottomLeftRadiusH"},
+                Right = {
                     min: 0, max: 20, step: 1, value: 5, unit: "px",
                     sliderElem: "#sliderBoxBorderBottomLeftRadiusV", boxProp: "#BorderBottomLeftRadiusV"}
-                );
+        );
 
 
-           
-                /*********************************Custom event******************************************************/
 
-                $(".contentArea").on("boxChange", function () {
-                    boxVisual();
-                    
-                })
-                /*********************************BorderLeftTopRadius sliders******************************************************/
+        /*********************************Custom event******************************************************/
 
-                $("#selectBorderTopLeftRadiusH").selectmenu({
-                    change: function (event, data) {
-                        var objD = {};
-                        var units = data.item.value;
-                        switch (units) {
-                            case"px":
-                                objD.min = 0;  objD.max = 40; objD.step = 1; objD.value = 20; break;
-                            case"cm":
-                                objD.min = 0; objD.max = 2; objD.step =0.01;  objD.value = 1; break;
-                            case"mm":
-                                objD.min = 0; objD.max = 20; objD.step = 0.1; objD.value = 1; break;
-                            case"em": 
-                                objD.min = 0; objD.max = 10; objD.step = 0.1; objD.value = 2.5; break;
-                            case"rem": objD.min = 0; objD.max = 10; objD.step = 0.1;  objD.value = 2.5; break;
-                            case"%": objD.min = 0; objD.max = 20; objD.step = 1; objD.value = 10; break;
-                        }
+        $(".contentArea").on("boxChange", function () {
+            boxVisual();
 
-                         LeftTop.paramsTop.unit=units;
-                         $("#sliderBoxBorderTopLeftRadiusH").slider( "option", { min: objD.min, max: objD.max, step: objD.step, value: objD.value } );
-                    }
+        });
+        
+        /*********************************BackgroundAttachment******************************************************/
+        $("#selectBackgroundAttachment").selectmenu({
+            change: function (event, data) {
+
+                var attachment = data.item.value;
+                console.log(attachment);
+                $(".contentArea").css("background-attachment", attachment);
+            }
+        });
+
+        
+        
+        /*********************************BackgroundClip******************************************************/
+        $("#selectBackgroundClip").selectmenu({
+            change: function (event, data) {
+
+                var clip = data.item.value;
+                $(".contentArea").css("background-clip", clip);
+            }
+        });
+
+        /*********************************BackgroundOrigin******************************************************/
+        $("#selectBackgroundOrigin").selectmenu({
+            change: function (event, data) {
+
+                var origin = data.item.value;
+                $(".contentArea").css("background-origin", origin);
+            }
+        });
+
+        /*********************************BackgroundImage******************************************************/
+
+
+
+        $("#selectBackgroundImage").selectmenu({
+            myImage: "bimg1",
+            change: function (event, data) {
+
+                var image = data.item.value;
+                var imgURL;
+
+                $(this).selectmenu("option", "myImage", image)
+
+                switch (image) {
+                    case"bimg1":
+                        imgURL = "http://localhost:8383/myTutorSite/Examples/img/bimg1.jpg";
+
+                        break;
+                    case"bimg2":
+                        imgURL = "http://localhost:8383/myTutorSite/Examples/img/bimg2.jpg";
+                        break;
+                    case"bimg3":
+                        imgURL = "http://localhost:8383/myTutorSite/Examples/img/bimg3.jpg";
+                        break;
+                    case"bimg4":
+                        imgURL = "http://localhost:8383/myTutorSite/Examples/img/bimg4.jpg";
+                        break;
+                }
+
+
+
+                $(".contentArea").css("background-image", "url(" + imgURL + ")");
+            }
+        });
+
+        /*******************Adding/removing "background" ************************/
+
+        $("input[name='noBackground']").on("click", function () {
+
+            var options = $("#selectBackgroundImage").selectmenu("option");
+
+            //console.log("url('http://localhost:8383/myTutorSite/Examples/img/"+ options.myImage +".jpg')")
+
+
+            if ($(this).prop("checked")) {
+
+                $(".contentArea").css("background-image", function (index, value) {
+
+                    return "url('http://localhost:8383/myTutorSite/Examples/img/" + options.myImage + ".jpg')";
                 });
-                
-                $("#selectBorderTopLeftRadiusV").selectmenu({
-                    change: function (event, data) {
-                        var objD = {};
-                        var units = data.item.value;
-                        switch (units) {
-                            case"px":
-                                objD.min = 0;  objD.max = 40; objD.step = 1; objD.value = 20; break;
-                            case"cm":
-                                objD.min = 0; objD.max = 2; objD.step =0.01;  objD.value = 1; break;
-                            case"mm":
-                                objD.min = 0; objD.max = 20; objD.step = 0.1; objD.value = 1; break;
-                            case"em": 
-                                objD.min = 0; objD.max = 10; objD.step = 0.1; objD.value = 2.5; break;
-                            case"rem": objD.min = 0; objD.max = 10; objD.step = 0.1;  objD.value = 2.5; break;
-                            case"%": objD.min = 0; objD.max = 20; objD.step = 1; objD.value = 10; break;
-                        }
+            } else {
 
-                         LeftTop.paramsRight.unit=units;
-                         $("#sliderBoxBorderTopLeftRadiusV").slider( "option", { min: objD.min, max: objD.max, step: objD.step, value: objD.value } );
-                    }
+                $(".contentArea").css("background-image", function (index, value) {
+
+
+                    return "";
                 });
-                
-                /*********************************BorderTopRightRadius sliders******************************************************/
+            }
+            ;
+        });
 
-                $("#selectBorderTopRightRadiusH").selectmenu({
-                    change: function (event, data) {
-                        var objD = {};
-                        var units = data.item.value;
-                        switch (units) {
-                            case"px":
-                                objD.min = 0;  objD.max = 40; objD.step = 1; objD.value = 20; break;
-                            case"cm":
-                                objD.min = 0; objD.max = 2; objD.step =0.01;  objD.value = 1; break;
-                            case"mm":
-                                objD.min = 0; objD.max = 20; objD.step = 0.1; objD.value = 1; break;
-                            case"em": 
-                                objD.min = 0; objD.max = 10; objD.step = 0.1; objD.value = 2.5; break;
-                            case"rem": objD.min = 0; objD.max = 10; objD.step = 0.1;  objD.value = 2.5; break;
-                            case"%": objD.min = 0; objD.max = 20; objD.step = 1; objD.value = 10; break;
-                        }
 
-                         TopRight.paramsTop.unit=units;
-                         $("#sliderBoxBorderTopRightRadiusH").slider( "option", { min: objD.min, max: objD.max, step: objD.step, value: objD.value } );
-                    }
+        /*********************************BorderImageOutset******************************************************/
+        var ImageOutset = new myWww("border-image-outset", Top = {
+            min: 0, max: 40, step: 1, value: 5, unit: "",
+            sliderElem: "#sliderBoxBorderImageOutsetT", boxProp: "#BorderImageOutsetT"},
+                Right = {
+                    min: 0, max: 40, step: 1, value: 5, unit: "",
+                    sliderElem: "#sliderBoxBorderImageOutsetR", boxProp: "#BorderImageOutsetR"},
+                Bottom = {
+                    min: 0, max: 40, step: 1, value: 5, unit: "",
+                    sliderElem: "#sliderBoxBorderImageOutsetB", boxProp: "#BorderImageOutsetB"},
+                Left = {
+                    min: 0, max: 40, step: 1, value: 5, unit: "",
+                    sliderElem: "#sliderBoxBorderImageOutsetL", boxProp: "#BorderImageOutsetL"}
+
+
+        );
+
+        $("#selectBorderImageOutsetT").selectmenu({
+            change: function (event, data) {
+                var objD = {};
+                var units = data.item.value;
+                switch (units) {
+                    case"px":
+                        objD.min = 0;
+                        objD.max = 40;
+                        objD.step = 1;
+                        objD.value = 20;
+                        break;
+                    case"cm":
+                        objD.min = 0;
+                        objD.max = 2;
+                        objD.step = 0.01;
+                        objD.value = 1;
+                        break;
+                    case"mm":
+                        objD.min = 0;
+                        objD.max = 20;
+                        objD.step = 0.1;
+                        objD.value = 1;
+                        break;
+                    case"em":
+                        objD.min = 0;
+                        objD.max = 10;
+                        objD.step = 0.1;
+                        objD.value = 2.5;
+                        break;
+                    case"rem":
+                        objD.min = 0;
+                        objD.max = 10;
+                        objD.step = 0.1;
+                        objD.value = 2.5;
+                        break;
+                    case"%":
+                        objD.min = 0;
+                        objD.max = 20;
+                        objD.step = 1;
+                        objD.value = 10;
+                        break;
+                    case"":
+                        objD.min = 0;
+                        objD.max = 20;
+                        objD.step = 1;
+                        objD.value = 10;
+                        break;
+                    case"auto":
+                        objD.min = 0;
+                        objD.max = 0;
+                        objD.step = 0;
+                        objD.value = 0;
+                        ImageOutset.paramsTop.value = "";
+                        break;
+                }
+
+                ImageOutset.paramsTop.unit = units;
+                $("#sliderBoxBorderImageOutsetT").slider("option", {min: objD.min, max: objD.max, step: objD.step, value: objD.value});
+                $("#sliderBoxBorderImageOutsetT").trigger("slidechange");
+
+            }
+        });
+
+        $("#selectBorderImageOutsetR").selectmenu({
+            change: function (event, data) {
+                var objD = {};
+                var units = data.item.value;
+                switch (units) {
+                    case"px":
+                        objD.min = 0;
+                        objD.max = 40;
+                        objD.step = 1;
+                        objD.value = 20;
+                        break;
+                    case"cm":
+                        objD.min = 0;
+                        objD.max = 2;
+                        objD.step = 0.01;
+                        objD.value = 1;
+                        break;
+                    case"mm":
+                        objD.min = 0;
+                        objD.max = 20;
+                        objD.step = 0.1;
+                        objD.value = 1;
+                        break;
+                    case"em":
+                        objD.min = 0;
+                        objD.max = 10;
+                        objD.step = 0.1;
+                        objD.value = 2.5;
+                        break;
+                    case"rem":
+                        objD.min = 0;
+                        objD.max = 10;
+                        objD.step = 0.1;
+                        objD.value = 2.5;
+                        break;
+                    case"%":
+                        objD.min = 0;
+                        objD.max = 20;
+                        objD.step = 1;
+                        objD.value = 10;
+                        break;
+                    case"":
+                        objD.min = 0;
+                        objD.max = 20;
+                        objD.step = 1;
+                        objD.value = 10;
+                        break;
+                    case"auto":
+                        objD.min = 0;
+                        objD.max = 0;
+                        objD.step = 0;
+                        objD.value = 0;
+                        ImageOutset.paramsRight.value = "";
+                        break;
+                }
+
+                ImageOutset.paramsRight.unit = units;
+                $("#sliderBoxBorderImageOutsetR").slider("option", {min: objD.min, max: objD.max, step: objD.step, value: objD.value});
+                $("#sliderBoxBorderImageOutsetR").trigger("slidechange");
+
+            }
+        });
+
+        $("#selectBorderImageOutsetB").selectmenu({
+            change: function (event, data) {
+                var objD = {};
+                var units = data.item.value;
+                switch (units) {
+                    case"px":
+                        objD.min = 0;
+                        objD.max = 40;
+                        objD.step = 1;
+                        objD.value = 20;
+                        break;
+                    case"cm":
+                        objD.min = 0;
+                        objD.max = 2;
+                        objD.step = 0.01;
+                        objD.value = 1;
+                        break;
+                    case"mm":
+                        objD.min = 0;
+                        objD.max = 20;
+                        objD.step = 0.1;
+                        objD.value = 1;
+                        break;
+                    case"em":
+                        objD.min = 0;
+                        objD.max = 10;
+                        objD.step = 0.1;
+                        objD.value = 2.5;
+                        break;
+                    case"rem":
+                        objD.min = 0;
+                        objD.max = 10;
+                        objD.step = 0.1;
+                        objD.value = 2.5;
+                        break;
+                    case"%":
+                        objD.min = 0;
+                        objD.max = 20;
+                        objD.step = 1;
+                        objD.value = 10;
+                        break;
+                    case"":
+                        objD.min = 0;
+                        objD.max = 20;
+                        objD.step = 1;
+                        objD.value = 10;
+                        break;
+                    case"auto":
+                        objD.min = 0;
+                        objD.max = 0;
+                        objD.step = 0;
+                        objD.value = 0;
+                        ImageOutset.paramsBottom.value = "";
+                        break;
+                }
+
+                ImageOutset.paramsBottom.unit = units;
+                $("#sliderBoxBorderImageOutsetB").slider("option", {min: objD.min, max: objD.max, step: objD.step, value: objD.value});
+                $("#sliderBoxBorderImageOutsetB").trigger("slidechange");
+
+            }
+        });
+
+        $("#selectBorderImageOutsetL").selectmenu({
+            change: function (event, data) {
+                var objD = {};
+                var units = data.item.value;
+                switch (units) {
+                    case"px":
+                        objD.min = 0;
+                        objD.max = 40;
+                        objD.step = 1;
+                        objD.value = 20;
+                        break;
+                    case"cm":
+                        objD.min = 0;
+                        objD.max = 2;
+                        objD.step = 0.01;
+                        objD.value = 1;
+                        break;
+                    case"mm":
+                        objD.min = 0;
+                        objD.max = 20;
+                        objD.step = 0.1;
+                        objD.value = 1;
+                        break;
+                    case"em":
+                        objD.min = 0;
+                        objD.max = 10;
+                        objD.step = 0.1;
+                        objD.value = 2.5;
+                        break;
+                    case"rem":
+                        objD.min = 0;
+                        objD.max = 10;
+                        objD.step = 0.1;
+                        objD.value = 2.5;
+                        break;
+                    case"%":
+                        objD.min = 0;
+                        objD.max = 20;
+                        objD.step = 1;
+                        objD.value = 10;
+                        break;
+                    case"":
+                        objD.min = 0;
+                        objD.max = 20;
+                        objD.step = 1;
+                        objD.value = 10;
+                        break;
+                    case"auto":
+                        objD.min = 0;
+                        objD.max = 0;
+                        objD.step = 0;
+                        objD.value = 0;
+                        ImageOutset.paramsLeft.value = "";
+                        break;
+                }
+
+                ImageOutset.paramsLeft.unit = units;
+                $("#sliderBoxBorderImageOutsetL").slider("option", {min: objD.min, max: objD.max, step: objD.step, value: objD.value});
+                $("#sliderBoxBorderImageOutsetL").trigger("slidechange");
+
+            }
+        });
+
+
+
+        /*********************************BorderImageWidth******************************************************/
+        var ImageWidth = new myWww("border-image-width", Top = {
+            min: 0, max: 40, step: 1, value: 5, unit: "",
+            sliderElem: "#sliderBoxBorderImageWidthT", boxProp: "#BorderImageWidthT"},
+                Right = {
+                    min: 0, max: 40, step: 1, value: 5, unit: "",
+                    sliderElem: "#sliderBoxBorderImageWidthR", boxProp: "#BorderImageWidthR"},
+                Bottom = {
+                    min: 0, max: 40, step: 1, value: 5, unit: "",
+                    sliderElem: "#sliderBoxBorderImageWidthB", boxProp: "#BorderImageWidthB"},
+                Left = {
+                    min: 0, max: 40, step: 1, value: 5, unit: "",
+                    sliderElem: "#sliderBoxBorderImageWidthL", boxProp: "#BorderImageWidthL"}
+
+
+        );
+
+        $("#selectBorderImageWidthT").selectmenu({
+            change: function (event, data) {
+                var objD = {};
+                var units = data.item.value;
+                switch (units) {
+                    case"px":
+                        objD.min = 0;
+                        objD.max = 40;
+                        objD.step = 1;
+                        objD.value = 20;
+                        break;
+                    case"cm":
+                        objD.min = 0;
+                        objD.max = 2;
+                        objD.step = 0.01;
+                        objD.value = 1;
+                        break;
+                    case"mm":
+                        objD.min = 0;
+                        objD.max = 20;
+                        objD.step = 0.1;
+                        objD.value = 1;
+                        break;
+                    case"em":
+                        objD.min = 0;
+                        objD.max = 10;
+                        objD.step = 0.1;
+                        objD.value = 2.5;
+                        break;
+                    case"rem":
+                        objD.min = 0;
+                        objD.max = 10;
+                        objD.step = 0.1;
+                        objD.value = 2.5;
+                        break;
+                    case"%":
+                        objD.min = 0;
+                        objD.max = 20;
+                        objD.step = 1;
+                        objD.value = 10;
+                        break;
+                    case"":
+                        objD.min = 0;
+                        objD.max = 20;
+                        objD.step = 1;
+                        objD.value = 10;
+                        break;
+                    case"auto":
+                        objD.min = 0;
+                        objD.max = 0;
+                        objD.step = 0;
+                        objD.value = 0;
+                        ImageWidth.paramsTop.value = "";
+                        break;
+                }
+
+                ImageWidth.paramsTop.unit = units;
+                $("#sliderBoxBorderImageWidthT").slider("option", {min: objD.min, max: objD.max, step: objD.step, value: objD.value});
+                $("#sliderBoxBorderImageWidthT").trigger("slidechange");
+
+            }
+        });
+
+        $("#selectBorderImageWidthR").selectmenu({
+            change: function (event, data) {
+                var objD = {};
+                var units = data.item.value;
+                switch (units) {
+                    case"px":
+                        objD.min = 0;
+                        objD.max = 40;
+                        objD.step = 1;
+                        objD.value = 20;
+                        break;
+                    case"cm":
+                        objD.min = 0;
+                        objD.max = 2;
+                        objD.step = 0.01;
+                        objD.value = 1;
+                        break;
+                    case"mm":
+                        objD.min = 0;
+                        objD.max = 20;
+                        objD.step = 0.1;
+                        objD.value = 1;
+                        break;
+                    case"em":
+                        objD.min = 0;
+                        objD.max = 10;
+                        objD.step = 0.1;
+                        objD.value = 2.5;
+                        break;
+                    case"rem":
+                        objD.min = 0;
+                        objD.max = 10;
+                        objD.step = 0.1;
+                        objD.value = 2.5;
+                        break;
+                    case"%":
+                        objD.min = 0;
+                        objD.max = 20;
+                        objD.step = 1;
+                        objD.value = 10;
+                        break;
+                    case"":
+                        objD.min = 0;
+                        objD.max = 20;
+                        objD.step = 1;
+                        objD.value = 10;
+                        break;
+                    case"auto":
+                        objD.min = 0;
+                        objD.max = 0;
+                        objD.step = 0;
+                        objD.value = 0;
+                        ImageWidth.paramsRight.value = "";
+                        break;
+                }
+
+                ImageWidth.paramsRight.unit = units;
+                $("#sliderBoxBorderImageWidthR").slider("option", {min: objD.min, max: objD.max, step: objD.step, value: objD.value});
+                $("#sliderBoxBorderImageWidthR").trigger("slidechange");
+
+            }
+        });
+
+        $("#selectBorderImageWidthB").selectmenu({
+            change: function (event, data) {
+                var objD = {};
+                var units = data.item.value;
+                switch (units) {
+                    case"px":
+                        objD.min = 0;
+                        objD.max = 40;
+                        objD.step = 1;
+                        objD.value = 20;
+                        break;
+                    case"cm":
+                        objD.min = 0;
+                        objD.max = 2;
+                        objD.step = 0.01;
+                        objD.value = 1;
+                        break;
+                    case"mm":
+                        objD.min = 0;
+                        objD.max = 20;
+                        objD.step = 0.1;
+                        objD.value = 1;
+                        break;
+                    case"em":
+                        objD.min = 0;
+                        objD.max = 10;
+                        objD.step = 0.1;
+                        objD.value = 2.5;
+                        break;
+                    case"rem":
+                        objD.min = 0;
+                        objD.max = 10;
+                        objD.step = 0.1;
+                        objD.value = 2.5;
+                        break;
+                    case"%":
+                        objD.min = 0;
+                        objD.max = 20;
+                        objD.step = 1;
+                        objD.value = 10;
+                        break;
+                    case"":
+                        objD.min = 0;
+                        objD.max = 20;
+                        objD.step = 1;
+                        objD.value = 10;
+                        break;
+                    case"auto":
+                        objD.min = 0;
+                        objD.max = 0;
+                        objD.step = 0;
+                        objD.value = 0;
+                        ImageWidth.paramsBottom.value = "";
+                        break;
+                }
+
+                ImageWidth.paramsBottom.unit = units;
+                $("#sliderBoxBorderImageWidthB").slider("option", {min: objD.min, max: objD.max, step: objD.step, value: objD.value});
+                $("#sliderBoxBorderImageWidthB").trigger("slidechange");
+
+            }
+        });
+
+        $("#selectBorderImageWidthL").selectmenu({
+            change: function (event, data) {
+                var objD = {};
+                var units = data.item.value;
+                switch (units) {
+                    case"px":
+                        objD.min = 0;
+                        objD.max = 40;
+                        objD.step = 1;
+                        objD.value = 20;
+                        break;
+                    case"cm":
+                        objD.min = 0;
+                        objD.max = 2;
+                        objD.step = 0.01;
+                        objD.value = 1;
+                        break;
+                    case"mm":
+                        objD.min = 0;
+                        objD.max = 20;
+                        objD.step = 0.1;
+                        objD.value = 1;
+                        break;
+                    case"em":
+                        objD.min = 0;
+                        objD.max = 10;
+                        objD.step = 0.1;
+                        objD.value = 2.5;
+                        break;
+                    case"rem":
+                        objD.min = 0;
+                        objD.max = 10;
+                        objD.step = 0.1;
+                        objD.value = 2.5;
+                        break;
+                    case"%":
+                        objD.min = 0;
+                        objD.max = 20;
+                        objD.step = 1;
+                        objD.value = 10;
+                        break;
+                    case"":
+                        objD.min = 0;
+                        objD.max = 20;
+                        objD.step = 1;
+                        objD.value = 10;
+                        break;
+                    case"auto":
+                        objD.min = 0;
+                        objD.max = 0;
+                        objD.step = 0;
+                        objD.value = 0;
+                        ImageWidth.paramsLeft.value = "";
+                        break;
+                }
+
+                ImageWidth.paramsLeft.unit = units;
+                $("#sliderBoxBorderImageWidthL").slider("option", {min: objD.min, max: objD.max, step: objD.step, value: objD.value});
+                $("#sliderBoxBorderImageWidthL").trigger("slidechange");
+
+            }
+        });
+
+
+        /*********************************BorderImageSlice******************************************************/
+
+
+        var ImageSlice = new myWww("border-image-slice", Top = {
+            min: 0, max: 40, step: 1, value: 5, unit: "",
+            sliderElem: "#sliderBoxBorderImageSliceT", boxProp: "#BorderImageSliceT"},
+                Right = {
+                    min: 0, max: 40, step: 1, value: 5, unit: "",
+                    sliderElem: "#sliderBoxBorderImageSliceR", boxProp: "#BorderImageSliceR"},
+                Bottom = {
+                    min: 0, max: 40, step: 1, value: 5, unit: "",
+                    sliderElem: "#sliderBoxBorderImageSliceB", boxProp: "#BorderImageSliceB"},
+                Left = {
+                    min: 0, max: 40, step: 1, value: 5, unit: "",
+                    sliderElem: "#sliderBoxBorderImageSliceL", boxProp: "#BorderImageSliceL"}
+
+
+        );
+
+        $("#selectBorderImageSliceT").selectmenu({
+            change: function (event, data) {
+                var objD = {};
+                var units = data.item.value;
+                switch (units) {
+                    case "":
+                        objD.min = 0;
+                        objD.max = 80;
+                        objD.step = 1;
+                        objD.value = 20;
+                        break;
+
+                    case"%":
+                        objD.min = 0;
+                        objD.max = 20;
+                        objD.step = 1;
+                        objD.value = 10;
+                        break;
+
+                }
+
+                ImageSlice.paramsTop.unit = units;
+                $("#sliderBoxBorderImageSliceT").slider("option", {min: objD.min, max: objD.max, step: objD.step, value: objD.value});
+            }
+        });
+
+        $("#selectBorderImageSliceR").selectmenu({
+            change: function (event, data) {
+                var objD = {};
+                var units = data.item.value;
+                switch (units) {
+                    case "":
+                        objD.min = 0;
+                        objD.max = 80;
+                        objD.step = 1;
+                        objD.value = 20;
+                        break;
+
+                    case"%":
+                        objD.min = 0;
+                        objD.max = 20;
+                        objD.step = 1;
+                        objD.value = 10;
+                        break;
+
+                }
+
+                ImageSlice.paramsRight.unit = units;
+                $("#sliderBoxBorderImageSliceR").slider("option", {min: objD.min, max: objD.max, step: objD.step, value: objD.value});
+            }
+        });
+
+        $("#selectBorderImageSliceB").selectmenu({
+            change: function (event, data) {
+                var objD = {};
+                var units = data.item.value;
+                switch (units) {
+                    case "":
+                        objD.min = 0;
+                        objD.max = 80;
+                        objD.step = 1;
+                        objD.value = 20;
+                        break;
+
+                    case"%":
+                        objD.min = 0;
+                        objD.max = 20;
+                        objD.step = 1;
+                        objD.value = 10;
+                        break;
+
+                }
+
+                ImageSlice.paramsBottom.unit = units;
+                $("#sliderBoxBorderImageSliceB").slider("option", {min: objD.min, max: objD.max, step: objD.step, value: objD.value});
+            }
+        });
+
+        $("#selectBorderImageSliceL").selectmenu({
+            change: function (event, data) {
+                var objD = {};
+                var units = data.item.value;
+                switch (units) {
+                    case "":
+                        objD.min = 0;
+                        objD.max = 100;
+                        objD.step = 1;
+                        objD.value = 20;
+                        break;
+
+                    case"%":
+                        objD.min = 0;
+                        objD.max = 20;
+                        objD.step = 1;
+                        objD.value = 10;
+                        break;
+
+                }
+
+                ImageSlice.paramsLeft.unit = units;
+                $("#sliderBoxBorderImageSliceL").slider("option", {min: objD.min, max: objD.max, step: objD.step, value: objD.value});
+            }
+        });
+
+        /*******************Adding/removing "fill" ************************/
+
+        $("input[name='fill']").on("click", function () {
+
+
+
+            if ($(this).prop("checked")) {
+
+                $(".contentArea").css("border-image-slice", function (index, value) {
+                    return value + " fill";
                 });
-                
-                $("#selectBorderTopRightRadiusV").selectmenu({
-                    change: function (event, data) {
-                        var objD = {};
-                        var units = data.item.value;
-                        switch (units) {
-                            case"px":
-                                objD.min = 0;  objD.max = 40; objD.step = 1; objD.value = 20; break;
-                            case"cm":
-                                objD.min = 0; objD.max = 2; objD.step =0.01;  objD.value = 1; break;
-                            case"mm":
-                                objD.min = 0; objD.max = 20; objD.step = 0.1; objD.value = 1; break;
-                            case"em": 
-                                objD.min = 0; objD.max = 10; objD.step = 0.1; objD.value = 2.5; break;
-                            case"rem": objD.min = 0; objD.max = 10; objD.step = 0.1;  objD.value = 2.5; break;
-                            case"%": objD.min = 0; objD.max = 20; objD.step = 1; objD.value = 10; break;
-                        }
+            } else {
 
-                         TopRight.paramsRight.unit=units;
-                         $("#sliderBoxBorderTopRightRadiusV").slider( "option", { min: objD.min, max: objD.max, step: objD.step, value: objD.value } );
-                    }
+                $(".contentArea").css("border-image-slice", function (index, value) {
+                    re = new RegExp("fill", 'gi');
+                    str = value.replace(re, '');
+                    return str;
                 });
-                
-                 /*********************************BorderBottomRightRadius sliders******************************************************/
+            }
+            ;
+        });
 
-                $("#selectBorderBottomRightRadiusH").selectmenu({
-                    change: function (event, data) {
-                        var objD = {};
-                        var units = data.item.value;
-                        switch (units) {
-                            case"px":
-                                objD.min = 0;  objD.max = 40; objD.step = 1; objD.value = 20; break;
-                            case"cm":
-                                objD.min = 0; objD.max = 2; objD.step =0.01;  objD.value = 1; break;
-                            case"mm":
-                                objD.min = 0; objD.max = 20; objD.step = 0.1; objD.value = 1; break;
-                            case"em": 
-                                objD.min = 0; objD.max = 10; objD.step = 0.1; objD.value = 2.5; break;
-                            case"rem": objD.min = 0; objD.max = 10; objD.step = 0.1;  objD.value = 2.5; break;
-                            case"%": objD.min = 0; objD.max = 20; objD.step = 1; objD.value = 10; break;
-                        }
 
-                         BottomRight.paramsTop.unit=units;
-                         $("#sliderBoxBorderBottomRightRadiusH").slider( "option", { min: objD.min, max: objD.max, step: objD.step, value: objD.value } );
-                    }
-                });
-                
-                $("#selectBorderBottomRightRadiusV").selectmenu({
-                    change: function (event, data) {
-                        var objD = {};
-                        var units = data.item.value;
-                        switch (units) {
-                            case"px":
-                                objD.min = 0;  objD.max = 40; objD.step = 1; objD.value = 20; break;
-                            case"cm":
-                                objD.min = 0; objD.max = 2; objD.step =0.01;  objD.value = 1; break;
-                            case"mm":
-                                objD.min = 0; objD.max = 20; objD.step = 0.1; objD.value = 1; break;
-                            case"em": 
-                                objD.min = 0; objD.max = 10; objD.step = 0.1; objD.value = 2.5; break;
-                            case"rem": objD.min = 0; objD.max = 10; objD.step = 0.1;  objD.value = 2.5; break;
-                            case"%": objD.min = 0; objD.max = 20; objD.step = 1; objD.value = 10; break;
-                        }
-
-                         BottomRight.paramsRight.unit=units;
-                         $("#sliderBoxBorderBottomRightRadiusV").slider( "option", { min: objD.min, max: objD.max, step: objD.step, value: objD.value } );
-                    }
-                });
-                
-                 /*********************************BorderBottomLeftRadius sliders******************************************************/
-
-                $("#selectBorderBottomLeftRadiusH").selectmenu({
-                    change: function (event, data) {
-                        var objD = {};
-                        var units = data.item.value;
-                        switch (units) {
-                            case"px":
-                                objD.min = 0;  objD.max = 40; objD.step = 1; objD.value = 20; break;
-                            case"cm":
-                                objD.min = 0; objD.max = 2; objD.step =0.01;  objD.value = 1; break;
-                            case"mm":
-                                objD.min = 0; objD.max = 20; objD.step = 0.1; objD.value = 1; break;
-                            case"em": 
-                                objD.min = 0; objD.max = 10; objD.step = 0.1; objD.value = 2.5; break;
-                            case"rem": objD.min = 0; objD.max = 10; objD.step = 0.1;  objD.value = 2.5; break;
-                            case"%": objD.min = 0; objD.max = 20; objD.step = 1; objD.value = 10; break;
-                        }
-
-                         BottomLeft.paramsTop.unit=units;
-                         $("#sliderBoxBorderBottomLeftRadiusH").slider( "option", { min: objD.min, max: objD.max, step: objD.step, value: objD.value } );
-                    }
-                });
-                
-                $("#selectBorderBottomLeftRadiusV").selectmenu({
-                    change: function (event, data) {
-                        var objD = {};
-                        var units = data.item.value;
-                        switch (units) {
-                            case"px":
-                                objD.min = 0;  objD.max = 40; objD.step = 1; objD.value = 20; break;
-                            case"cm":
-                                objD.min = 0; objD.max = 2; objD.step =0.01;  objD.value = 1; break;
-                            case"mm":
-                                objD.min = 0; objD.max = 20; objD.step = 0.1; objD.value = 1; break;
-                            case"em": 
-                                objD.min = 0; objD.max = 10; objD.step = 0.1; objD.value = 2.5; break;
-                            case"rem": objD.min = 0; objD.max = 10; objD.step = 0.1;  objD.value = 2.5; break;
-                            case"%": objD.min = 0; objD.max = 20; objD.step = 1; objD.value = 10; break;
-                        }
-
-                         BottomLeft.paramsRight.unit=units;
-                         $("#sliderBoxBorderBottomLeftRadiusV").slider( "option", { min: objD.min, max: objD.max, step: objD.step, value: objD.value } );
-                    }
-                });
-                
-                
-                
-                
-                
-                /*********************************Width slider******************************************************/
+        /*********************************BorderImageRepeat******************************************************/
 
 
 
-                $("#selectWidth").selectmenu({
-                    change: function (event, data) {
-                        var objD = {};
-                        widthD = data.item.value;
-                        switch (widthD) {
-                            case"px":
-                                objD.min = 0;
-                                objD.max = 400;
-                                objD.step = 10;
-                                objD.value = 200;
-                                break;
-                            case"cm":
-                                objD.min = 0;
-                                objD.max = 10;
-                                objD.step = 1;
-                                objD.value = 5;
-                                break;
-                            case"mm":
-                                objD.min = 0;
-                                objD.max = 150;
-                                objD.step = 10;
-                                objD.value = 50;
-                                break;
-                            case"em":
-                                objD.min = 0;
-                                objD.max = 50;
-                                objD.step = 1;
-                                objD.value = 25;
-                                break;
-                            case"rem":
-                                objD.min = 0;
-                                objD.max = 50;
-                                objD.step = 1;
-                                objD.value = 25;
-                                break;
-                            case"%":
-                                objD.min = 0;
-                                objD.max = 100;
-                                objD.step = 5;
-                                objD.value = 50;
-                                break;
-                        }
+        $("#selectBorderImageRepeat").selectmenu({
+            change: function (event, data) {
 
-                        boxHW("Width", objD);
-                    }
-                });
-                /*********************************Hight slider******************************************************/
-
-                $("#selectHeight").selectmenu({
-                    change: function (event, data) {
-                        var objD = {};
-                        widthD = data.item.value;
-                        switch (widthD) {
-                            case"px":
-                                objD.min = 0;
-                                objD.max = 400;
-                                objD.step = 10;
-                                objD.value = 200;
-                                break;
-                            case"cm":
-                                objD.min = 0;
-                                objD.max = 10;
-                                objD.step = 1;
-                                objD.value = 5;
-                                break;
-                            case"mm":
-                                objD.min = 0;
-                                objD.max = 150;
-                                objD.step = 10;
-                                objD.value = 50;
-                                break;
-                            case"em":
-                                objD.min = 0;
-                                objD.max = 50;
-                                objD.step = 1;
-                                objD.value = 25;
-                                break;
-                            case"rem":
-                                objD.min = 0;
-                                objD.max = 50;
-                                objD.step = 1;
-                                objD.value = 25;
-                                break;
-                            case"%":
-                                objD.min = 0;
-                                objD.max = 100;
-                                objD.step = 5;
-                                objD.value = 50;
-                                break;
-                        }
-
-                        boxHW("Height", objD);
-                    }
-                });
-                /*********************************PaddingTop slider******************************************************/
+                var repeat = data.item.value;
 
 
-                $("#selectPaddingTop").selectmenu({
-                    change: function (event, data) {
-                        var objD = {};
-                        widthD = data.item.value;
-                        switch (widthD) {
-                            case"px":
-                                objD.min = 0;
-                                objD.max = 40;
-                                objD.step = 1;
-                                objD.value = 20;
-                                break;
-                            case"cm":
-                                objD.min = 0;
-                                objD.max = 1;
-                                objD.step = 0.01;
-                                objD.value = 0.5;
-                                break;
-                            case"mm":
-                                objD.min = 0;
-                                objD.max = 10;
-                                objD.step = 0.1;
-                                objD.value = 5;
-                                break;
-                            case"em":
-                                objD.min = 0;
-                                objD.max = 2;
-                                objD.step = 0.01;
-                                objD.value = 1;
-                                break;
-                            case"rem":
-                                objD.min = 0;
-                                objD.max = 2;
-                                objD.step = 0.01;
-                                objD.value = 1;
-                                break;
-                            case"%":
-                                objD.min = 0;
-                                objD.max = 20;
-                                objD.step = 0.1;
-                                objD.value = 10;
-                                break;
-                        }
 
-                        boxHW("PaddingTop", objD);
-                    }
-                });
-                /*********************************PaddingRight slider******************************************************/
-
-                $("#selectPaddingRight").selectmenu({
-                    change: function (event, data) {
-                        var objD = {};
-                        widthD = data.item.value;
-                        switch (widthD) {
-                            case"px":
-                                objD.min = 0;
-                                objD.max = 40;
-                                objD.step = 1;
-                                objD.value = 20;
-                                break;
-                            case"cm":
-                                objD.min = 0;
-                                objD.max = 1;
-                                objD.step = 0.01;
-                                objD.value = 0.5;
-                                break;
-                            case"mm":
-                                objD.min = 0;
-                                objD.max = 10;
-                                objD.step = 0.1;
-                                objD.value = 5;
-                                break;
-                            case"em":
-                                objD.min = 0;
-                                objD.max = 2;
-                                objD.step = 0.01;
-                                objD.value = 1;
-                                break;
-                            case"rem":
-                                objD.min = 0;
-                                objD.max = 2;
-                                objD.step = 0.01;
-                                objD.value = 1;
-                                break;
-                            case"%":
-                                objD.min = 0;
-                                objD.max = 20;
-                                objD.step = 0.1;
-                                objD.value = 10;
-                                break;
-                        }
-
-                        boxHW("PaddingRight", objD);
-                    }
-                });
-                /*********************************PaddingBottom slider******************************************************/
-
-                $("#selectPaddingBottom").selectmenu({
-                    change: function (event, data) {
-                        var objD = {};
-                        widthD = data.item.value;
-                        switch (widthD) {
-                            case"px":
-                                objD.min = 0;
-                                objD.max = 40;
-                                objD.step = 1;
-                                objD.value = 20;
-                                break;
-                            case"cm":
-                                objD.min = 0;
-                                objD.max = 1;
-                                objD.step = 0.01;
-                                objD.value = 0.5;
-                                break;
-                            case"mm":
-                                objD.min = 0;
-                                objD.max = 10;
-                                objD.step = 0.1;
-                                objD.value = 5;
-                                break;
-                            case"em":
-                                objD.min = 0;
-                                objD.max = 2;
-                                objD.step = 0.01;
-                                objD.value = 1;
-                                break;
-                            case"rem":
-                                objD.min = 0;
-                                objD.max = 2;
-                                objD.step = 0.01;
-                                objD.value = 1;
-                                break;
-                            case"%":
-                                objD.min = 0;
-                                objD.max = 20;
-                                objD.step = 0.1;
-                                objD.value = 10;
-                                break;
-                        }
-
-                        boxHW("PaddingBottom", objD);
-                    }
-                });
-                /*********************************PaddingLeft slider******************************************************/
-
-                $("#selectPaddingLeft").selectmenu({
-                    change: function (event, data) {
-                        var objD = {};
-                        widthD = data.item.value;
-                        switch (widthD) {
-                            case"px":
-                                objD.min = 0;
-                                objD.max = 40;
-                                objD.step = 1;
-                                objD.value = 20;
-                                break;
-                            case"cm":
-                                objD.min = 0;
-                                objD.max = 1;
-                                objD.step = 0.01;
-                                objD.value = 0.5;
-                                break;
-                            case"mm":
-                                objD.min = 0;
-                                objD.max = 10;
-                                objD.step = 0.1;
-                                objD.value = 5;
-                                break;
-                            case"em":
-                                objD.min = 0;
-                                objD.max = 2;
-                                objD.step = 0.01;
-                                objD.value = 1;
-                                break;
-                            case"rem":
-                                objD.min = 0;
-                                objD.max = 2;
-                                objD.step = 0.01;
-                                objD.value = 1;
-                                break;
-                            case"%":
-                                objD.min = 0;
-                                objD.max = 20;
-                                objD.step = 0.1;
-                                objD.value = 10;
-                                break;
-                        }
-
-                        boxHW("PaddingLeft", objD);
-                    }
-                });
-                /*********************************MarginTop slider******************************************************/
-
-                $("#selectMarginTop").selectmenu({
-                    change: function (event, data) {
-                        var objD = {};
-                        widthD = data.item.value;
-                        switch (widthD) {
-                            case"px":
-                                objD.min = 0;
-                                objD.max = 40;
-                                objD.step = 1;
-                                objD.value = 20;
-                                break;
-                            case"cm":
-                                objD.min = 0;
-                                objD.max = 1;
-                                objD.step = 0.01;
-                                objD.value = 0.5;
-                                break;
-                            case"mm":
-                                objD.min = 0;
-                                objD.max = 10;
-                                objD.step = 0.1;
-                                objD.value = 5;
-                                break;
-                            case"em":
-                                objD.min = 0;
-                                objD.max = 2;
-                                objD.step = 0.01;
-                                objD.value = 1;
-                                break;
-                            case"rem":
-                                objD.min = 0;
-                                objD.max = 2;
-                                objD.step = 0.01;
-                                objD.value = 1;
-                                break;
-                            case"%":
-                                objD.min = 0;
-                                objD.max = 20;
-                                objD.step = 0.1;
-                                objD.value = 10;
-                                break;
-                        }
-
-                        boxHW("MarginTop", objD);
-                    }
-                });
-                /*********************************MarginRight slider******************************************************/
-
-                $("#selectMarginRight").selectmenu({
-                    change: function (event, data) {
-                        var objD = {};
-                        widthD = data.item.value;
-                        switch (widthD) {
-                            case"px":
-                                objD.min = 0;
-                                objD.max = 40;
-                                objD.step = 1;
-                                objD.value = 20;
-                                break;
-                            case"cm":
-                                objD.min = 0;
-                                objD.max = 1;
-                                objD.step = 0.01;
-                                objD.value = 0.5;
-                                break;
-                            case"mm":
-                                objD.min = 0;
-                                objD.max = 10;
-                                objD.step = 0.1;
-                                objD.value = 5;
-                                break;
-                            case"em":
-                                objD.min = 0;
-                                objD.max = 2;
-                                objD.step = 0.01;
-                                objD.value = 1;
-                                break;
-                            case"rem":
-                                objD.min = 0;
-                                objD.max = 2;
-                                objD.step = 0.01;
-                                objD.value = 1;
-                                break;
-                            case"%":
-                                objD.min = 0;
-                                objD.max = 20;
-                                objD.step = 0.1;
-                                objD.value = 10;
-                                break;
-                        }
-
-                        boxHW("MarginRight", objD);
-                    }
-                });
-                /*********************************MarginBottom slider******************************************************/
-
-                $("#selectMarginBottom").selectmenu({
-                    change: function (event, data) {
-                        var objD = {};
-                        widthD = data.item.value;
-                        switch (widthD) {
-                            case"px":
-                                objD.min = 0;
-                                objD.max = 40;
-                                objD.step = 1;
-                                objD.value = 20;
-                                break;
-                            case"cm":
-                                objD.min = 0;
-                                objD.max = 1;
-                                objD.step = 0.01;
-                                objD.value = 0.5;
-                                break;
-                            case"mm":
-                                objD.min = 0;
-                                objD.max = 10;
-                                objD.step = 0.1;
-                                objD.value = 5;
-                                break;
-                            case"em":
-                                objD.min = 0;
-                                objD.max = 2;
-                                objD.step = 0.01;
-                                objD.value = 1;
-                                break;
-                            case"rem":
-                                objD.min = 0;
-                                objD.max = 2;
-                                objD.step = 0.01;
-                                objD.value = 1;
-                                break;
-                            case"%":
-                                objD.min = 0;
-                                objD.max = 20;
-                                objD.step = 0.1;
-                                objD.value = 10;
-                                break;
-                        }
-
-                        boxHW("MarginBottom", objD);
-                    }
-                });
-                /*********************************MarginLeft slider******************************************************/
-
-                $("#selectMarginLeft").selectmenu({
-                    change: function (event, data) {
-                        var objD = {};
-                        widthD = data.item.value;
-                        switch (widthD) {
-                            case"px":
-                                objD.min = 0;
-                                objD.max = 40;
-                                objD.step = 1;
-                                objD.value = 20;
-                                break;
-                            case"cm":
-                                objD.min = 0;
-                                objD.max = 1;
-                                objD.step = 0.01;
-                                objD.value = 0.5;
-                                break;
-                            case"mm":
-                                objD.min = 0;
-                                objD.max = 10;
-                                objD.step = 0.1;
-                                objD.value = 5;
-                                break;
-                            case"em":
-                                objD.min = 0;
-                                objD.max = 2;
-                                objD.step = 0.01;
-                                objD.value = 1;
-                                break;
-                            case"rem":
-                                objD.min = 0;
-                                objD.max = 2;
-                                objD.step = 0.01;
-                                objD.value = 1;
-                                break;
-                            case"%":
-                                objD.min = 0;
-                                objD.max = 20;
-                                objD.step = 0.1;
-                                objD.value = 10;
-                                break;
-                        }
-
-                        boxHW("MarginLeft", objD);
-                    }
-                });
-                /*********************************BorderTopWidth slider******************************************************/
-
-                $("#selectBorderTopWidth").selectmenu({
-                    change: function (event, data) {
-                        var objD = {};
-                        widthD = data.item.value;
-                        switch (widthD) {
-                            case"px":
-                                objD.min = 0;
-                                objD.max = 40;
-                                objD.step = 1;
-                                objD.value = 20;
-                                break;
-                            case"cm":
-                                objD.min = 0;
-                                objD.max = 1;
-                                objD.step = 0.01;
-                                objD.value = 0.5;
-                                break;
-                            case"mm":
-                                objD.min = 0;
-                                objD.max = 10;
-                                objD.step = 0.1;
-                                objD.value = 5;
-                                break;
-                            case"em":
-                                objD.min = 0;
-                                objD.max = 2;
-                                objD.step = 0.01;
-                                objD.value = 1;
-                                break;
-                            case"rem":
-                                objD.min = 0;
-                                objD.max = 2;
-                                objD.step = 0.01;
-                                objD.value = 1;
-                                break;
-                            case"%":
-                                objD.min = 0;
-                                objD.max = 20;
-                                objD.step = 0.1;
-                                objD.value = 10;
-                                break;
-                        }
-
-                        boxHW("BorderTopWidth", objD);
-                    }
-                });
-                /*********************************BorderRightWidth slider******************************************************/
-
-                $("#selectBorderRightWidth").selectmenu({
-                    change: function (event, data) {
-                        var objD = {};
-                        widthD = data.item.value;
-                        switch (widthD) {
-                            case"px":
-                                objD.min = 0;
-                                objD.max = 40;
-                                objD.step = 1;
-                                objD.value = 20;
-                                break;
-                            case"cm":
-                                objD.min = 0;
-                                objD.max = 1;
-                                objD.step = 0.01;
-                                objD.value = 0.5;
-                                break;
-                            case"mm":
-                                objD.min = 0;
-                                objD.max = 10;
-                                objD.step = 0.1;
-                                objD.value = 5;
-                                break;
-                            case"em":
-                                objD.min = 0;
-                                objD.max = 2;
-                                objD.step = 0.01;
-                                objD.value = 1;
-                                break;
-                            case"rem":
-                                objD.min = 0;
-                                objD.max = 2;
-                                objD.step = 0.01;
-                                objD.value = 1;
-                                break;
-                            case"%":
-                                objD.min = 0;
-                                objD.max = 20;
-                                objD.step = 0.1;
-                                objD.value = 10;
-                                break;
-                        }
-
-                        boxHW("BorderRightWidth", objD);
-                    }
-                });
-                /*********************************BorderBottomWidth slider******************************************************/
-
-                $("#selectBorderBottomWidth").selectmenu({
-                    change: function (event, data) {
-                        var objD = {};
-                        widthD = data.item.value;
-                        switch (widthD) {
-                            case"px":
-                                objD.min = 0;
-                                objD.max = 40;
-                                objD.step = 1;
-                                objD.value = 20;
-                                break;
-                            case"cm":
-                                objD.min = 0;
-                                objD.max = 1;
-                                objD.step = 0.01;
-                                objD.value = 0.5;
-                                break;
-                            case"mm":
-                                objD.min = 0;
-                                objD.max = 10;
-                                objD.step = 0.1;
-                                objD.value = 5;
-                                break;
-                            case"em":
-                                objD.min = 0;
-                                objD.max = 2;
-                                objD.step = 0.01;
-                                objD.value = 1;
-                                break;
-                            case"rem":
-                                objD.min = 0;
-                                objD.max = 2;
-                                objD.step = 0.01;
-                                objD.value = 1;
-                                break;
-                            case"%":
-                                objD.min = 0;
-                                objD.max = 20;
-                                objD.step = 0.1;
-                                objD.value = 10;
-                                break;
-                        }
-
-                        boxHW("BorderBottomWidth", objD);
-                    }
-                });
-                /*********************************BorderLeftWidth slider******************************************************/
+                $(".contentArea").css("border-image-repeat", repeat);
+            }
+        });
 
 
-                $("#selectBorderLeftWidth").selectmenu({
-                    change: function (event, data) {
-                        var objD = {};
-                        widthD = data.item.value;
-                        switch (widthD) {
-                            case"px":
-                                objD.min = 0;
-                                objD.max = 40;
-                                objD.step = 1;
-                                objD.value = 20;
-                                break;
-                            case"cm":
-                                objD.min = 0;
-                                objD.max = 1;
-                                objD.step = 0.01;
-                                objD.value = 0.5;
-                                break;
-                            case"mm":
-                                objD.min = 0;
-                                objD.max = 10;
-                                objD.step = 0.1;
-                                objD.value = 5;
-                                break;
-                            case"em":
-                                objD.min = 0;
-                                objD.max = 2;
-                                objD.step = 0.01;
-                                objD.value = 1;
-                                break;
-                            case"rem":
-                                objD.min = 0;
-                                objD.max = 2;
-                                objD.step = 0.01;
-                                objD.value = 1;
-                                break;
-                            case"%":
-                                objD.min = 0;
-                                objD.max = 20;
-                                objD.step = 0.1;
-                                objD.value = 10;
-                                break;
-                        }
+        /*********************************BorderImageSource******************************************************/
 
-                        boxHW("BorderLeftWidth", objD);
-                    }
-                });
-                /***************************************************************************************************/
-
-            });
-            /***************************************************************************************************/
+        $("input[name='selectBorderImageSource']").on("change", function () {
 
 
-        </script>
+            $(".contentArea").css("border-image-source", "url(http://localhost:8383/myTutorSite/Examples/img/border2.png)");
+        });
 
-    </body>
+        /*********************************BorderTopColor******************************************************/
+
+        $("input[name='selectBorderTopColor']").on("change", function () {
+            $(".contentArea").css("border-top-color", $(this).val());
+        });
+
+        /*********************************BorderRightColor******************************************************/
+
+        $("input[name='selectBorderRightColor']").on("change", function () {
+            $(".contentArea").css("border-right-color", $(this).val());
+        });
+        /*********************************BorderBottomColor******************************************************/
+
+        $("input[name='selectBorderBottomColor']").on("change", function () {
+            $(".contentArea").css("border-bottom-color", $(this).val());
+        });
+        /*********************************BorderLeftColor******************************************************/
+
+        $("input[name='selectBorderLeftColor']").on("change", function () {
+            $(".contentArea").css("border-left-color", $(this).val());
+        });
+
+        /*********************************BorderTopStyle******************************************************/
+        $("#selectBorderTopStyle").selectmenu({
+            change: function (event, data) {
+
+                var topStyle = data.item.value;
+
+
+
+                $(".contentArea").css("border-top-style", topStyle);
+            }
+        });
+
+        /*********************************BorderRightStyle******************************************************/
+        $("#selectBorderRightStyle").selectmenu({
+            change: function (event, data) {
+
+                var topStyle = data.item.value;
+
+
+
+                $(".contentArea").css("border-right-style", topStyle);
+            }
+        });
+
+        /*********************************BorderBottomStyle******************************************************/
+        $("#selectBorderBottomStyle").selectmenu({
+            change: function (event, data) {
+
+                var topStyle = data.item.value;
+
+
+
+                $(".contentArea").css("border-bottom-style", topStyle);
+            }
+        });
+
+        /*********************************BorderLeftStyle******************************************************/
+        $("#selectBorderLeftStyle").selectmenu({
+            change: function (event, data) {
+
+                var topStyle = data.item.value;
+
+
+
+                $(".contentArea").css("border-left-style", topStyle);
+            }
+        });
+
+
+        /*********************************BorderLeftTopRadius sliders******************************************************/
+
+        $("#selectBorderTopLeftRadiusH").selectmenu({
+            change: function (event, data) {
+                var objD = {};
+                var units = data.item.value;
+                switch (units) {
+                    case"px":
+                        objD.min = 0;
+                        objD.max = 40;
+                        objD.step = 1;
+                        objD.value = 20;
+                        break;
+                    case"cm":
+                        objD.min = 0;
+                        objD.max = 2;
+                        objD.step = 0.01;
+                        objD.value = 1;
+                        break;
+                    case"mm":
+                        objD.min = 0;
+                        objD.max = 20;
+                        objD.step = 0.1;
+                        objD.value = 1;
+                        break;
+                    case"em":
+                        objD.min = 0;
+                        objD.max = 10;
+                        objD.step = 0.1;
+                        objD.value = 2.5;
+                        break;
+                    case"rem":
+                        objD.min = 0;
+                        objD.max = 10;
+                        objD.step = 0.1;
+                        objD.value = 2.5;
+                        break;
+                    case"%":
+                        objD.min = 0;
+                        objD.max = 20;
+                        objD.step = 1;
+                        objD.value = 10;
+                        break;
+                }
+
+                LeftTop.paramsTop.unit = units;
+                $("#sliderBoxBorderTopLeftRadiusH").slider("option", {min: objD.min, max: objD.max, step: objD.step, value: objD.value});
+            }
+        });
+
+        $("#selectBorderTopLeftRadiusV").selectmenu({
+            change: function (event, data) {
+                var objD = {};
+                var units = data.item.value;
+                switch (units) {
+                    case"px":
+                        objD.min = 0;
+                        objD.max = 40;
+                        objD.step = 1;
+                        objD.value = 20;
+                        break;
+                    case"cm":
+                        objD.min = 0;
+                        objD.max = 2;
+                        objD.step = 0.01;
+                        objD.value = 1;
+                        break;
+                    case"mm":
+                        objD.min = 0;
+                        objD.max = 20;
+                        objD.step = 0.1;
+                        objD.value = 1;
+                        break;
+                    case"em":
+                        objD.min = 0;
+                        objD.max = 10;
+                        objD.step = 0.1;
+                        objD.value = 2.5;
+                        break;
+                    case"rem":
+                        objD.min = 0;
+                        objD.max = 10;
+                        objD.step = 0.1;
+                        objD.value = 2.5;
+                        break;
+                    case"%":
+                        objD.min = 0;
+                        objD.max = 20;
+                        objD.step = 1;
+                        objD.value = 10;
+                        break;
+                }
+
+                LeftTop.paramsRight.unit = units;
+                $("#sliderBoxBorderTopLeftRadiusV").slider("option", {min: objD.min, max: objD.max, step: objD.step, value: objD.value});
+            }
+        });
+
+        /*********************************BorderTopRightRadius sliders******************************************************/
+
+        $("#selectBorderTopRightRadiusH").selectmenu({
+            change: function (event, data) {
+                var objD = {};
+                var units = data.item.value;
+                switch (units) {
+                    case"px":
+                        objD.min = 0;
+                        objD.max = 40;
+                        objD.step = 1;
+                        objD.value = 20;
+                        break;
+                    case"cm":
+                        objD.min = 0;
+                        objD.max = 2;
+                        objD.step = 0.01;
+                        objD.value = 1;
+                        break;
+                    case"mm":
+                        objD.min = 0;
+                        objD.max = 20;
+                        objD.step = 0.1;
+                        objD.value = 1;
+                        break;
+                    case"em":
+                        objD.min = 0;
+                        objD.max = 10;
+                        objD.step = 0.1;
+                        objD.value = 2.5;
+                        break;
+                    case"rem":
+                        objD.min = 0;
+                        objD.max = 10;
+                        objD.step = 0.1;
+                        objD.value = 2.5;
+                        break;
+                    case"%":
+                        objD.min = 0;
+                        objD.max = 20;
+                        objD.step = 1;
+                        objD.value = 10;
+                        break;
+                }
+
+                TopRight.paramsTop.unit = units;
+                $("#sliderBoxBorderTopRightRadiusH").slider("option", {min: objD.min, max: objD.max, step: objD.step, value: objD.value});
+            }
+        });
+
+        $("#selectBorderTopRightRadiusV").selectmenu({
+            change: function (event, data) {
+                var objD = {};
+                var units = data.item.value;
+                switch (units) {
+                    case"px":
+                        objD.min = 0;
+                        objD.max = 40;
+                        objD.step = 1;
+                        objD.value = 20;
+                        break;
+                    case"cm":
+                        objD.min = 0;
+                        objD.max = 2;
+                        objD.step = 0.01;
+                        objD.value = 1;
+                        break;
+                    case"mm":
+                        objD.min = 0;
+                        objD.max = 20;
+                        objD.step = 0.1;
+                        objD.value = 1;
+                        break;
+                    case"em":
+                        objD.min = 0;
+                        objD.max = 10;
+                        objD.step = 0.1;
+                        objD.value = 2.5;
+                        break;
+                    case"rem":
+                        objD.min = 0;
+                        objD.max = 10;
+                        objD.step = 0.1;
+                        objD.value = 2.5;
+                        break;
+                    case"%":
+                        objD.min = 0;
+                        objD.max = 20;
+                        objD.step = 1;
+                        objD.value = 10;
+                        break;
+                }
+
+                TopRight.paramsRight.unit = units;
+                $("#sliderBoxBorderTopRightRadiusV").slider("option", {min: objD.min, max: objD.max, step: objD.step, value: objD.value});
+            }
+        });
+
+        /*********************************BorderBottomRightRadius sliders******************************************************/
+
+        $("#selectBorderBottomRightRadiusH").selectmenu({
+            change: function (event, data) {
+                var objD = {};
+                var units = data.item.value;
+                switch (units) {
+                    case"px":
+                        objD.min = 0;
+                        objD.max = 40;
+                        objD.step = 1;
+                        objD.value = 20;
+                        break;
+                    case"cm":
+                        objD.min = 0;
+                        objD.max = 2;
+                        objD.step = 0.01;
+                        objD.value = 1;
+                        break;
+                    case"mm":
+                        objD.min = 0;
+                        objD.max = 20;
+                        objD.step = 0.1;
+                        objD.value = 1;
+                        break;
+                    case"em":
+                        objD.min = 0;
+                        objD.max = 10;
+                        objD.step = 0.1;
+                        objD.value = 2.5;
+                        break;
+                    case"rem":
+                        objD.min = 0;
+                        objD.max = 10;
+                        objD.step = 0.1;
+                        objD.value = 2.5;
+                        break;
+                    case"%":
+                        objD.min = 0;
+                        objD.max = 20;
+                        objD.step = 1;
+                        objD.value = 10;
+                        break;
+                }
+
+                BottomRight.paramsTop.unit = units;
+                $("#sliderBoxBorderBottomRightRadiusH").slider("option", {min: objD.min, max: objD.max, step: objD.step, value: objD.value});
+            }
+        });
+
+        $("#selectBorderBottomRightRadiusV").selectmenu({
+            change: function (event, data) {
+                var objD = {};
+                var units = data.item.value;
+                switch (units) {
+                    case"px":
+                        objD.min = 0;
+                        objD.max = 40;
+                        objD.step = 1;
+                        objD.value = 20;
+                        break;
+                    case"cm":
+                        objD.min = 0;
+                        objD.max = 2;
+                        objD.step = 0.01;
+                        objD.value = 1;
+                        break;
+                    case"mm":
+                        objD.min = 0;
+                        objD.max = 20;
+                        objD.step = 0.1;
+                        objD.value = 1;
+                        break;
+                    case"em":
+                        objD.min = 0;
+                        objD.max = 10;
+                        objD.step = 0.1;
+                        objD.value = 2.5;
+                        break;
+                    case"rem":
+                        objD.min = 0;
+                        objD.max = 10;
+                        objD.step = 0.1;
+                        objD.value = 2.5;
+                        break;
+                    case"%":
+                        objD.min = 0;
+                        objD.max = 20;
+                        objD.step = 1;
+                        objD.value = 10;
+                        break;
+                }
+
+                BottomRight.paramsRight.unit = units;
+                $("#sliderBoxBorderBottomRightRadiusV").slider("option", {min: objD.min, max: objD.max, step: objD.step, value: objD.value});
+            }
+        });
+
+        /*********************************BorderBottomLeftRadius sliders******************************************************/
+
+        $("#selectBorderBottomLeftRadiusH").selectmenu({
+            change: function (event, data) {
+                var objD = {};
+                var units = data.item.value;
+                switch (units) {
+                    case"px":
+                        objD.min = 0;
+                        objD.max = 40;
+                        objD.step = 1;
+                        objD.value = 20;
+                        break;
+                    case"cm":
+                        objD.min = 0;
+                        objD.max = 2;
+                        objD.step = 0.01;
+                        objD.value = 1;
+                        break;
+                    case"mm":
+                        objD.min = 0;
+                        objD.max = 20;
+                        objD.step = 0.1;
+                        objD.value = 1;
+                        break;
+                    case"em":
+                        objD.min = 0;
+                        objD.max = 10;
+                        objD.step = 0.1;
+                        objD.value = 2.5;
+                        break;
+                    case"rem":
+                        objD.min = 0;
+                        objD.max = 10;
+                        objD.step = 0.1;
+                        objD.value = 2.5;
+                        break;
+                    case"%":
+                        objD.min = 0;
+                        objD.max = 20;
+                        objD.step = 1;
+                        objD.value = 10;
+                        break;
+                }
+
+                BottomLeft.paramsTop.unit = units;
+                $("#sliderBoxBorderBottomLeftRadiusH").slider("option", {min: objD.min, max: objD.max, step: objD.step, value: objD.value});
+            }
+        });
+
+        $("#selectBorderBottomLeftRadiusV").selectmenu({
+            change: function (event, data) {
+                var objD = {};
+                var units = data.item.value;
+                switch (units) {
+                    case"px":
+                        objD.min = 0;
+                        objD.max = 40;
+                        objD.step = 1;
+                        objD.value = 20;
+                        break;
+                    case"cm":
+                        objD.min = 0;
+                        objD.max = 2;
+                        objD.step = 0.01;
+                        objD.value = 1;
+                        break;
+                    case"mm":
+                        objD.min = 0;
+                        objD.max = 20;
+                        objD.step = 0.1;
+                        objD.value = 1;
+                        break;
+                    case"em":
+                        objD.min = 0;
+                        objD.max = 10;
+                        objD.step = 0.1;
+                        objD.value = 2.5;
+                        break;
+                    case"rem":
+                        objD.min = 0;
+                        objD.max = 10;
+                        objD.step = 0.1;
+                        objD.value = 2.5;
+                        break;
+                    case"%":
+                        objD.min = 0;
+                        objD.max = 20;
+                        objD.step = 1;
+                        objD.value = 10;
+                        break;
+                }
+
+                BottomLeft.paramsRight.unit = units;
+                $("#sliderBoxBorderBottomLeftRadiusV").slider("option", {min: objD.min, max: objD.max, step: objD.step, value: objD.value});
+            }
+        });
+
+
+
+
+
+        /*********************************Width slider******************************************************/
+
+
+
+        $("#selectWidth").selectmenu({
+            change: function (event, data) {
+                var objD = {};
+                widthD = data.item.value;
+                switch (widthD) {
+                    case"px":
+                        objD.min = 0;
+                        objD.max = 400;
+                        objD.step = 10;
+                        objD.value = 200;
+                        break;
+                    case"cm":
+                        objD.min = 0;
+                        objD.max = 10;
+                        objD.step = 1;
+                        objD.value = 5;
+                        break;
+                    case"mm":
+                        objD.min = 0;
+                        objD.max = 150;
+                        objD.step = 10;
+                        objD.value = 50;
+                        break;
+                    case"em":
+                        objD.min = 0;
+                        objD.max = 50;
+                        objD.step = 1;
+                        objD.value = 25;
+                        break;
+                    case"rem":
+                        objD.min = 0;
+                        objD.max = 50;
+                        objD.step = 1;
+                        objD.value = 25;
+                        break;
+                    case"%":
+                        objD.min = 0;
+                        objD.max = 100;
+                        objD.step = 5;
+                        objD.value = 50;
+                        break;
+                }
+
+                boxHW("Width", objD);
+            }
+        });
+        /*********************************Hight slider******************************************************/
+
+        $("#selectHeight").selectmenu({
+            change: function (event, data) {
+                var objD = {};
+                widthD = data.item.value;
+                switch (widthD) {
+                    case"px":
+                        objD.min = 0;
+                        objD.max = 400;
+                        objD.step = 10;
+                        objD.value = 200;
+                        break;
+                    case"cm":
+                        objD.min = 0;
+                        objD.max = 10;
+                        objD.step = 1;
+                        objD.value = 5;
+                        break;
+                    case"mm":
+                        objD.min = 0;
+                        objD.max = 150;
+                        objD.step = 10;
+                        objD.value = 50;
+                        break;
+                    case"em":
+                        objD.min = 0;
+                        objD.max = 50;
+                        objD.step = 1;
+                        objD.value = 25;
+                        break;
+                    case"rem":
+                        objD.min = 0;
+                        objD.max = 50;
+                        objD.step = 1;
+                        objD.value = 25;
+                        break;
+                    case"%":
+                        objD.min = 0;
+                        objD.max = 100;
+                        objD.step = 5;
+                        objD.value = 50;
+                        break;
+                }
+
+                boxHW("Height", objD);
+            }
+        });
+        /*********************************PaddingTop slider******************************************************/
+
+
+        $("#selectPaddingTop").selectmenu({
+            change: function (event, data) {
+                var objD = {};
+                widthD = data.item.value;
+                switch (widthD) {
+                    case"px":
+                        objD.min = 0;
+                        objD.max = 40;
+                        objD.step = 1;
+                        objD.value = 20;
+                        break;
+                    case"cm":
+                        objD.min = 0;
+                        objD.max = 1;
+                        objD.step = 0.01;
+                        objD.value = 0.5;
+                        break;
+                    case"mm":
+                        objD.min = 0;
+                        objD.max = 10;
+                        objD.step = 0.1;
+                        objD.value = 5;
+                        break;
+                    case"em":
+                        objD.min = 0;
+                        objD.max = 2;
+                        objD.step = 0.01;
+                        objD.value = 1;
+                        break;
+                    case"rem":
+                        objD.min = 0;
+                        objD.max = 2;
+                        objD.step = 0.01;
+                        objD.value = 1;
+                        break;
+                    case"%":
+                        objD.min = 0;
+                        objD.max = 20;
+                        objD.step = 0.1;
+                        objD.value = 10;
+                        break;
+                }
+
+                boxHW("PaddingTop", objD);
+            }
+        });
+        /*********************************PaddingRight slider******************************************************/
+
+        $("#selectPaddingRight").selectmenu({
+            change: function (event, data) {
+                var objD = {};
+                widthD = data.item.value;
+                switch (widthD) {
+                    case"px":
+                        objD.min = 0;
+                        objD.max = 40;
+                        objD.step = 1;
+                        objD.value = 20;
+                        break;
+                    case"cm":
+                        objD.min = 0;
+                        objD.max = 1;
+                        objD.step = 0.01;
+                        objD.value = 0.5;
+                        break;
+                    case"mm":
+                        objD.min = 0;
+                        objD.max = 10;
+                        objD.step = 0.1;
+                        objD.value = 5;
+                        break;
+                    case"em":
+                        objD.min = 0;
+                        objD.max = 2;
+                        objD.step = 0.01;
+                        objD.value = 1;
+                        break;
+                    case"rem":
+                        objD.min = 0;
+                        objD.max = 2;
+                        objD.step = 0.01;
+                        objD.value = 1;
+                        break;
+                    case"%":
+                        objD.min = 0;
+                        objD.max = 20;
+                        objD.step = 0.1;
+                        objD.value = 10;
+                        break;
+                }
+
+                boxHW("PaddingRight", objD);
+            }
+        });
+        /*********************************PaddingBottom slider******************************************************/
+
+        $("#selectPaddingBottom").selectmenu({
+            change: function (event, data) {
+                var objD = {};
+                widthD = data.item.value;
+                switch (widthD) {
+                    case"px":
+                        objD.min = 0;
+                        objD.max = 40;
+                        objD.step = 1;
+                        objD.value = 20;
+                        break;
+                    case"cm":
+                        objD.min = 0;
+                        objD.max = 1;
+                        objD.step = 0.01;
+                        objD.value = 0.5;
+                        break;
+                    case"mm":
+                        objD.min = 0;
+                        objD.max = 10;
+                        objD.step = 0.1;
+                        objD.value = 5;
+                        break;
+                    case"em":
+                        objD.min = 0;
+                        objD.max = 2;
+                        objD.step = 0.01;
+                        objD.value = 1;
+                        break;
+                    case"rem":
+                        objD.min = 0;
+                        objD.max = 2;
+                        objD.step = 0.01;
+                        objD.value = 1;
+                        break;
+                    case"%":
+                        objD.min = 0;
+                        objD.max = 20;
+                        objD.step = 0.1;
+                        objD.value = 10;
+                        break;
+                }
+
+                boxHW("PaddingBottom", objD);
+            }
+        });
+        /*********************************PaddingLeft slider******************************************************/
+
+        $("#selectPaddingLeft").selectmenu({
+            change: function (event, data) {
+                var objD = {};
+                widthD = data.item.value;
+                switch (widthD) {
+                    case"px":
+                        objD.min = 0;
+                        objD.max = 40;
+                        objD.step = 1;
+                        objD.value = 20;
+                        break;
+                    case"cm":
+                        objD.min = 0;
+                        objD.max = 1;
+                        objD.step = 0.01;
+                        objD.value = 0.5;
+                        break;
+                    case"mm":
+                        objD.min = 0;
+                        objD.max = 10;
+                        objD.step = 0.1;
+                        objD.value = 5;
+                        break;
+                    case"em":
+                        objD.min = 0;
+                        objD.max = 2;
+                        objD.step = 0.01;
+                        objD.value = 1;
+                        break;
+                    case"rem":
+                        objD.min = 0;
+                        objD.max = 2;
+                        objD.step = 0.01;
+                        objD.value = 1;
+                        break;
+                    case"%":
+                        objD.min = 0;
+                        objD.max = 20;
+                        objD.step = 0.1;
+                        objD.value = 10;
+                        break;
+                }
+
+                boxHW("PaddingLeft", objD);
+            }
+        });
+        /*********************************MarginTop slider******************************************************/
+
+        $("#selectMarginTop").selectmenu({
+            change: function (event, data) {
+                var objD = {};
+                widthD = data.item.value;
+                switch (widthD) {
+                    case"px":
+                        objD.min = 0;
+                        objD.max = 40;
+                        objD.step = 1;
+                        objD.value = 20;
+                        break;
+                    case"cm":
+                        objD.min = 0;
+                        objD.max = 1;
+                        objD.step = 0.01;
+                        objD.value = 0.5;
+                        break;
+                    case"mm":
+                        objD.min = 0;
+                        objD.max = 10;
+                        objD.step = 0.1;
+                        objD.value = 5;
+                        break;
+                    case"em":
+                        objD.min = 0;
+                        objD.max = 2;
+                        objD.step = 0.01;
+                        objD.value = 1;
+                        break;
+                    case"rem":
+                        objD.min = 0;
+                        objD.max = 2;
+                        objD.step = 0.01;
+                        objD.value = 1;
+                        break;
+                    case"%":
+                        objD.min = 0;
+                        objD.max = 20;
+                        objD.step = 0.1;
+                        objD.value = 10;
+                        break;
+                }
+
+                boxHW("MarginTop", objD);
+            }
+        });
+        /*********************************MarginRight slider******************************************************/
+
+        $("#selectMarginRight").selectmenu({
+            change: function (event, data) {
+                var objD = {};
+                widthD = data.item.value;
+                switch (widthD) {
+                    case"px":
+                        objD.min = 0;
+                        objD.max = 40;
+                        objD.step = 1;
+                        objD.value = 20;
+                        break;
+                    case"cm":
+                        objD.min = 0;
+                        objD.max = 1;
+                        objD.step = 0.01;
+                        objD.value = 0.5;
+                        break;
+                    case"mm":
+                        objD.min = 0;
+                        objD.max = 10;
+                        objD.step = 0.1;
+                        objD.value = 5;
+                        break;
+                    case"em":
+                        objD.min = 0;
+                        objD.max = 2;
+                        objD.step = 0.01;
+                        objD.value = 1;
+                        break;
+                    case"rem":
+                        objD.min = 0;
+                        objD.max = 2;
+                        objD.step = 0.01;
+                        objD.value = 1;
+                        break;
+                    case"%":
+                        objD.min = 0;
+                        objD.max = 20;
+                        objD.step = 0.1;
+                        objD.value = 10;
+                        break;
+                }
+
+                boxHW("MarginRight", objD);
+            }
+        });
+        /*********************************MarginBottom slider******************************************************/
+
+        $("#selectMarginBottom").selectmenu({
+            change: function (event, data) {
+                var objD = {};
+                widthD = data.item.value;
+                switch (widthD) {
+                    case"px":
+                        objD.min = 0;
+                        objD.max = 40;
+                        objD.step = 1;
+                        objD.value = 20;
+                        break;
+                    case"cm":
+                        objD.min = 0;
+                        objD.max = 1;
+                        objD.step = 0.01;
+                        objD.value = 0.5;
+                        break;
+                    case"mm":
+                        objD.min = 0;
+                        objD.max = 10;
+                        objD.step = 0.1;
+                        objD.value = 5;
+                        break;
+                    case"em":
+                        objD.min = 0;
+                        objD.max = 2;
+                        objD.step = 0.01;
+                        objD.value = 1;
+                        break;
+                    case"rem":
+                        objD.min = 0;
+                        objD.max = 2;
+                        objD.step = 0.01;
+                        objD.value = 1;
+                        break;
+                    case"%":
+                        objD.min = 0;
+                        objD.max = 20;
+                        objD.step = 0.1;
+                        objD.value = 10;
+                        break;
+                }
+
+                boxHW("MarginBottom", objD);
+            }
+        });
+        /*********************************MarginLeft slider******************************************************/
+
+        $("#selectMarginLeft").selectmenu({
+            change: function (event, data) {
+                var objD = {};
+                widthD = data.item.value;
+                switch (widthD) {
+                    case"px":
+                        objD.min = 0;
+                        objD.max = 40;
+                        objD.step = 1;
+                        objD.value = 20;
+                        break;
+                    case"cm":
+                        objD.min = 0;
+                        objD.max = 1;
+                        objD.step = 0.01;
+                        objD.value = 0.5;
+                        break;
+                    case"mm":
+                        objD.min = 0;
+                        objD.max = 10;
+                        objD.step = 0.1;
+                        objD.value = 5;
+                        break;
+                    case"em":
+                        objD.min = 0;
+                        objD.max = 2;
+                        objD.step = 0.01;
+                        objD.value = 1;
+                        break;
+                    case"rem":
+                        objD.min = 0;
+                        objD.max = 2;
+                        objD.step = 0.01;
+                        objD.value = 1;
+                        break;
+                    case"%":
+                        objD.min = 0;
+                        objD.max = 20;
+                        objD.step = 0.1;
+                        objD.value = 10;
+                        break;
+                }
+
+                boxHW("MarginLeft", objD);
+            }
+        });
+        /*********************************BorderTopWidth slider******************************************************/
+
+        $("#selectBorderTopWidth").selectmenu({
+            change: function (event, data) {
+                var objD = {};
+                widthD = data.item.value;
+                switch (widthD) {
+                    case"px":
+                        objD.min = 0;
+                        objD.max = 40;
+                        objD.step = 1;
+                        objD.value = 20;
+                        break;
+                    case"cm":
+                        objD.min = 0;
+                        objD.max = 1;
+                        objD.step = 0.01;
+                        objD.value = 0.5;
+                        break;
+                    case"mm":
+                        objD.min = 0;
+                        objD.max = 10;
+                        objD.step = 0.1;
+                        objD.value = 5;
+                        break;
+                    case"em":
+                        objD.min = 0;
+                        objD.max = 2;
+                        objD.step = 0.01;
+                        objD.value = 1;
+                        break;
+                    case"rem":
+                        objD.min = 0;
+                        objD.max = 2;
+                        objD.step = 0.01;
+                        objD.value = 1;
+                        break;
+                    case"%":
+                        objD.min = 0;
+                        objD.max = 20;
+                        objD.step = 0.1;
+                        objD.value = 10;
+                        break;
+                }
+
+                boxHW("BorderTopWidth", objD);
+            }
+        });
+        /*********************************BorderRightWidth slider******************************************************/
+
+        $("#selectBorderRightWidth").selectmenu({
+            change: function (event, data) {
+                var objD = {};
+                widthD = data.item.value;
+                switch (widthD) {
+                    case"px":
+                        objD.min = 0;
+                        objD.max = 40;
+                        objD.step = 1;
+                        objD.value = 20;
+                        break;
+                    case"cm":
+                        objD.min = 0;
+                        objD.max = 1;
+                        objD.step = 0.01;
+                        objD.value = 0.5;
+                        break;
+                    case"mm":
+                        objD.min = 0;
+                        objD.max = 10;
+                        objD.step = 0.1;
+                        objD.value = 5;
+                        break;
+                    case"em":
+                        objD.min = 0;
+                        objD.max = 2;
+                        objD.step = 0.01;
+                        objD.value = 1;
+                        break;
+                    case"rem":
+                        objD.min = 0;
+                        objD.max = 2;
+                        objD.step = 0.01;
+                        objD.value = 1;
+                        break;
+                    case"%":
+                        objD.min = 0;
+                        objD.max = 20;
+                        objD.step = 0.1;
+                        objD.value = 10;
+                        break;
+                }
+
+                boxHW("BorderRightWidth", objD);
+            }
+        });
+        /*********************************BorderBottomWidth slider******************************************************/
+
+        $("#selectBorderBottomWidth").selectmenu({
+            change: function (event, data) {
+                var objD = {};
+                widthD = data.item.value;
+                switch (widthD) {
+                    case"px":
+                        objD.min = 0;
+                        objD.max = 40;
+                        objD.step = 1;
+                        objD.value = 20;
+                        break;
+                    case"cm":
+                        objD.min = 0;
+                        objD.max = 1;
+                        objD.step = 0.01;
+                        objD.value = 0.5;
+                        break;
+                    case"mm":
+                        objD.min = 0;
+                        objD.max = 10;
+                        objD.step = 0.1;
+                        objD.value = 5;
+                        break;
+                    case"em":
+                        objD.min = 0;
+                        objD.max = 2;
+                        objD.step = 0.01;
+                        objD.value = 1;
+                        break;
+                    case"rem":
+                        objD.min = 0;
+                        objD.max = 2;
+                        objD.step = 0.01;
+                        objD.value = 1;
+                        break;
+                    case"%":
+                        objD.min = 0;
+                        objD.max = 20;
+                        objD.step = 0.1;
+                        objD.value = 10;
+                        break;
+                }
+
+                boxHW("BorderBottomWidth", objD);
+            }
+        });
+        /*********************************BorderLeftWidth slider******************************************************/
+
+
+        $("#selectBorderLeftWidth").selectmenu({
+            change: function (event, data) {
+                var objD = {};
+                widthD = data.item.value;
+                switch (widthD) {
+                    case"px":
+                        objD.min = 0;
+                        objD.max = 40;
+                        objD.step = 1;
+                        objD.value = 20;
+                        break;
+                    case"cm":
+                        objD.min = 0;
+                        objD.max = 1;
+                        objD.step = 0.01;
+                        objD.value = 0.5;
+                        break;
+                    case"mm":
+                        objD.min = 0;
+                        objD.max = 10;
+                        objD.step = 0.1;
+                        objD.value = 5;
+                        break;
+                    case"em":
+                        objD.min = 0;
+                        objD.max = 2;
+                        objD.step = 0.01;
+                        objD.value = 1;
+                        break;
+                    case"rem":
+                        objD.min = 0;
+                        objD.max = 2;
+                        objD.step = 0.01;
+                        objD.value = 1;
+                        break;
+                    case"%":
+                        objD.min = 0;
+                        objD.max = 20;
+                        objD.step = 0.1;
+                        objD.value = 10;
+                        break;
+                }
+
+                boxHW("BorderLeftWidth", objD);
+            }
+        });
+        /***************************************************************************************************/
+
+    });
+    /***************************************************************************************************/
+
+
+</script>
+
+</body>
 </html>

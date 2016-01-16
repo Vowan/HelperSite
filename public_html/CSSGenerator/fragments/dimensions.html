@@ -1,0 +1,174 @@
+<label  for="boxWidth" style="display: inline;">Width:</label>
+
+<input type="text" id="boxWidth" readonly style="display: inline; width: 40px; border:0; color:#f6931f; font-weight:bold;">
+
+<select name="radius" id="selectWidth" class="zeroMP" style="display: inline;">
+    <option value="px" selected="selected" title="px">px</option>
+    <option id="mmW" value="mm">mm</option>
+    <option value="cm">cm</option>
+    <option value="em">em</option>
+    <option value="rem">rem</option>
+    <option value="%">%</option>
+</select>
+
+<div id="sliderBoxWidth" style="width: 100%" ></div>
+
+<br>
+<br>
+
+<label  for="boxHeight" style="display: inline;">Height:</label>
+
+<input type="text" id="boxHeight" readonly style="display: inline; width: 40px; border:0; color:#f6931f; font-weight:bold;">
+
+<select name="radius" id="selectHeight" class="zeroMP" style="display: inline;">
+    <option value="px" selected="selected" title="px">px</option>
+    <option value="mm">mm</option>
+    <option value="cm">cm</option>
+    <option value="em">em</option>
+    <option value="rem">rem</option>
+    <option value="%">%</option>
+</select>
+
+<div id="sliderBoxHeight" style="width: 100%" ></div>
+
+
+<script>
+
+    /*********************************Width slider******************************************************/
+
+    
+    if (!State["Width"])
+        State["Width"] = {min: 0, max: 400, step: 10, value: 200, unit: "px"};
+
+    if (!State["Height"])
+        State["Height"] = {min: 0, max: 400, step: 10, value: 200, unit: "px"};
+
+
+
+    boxHW("Width", State["Width"]);
+    boxHW("Height", State["Height"]);
+
+
+
+    var currentUnitW = "#selectWidth option[value='" + State["Width"]["unit"] + "']";
+    var currentUnitH = "#selectHeight option[value='" + State["Height"]["unit"] + "']";
+
+
+
+    $("#selectWidth").find('option:selected').removeAttr("selected");
+    $(currentUnitW).attr("selected", "selected");
+
+    $("#selectHeight").find('option:selected').removeAttr("selected");
+    $(currentUnitH).attr("selected", "selected");
+
+
+    $("#selectWidth").selectmenu({
+        width: 80,
+        change: function (event, data) {
+            var objD = {};
+            var units = data.item.value;
+            objD.unit = units;
+            State["Width"]["unit"] = units;
+
+            switch (units) {
+                case"px":
+                    State["Width"]["min"] = 0;
+                    State["Width"]["max"] = 400;
+                    State["Width"]["step"] = 10;
+                    State["Width"]["value"] = 200;
+
+                    break;
+                case"cm":
+                    State["Width"]["min"] = 0;
+                    State["Width"]["max"] = 6;
+                    State["Width"]["step"] = 0.1;
+                    State["Width"]["value"] = 3;
+                    break;
+                case"mm":
+                    State["Width"]["min"] = 0;
+                    State["Width"]["max"] = 60;
+                    State["Width"]["step"] = 1;
+                    State["Width"]["value"] = 30;
+                    break;
+                case"em":
+                    State["Width"]["min"] = 0;
+                    State["Width"]["max"] = 50;
+                    State["Width"]["step"] = 1;
+                    State["Width"]["value"] = 25;
+                    break;
+                case"rem":
+                    State["Width"]["min"] = 0;
+                    State["Width"]["max"] = 50;
+                    State["Width"]["step"] = 1;
+                    State["Width"]["value"] = 25;
+                    break;
+                case"%":
+                    State["Width"]["min"] = 0;
+                    State["Width"]["max"] = 100;
+                    State["Width"]["step"] = 5;
+                    State["Width"]["value"] = 50;
+                    break;
+            }
+
+            boxHW("Width", State["Width"]);
+        }
+    });
+    $("#selectWidth").selectmenu("refresh");
+
+    $("#selectHeight").selectmenu({
+        width: 80,
+        change: function (event, data) {
+            var objD = {};
+            var units = data.item.value;
+            objD.unit = units;
+            State["Height"]["unit"] = units;
+
+            switch (units) {
+                case"px":
+                    State["Height"]["min"] = 0;
+                    State["Height"]["max"] = 400;
+                    State["Height"]["step"] = 10;
+                    State["Height"]["value"] = 200;
+
+                    break;
+                case"cm":
+                    State["Height"]["min"] = 0;
+                    State["Height"]["max"] = 6;
+                    State["Height"]["step"] = 0.1;
+                    State["Height"]["value"] = 3;
+                    break;
+                case"mm":
+                    State["Height"]["min"] = 0;
+                    State["Height"]["max"] = 60;
+                    State["Height"]["step"] = 1;
+                    State["Height"]["value"] = 30;
+                    break;
+                case"em":
+                    State["Height"]["min"] = 0;
+                    State["Height"]["max"] = 50;
+                    State["Height"]["step"] = 1;
+                    State["Height"]["value"] = 25;
+                    break;
+                case"rem":
+                    State["Height"]["min"] = 0;
+                    State["Height"]["max"] = 50;
+                    State["Height"]["step"] = 1;
+                    State["Height"]["value"] = 25;
+                    break;
+                case"%":
+                    State["Height"]["min"] = 0;
+                    State["Height"]["max"] = 100;
+                    State["Height"]["step"] = 5;
+                    State["Height"]["value"] = 50;
+                    break;
+            }
+
+            boxHW("Height", State["Height"]);
+        }
+
+
+    });
+    $("#selectHeight").selectmenu("refresh");
+
+
+</script>

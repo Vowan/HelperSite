@@ -1,0 +1,182 @@
+<div class="myFix">
+
+</div>
+
+<div id="textProp" class="textProp panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">Element with text</h3>
+
+    </div>
+    <div class="panel-body" >
+        <div class="paddingArea">
+            <textarea class="contentArea" name="textarea" rows="5" cols="50">
+This text is styled with the text formatting properties. The heading uses the text-align, text-transform, and color properties. The paragraph is indented, aligned, and the space between characters is specified. The underline is removed from this "Try it yourself" link.
+
+            </textarea>
+        </div>
+    </div>
+</div>
+
+<script>
+    var widthD = "px", widthSlider = {};
+    var boxCompProperties = {};
+    var State = {};
+
+    var boxVisual = function () {
+        var offset = $(".contentArea").offset();
+        var height = $(".contentArea").outerHeight(true);
+        var width = $(".contentArea").outerWidth(true);
+        var marginTop = parseFloat($(".contentArea").css("margin-top"));
+        var marginLeft = parseFloat($(".contentArea").css("margin-left"));
+        //console.log("left  " + offset.left + " top " + offset.top);
+        $(".myFix").offset({top: offset.top - marginTop, left: offset.left - marginLeft});
+        $(".myFix").height(height).width(width);
+    };
+
+    var seeCompProperties = function (arrayProp) {
+
+        var toArray = Object.keys(arrayProp);
+
+        var cssContent = [];
+
+        var styleProps = $(".contentArea").css(toArray);
+        $.each(styleProps, function (prop, value) {
+            cssContent.push(prop + ": " + value + ";");
+        });
+
+        $("#cssCompProp").html(cssContent.join("<br>"));
+    };
+
+
+
+    var boxHW = function (property, params) {
+        var obj = {unit: "px"}, xxx = {}, prop, qqq ={};
+        switch (property) {
+            case"Width":
+                prop = "width";
+                break;
+            case"Height":
+                topSliderSet=qqq;
+                
+                prop = "height";
+                break;
+            case"PaddingTop":
+                prop = "padding-top";
+                break;
+            case"PaddingRight":
+                prop = "padding-right";
+                break;
+            case"PaddingBottom":
+                prop = "padding-bottom";
+                break;
+            case"PaddingLeft":
+                prop = "padding-left";
+                break;
+            case"MarginTop":
+                prop = "margin-top";
+                break;
+            case"MarginRight":
+                prop = "margin-right";
+                break;
+            case"MarginBottom":
+                prop = "margin-bottom";
+                break;
+            case"MarginLeft":
+                prop = "margin-left";
+                break;
+            case"BorderTopWidth":
+                prop = "border-top-width";
+                break;
+            case"BorderRightWidth":
+                prop = "border-right-width";
+                break;
+            case"BorderBottomWidth":
+                prop = "border-bottom-width";
+                break;
+            case"BorderLeftWidth":
+                prop = "border-left-width";
+                break;
+        }
+        xxx = params || obj;
+        qqq = xxx;
+        var sliderBox = "#sliderBox" + property;
+        //var prop = property.toLowerCase();
+        var boxProp = "#box" + property;
+        $(sliderBox).slider({
+            range: "min",
+            min: xxx.min,
+            max: xxx.max,
+            step: xxx.step,
+            value: xxx.value,
+            slide: function (event, ui) {
+                $(boxProp).val(ui.value);
+    //debugger;            
+                qqq.value = ui.value;
+                qqq.unit = xxx.unit;
+                
+                State[property]["value"]=ui.value;
+                State[property]["unit"]=xxx.unit;
+ 
+                $(cssID).text(prop + ":" + ui.value + xxx.unit + ";")
+                $(".contentArea").css(prop, ui.value + xxx.unit);
+                $(".contentArea").trigger("boxChange");
+            }
+        });
+        
+    
+ 
+
+        if (!boxCompProperties.hasOwnProperty(prop)) {
+            Object.defineProperty(boxCompProperties, prop, {
+                value: "",
+                writable: true,
+                enumerable: true,
+                configurable: true
+            });
+            var cssHTML = "<div id ='passing" + property + "'>" + prop + ":" + xxx.value + xxx.unit + ";</div>"
+            
+            $("#cssProp").append(cssHTML);
+        }
+       
+        var cssID = '#passing' + property;
+        
+    
+      
+         $(cssID).text(prop + ":" + State[property]["value"] + State[property]["unit"] + ";")
+
+        $(".contentArea").css(prop, State[property]["value"] + State[property]["unit"]);
+
+        $(".contentArea").trigger("boxChange");
+
+
+
+
+
+
+        $(boxProp).val($(sliderBox).slider("value"));
+        return obj;
+    };
+
+
+    $(function () {
+
+        boxVisual();
+
+
+
+        $(window).on("scroll resize", function () {
+            boxVisual();
+        });
+
+        /*********************************Custom event******************************************************/
+
+        $(".contentArea").on("boxChange", function () {
+            boxVisual();
+            seeCompProperties(boxCompProperties);
+
+        });
+
+    });
+
+
+</script>

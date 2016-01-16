@@ -1,0 +1,358 @@
+<label  for="boxPaddingTop" style="display: inline;">padding-top:</label>
+
+<input type="text" id="boxPaddingTop" readonly style="display: inline; width: 40px; border:0; color:#f6931f; font-weight:bold;">
+
+<select name="radius" id="selectPaddingTop" class="zeroMP" style="display: inline;">
+    <option value="px" selected="selected" title="px">px</option>
+    <option value="mm">mm</option>
+    <option value="cm">cm</option>
+    <option value="em">em</option>
+    <option value="rem">rem</option>
+    <option value="%">%</option>
+</select>
+
+<div id="sliderBoxPaddingTop" style="width: 100%" ></div>
+
+<br>
+<br>
+
+<label  for="boxPaddingRight" style="display: inline;">padding-right:</label>
+
+<input type="text" id="boxPaddingRight" readonly style="display: inline; width: 40px; border:0; color:#f6931f; font-weight:bold;">
+
+<select name="radius" id="selectPaddingRight" class="zeroMP" style="display: inline;">
+    <option value="px" selected="selected" title="px">px</option>
+    <option value="mm">mm</option>
+    <option value="cm">cm</option>
+    <option value="em">em</option>
+    <option value="rem">rem</option>
+    <option value="%">%</option>
+</select>
+
+<div id="sliderBoxPaddingRight" style="width: 100%" ></div>
+
+<br>
+<br>
+
+<label  for="boxPaddingBottom" style="display: inline;">padding-bottom:</label>
+
+<input type="text" id="boxPaddingBottom" readonly style="display: inline; width: 40px; border:0; color:#f6931f; font-weight:bold;">
+
+<select name="radius" id="selectPaddingBottom" class="zeroMP" style="display: inline;">
+    <option value="px" selected="selected" title="px">px</option>
+    <option value="mm">mm</option>
+    <option value="cm">cm</option>
+    <option value="em">em</option>
+    <option value="rem">rem</option>
+    <option value="%">%</option>
+</select>
+
+<div id="sliderBoxPaddingBottom" style="width: 100%" ></div>
+
+<br>
+<br>
+
+<label  for="boxPaddingLeft" style="display: inline;">padding-left:</label>
+
+<input type="text" id="boxPaddingLeft" readonly style="display: inline; width: 40px; border:0; color:#f6931f; font-weight:bold;">
+
+<select name="radius" id="selectPaddingLeft" class="zeroMP" style="display: inline;">
+    <option value="px" selected="selected" title="px">px</option>
+    <option value="mm">mm</option>
+    <option value="cm">cm</option>
+    <option value="em">em</option>
+    <option value="rem">rem</option>
+    <option value="%">%</option>
+</select>
+
+<div id="sliderBoxPaddingLeft" style="width: 100%" ></div>
+
+<script>
+
+    /*********************************Width slider******************************************************/
+
+    debugger;
+    if (!State["PaddingTop"])
+        State["PaddingTop"] = {min: 0, max: 20, step: 0.1, value: 5, unit: "px"};
+
+    if (!State["PaddingRight"])
+        State["PaddingRight"] = {min: 0, max: 20, step: 0.1, value: 5, unit: "px"};
+
+    if (!State["PaddingBottom"])
+        State["PaddingBottom"] = {min: 0, max: 20, step: 0.1, value: 5, unit: "px"};
+    if (!State["PaddingLeft"])
+        State["PaddingLeft"] = {min: 0, max: 20, step: 0.1, value: 5, unit: "px"};
+
+
+    boxHW("PaddingTop", State["PaddingTop"]);
+    boxHW("PaddingRight", State["PaddingRight"]);
+    boxHW("PaddingBottom", State["PaddingBottom"]);
+    boxHW("PaddingLeft", State["PaddingLeft"]);
+
+
+
+    var currentUnitPT = "#selectPaddingTop option[value='" + State["PaddingTop"]["unit"] + "']";
+    var currentUnitPR = "#selectPaddingRight option[value='" + State["PaddingRight"]["unit"] + "']";
+    var currentUnitPB = "#selectPaddingBottom option[value='" + State["PaddingBottom"]["unit"] + "']";
+    var currentUnitPL = "#selectPaddingLeft option[value='" + State["PaddingLeft"]["unit"] + "']";
+
+
+
+    $("#selectPaddingTop").find('option:selected').removeAttr("selected");
+    $(currentUnitPT).attr("selected", "selected");
+
+    $("#PaddingRight").find('option:selected').removeAttr("selected");
+    $(currentUnitPR).attr("selected", "selected");
+
+    $("#PaddingBottom").find('option:selected').removeAttr("selected");
+    $(currentUnitPB).attr("selected", "selected");
+
+    $("#PaddingLeft").find('option:selected').removeAttr("selected");
+    $(currentUnitPL).attr("selected", "selected");
+
+
+
+
+    $("#selectPaddingTop").selectmenu({
+        width: 80,
+        change: function (event, data) {
+            debugger;
+
+            var objD = {};
+            var units = data.item.value;
+            objD.unit = units;
+            State["PaddingTop"]["unit"] = units;
+
+            switch (units) {
+                case"px":
+                    State["PaddingTop"]["min"] = 0;
+                    State["PaddingTop"]["max"] = 20;
+                    State["PaddingTop"]["step"] = 0.1;
+                    State["PaddingTop"]["value"] = 10;
+
+                    break;
+                case"cm":
+
+                    State["PaddingTop"]["min"] = 0;
+                    State["PaddingTop"]["max"] = 3;
+                    State["PaddingTop"]["step"] = 0.1;
+                    State["PaddingTop"]["value"] = 1.5;
+                    break;
+                case"mm":
+                    State["PaddingTop"]["min"] = 0;
+                    State["PaddingTop"]["max"] = 30;
+                    State["PaddingTop"]["step"] = 1;
+                    State["PaddingTop"]["value"] = 15;
+
+                    break;
+                case"em":
+                    State["PaddingTop"]["min"] = 0;
+                    State["PaddingTop"]["max"] = 50;
+                    State["PaddingTop"]["step"] = 1;
+                    State["PaddingTop"]["value"] = 25;
+
+                    break;
+                case"rem":
+                    State["PaddingTop"]["min"] = 0;
+                    State["PaddingTop"]["max"] = 50;
+                    State["PaddingTop"]["step"] = 1;
+                    State["PaddingTop"]["value"] = 25;
+
+
+                    break;
+                case"%":
+                    State["PaddingTop"]["min"] = 0;
+                    State["PaddingTop"]["max"] = 100;
+                    State["PaddingTop"]["step"] = 5;
+                    State["PaddingTop"]["value"] = 50;
+
+                    break;
+            }
+
+            boxHW("PaddingTop", State["PaddingTop"]);
+        }
+    });
+
+    $("#selectPaddingTop").selectmenu("refresh");
+
+    $("#selectPaddingRight").selectmenu({
+        width: 80,
+        change: function (event, data) {
+            var objD = {};
+            var units = data.item.value;
+            objD.unit = units;
+            State["PaddingRight"]["unit"] = units;
+
+            switch (units) {
+                case"px":
+                    State["PaddingRight"]["min"] = 0;
+                    State["PaddingRight"]["max"] = 20;
+                    State["PaddingRight"]["step"] = 0.1;
+                    State["PaddingRight"]["value"] = 10;
+
+                    break;
+                case"cm":
+
+                    State["PaddingRight"]["min"] = 0;
+                    State["PaddingRight"]["max"] = 3;
+                    State["PaddingRight"]["step"] = 0.1;
+                    State["PaddingRight"]["value"] = 1.5;
+                    break;
+                case"mm":
+                    State["PaddingRight"]["min"] = 0;
+                    State["PaddingRight"]["max"] = 30;
+                    State["PaddingRight"]["step"] = 1;
+                    State["PaddingRight"]["value"] = 10;
+
+                    break;
+                case"em":
+                    State["PaddingRight"]["min"] = 0;
+                    State["PaddingRight"]["max"] = 50;
+                    State["PaddingRight"]["step"] = 1;
+                    State["PaddingRight"]["value"] = 25;
+
+                    break;
+                case"rem":
+                    State["PaddingRight"]["min"] = 0;
+                    State["PaddingRight"]["max"] = 50;
+                    State["PaddingRight"]["step"] = 1;
+                    State["PaddingRight"]["value"] = 25;
+
+
+                    break;
+                case"%":
+                    State["PaddingRight"]["min"] = 0;
+                    State["PaddingRight"]["max"] = 100;
+                    State["PaddingRight"]["step"] = 5;
+                    State["PaddingRight"]["value"] = 50;
+
+                    break;
+            }
+
+            boxHW("PaddingRight", State["PaddingRight"]);
+        }
+    });
+
+    $("#selectPaddingRight").selectmenu("refresh");
+
+    $("#selectPaddingBottom").selectmenu({
+        width: 80,
+        change: function (event, data) {
+            var objD = {};
+            var units = data.item.value;
+            objD.unit = units;
+            State["PaddingBottom"]["unit"] = units;
+
+            switch (units) {
+                case"px":
+                    State["PaddingBottom"]["min"] = 0;
+                    State["PaddingBottom"]["max"] = 20;
+                    State["PaddingBottom"]["step"] = 0.1;
+                    State["PaddingBottom"]["value"] = 10;
+
+                    break;
+                case"cm":
+
+                    State["PaddingBottom"]["min"] = 0;
+                    State["PaddingBottom"]["max"] = 3;
+                    State["PaddingBottom"]["step"] = 0.1;
+                    State["PaddingBottom"]["value"] = 1.5;
+                    break;
+                case"mm":
+                    State["PaddingBottom"]["min"] = 0;
+                    State["PaddingBottom"]["max"] = 30;
+                    State["PaddingBottom"]["step"] = 1;
+                    State["PaddingBottom"]["value"] = 10;
+
+                    break;
+                case"em":
+                    State["PaddingBottom"]["min"] = 0;
+                    State["PaddingBottom"]["max"] = 50;
+                    State["PaddingBottom"]["step"] = 1;
+                    State["PaddingBottom"]["value"] = 25;
+
+                    break;
+                case"rem":
+                    State["PaddingBottom"]["min"] = 0;
+                    State["PaddingBottom"]["max"] = 50;
+                    State["PaddingBottom"]["step"] = 1;
+                    State["PaddingBottom"]["value"] = 25;
+
+
+                    break;
+                case"%":
+                    State["PaddingBottom"]["min"] = 0;
+                    State["PaddingBottom"]["max"] = 100;
+                    State["PaddingBottom"]["step"] = 5;
+                    State["PaddingBottom"]["value"] = 50;
+
+                    break;
+            }
+
+            boxHW("PaddingBottom", State["PaddingBottom"]);
+        }
+    });
+
+    $("#selectPaddingBottom").selectmenu("refresh");
+
+    $("#selectPaddingLeft").selectmenu({
+        width: 80,
+        change: function (event, data) {
+            var objD = {};
+            var units = data.item.value;
+            objD.unit = units;
+            State["PaddingLeft"]["unit"] = units;
+
+            switch (units) {
+                case"px":
+                    State["PaddingLeft"]["min"] = 0;
+                    State["PaddingLeft"]["max"] = 20;
+                    State["PaddingLeft"]["step"] = 0.1;
+                    State["PaddingLeft"]["value"] = 10;
+
+                    break;
+                case"cm":
+
+                    State["PaddingLeft"]["min"] = 0;
+                    State["PaddingLeft"]["max"] = 3;
+                    State["PaddingLeft"]["step"] = 0.1;
+                    State["PaddingLeft"]["value"] = 1.5;
+                    break;
+                case"mm":
+                    State["PaddingLeft"]["min"] = 0;
+                    State["PaddingLeft"]["max"] = 30;
+                    State["PaddingLeft"]["step"] = 1;
+                    State["PaddingLeft"]["value"] = 10;
+
+                    break;
+                case"em":
+                    State["PaddingLeft"]["min"] = 0;
+                    State["PaddingLeft"]["max"] = 50;
+                    State["PaddingLeft"]["step"] = 1;
+                    State["PaddingLeft"]["value"] = 25;
+
+                    break;
+                case"rem":
+                    State["PaddingLeft"]["min"] = 0;
+                    State["PaddingLeft"]["max"] = 50;
+                    State["PaddingLeft"]["step"] = 1;
+                    State["PaddingLeft"]["value"] = 25;
+
+
+                    break;
+                case"%":
+                    State["PaddingLeft"]["min"] = 0;
+                    State["PaddingLeft"]["max"] = 100;
+                    State["PaddingLeft"]["step"] = 5;
+                    State["PaddingLeft"]["value"] = 50;
+
+                    break;
+            }
+
+            boxHW("PaddingLeft", State["PaddingLeft"]);
+        }
+    });
+
+    $("#selectPaddingLeft").selectmenu("refresh");
+
+</script>

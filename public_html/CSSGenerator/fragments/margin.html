@@ -1,0 +1,358 @@
+<label  for="boxMarginTop" style="display: inline;">margin-top:</label>
+
+<input type="text" id="boxMarginTop" readonly style="display: inline; width: 40px; border:0; color:#f6931f; font-weight:bold;">
+
+<select name="radius" id="selectMarginTop" class="zeroMP" style="display: inline;">
+    <option value="px" selected="selected" title="px">px</option>
+    <option value="mm">mm</option>
+    <option value="cm">cm</option>
+    <option value="em">em</option>
+    <option value="rem">rem</option>
+    <option value="%">%</option>
+</select>
+
+<div id="sliderBoxMarginTop" style="width: 100%" ></div>
+
+<br>
+<br>
+
+<label  for="boxMarginRight" style="display: inline;">margin-right:</label>
+
+<input type="text" id="boxMarginRight" readonly style="display: inline; width: 40px; border:0; color:#f6931f; font-weight:bold;">
+
+<select name="radius" id="selectMarginRight" class="zeroMP" style="display: inline;">
+    <option value="px" selected="selected" title="px">px</option>
+    <option value="mm">mm</option>
+    <option value="cm">cm</option>
+    <option value="em">em</option>
+    <option value="rem">rem</option>
+    <option value="%">%</option>
+</select>
+
+<div id="sliderBoxMarginRight" style="width: 100%" ></div>
+
+<br>
+<br>
+
+<label  for="boxMarginBottom" style="display: inline;">margin-bottom:</label>
+
+<input type="text" id="boxMarginBottom" readonly style="display: inline; width: 40px; border:0; color:#f6931f; font-weight:bold;">
+
+<select name="radius" id="selectMarginBottom" class="zeroMP" style="display: inline;">
+    <option value="px" selected="selected" title="px">px</option>
+    <option value="mm">mm</option>
+    <option value="cm">cm</option>
+    <option value="em">em</option>
+    <option value="rem">rem</option>
+    <option value="%">%</option>
+</select>
+
+<div id="sliderBoxMarginBottom" style="width: 100%" ></div>
+
+<br>
+<br>
+
+<label  for="boxMarginLeft" style="display: inline;">margin-left:</label>
+
+<input type="text" id="boxMarginLeft" readonly style="display: inline; width: 40px; border:0; color:#f6931f; font-weight:bold;">
+
+<select name="radius" id="selectMarginLeft" class="zeroMP" style="display: inline;">
+    <option value="px" selected="selected" title="px">px</option>
+    <option value="mm">mm</option>
+    <option value="cm">cm</option>
+    <option value="em">em</option>
+    <option value="rem">rem</option>
+    <option value="%">%</option>
+</select>
+
+<div id="sliderBoxMarginLeft" style="width: 100%" ></div>
+
+<script>
+
+    /*********************************Width slider******************************************************/
+
+  //  debugger;
+    if (!State["MarginTop"])
+        State["MarginTop"] = {min: 0, max: 20, step: 0.1, value: 5, unit: "px"};
+
+    if (!State["MarginRight"])
+        State["MarginRight"] = {min: 0, max: 20, step: 0.1, value: 5, unit: "px"};
+
+    if (!State["MarginBottom"])
+        State["MarginBottom"] = {min: 0, max: 20, step: 0.1, value: 5, unit: "px"};
+    if (!State["MarginLeft"])
+        State["MarginLeft"] = {min: 0, max: 20, step: 0.1, value: 5, unit: "px"};
+
+
+    boxHW("MarginTop", State["MarginTop"]);
+    boxHW("MarginRight", State["MarginRight"]);
+    boxHW("MarginBottom", State["MarginBottom"]);
+    boxHW("MarginLeft", State["MarginLeft"]);
+
+
+
+    var currentUnitMT = "#selectMarginTop option[value='" + State["MarginTop"]["unit"] + "']";
+    var currentUnitMR = "#selectMarginRight option[value='" + State["MarginRight"]["unit"] + "']";
+    var currentUnitMB = "#selectMarginBottom option[value='" + State["MarginBottom"]["unit"] + "']";
+    var currentUnitML = "#selectMarginLeft option[value='" + State["MarginLeft"]["unit"] + "']";
+
+
+
+    $("#selectMarginTop").find('option:selected').removeAttr("selected");
+    $(currentUnitMT).attr("selected", "selected");
+
+    $("#MarginRight").find('option:selected').removeAttr("selected");
+    $(currentUnitMR).attr("selected", "selected");
+
+    $("#MarginBottom").find('option:selected').removeAttr("selected");
+    $(currentUnitMB).attr("selected", "selected");
+
+    $("#MarginLeft").find('option:selected').removeAttr("selected");
+    $(currentUnitML).attr("selected", "selected");
+
+
+
+
+    $("#selectMarginTop").selectmenu({
+        width: 80,
+        change: function (event, data) {
+            //debugger;
+
+            var objD = {};
+            var units = data.item.value;
+            objD.unit = units;
+            State["MarginTop"]["unit"] = units;
+
+            switch (units) {
+                case"px":
+                    State["MarginTop"]["min"] = 0;
+                    State["MarginTop"]["max"] = 20;
+                    State["MarginTop"]["step"] = 0.1;
+                    State["MarginTop"]["value"] = 10;
+
+                    break;
+                case"cm":
+
+                    State["MarginTop"]["min"] = 0;
+                    State["MarginTop"]["max"] = 3;
+                    State["MarginTop"]["step"] = 0.1;
+                    State["MarginTop"]["value"] = 1.5;
+                    break;
+                case"mm":
+                    State["MarginTop"]["min"] = 0;
+                    State["MarginTop"]["max"] = 30;
+                    State["MarginTop"]["step"] = 1;
+                    State["MarginTop"]["value"] = 15;
+
+                    break;
+                case"em":
+                    State["MarginTop"]["min"] = 0;
+                    State["MarginTop"]["max"] = 50;
+                    State["MarginTop"]["step"] = 1;
+                    State["MarginTop"]["value"] = 25;
+
+                    break;
+                case"rem":
+                    State["MarginTop"]["min"] = 0;
+                    State["MarginTop"]["max"] = 50;
+                    State["MarginTop"]["step"] = 1;
+                    State["MarginTop"]["value"] = 25;
+
+
+                    break;
+                case"%":
+                    State["MarginTop"]["min"] = 0;
+                    State["MarginTop"]["max"] = 100;
+                    State["MarginTop"]["step"] = 5;
+                    State["MarginTop"]["value"] = 50;
+
+                    break;
+            }
+
+            boxHW("MarginTop", State["MarginTop"]);
+        }
+    });
+
+    $("#selectMarginTop").selectmenu("refresh");
+
+    $("#selectMarginRight").selectmenu({
+        width: 80,
+        change: function (event, data) {
+            var objD = {};
+            var units = data.item.value;
+            objD.unit = units;
+            State["MarginRight"]["unit"] = units;
+
+            switch (units) {
+                case"px":
+                    State["MarginRight"]["min"] = 0;
+                    State["MarginRight"]["max"] = 20;
+                    State["MarginRight"]["step"] = 0.1;
+                    State["MarginRight"]["value"] = 10;
+
+                    break;
+                case"cm":
+
+                    State["MarginRight"]["min"] = 0;
+                    State["MarginRight"]["max"] = 3;
+                    State["MarginRight"]["step"] = 0.1;
+                    State["MarginRight"]["value"] = 1.5;
+                    break;
+                case"mm":
+                    State["MarginRight"]["min"] = 0;
+                    State["MarginRight"]["max"] = 30;
+                    State["MarginRight"]["step"] = 1;
+                    State["MarginRight"]["value"] = 10;
+
+                    break;
+                case"em":
+                    State["MarginRight"]["min"] = 0;
+                    State["MarginRight"]["max"] = 50;
+                    State["MarginRight"]["step"] = 1;
+                    State["MarginRight"]["value"] = 25;
+
+                    break;
+                case"rem":
+                    State["MarginRight"]["min"] = 0;
+                    State["MarginRight"]["max"] = 50;
+                    State["MarginRight"]["step"] = 1;
+                    State["MarginRight"]["value"] = 25;
+
+
+                    break;
+                case"%":
+                    State["MarginRight"]["min"] = 0;
+                    State["MarginRight"]["max"] = 100;
+                    State["MarginRight"]["step"] = 5;
+                    State["MarginRight"]["value"] = 50;
+
+                    break;
+            }
+
+            boxHW("MarginRight", State["MarginRight"]);
+        }
+    });
+
+    $("#selectMarginRight").selectmenu("refresh");
+
+    $("#selectMarginBottom").selectmenu({
+        width: 80,
+        change: function (event, data) {
+            var objD = {};
+            var units = data.item.value;
+            objD.unit = units;
+            State["MarginBottom"]["unit"] = units;
+
+            switch (units) {
+                case"px":
+                    State["MarginBottom"]["min"] = 0;
+                    State["MarginBottom"]["max"] = 20;
+                    State["MarginBottom"]["step"] = 0.1;
+                    State["MarginBottom"]["value"] = 10;
+
+                    break;
+                case"cm":
+
+                    State["MarginBottom"]["min"] = 0;
+                    State["MarginBottom"]["max"] = 3;
+                    State["MarginBottom"]["step"] = 0.1;
+                    State["MarginBottom"]["value"] = 1.5;
+                    break;
+                case"mm":
+                    State["MarginBottom"]["min"] = 0;
+                    State["MarginBottom"]["max"] = 30;
+                    State["MarginBottom"]["step"] = 1;
+                    State["MarginBottom"]["value"] = 10;
+
+                    break;
+                case"em":
+                    State["MarginBottom"]["min"] = 0;
+                    State["MarginBottom"]["max"] = 50;
+                    State["MarginBottom"]["step"] = 1;
+                    State["MarginBottom"]["value"] = 25;
+
+                    break;
+                case"rem":
+                    State["MarginBottom"]["min"] = 0;
+                    State["MarginBottom"]["max"] = 50;
+                    State["MarginBottom"]["step"] = 1;
+                    State["MarginBottom"]["value"] = 25;
+
+
+                    break;
+                case"%":
+                    State["MarginBottom"]["min"] = 0;
+                    State["MarginBottom"]["max"] = 100;
+                    State["MarginBottom"]["step"] = 5;
+                    State["MarginBottom"]["value"] = 50;
+
+                    break;
+            }
+
+            boxHW("MarginBottom", State["MarginBottom"]);
+        }
+    });
+
+    $("#selectMarginBottom").selectmenu("refresh");
+
+    $("#selectMarginLeft").selectmenu({
+        width: 80,
+        change: function (event, data) {
+            var objD = {};
+            var units = data.item.value;
+            objD.unit = units;
+            State["MarginLeft"]["unit"] = units;
+
+            switch (units) {
+                case"px":
+                    State["MarginLeft"]["min"] = 0;
+                    State["MarginLeft"]["max"] = 20;
+                    State["MarginLeft"]["step"] = 0.1;
+                    State["MarginLeft"]["value"] = 10;
+
+                    break;
+                case"cm":
+
+                    State["MarginLeft"]["min"] = 0;
+                    State["MarginLeft"]["max"] = 3;
+                    State["MarginLeft"]["step"] = 0.1;
+                    State["MarginLeft"]["value"] = 1.5;
+                    break;
+                case"mm":
+                    State["MarginLeft"]["min"] = 0;
+                    State["MarginLeft"]["max"] = 30;
+                    State["MarginLeft"]["step"] = 1;
+                    State["MarginLeft"]["value"] = 10;
+
+                    break;
+                case"em":
+                    State["MarginLeft"]["min"] = 0;
+                    State["MarginLeft"]["max"] = 50;
+                    State["MarginLeft"]["step"] = 1;
+                    State["MarginLeft"]["value"] = 25;
+
+                    break;
+                case"rem":
+                    State["MarginLeft"]["min"] = 0;
+                    State["MarginLeft"]["max"] = 50;
+                    State["MarginLeft"]["step"] = 1;
+                    State["MarginLeft"]["value"] = 25;
+
+
+                    break;
+                case"%":
+                    State["MarginLeft"]["min"] = 0;
+                    State["MarginLeft"]["max"] = 100;
+                    State["MarginLeft"]["step"] = 5;
+                    State["MarginLeft"]["value"] = 50;
+
+                    break;
+            }
+
+            boxHW("MarginLeft", State["MarginLeft"]);
+        }
+    });
+
+    $("#selectMarginLeft").selectmenu("refresh");
+
+</script>

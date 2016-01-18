@@ -1,0 +1,184 @@
+<label  for="boxBorderTopWidth" style="display: inline">border-top-width:</label>
+<input type="text" id="boxBorderTopWidth" readonly style="display: inline; width: 40px; border:0; color:#f6931f; font-weight:bold;">
+
+
+<select name="radius" id="selectBorderTopWidth" class="zeroMP" style="display: inline; width: 100px;">
+    <option value="px" selected="selected" title="px">px</option>
+    <option value="mm">mm</option>
+    <option value="cm">cm</option>
+    <option value="em">em</option>
+    <option value="rem">rem</option>
+    <option value="thin">thin</option>
+    <option value="medium">medium</option>
+    <option value="thick">thick</option>
+    <option value="inherit">inherit</option>
+    <option value="initial">initial</option>
+
+
+</select>
+
+<div id="sliderBoxBorderTopWidth" style="width: 100%" ></div>
+<!---------------------------------------------------------------------------------->
+<label  for="boxBorderRightWidth" style="display: inline">border-right-width:</label>
+<input type="text" id="boxBorderRightWidth" readonly style="display: inline; width: 40px; border:0; color:#f6931f; font-weight:bold;">
+
+
+<select name="radius" id="selectBorderRightWidth" class="zeroMP" style="display: inline; width: 100px;">
+    <option value="px" selected="selected" title="px">px</option>
+    <option value="mm">mm</option>
+    <option value="cm">cm</option>
+    <option value="em">em</option>
+    <option value="rem">rem</option>
+    <option value="thin">thin</option>
+    <option value="medium">medium</option>
+    <option value="thick">thick</option>
+    <option value="inherit">inherit</option>
+    <option value="initial">initial</option>
+
+
+</select>
+
+<div id="sliderBoxBorderRightWidth" style="width: 100%" ></div>
+<!---------------------------------------------------------------------------------->
+<label  for="boxBorderBottomWidth" style="display: inline">border-bottom-width:</label>
+<input type="text" id="boxBorderBottomWidth" readonly style="display: inline; width: 40px; border:0; color:#f6931f; font-weight:bold;">
+
+
+<select name="radius" id="selectBorderBottomWidth" class="zeroMP" style="display: inline; width: 100px;">
+    <option value="px" selected="selected" title="px">px</option>
+    <option value="mm">mm</option>
+    <option value="cm">cm</option>
+    <option value="em">em</option>
+    <option value="rem">rem</option>
+    <option value="thin">thin</option>
+    <option value="medium">medium</option>
+    <option value="thick">thick</option>
+    <option value="inherit">inherit</option>
+    <option value="initial">initial</option>
+
+
+</select>
+
+<div id="sliderBoxBorderBottomWidth" style="width: 100%" ></div>
+<!---------------------------------------------------------------------------------->
+<label  for="boxBorderLeftWidth" style="display: inline">border-left-width:</label>
+<input type="text" id="boxBorderLeftWidth" readonly style="display: inline; width: 40px; border:0; color:#f6931f; font-weight:bold;">
+
+
+<select name="radius" id="selectBorderLeftWidth" class="zeroMP" style="display: inline; width: 100px;">
+    <option value="px" selected="selected" title="px">px</option>
+    <option value="mm">mm</option>
+    <option value="cm">cm</option>
+    <option value="em">em</option>
+    <option value="rem">rem</option>
+    <option value="thin">thin</option>
+    <option value="medium">medium</option>
+    <option value="thick">thick</option>
+    <option value="inherit">inherit</option>
+    <option value="initial">initial</option>
+
+
+</select>
+
+<div id="sliderBoxBorderLeftWidth" style="width: 100%" ></div>
+<!---------------------------------------------------------------------------------->
+
+<script>
+
+debugger;
+
+    
+
+    var seperatBorderWidth = function (cssProp, nameProp) {
+
+        if (!State[nameProp])
+            State[nameProp] = new myWww(cssProp, Top = {
+                min: 0, max: 20, step: 1, value: 5, unit: "px",
+                sliderElem: "#sliderBox" + nameProp, boxProp: "#box" + nameProp}
+
+            );
+
+        State[nameProp].sliderTop();
+
+
+        var currentUnitBTW = "#select" + nameProp + " option[value='" + State[nameProp]["paramsTop"]["unit"] + "']";
+
+        $("#select" + nameProp).find('option:selected').removeAttr("selected");
+        $(currentUnitBTW).attr("selected", "selected");
+
+
+        $("#select" + nameProp).selectmenu({
+            change: function (event, data) {
+                var objD = {};
+                var units = data.item.value;
+
+
+                borderSwitch(units, State[nameProp].paramsTop);
+
+                State[nameProp].paramsTop.unit = units;
+                $("#sliderBox" + nameProp).slider("option",
+                        {min: State[nameProp]["paramsTop"].min,
+                            max: State[nameProp]["paramsTop"].max,
+                            step: State[nameProp]["paramsTop"].step,
+                            value: State[nameProp]["paramsTop"].value});
+                $("#sliderBox"+nameProp).trigger("slidechange");
+                seeProperty.call(State[nameProp].paramsTop, cssProp);
+
+            }
+        });
+
+    }
+
+    var borderSwitch = function (unit, obj) {
+
+        switch (unit) {
+            case"px":
+                obj.min = 0;
+                obj.max = 40;
+                obj.step = 1;
+                obj.value = 20;
+                break;
+            case"cm":
+                obj.min = 0;
+                obj.max = 2;
+                obj.step = 0.01;
+                obj.value = 1;
+                break;
+            case"mm":
+                obj.min = 0;
+                obj.max = 20;
+                obj.step = 0.1;
+                obj.value = 1;
+                break;
+            case"em":
+                obj.min = 0;
+                obj.max = 10;
+                obj.step = 0.1;
+                obj.value = 2.5;
+                break;
+            case"rem":
+                obj.min = 0;
+                obj.max = 10;
+                obj.step = 0.1;
+                obj.value = 2.5;
+                break;
+            case"thin":
+            case"medium":
+            case"thick":
+            case"inherit":
+            case"initial":
+                obj.min = 0;
+                obj.max = 0;
+                obj.step = 0;
+                obj.value = " ";
+
+                break;
+        }
+    }
+    
+    seperatBorderWidth("border-top-width", "BorderTopWidth");
+    seperatBorderWidth("border-right-width", "BorderRightWidth");
+    seperatBorderWidth("border-bottom-width", "BorderBottomWidth");
+    seperatBorderWidth("border-left-width", "BorderLeftWidth");
+
+</script>

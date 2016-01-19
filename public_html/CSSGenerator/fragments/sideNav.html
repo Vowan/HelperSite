@@ -2,7 +2,16 @@
     <li><a href="#section1">Dimensions</a></li>
     <li><a href="#section2">Padding</a></li>
     <li><a href="#section3">Margin</a></li>
-    <li><a href="#section4">Border</a></li>
+   
+    
+    <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Border <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+            <li><a href="#section41">width</a></li>
+            <li><a href="#section42">Section 4-2</a></li>                     
+        </ul>
+    </li>
+    
     <li><a href="#section5">Background</a></li>
     <li><a href="#section6">Text</a></li>
     <li><a href="#section7">Font</a></li>
@@ -38,7 +47,7 @@
             $("#control").load("http://localhost:8383/myTutorSite/CSSGenerator/fragments/margin.html");
         });
         
-        $("[href='#section4']").click(function (e) {
+        $("[href='#section41']").click(function (e) {
             e.preventDefault();
           //  console.log("side")
             $("#control").load("http://localhost:8383/myTutorSite/CSSGenerator/fragments/border.html");

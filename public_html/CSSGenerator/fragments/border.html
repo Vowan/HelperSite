@@ -81,22 +81,96 @@
 </select>
 
 <div id="sliderBoxBorderLeftWidth" style="width: 100%" ></div>
+
+
+<div  style="padding-left: 0px;">
+    <label  for="shorthandBorderWidth" style="display: inline">shorthand:</label>
+    <input type="checkbox" name="shorthandBorderWidth" > 
+</div>
 <!---------------------------------------------------------------------------------->
 
 <script>
 
-debugger;
 
-    
 
+    /*******************Adding/removing "fill" ************************/
+
+    $("input[name='shorthandBorderWidth']").on("click", function () {
+
+      //  debugger;
+
+        if ($(this).prop("checked")) {
+
+            State["shortHandBorderWidth"].enable = true;
+
+            if (boxCompProperties.hasOwnProperty("border-top-width")) {
+                delete boxCompProperties["border-top-width"];
+            }
+            if (boxCompProperties.hasOwnProperty("border-right-width")) {
+                delete boxCompProperties["border-right-width"];
+            }
+            if (boxCompProperties.hasOwnProperty("border-bottom-width")) {
+                delete boxCompProperties["border-bottom-width"];
+            }
+            if (boxCompProperties.hasOwnProperty("border-left-width")) {
+                delete boxCompProperties["border-left-width"];
+            }
+
+
+            State["shortHandBorderWidth"].first = State["BorderTopWidth"];
+
+
+            State["shortHandBorderWidth"].second = State["BorderRightWidth"];
+
+
+            State["shortHandBorderWidth"].third = State["BorderBottomWidth"];
+
+
+            State["shortHandBorderWidth"].forth = State["BorderLeftWidth"];
+
+            $("#passingborder-left-width").remove();
+            $("#passingborder-top-width").remove();
+            $("#passingborder-bottom-width").remove();
+            $("#passingborder-right-width").remove();
+
+        } else {
+
+            State["shortHandBorderWidth"].enable = false;
+
+            if (boxCompProperties.hasOwnProperty("border-width")) {
+                delete boxCompProperties["border-width"];
+            }
+
+            $("#passingborder-width").remove();
+        }
+
+        seperatBorderWidth("border-top-width", "BorderTopWidth");
+        seperatBorderWidth("border-right-width", "BorderRightWidth");
+        seperatBorderWidth("border-bottom-width", "BorderBottomWidth");
+        seperatBorderWidth("border-left-width", "BorderLeftWidth");
+
+
+    });
+
+
+
+    if (!State["shortHandBorderWidth"]) {
+        State["shortHandBorderWidth"] = {
+            cssProp: "border-width",
+            enable: false,
+            first: null,
+            second: null,
+            third: null,
+            forth: null
+        }
+    }
     var seperatBorderWidth = function (cssProp, nameProp) {
 
-        if (!State[nameProp])
-            State[nameProp] = new myWww(cssProp, Top = {
-                min: 0, max: 20, step: 1, value: 5, unit: "px",
-                sliderElem: "#sliderBox" + nameProp, boxProp: "#box" + nameProp}
+        
 
-            );
+        State[nameProp]["paramsTop"].shortHand = State["shortHandBorderWidth"];
+
+
 
         State[nameProp].sliderTop();
 
@@ -121,13 +195,70 @@ debugger;
                             max: State[nameProp]["paramsTop"].max,
                             step: State[nameProp]["paramsTop"].step,
                             value: State[nameProp]["paramsTop"].value});
-                $("#sliderBox"+nameProp).trigger("slidechange");
+                $("#sliderBox" + nameProp).trigger("slidechange");
                 seeProperty.call(State[nameProp].paramsTop, cssProp);
 
             }
         });
 
     }
+
+    /*  var shotBorderWidth = function (cssProp, nameProp) {
+     
+     if (!State[nameProp])
+     State[nameProp] = new myWww(cssProp,
+     Top = {
+     min: 0, max: 20, step: 1, value: 5, unit: "px",
+     sliderElem: "#sliderBox" + "BorderTopWidth", boxProp: "#box" + "BorderTopWidth"
+     },
+     Right = {
+     min: 0, max: 20, step: 1, value: 5, unit: "px",
+     sliderElem: "#sliderBox" + "BorderRightWidth", boxProp: "#box" + "BorderRightWidth"
+     },
+     Bottom = {
+     min: 0, max: 20, step: 1, value: 5, unit: "px",
+     sliderElem: "#sliderBox" + "BorderBottomWidth", boxProp: "#box" + "BorderBottomWidth"
+     },
+     Left = {
+     min: 0, max: 20, step: 1, value: 5, unit: "px",
+     sliderElem: "#sliderBox" + "BorderLeftWidth", boxProp: "#box" + "BorderLeftWidth"
+     }
+     );
+     
+     State[nameProp].sliderTop();
+     State[nameProp].sliderRight();
+     State[nameProp].sliderBottom();
+     State[nameProp].sliderLeft();
+     
+     
+     var currentUnitBTW = "#select" + nameProp + " option[value='" + State[nameProp]["paramsTop"]["unit"] + "']";
+     
+     $("#select" + nameProp).find('option:selected').removeAttr("selected");
+     $(currentUnitBTW).attr("selected", "selected");
+     
+     
+     $("#select" + nameProp).selectmenu({
+     change: function (event, data) {
+     var objD = {};
+     var units = data.item.value;
+     
+     
+     borderSwitch(units, State[nameProp].paramsTop);
+     
+     State[nameProp].paramsTop.unit = units;
+     $("#sliderBox" + nameProp).slider("option",
+     {min: State[nameProp]["paramsTop"].min,
+     max: State[nameProp]["paramsTop"].max,
+     step: State[nameProp]["paramsTop"].step,
+     value: State[nameProp]["paramsTop"].value});
+     $("#sliderBox" + nameProp).trigger("slidechange");
+     seeProperty.call(State[nameProp].paramsTop, cssProp);
+     
+     }
+     });
+     
+     }*/
+
 
     var borderSwitch = function (unit, obj) {
 
@@ -175,10 +306,44 @@ debugger;
                 break;
         }
     }
-    
+
+    if (!State["BorderTopWidth"])
+        State["BorderTopWidth"] = new myWww("border-top-width", Top = {
+            min: 0, max: 20, step: 1, value: 5, unit: "px",
+            sliderElem: "#sliderBox" + "BorderTopWidth", boxProp: "#box" + "BorderTopWidth"}
+
+        );
+    State["shortHandBorderWidth"].first = State["BorderTopWidth"];
+
+    if (!State["BorderRightWidth"])
+        State["BorderRightWidth"] = new myWww("border-right-width", Top = {
+            min: 0, max: 20, step: 1, value: 5, unit: "px",
+            sliderElem: "#sliderBox" + "BorderRightWidth", boxProp: "#box" + "BorderRightWidth"}
+
+        );
+    State["shortHandBorderWidth"].second = State["BorderRightWidth"];
+
+    if (!State["BorderBottomWidth"])
+        State["BorderBottomWidth"] = new myWww("border-bottom-width", Top = {
+            min: 0, max: 20, step: 1, value: 5, unit: "px",
+            sliderElem: "#sliderBox" + "BorderBottomWidth", boxProp: "#box" + "BorderBottomWidth"}
+
+        );
+    State["shortHandBorderWidth"].third = State["BorderBottomWidth"];
+
+    if (!State["BorderLeftWidth"])
+        State["BorderLeftWidth"] = new myWww("border-left-width", Top = {
+            min: 0, max: 20, step: 1, value: 5, unit: "px",
+            sliderElem: "#sliderBox" + "BorderLeftWidth", boxProp: "#box" + "BorderLeftWidth"}
+
+        );
+    State["shortHandBorderWidth"].forth = State["BorderLeftWidth"];
+
+
     seperatBorderWidth("border-top-width", "BorderTopWidth");
     seperatBorderWidth("border-right-width", "BorderRightWidth");
     seperatBorderWidth("border-bottom-width", "BorderBottomWidth");
     seperatBorderWidth("border-left-width", "BorderLeftWidth");
+
 
 </script>

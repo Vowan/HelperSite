@@ -1,0 +1,253 @@
+<label  for="selectBorderTopColor" style="display: inline">border-top-color:</label>
+
+<input type="color" id="BorderTopColor">
+
+<select name="radius" id="selectBorderTopColor" class="zeroMP" style=" width: 100px">
+    <option value="colorPicker" data-value="colorPicker" selected="selected" title="none">colorPicker</option>
+    <option value="#ff0000" data-value="red">red</option>
+    <option value="#008000" data-value="green">green</option>
+
+</select>
+
+<br>
+
+
+<label  for="selectBorderRightColor" style="display: inline">border-right-color:</label>
+
+<input type="color" id="BorderRightColor">
+
+<select name="radius" id="selectBorderRightColor" class="zeroMP" style=" width: 100px">
+    <option value="colorPicker" data-value="colorPicker" selected="selected" title="none">colorPicker</option>
+    <option value="#ff0000" data-value="red">red</option>
+    <option value="#008000" data-value="green">green</option>
+
+</select>
+
+<br>
+
+<label  for="selectBorderBottomColor" style="display: inline">border-bottom-color:</label>
+
+<input type="color" id="BorderBottomColor" style="width: 35px;">
+
+<select name="radius" id="selectBorderBottomColor" class="zeroMP" style=" width: 100px">
+    <option value="colorPicker" data-value="colorPicker" selected="selected" title="none">colorPicker</option>
+    <option value="#ff0000" data-value="red">red</option>
+    <option value="#008000" data-value="green">green</option>
+
+</select>
+
+<br>
+
+<label  for="selectBorderLeftColor" style="display: inline">border-left-color:</label>
+
+<input type="color" id="BorderLeftColor">
+
+<select name="radius" id="selectBorderLeftColor" class="zeroMP" style=" width: 100px">
+    <option value="colorPicker" data-value="colorPicker" selected="selected" title="none">colorPicker</option>
+    <option value="#ff0000" data-value="red">red</option>
+    <option value="#008000" data-value="green">green</option>
+
+</select>
+
+<br>
+
+<div  style="padding-left: 0px;">
+    <label  for="shorthandBorderColor" style="display: inline">shorthand:</label>
+    <input type="checkbox" name="shorthandBorderColor" > 
+</div>
+
+
+<script>
+    
+      $("input[name='shorthandBorderColor']").on("click", function () {
+
+    
+        if ($(this).prop("checked")) {
+
+            State["shortHandBorderColor"].enable = true;
+
+            if (boxCompProperties.hasOwnProperty("border-top-color")) {
+                delete boxCompProperties["border-top-color"];
+            }
+            if (boxCompProperties.hasOwnProperty("border-right-color")) {
+                delete boxCompProperties["border-right-color"];
+            }
+            if (boxCompProperties.hasOwnProperty("border-bottom-color")) {
+                delete boxCompProperties["border-bottom-color"];
+            }
+            if (boxCompProperties.hasOwnProperty("border-left-color")) {
+                delete boxCompProperties["border-left-color"];
+            }
+
+
+            State["shortHandBorderColor"].first = State["BorderTopColor"];
+
+
+            State["shortHandBorderColor"].second = State["BorderRightColor"];
+
+
+            State["shortHandBorderColor"].third = State["BorderBottomColor"];
+
+
+            State["shortHandBorderColor"].forth = State["BorderLeftColor"];
+
+            $("#passingborder-left-color").remove();
+            $("#passingborder-top-color").remove();
+            $("#passingborder-bottom-color").remove();
+            $("#passingborder-right-color").remove();
+
+        } else {
+
+            State["shortHandBorderColor"].enable = false;
+
+            if (boxCompProperties.hasOwnProperty("border-color")) {
+                delete boxCompProperties["border-color"];
+            }
+
+            $("#passingborder-color").remove();
+        }
+
+        seperatBorderColor("border-top-color", "BorderTopColor");
+        seperatBorderColor("border-right-color", "BorderRightColor");
+        seperatBorderColor("border-bottom-color", "BorderBottomColor");
+        seperatBorderColor("border-left-color", "BorderLeftColor");
+
+
+    });
+
+
+    if (!State["shortHandBorderColor"]) {
+        State["shortHandBorderColor"] = {
+            cssProp: "border-color",
+            enable: false,
+            first: null,
+            second: null,
+            third: null,
+            forth: null
+        }
+    }
+
+    var seperatBorderColor = function (cssProp, nameProp) {
+
+        if (State[nameProp].paramsTop.dataValue != "colorPicker") {
+
+            var currentUnitBTW = "#select" + nameProp + " option[data-value='" + State[nameProp]["paramsTop"]["unit"] + "']";
+
+            $("#select" + nameProp).find('option:selected').removeAttr("selected");
+            $(currentUnitBTW).attr("selected", "selected");
+
+           // $("#select" + nameProp).selectmenu("refresh");
+
+            $("#" + nameProp).val($(currentUnitBTW).val());
+
+        } else {
+            $("#" + nameProp).val(State[nameProp].paramsTop.unit);
+
+        }
+
+        seeProperty.call(State[nameProp].paramsTop, cssProp);
+
+
+        $("#select" + nameProp).selectmenu({
+            change: function (event, data) {
+                var objD = {};
+              
+                var colorKeyword = data.item.value;
+                
+                if (colorKeyword != "colorPicker") {
+
+                    State[nameProp].paramsTop.unit = data.item.label;
+                    State[nameProp].paramsTop.value = "";
+                    State[nameProp].paramsTop.dataValue = "";
+                    $("#" + nameProp).val(colorKeyword).trigger("change", {selector: true});
+
+
+                } else {
+                    State[nameProp].paramsTop.unit = $("#" + nameProp).val();
+                    State[nameProp].paramsTop.value = "";
+                    State[nameProp].paramsTop.dataValue = "colorPicker";
+
+                }
+
+                seeProperty.call(State[nameProp].paramsTop, cssProp);
+
+            }
+        });
+
+        $("#" + nameProp).on("change", function (e, data) {
+            
+            
+           
+            State[nameProp].paramsTop.value = "";
+            if (data) {
+                State[nameProp].paramsTop.dataValue = "";
+            } else {
+                State[nameProp].paramsTop.dataValue = "colorPicker";
+                 State[nameProp].paramsTop.unit = $("#" + nameProp).val();
+            }
+            seeProperty.call(State[nameProp].paramsTop, cssProp);
+        });
+
+        $("#" + nameProp).on("click", function () {
+
+   //         debugger
+            var selectColorPicker = "#select" + nameProp + " option[data-value='colorPicker']";
+
+            $("#select" + nameProp).find('option:selected').removeAttr("selected");
+            $(selectColorPicker).attr("selected", "selected");
+            $("#select" + nameProp).selectmenu("refresh");
+
+
+        });
+
+    }
+
+
+    if (!State["BorderTopColor"])
+        State["BorderTopColor"] = new myWww("", Top = {
+            min: 0, max: 20, step: 1, value: "", unit: $("#BorderTopColor").val(),
+            sliderElem: "", boxProp: "", dataValue: "colorPicker"}
+
+        );
+    State["shortHandBorderColor"].first = State["BorderTopColor"];
+    State["BorderTopColor"]["paramsTop"].shortHand = State["shortHandBorderColor"];
+
+
+    seperatBorderColor("border-top-color", "BorderTopColor");
+    
+    if (!State["BorderRightColor"])
+        State["BorderRightColor"] = new myWww("", Top = {
+            min: 0, max: 20, step: 1, value: "", unit: $("#BorderRightColor").val(),
+            sliderElem: "", boxProp: "", dataValue: "colorPicker"}
+
+        );
+    State["shortHandBorderColor"].second = State["BorderRightColor"];
+    State["BorderRightColor"]["paramsTop"].shortHand = State["shortHandBorderColor"];
+
+
+    seperatBorderColor("border-right-color", "BorderRightColor");
+
+    if (!State["BorderBottomColor"])
+        State["BorderBottomColor"] = new myWww("", Top = {
+            min: 0, max: 20, step: 1, value: "", unit: $("#BorderBottomColor").val(),
+            sliderElem: "", boxProp: "", dataValue: "colorPicker"}
+
+        );
+    State["shortHandBorderColor"].third = State["BorderBottomColor"];
+    State["BorderBottomColor"]["paramsTop"].shortHand = State["shortHandBorderColor"];
+
+
+    seperatBorderColor("border-bottom-color", "BorderBottomColor");
+    
+        if (!State["BorderLeftColor"])
+        State["BorderLeftColor"] = new myWww("", Top = {
+            min: 0, max: 20, step: 1, value: "", unit: $("#BorderLeftColor").val(),
+            sliderElem: "", boxProp: "", dataValue: "colorPicker"}
+
+        );
+    State["shortHandBorderColor"].forth = State["BorderLeftColor"];
+    State["BorderLeftColor"]["paramsTop"].shortHand = State["shortHandBorderColor"];
+
+
+    seperatBorderColor("border-left-color", "BorderLeftColor");
+</script>

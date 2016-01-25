@@ -1,358 +1,284 @@
-<label  for="boxPaddingTop" style="display: inline;">padding-top:</label>
+<h4>Padding</h4>
 
-<input type="text" id="boxPaddingTop" readonly style="display: inline; width: 40px; border:0; color:#f6931f; font-weight:bold;">
+<div>
+    <label for="labPadding-Top" style="display: inline; width: 15%">top</label>
+    <input type="range" min="0" max="10" value="5" id="slidPadding-Top" step="1" style="display: inline; width: 50%">
+    <output for="outWidth" id="outPadding-Top" style="display: inline; width: 15%">5</output>
 
-<select name="radius" id="selectPaddingTop" class="zeroMP" style="display: inline;">
-    <option value="px" selected="selected" title="px">px</option>
-    <option value="mm">mm</option>
-    <option value="cm">cm</option>
-    <option value="em">em</option>
-    <option value="rem">rem</option>
-    <option value="%">%</option>
-</select>
 
-<div id="sliderBoxPaddingTop" style="width: 100%" ></div>
-
-<br>
-<br>
-
-<label  for="boxPaddingRight" style="display: inline;">padding-right:</label>
-
-<input type="text" id="boxPaddingRight" readonly style="display: inline; width: 40px; border:0; color:#f6931f; font-weight:bold;">
-
-<select name="radius" id="selectPaddingRight" class="zeroMP" style="display: inline;">
-    <option value="px" selected="selected" title="px">px</option>
-    <option value="mm">mm</option>
-    <option value="cm">cm</option>
-    <option value="em">em</option>
-    <option value="rem">rem</option>
-    <option value="%">%</option>
-</select>
-
-<div id="sliderBoxPaddingRight" style="width: 100%" ></div>
-
-<br>
+    <select name="radius" id="selPadding-Top" class="zeroMP" style="display: inline; width: 20%">
+        <option value="px" selected="selected" title="px">px</option>
+        <option id="mmW" value="mm">mm</option>
+        <option value="cm">cm</option>
+        <option value="em">em</option>
+        <option value="rem">rem</option>
+        <option value="%">%</option>
+    </select>
+</div>
 <br>
 
-<label  for="boxPaddingBottom" style="display: inline;">padding-bottom:</label>
+<div>
+    <label for="labPadding-Right" style="display: inline; width: 15%">right</label>
+    <input type="range" min="0" max="10" value="5" id="slidPadding-Right" step="1" style="display: inline; width: 50%">
+    <output for="slidPadding-Right" id="outPadding-Right" style="display: inline; width: 15%">5</output>
 
-<input type="text" id="boxPaddingBottom" readonly style="display: inline; width: 40px; border:0; color:#f6931f; font-weight:bold;">
 
-<select name="radius" id="selectPaddingBottom" class="zeroMP" style="display: inline;">
-    <option value="px" selected="selected" title="px">px</option>
-    <option value="mm">mm</option>
-    <option value="cm">cm</option>
-    <option value="em">em</option>
-    <option value="rem">rem</option>
-    <option value="%">%</option>
-</select>
-
-<div id="sliderBoxPaddingBottom" style="width: 100%" ></div>
-
+    <select name="radius" id="selPadding-Right" class="zeroMP" style="display: inline; width: 20%">
+        <option value="px" selected="selected" title="px">px</option>
+        <option id="mmW" value="mm">mm</option>
+        <option value="cm">cm</option>
+        <option value="em">em</option>
+        <option value="rem">rem</option>
+        <option value="%">%</option>
+    </select>
+</div>
 <br>
+
+<div>
+    <label for="labPadding-Bottom" style="display: inline; width: 15%">bottom</label>
+    <input type="range" min="0" max="10" value="5" id="slidPadding-Bottom" step="1" style="display: inline; width: 50%">
+    <output for="slidPadding-Bottom" id="outPadding-Bottom" style="display: inline; width: 15%">5</output>
+
+
+    <select name="radius" id="selPadding-Bottom" class="zeroMP" style="display: inline; width: 20%">
+        <option value="px" selected="selected" title="px">px</option>
+        <option id="mmW" value="mm">mm</option>
+        <option value="cm">cm</option>
+        <option value="em">em</option>
+        <option value="rem">rem</option>
+        <option value="%">%</option>
+    </select>
+</div>
 <br>
 
-<label  for="boxPaddingLeft" style="display: inline;">padding-left:</label>
+<div>
+    <label for="labPadding-Left" style="display: inline; width: 15%">left</label>
+    <input type="range" min="0" max="10" value="5" id="slidPadding-Left" step="1" style="display: inline; width: 50%">
+    <output for="slidPadding-Left" id="outPadding-Left" style="display: inline; width: 15%">5</output>
 
-<input type="text" id="boxPaddingLeft" readonly style="display: inline; width: 40px; border:0; color:#f6931f; font-weight:bold;">
 
-<select name="radius" id="selectPaddingLeft" class="zeroMP" style="display: inline;">
-    <option value="px" selected="selected" title="px">px</option>
-    <option value="mm">mm</option>
-    <option value="cm">cm</option>
-    <option value="em">em</option>
-    <option value="rem">rem</option>
-    <option value="%">%</option>
-</select>
+    <select name="radius" id="selPadding-Left" class="zeroMP" style="display: inline; width: 20%">
+        <option value="px" selected="selected" title="px">px</option>
+        <option id="mmW" value="mm">mm</option>
+        <option value="cm">cm</option>
+        <option value="em">em</option>
+        <option value="rem">rem</option>
+        <option value="%">%</option>
+    </select>
+</div>
+<br>
+<div  style="display: inline; width: 45%; padding-right: 5%;">
+    <label  for="shorthandPadding" style="display: inline">shorthand:</label>
+    <input type="checkbox" name="shorthandPadding" > 
+</div>
 
-<div id="sliderBoxPaddingLeft" style="width: 100%" ></div>
+<div  style="display: inline; width: 45%; padding-right: 5%;">
+    <label  for="separatePad" style="display: inline">separate:</label>
+    <input type="checkbox" name="separatePad" > 
+</div>
+
+
 
 <script>
+   
 
-    /*********************************Width slider******************************************************/
+    $("input[name='separatePad']").on("click", function () {
+        if ($(this).prop("checked")) {
 
-  //  debugger;
-    if (!State["PaddingTop"])
-        State["PaddingTop"] = {min: 0, max: 20, step: 0.1, value: 5, unit: "px"};
-
-    if (!State["PaddingRight"])
-        State["PaddingRight"] = {min: 0, max: 20, step: 0.1, value: 5, unit: "px"};
-
-    if (!State["PaddingBottom"])
-        State["PaddingBottom"] = {min: 0, max: 20, step: 0.1, value: 5, unit: "px"};
-    if (!State["PaddingLeft"])
-        State["PaddingLeft"] = {min: 0, max: 20, step: 0.1, value: 5, unit: "px"};
+            mainObject.currentPropSet = mainObject.separatePropSet;
 
 
-    boxHW("PaddingTop", State["PaddingTop"]);
-    boxHW("PaddingRight", State["PaddingRight"]);
-    boxHW("PaddingBottom", State["PaddingBottom"]);
-    boxHW("PaddingLeft", State["PaddingLeft"]);
+            mainObject.displayProp();
 
 
+        } else {
+            mainObject.currentPropSet = mainObject.fullPropSet;
+            mainObject.displayProp();
+        }
+    })
 
-    var currentUnitPT = "#selectPaddingTop option[value='" + State["PaddingTop"]["unit"] + "']";
-    var currentUnitPR = "#selectPaddingRight option[value='" + State["PaddingRight"]["unit"] + "']";
-    var currentUnitPB = "#selectPaddingBottom option[value='" + State["PaddingBottom"]["unit"] + "']";
-    var currentUnitPL = "#selectPaddingLeft option[value='" + State["PaddingLeft"]["unit"] + "']";
+    $("input[name='shorthandPadding']").on("click", function () {
 
 
+        if ($(this).prop("checked")) {
 
-    $("#selectPaddingTop").find('option:selected').removeAttr("selected");
-    $(currentUnitPT).attr("selected", "selected");
 
-    $("#PaddingRight").find('option:selected').removeAttr("selected");
-    $(currentUnitPR).attr("selected", "selected");
+            mainObject.addExeptPropSet("padding-top").addExeptPropSet("padding-right")
+                    .addExeptPropSet("padding-bottom").addExeptPropSet("padding-left").removeExeptPropSet("padding");
+            
+            mainObject.displayProp();
 
-    $("#PaddingBottom").find('option:selected').removeAttr("selected");
-    $(currentUnitPB).attr("selected", "selected");
+            mainObject.debugProp("padding-left");
 
-    $("#PaddingLeft").find('option:selected').removeAttr("selected");
-    $(currentUnitPL).attr("selected", "selected");
+
+        } else {
+            mainObject.removeExeptPropSet("padding-top").removeExeptPropSet("padding-right")
+                    .removeExeptPropSet("padding-bottom").removeExeptPropSet("padding-left").addExeptPropSet("padding");
+
+            mainObject.displayProp();
+
+        }
 
 
 
 
-    $("#selectPaddingTop").selectmenu({
-        width: 80,
-        change: function (event, data) {
-            //debugger;
+    });
 
-            var objD = {};
-            var units = data.item.value;
-            objD.unit = units;
-            State["PaddingTop"]["unit"] = units;
+    mainObject.trig = function () {
 
-            switch (units) {
+        mainObject.fullPropSet["padding"] =
+                mainObject.fullPropSet["padding-top"] + " "
+                + mainObject.fullPropSet["padding-right"] + " "
+                + mainObject.fullPropSet["padding-bottom"] + " "
+                + mainObject.fullPropSet["padding-left"];
+        mainObject.separatePropSet["padding"] =
+                mainObject.fullPropSet["padding-top"] + " "
+                + mainObject.fullPropSet["padding-right"] + " "
+                + mainObject.fullPropSet["padding-bottom"] + " "
+                + mainObject.fullPropSet["padding-left"];
+
+
+
+
+    }
+
+
+
+
+    var propProc = function (prop) {
+
+        var p = prop.toLowerCase();
+
+        if (mainObject[p + "Unit"]) {
+            var curUnitW = "#sel" + prop + " option[value='" + mainObject[p + 'Unit'] + "']";
+            $("#sel" + prop).find('option:selected').removeAttr("selected");
+            $(curUnitW).attr("selected", "selected");
+        }
+
+        if (mainObject[p + "Val"]) {
+            $("#slid" + prop).val(mainObject[p + "Val"]);
+            $("#out" + prop).val(mainObject[p + "Val"]);
+        }
+
+
+        mainObject[p + "Unit"] = $("#sel" + prop).val();
+        mainObject[p + "Val"] = $("#slid" + prop).val();
+
+        
+        mainObject.processFullProp(p, mainObject[p + "Val"] + "" + mainObject[p + "Unit"]);
+
+
+        $("#slid" + prop).on('input', function () {
+            // mainObject.slid = this.value;
+
+            mainObject[p + "Val"] = this.value
+            $("#out" + prop).val(this.value);
+            
+            
+
+            mainObject.processFullProp(p, mainObject[p + "Val"] + "" + mainObject[p + "Unit"]);
+
+
+            
+        })
+
+        $("#sel" + prop).on("change", function () {
+            switch (this.value) {
                 case"px":
-                    State["PaddingTop"]["min"] = 0;
-                    State["PaddingTop"]["max"] = 20;
-                    State["PaddingTop"]["step"] = 0.1;
-                    State["PaddingTop"]["value"] = 10;
+                    $("#slid" + prop).attr({
+                        min: 0,
+                        max: 20,
+                        step: 0.1,
+                        value: 10
+                    }).trigger("input");
+
+                    mainObject[p + "Unit"] = this.value;
+                    mainObject[p + "Val"] = $("#out" + prop).val();
 
                     break;
                 case"cm":
 
-                    State["PaddingTop"]["min"] = 0;
-                    State["PaddingTop"]["max"] = 3;
-                    State["PaddingTop"]["step"] = 0.1;
-                    State["PaddingTop"]["value"] = 1.5;
+                    $("#slid" + prop).attr({
+                        min: "0",
+                        max: "2",
+                        step: "0.1",
+                        value: "1"
+                    }).trigger("input");
+
+                    mainObject[p + "Unit"] = this.value;
+                    mainObject[p + "Val"] = $("#out" + prop).val();
+
                     break;
                 case"mm":
-                    State["PaddingTop"]["min"] = 0;
-                    State["PaddingTop"]["max"] = 30;
-                    State["PaddingTop"]["step"] = 1;
-                    State["PaddingTop"]["value"] = 15;
+                    $("#slid" + prop).attr({
+                        min: "0",
+                        max: "20",
+                        step: "0.1",
+                        value: "1"
+                    }).trigger("input");
+
+                    mainObject[p + "Unit"] = this.value;
+                    mainObject[p + "Val"] = $("#out" + prop).val();
+
 
                     break;
                 case"em":
-                    State["PaddingTop"]["min"] = 0;
-                    State["PaddingTop"]["max"] = 50;
-                    State["PaddingTop"]["step"] = 1;
-                    State["PaddingTop"]["value"] = 25;
+                    $("#slid" + prop).attr({
+                        min: "0",
+                        max: "20",
+                        step: "0.1",
+                        value: "1"
+                    }).trigger("input");
+
+                    mainObject[p + "Unit"] = this.value;
+                    mainObject[p + "Val"] = $("#out" + prop).val();
+
 
                     break;
                 case"rem":
-                    State["PaddingTop"]["min"] = 0;
-                    State["PaddingTop"]["max"] = 50;
-                    State["PaddingTop"]["step"] = 1;
-                    State["PaddingTop"]["value"] = 25;
+                    $("#slid" + prop).attr({
+                        min: "0",
+                        max: "2",
+                        step: "0.1",
+                        value: "1"
+                    }).trigger("input");
+
+                    mainObject[p + "Unit"] = this.value;
+                    mainObject[p + "Val"] = $("#out" + prop).val();
+
 
 
                     break;
                 case"%":
-                    State["PaddingTop"]["min"] = 0;
-                    State["PaddingTop"]["max"] = 100;
-                    State["PaddingTop"]["step"] = 5;
-                    State["PaddingTop"]["value"] = 50;
+                    $("#slid" + prop).attr({
+                        min: 0,
+                        max: 20,
+                        step: 0.1,
+                        value: 10
+                    }).trigger("input");
+
+                    mainObject[p + "Unit"] = this.value;
+                    mainObject[p + "Val"] = $("#out" + prop).val();
+
 
                     break;
             }
 
-            boxHW("PaddingTop", State["PaddingTop"]);
-        }
-    });
-
-    $("#selectPaddingTop").selectmenu("refresh");
-
-    $("#selectPaddingRight").selectmenu({
-        width: 80,
-        change: function (event, data) {
-            var objD = {};
-            var units = data.item.value;
-            objD.unit = units;
-            State["PaddingRight"]["unit"] = units;
-
-            switch (units) {
-                case"px":
-                    State["PaddingRight"]["min"] = 0;
-                    State["PaddingRight"]["max"] = 20;
-                    State["PaddingRight"]["step"] = 0.1;
-                    State["PaddingRight"]["value"] = 10;
-
-                    break;
-                case"cm":
-
-                    State["PaddingRight"]["min"] = 0;
-                    State["PaddingRight"]["max"] = 3;
-                    State["PaddingRight"]["step"] = 0.1;
-                    State["PaddingRight"]["value"] = 1.5;
-                    break;
-                case"mm":
-                    State["PaddingRight"]["min"] = 0;
-                    State["PaddingRight"]["max"] = 30;
-                    State["PaddingRight"]["step"] = 1;
-                    State["PaddingRight"]["value"] = 10;
-
-                    break;
-                case"em":
-                    State["PaddingRight"]["min"] = 0;
-                    State["PaddingRight"]["max"] = 50;
-                    State["PaddingRight"]["step"] = 1;
-                    State["PaddingRight"]["value"] = 25;
-
-                    break;
-                case"rem":
-                    State["PaddingRight"]["min"] = 0;
-                    State["PaddingRight"]["max"] = 50;
-                    State["PaddingRight"]["step"] = 1;
-                    State["PaddingRight"]["value"] = 25;
 
 
-                    break;
-                case"%":
-                    State["PaddingRight"]["min"] = 0;
-                    State["PaddingRight"]["max"] = 100;
-                    State["PaddingRight"]["step"] = 5;
-                    State["PaddingRight"]["value"] = 50;
+            mainObject.processFullProp(p, mainObject[p + "Val"] + "" + mainObject[p + "Unit"]);
 
-                    break;
-            }
+            
+            
+        })
 
-            boxHW("PaddingRight", State["PaddingRight"]);
-        }
-    });
+    }
 
-    $("#selectPaddingRight").selectmenu("refresh");
+    mainObject.clearSeparatePropSet();
+    mainObject.currentPropSet = mainObject.fullPropSet;
 
-    $("#selectPaddingBottom").selectmenu({
-        width: 80,
-        change: function (event, data) {
-            var objD = {};
-            var units = data.item.value;
-            objD.unit = units;
-            State["PaddingBottom"]["unit"] = units;
-
-            switch (units) {
-                case"px":
-                    State["PaddingBottom"]["min"] = 0;
-                    State["PaddingBottom"]["max"] = 20;
-                    State["PaddingBottom"]["step"] = 0.1;
-                    State["PaddingBottom"]["value"] = 10;
-
-                    break;
-                case"cm":
-
-                    State["PaddingBottom"]["min"] = 0;
-                    State["PaddingBottom"]["max"] = 3;
-                    State["PaddingBottom"]["step"] = 0.1;
-                    State["PaddingBottom"]["value"] = 1.5;
-                    break;
-                case"mm":
-                    State["PaddingBottom"]["min"] = 0;
-                    State["PaddingBottom"]["max"] = 30;
-                    State["PaddingBottom"]["step"] = 1;
-                    State["PaddingBottom"]["value"] = 10;
-
-                    break;
-                case"em":
-                    State["PaddingBottom"]["min"] = 0;
-                    State["PaddingBottom"]["max"] = 50;
-                    State["PaddingBottom"]["step"] = 1;
-                    State["PaddingBottom"]["value"] = 25;
-
-                    break;
-                case"rem":
-                    State["PaddingBottom"]["min"] = 0;
-                    State["PaddingBottom"]["max"] = 50;
-                    State["PaddingBottom"]["step"] = 1;
-                    State["PaddingBottom"]["value"] = 25;
-
-
-                    break;
-                case"%":
-                    State["PaddingBottom"]["min"] = 0;
-                    State["PaddingBottom"]["max"] = 100;
-                    State["PaddingBottom"]["step"] = 5;
-                    State["PaddingBottom"]["value"] = 50;
-
-                    break;
-            }
-
-            boxHW("PaddingBottom", State["PaddingBottom"]);
-        }
-    });
-
-    $("#selectPaddingBottom").selectmenu("refresh");
-
-    $("#selectPaddingLeft").selectmenu({
-        width: 80,
-        change: function (event, data) {
-            var objD = {};
-            var units = data.item.value;
-            objD.unit = units;
-            State["PaddingLeft"]["unit"] = units;
-
-            switch (units) {
-                case"px":
-                    State["PaddingLeft"]["min"] = 0;
-                    State["PaddingLeft"]["max"] = 20;
-                    State["PaddingLeft"]["step"] = 0.1;
-                    State["PaddingLeft"]["value"] = 10;
-
-                    break;
-                case"cm":
-
-                    State["PaddingLeft"]["min"] = 0;
-                    State["PaddingLeft"]["max"] = 3;
-                    State["PaddingLeft"]["step"] = 0.1;
-                    State["PaddingLeft"]["value"] = 1.5;
-                    break;
-                case"mm":
-                    State["PaddingLeft"]["min"] = 0;
-                    State["PaddingLeft"]["max"] = 30;
-                    State["PaddingLeft"]["step"] = 1;
-                    State["PaddingLeft"]["value"] = 10;
-
-                    break;
-                case"em":
-                    State["PaddingLeft"]["min"] = 0;
-                    State["PaddingLeft"]["max"] = 50;
-                    State["PaddingLeft"]["step"] = 1;
-                    State["PaddingLeft"]["value"] = 25;
-
-                    break;
-                case"rem":
-                    State["PaddingLeft"]["min"] = 0;
-                    State["PaddingLeft"]["max"] = 50;
-                    State["PaddingLeft"]["step"] = 1;
-                    State["PaddingLeft"]["value"] = 25;
-
-
-                    break;
-                case"%":
-                    State["PaddingLeft"]["min"] = 0;
-                    State["PaddingLeft"]["max"] = 100;
-                    State["PaddingLeft"]["step"] = 5;
-                    State["PaddingLeft"]["value"] = 50;
-
-                    break;
-            }
-
-            boxHW("PaddingLeft", State["PaddingLeft"]);
-        }
-    });
-
-    $("#selectPaddingLeft").selectmenu("refresh");
-
+    propProc("Padding-Top");
+    propProc("Padding-Right");
+    propProc("Padding-Bottom");
+    propProc("Padding-Left");
 </script>

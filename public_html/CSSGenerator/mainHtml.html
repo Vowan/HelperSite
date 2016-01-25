@@ -12,6 +12,7 @@ and open the template in the editor.
         <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
         <link rel="stylesheet" href="../bower_components/jquery-ui-1.11.4.custom/jquery-ui.css">
         <link rel="stylesheet" href="../bower_components/jquery-ui-1.11.4.custom/jquery-ui.theme.css">
+        <link rel="stylesheet" href="../bower_components/rangeslider.js-2.1.1/rangeslider.css">
 
         <style>
             body{
@@ -56,7 +57,7 @@ and open the template in the editor.
 
             }
 
-            .container-fluid, .row, #boxElement, #textProp{
+            #mainContent, #control, .panel-body {
                 opacity: 0.9; 
                 z-index: 1;
             }
@@ -114,31 +115,160 @@ and open the template in the editor.
         </section>
 
         <footer>
+            <div id="debugger"> 
 
+            </div>
         </footer>
 
 
         <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
         <script src="../bower_components/jquery-ui-1.11.4.custom/jquery-ui.js"></script>
         <script src='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js'></script>
+        <script src="../bower_components/rangeslider.js-2.1.1/rangeslider.js"></script>
+
         <script>
+
+            var mainObject = {
+                fullPropSet: {},
+                separatePropSet: {},
+                currentPropSet: this.fullPropSet,
+                exeptPropSet: {},
+                addExeptPropSet: function(prop){
+                    
+                    this.exeptPropSet[prop]="";
+                    return this;
+                },
+                removeExeptPropSet: function(prop){
+                    
+                    if (this.exeptPropSet.hasOwnProperty(prop)) {
+                       delete this.exeptPropSet[prop];
+                    }
+                    
+                   return this;
+                },
+                
+                clearSeparatePropSet: function() {
+                    for (var member in this.separatePropSet) delete this.separatePropSet[member];
+                     return this;
+                },
+                
+                setSeparatePropSet: function (prop, val) {
+                    this.separatePropSet[prop] = val;
+                    return this;
+                },
+                setExeptPropSet: function (prop, val) {
+                    this.exeptPropSet[prop] = val;
+                    return this;
+                },
+                setFullPropSet: function (prop, val) {
+                    this.fullPropSet[prop] = val;
+                    return this;
+                },
+                displayCompProps: function (props) {
+
+                    var cssContent = [];
+                    var compProp;
+                    for (var prop in props) {
+                        if (!this.exeptPropSet.hasOwnProperty(prop)) {
+                           compProp = $(".contentArea").css(prop);
+                           
+                            cssContent.push(prop + ": " + compProp + ";");
+                        }
+                    }
+                    
+                    $("#cssCompProp").html(cssContent.join("<br>"));
+                },
+                clearCompPropsPanel: function () {
+                    $("#cssCompProp").empty();
+                },
+                displayGivenProps: function (props) {
+
+                    var cssContent = [];
+
+                    for (var prop in props) {
+                        if (!this.exeptPropSet.hasOwnProperty(prop)) {
+                            $(".contentArea").css(prop, props[prop]);
+                            $(".contentArea").trigger("boxChange");
+                            cssContent.push(prop + ": " + props[prop] + ";");
+                        }
+                    }
+
+                    $("#cssProp").html(cssContent.join("<br>"));
+
+                    return this;
+                },
+                clearGivenPropsPanel: function () {
+                    $("#cssProp").empty();
+                },
+                processFullProp: function (prop, val) {
+                    this.setSeparatePropSet(prop, val);
+                    this.setFullPropSet(prop, val);
+                    this.trig();
+                    this.displayGivenProps(this.currentPropSet);
+                    this.displayCompProps(this.currentPropSet);
+                    return this;
+                },
+                displayProp: function () {
+                    this.trig();
+                    this.displayGivenProps(this.currentPropSet);
+                    this.displayCompProps(this.currentPropSet);
+                    return this;
+                },
+                trig: null,
+                debug: function () {
+
+                    $("#debugger").empty();
+
+                    for (prop in this) {
+                        if (!$.isFunction(this[prop]) && !$.isPlainObject(this[prop]))
+                            $("#debugger").append(
+                                    "<span style='color: red;'>" + prop + "</span>   " + this[prop] + "   "
+                                    )
+                    }
+                },
+                
+                debugProp: function (prop) {
+
+                   
+                            $("#debugger").append(
+                                    "<span style='color: green;'>" + prop + "</span>   " + this.fullPropSet[prop] + "   ")
+                        
+                        }
+            };
+
+            var myDebug = {
+                displayDebugOptions: function () {
+
+                    $("#debugger").empty();
+
+                    for (prop in this) {
+                        $("#debugger").append(
+                                "<span style='color: red;'>" + prop + "</span>   " + this[prop] + "   "
+                                )
+                    }
+                }
+
+            };
+
+
             $(function () {
-                
-                
-                
+
+
+
                 $("#sideNav").load("http://localhost:8383/myTutorSite/CSSGenerator/fragments/sideNav.html");
 
                 $("#boxElement").load("http://localhost:8383/myTutorSite/CSSGenerator/fragments/boxElement.html");
 
 
+//$("#debugger").html(document.write("mainObject.toString()"))
 
 
             });
 
 
 
-            
-        
+
+
         </script>
 
     </body>

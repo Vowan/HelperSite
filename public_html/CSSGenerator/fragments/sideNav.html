@@ -8,7 +8,10 @@
         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Border <span class="caret"></span></a>
         <ul class="dropdown-menu">
             <li><a href="#section41">width</a></li>
-            <li><a href="#section42">Section 4-2</a></li>                     
+            <li><a href="#section42">radius</a></li>   
+            <li><a href="#section43">style</a></li> 
+            <li><a href="#section44">color</a></li>
+            <li><a href="#section45">image</a></li>
         </ul>
     </li>
     
@@ -51,6 +54,26 @@
             e.preventDefault();
           //  console.log("side")
             $("#control").load("http://localhost:8383/myTutorSite/CSSGenerator/fragments/border.html");
+        });
+        $("[href='#section42']").click(function (e) {
+            e.preventDefault();
+          //  console.log("side")
+            $("#control").load("http://localhost:8383/myTutorSite/CSSGenerator/fragments/radius.html");
+        });
+        $("[href='#section43']").click(function (e) {
+            e.preventDefault();
+          //  console.log("side")
+            $("#control").load("http://localhost:8383/myTutorSite/CSSGenerator/fragments/borderStyle.html");
+        });
+        $("[href='#section44']").click(function (e) {
+            e.preventDefault();
+          //  console.log("side")
+            $("#control").load("http://localhost:8383/myTutorSite/CSSGenerator/fragments/borderColor.html");
+        });
+        $("[href='#section45']").click(function (e) {
+            e.preventDefault();
+          //  console.log("side")
+            $("#control").load("http://localhost:8383/myTutorSite/CSSGenerator/fragments/borderImage.html");
         });
         
         $("[href='#section5']").click(function (e) {

@@ -18,10 +18,12 @@ This text is styled with the text formatting properties. The heading uses the te
 </div>
 
 <script>
+
+    
+
     var widthD = "px", widthSlider = {};
     var boxCompProperties = {};
     var State = {};
-
     var boxVisual = function () {
         var offset = $(".contentArea").offset();
         var height = $(".contentArea").outerHeight(true);
@@ -32,25 +34,19 @@ This text is styled with the text formatting properties. The heading uses the te
         $(".myFix").offset({top: offset.top - marginTop, left: offset.left - marginLeft});
         $(".myFix").height(height).width(width);
     };
-
     var seeCompProperties = function (arrayProp) {
 
         var toArray = Object.keys(arrayProp);
-
         var cssContent = [];
-
         var styleProps = $(".contentArea").css(toArray);
-
         $.each(styleProps, function (prop, value) {
             cssContent.push(prop + ": " + value + ";");
         });
-
         $("#cssCompProp").html(cssContent.join("<br>"));
     };
-
     var seeProperty = function (prop, property) {
 
-        //  debugger;
+        debugger;
         if (!this.shortHand.enable) {
             if (!boxCompProperties.hasOwnProperty(prop)) {
                 Object.defineProperty(boxCompProperties, prop, {
@@ -65,14 +61,9 @@ This text is styled with the text formatting properties. The heading uses the te
             }
 
             var cssID = '#passing' + prop;
-
-
-
             $(cssID).text(prop + ":" + this.value + this.unit + ";")
 
             $(".contentArea").css(prop, this.value + this.unit);
-
-
         } else {
 
             var firstValue = this.shortHand.first ? this.shortHand.first.paramsTop.value : "";
@@ -83,8 +74,6 @@ This text is styled with the text formatting properties. The heading uses the te
             var thirdUnit = this.shortHand.third ? this.shortHand.third.paramsTop.unit : "";
             var forthValue = this.shortHand.forth ? this.shortHand.forth.paramsTop.value : "";
             var forthUnit = this.shortHand.forth ? this.shortHand.forth.paramsTop.unit : "";
-
-
             if (!boxCompProperties.hasOwnProperty(this.shortHand.cssProp)) {
 
 
@@ -106,9 +95,6 @@ This text is styled with the text formatting properties. The heading uses the te
             }
 
             var cssID = '#passing' + this.shortHand.cssProp;
-
-
-
             $(cssID).text(this.shortHand.cssProp + ":"
                     + firstValue + firstUnit + " "
                     + secondValue + secondUnit + " "
@@ -120,16 +106,11 @@ This text is styled with the text formatting properties. The heading uses the te
                     + secondValue + secondUnit + " "
                     + thirdValue + thirdUnit + " "
                     + forthValue + forthUnit);
-
-
         }
 
         $(this.boxProp).val(this.value);
         seeCompProperties.call(this, boxCompProperties);
-
         $(".contentArea").trigger("boxChange");
-
-
     }
 
 
@@ -142,7 +123,6 @@ This text is styled with the text formatting properties. The heading uses the te
                 break;
             case"Height":
                 topSliderSet = qqq;
-
                 prop = "height";
                 break;
             case"PaddingTop":
@@ -198,19 +178,13 @@ This text is styled with the text formatting properties. The heading uses the te
                 //debugger;            
                 qqq.value = ui.value;
                 qqq.unit = xxx.unit;
-
                 State[property]["value"] = ui.value;
                 State[property]["unit"] = xxx.unit;
-
                 $(cssID).text(prop + ":" + ui.value + xxx.unit + ";")
                 $(".contentArea").css(prop, ui.value + xxx.unit);
                 $(".contentArea").trigger("boxChange");
             }
         });
-
-
-
-
         if (!boxCompProperties.hasOwnProperty(prop)) {
             Object.defineProperty(boxCompProperties, prop, {
                 value: "",
@@ -224,39 +198,23 @@ This text is styled with the text formatting properties. The heading uses the te
         }
 
         var cssID = '#passing' + property;
-
-
-
         $(cssID).text(prop + ":" + State[property]["value"] + State[property]["unit"] + ";")
 
         $(".contentArea").css(prop, State[property]["value"] + State[property]["unit"]);
-
         $(".contentArea").trigger("boxChange");
-
-
-
-
-
-
         $(boxProp).val($(sliderBox).slider("value"));
         return obj;
     };
-
     /****************************Object for sliders*************************************************/
     var myWww = function (prop, top, right, bottom, left) {
 
         var that = this;
-
         this.myDefaults = {min: 0, max: 10, step: 1, value: "", unit: "", sliderElem: "", boxProp: ""};
         this.myDefaults_1 = {min: 0, max: 10, step: 1, value: "20", unit: "px", sliderElem: "", boxProp: ""};
-
         this.paramsTop = top || this.myDefaults;
         this.paramsRight = right || this.myDefaults;
         this.paramsBottom = bottom || this.myDefaults;
         this.paramsLeft = left || this.myDefaults;
-
-
-
         this.sliderTop = function () {
             $(that.paramsTop.sliderElem).slider({
                 range: "min",
@@ -267,30 +225,12 @@ This text is styled with the text formatting properties. The heading uses the te
                 slide: function (event, ui) {
                     $(that.paramsTop.boxProp).val(ui.value);
                     that.paramsTop.value = ui.value;
-
-                    //                  debugger;
-                    $(".contentArea").css(prop,
-                            that.paramsTop.value + that.paramsTop.unit + " "
-                            + that.paramsRight.value + that.paramsRight.unit + " "
-                            + that.paramsBottom.value + that.paramsBottom.unit + " "
-                            + that.paramsLeft.value + that.paramsLeft.unit);
-                    $(".contentArea").trigger("boxChange");
                     seeProperty.call(that.paramsTop, prop);
-
                 }
             });
-            $(".contentArea").css(prop,
-                    that.paramsTop.value + that.paramsTop.unit + " "
-                    + that.paramsRight.value + that.paramsRight.unit + " "
-                    + that.paramsBottom.value + that.paramsBottom.unit + " "
-                    + that.paramsLeft.value + that.paramsLeft.unit);
-
             seeProperty.call(that.paramsTop, prop);
-            $(".contentArea").trigger("boxChange");
-
-
-
-            $(that.paramsTop.boxProp).val($(that.paramsTop.sliderElem).slider("value"));
+            if (that.paramsTop.boxProp)
+                $(that.paramsTop.boxProp).val($(that.paramsTop.sliderElem).slider("value"));
         }
 
 
@@ -308,22 +248,16 @@ This text is styled with the text formatting properties. The heading uses the te
     $(function () {
 
         boxVisual();
-
-
-
         $(window).on("scroll resize", function () {
             boxVisual();
         });
-
         /*********************************Custom event******************************************************/
 
         $(".contentArea").on("boxChange", function () {
             boxVisual();
-
             //seeCompProperties(boxCompProperties);
 
         });
-
     });
 
 

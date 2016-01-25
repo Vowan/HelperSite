@@ -1,0 +1,569 @@
+<label  for="boxBorderTopLeftRadiusH" style="display: inline">border-top-left-radius:</label>
+<input type="text" id="boxBorderTopLeftRadiusH" readonly style="display: inline; width: 40px; border:0; color:#f6931f; font-weight:bold;">
+<select name="radius" id="selectBorderTopLeftRadiusH" class="zeroMP" style="display: inline; width: 50px;" >
+    <option value="px" selected="selected" title="px">px</option>
+    <option value="mm">mm</option>
+    <option value="cm">cm</option>
+    <option value="em">em</option>
+    <option value="rem">rem</option>
+    <option value="%">%</option>
+</select>
+<input type="text" id="boxBorderTopLeftRadiusV" readonly style="display: inline; width: 40px; border:0; color:#f6931f; font-weight:bold;">
+<select name="radius" id="selectBorderTopLeftRadiusV" class="zeroMP" style="display: inline; width: 50px;">
+    <option value="px" selected="selected" title="px">px</option>
+    <option value="mm">mm</option>
+    <option value="cm">cm</option>
+    <option value="em">em</option>
+    <option value="rem">rem</option>
+    <option value="%">%</option>
+</select>
+<div id="sliderBoxBorderTopLeftRadiusH" style="width: 100%" ></div>
+<div id="sliderBoxBorderTopLeftRadiusV" style="width: 100%" ></div>
+
+<!---------------------------------------------------------------------------------------->
+<label  for="boxBorderTopRightRadiusH" style="display: inline">border-top-left-radius:</label>
+<input type="text" id="boxBorderTopRightRadiusH" readonly style="display: inline; width: 40px; border:0; color:#f6931f; font-weight:bold;">
+<select name="radius" id="selectBorderTopRightRadiusH" class="zeroMP" style="display: inline; width: 50px;" >
+    <option value="px" selected="selected" title="px">px</option>
+    <option value="mm">mm</option>
+    <option value="cm">cm</option>
+    <option value="em">em</option>
+    <option value="rem">rem</option>
+    <option value="%">%</option>
+</select>
+<input type="text" id="boxBorderTopRightRadiusV" readonly style="display: inline; width: 40px; border:0; color:#f6931f; font-weight:bold;">
+<select name="radius" id="selectBorderTopRightRadiusV" class="zeroMP" style="display: inline; width: 50px;">
+    <option value="px" selected="selected" title="px">px</option>
+    <option value="mm">mm</option>
+    <option value="cm">cm</option>
+    <option value="em">em</option>
+    <option value="rem">rem</option>
+    <option value="%">%</option>
+</select>
+<div id="sliderBoxBorderTopRightRadiusH" style="width: 100%" ></div>
+<div id="sliderBoxBorderTopRightRadiusV" style="width: 100%" ></div>
+
+<!---------------------------------------------------------------------------------------->
+<label  for="boxBorderBottomRightRadiusH" style="display: inline">border-top-left-radius:</label>
+<input type="text" id="boxBorderBottomRightRadiusH" readonly style="display: inline; width: 40px; border:0; color:#f6931f; font-weight:bold;">
+<select name="radius" id="selectBorderBottomRightRadiusH" class="zeroMP" style="display: inline; width: 50px;" >
+    <option value="px" selected="selected" title="px">px</option>
+    <option value="mm">mm</option>
+    <option value="cm">cm</option>
+    <option value="em">em</option>
+    <option value="rem">rem</option>
+    <option value="%">%</option>
+</select>
+<input type="text" id="boxBorderBottomRightRadiusV" readonly style="display: inline; width: 40px; border:0; color:#f6931f; font-weight:bold;">
+<select name="radius" id="selectBorderBottomRightRadiusV" class="zeroMP" style="display: inline; width: 50px;">
+    <option value="px" selected="selected" title="px">px</option>
+    <option value="mm">mm</option>
+    <option value="cm">cm</option>
+    <option value="em">em</option>
+    <option value="rem">rem</option>
+    <option value="%">%</option>
+</select>
+<div id="sliderBoxBorderBottomRightRadiusH" style="width: 100%" ></div>
+<div id="sliderBoxBorderBottomRightRadiusV" style="width: 100%" ></div>
+
+<!---------------------------------------------------------------------------------------->
+<label  for="boxBorderBottomLeftRadiusH" style="display: inline">border-top-left-radius:</label>
+<input type="text" id="boxBorderBottomLeftRadiusH" readonly style="display: inline; width: 40px; border:0; color:#f6931f; font-weight:bold;">
+<select name="radius" id="selectBorderBottomLeftRadiusH" class="zeroMP" style="display: inline; width: 50px;" >
+    <option value="px" selected="selected" title="px">px</option>
+    <option value="mm">mm</option>
+    <option value="cm">cm</option>
+    <option value="em">em</option>
+    <option value="rem">rem</option>
+    <option value="%">%</option>
+</select>
+<input type="text" id="boxBorderBottomLeftRadiusV" readonly style="display: inline; width: 40px; border:0; color:#f6931f; font-weight:bold;">
+<select name="radius" id="selectBorderBottomLeftRadiusV" class="zeroMP" style="display: inline; width: 50px;">
+    <option value="px" selected="selected" title="px">px</option>
+    <option value="mm">mm</option>
+    <option value="cm">cm</option>
+    <option value="em">em</option>
+    <option value="rem">rem</option>
+    <option value="%">%</option>
+</select>
+<div id="sliderBoxBorderBottomLeftRadiusH" style="width: 100%" ></div>
+<div id="sliderBoxBorderBottomLeftRadiusV" style="width: 100%" ></div>
+
+
+
+<!---------------------------------------------------------------------------------------->
+
+
+<script>
+    
+//debugger;
+
+    if (!State["shortHandTopLeftRadius"]) {
+        State["shortHandTopLeftRadius"] = {
+            cssProp: "border-top-left-radius",
+            enable: true,
+            first: null,
+            second: null,
+            third: null,
+            forth: null
+        }
+    }
+    
+    var seperatBorderWidth = function (cssProp, nameProp) {
+
+        
+
+          State[nameProp].sliderTop();
+
+
+        var currentUnitBTW = "#select" + nameProp + " option[value='" + State[nameProp]["paramsTop"]["unit"] + "']";
+
+        $("#select" + nameProp).find('option:selected').removeAttr("selected");
+        $(currentUnitBTW).attr("selected", "selected");
+
+
+        $("#select" + nameProp).selectmenu({
+            change: function (event, data) {
+                var objD = {};
+                var units = data.item.value;
+
+
+                borderSwitch(units, State[nameProp].paramsTop);
+
+                State[nameProp].paramsTop.unit = units;
+                $("#sliderBox" + nameProp).slider("option",
+                        {min: State[nameProp]["paramsTop"].min,
+                            max: State[nameProp]["paramsTop"].max,
+                            step: State[nameProp]["paramsTop"].step,
+                            value: State[nameProp]["paramsTop"].value});
+                $("#sliderBox" + nameProp).trigger("slidechange");
+                seeProperty.call(State[nameProp].paramsTop, cssProp);
+
+            }
+        });
+
+    }
+
+    var borderSwitch = function (unit, obj) {
+
+        switch (unit) {
+            case"px":
+                obj.min = 0;
+                obj.max = 40;
+                obj.step = 1;
+                obj.value = 20;
+                break;
+            case"cm":
+                obj.min = 0;
+                obj.max = 2;
+                obj.step = 0.01;
+                obj.value = 1;
+                break;
+            case"mm":
+                obj.min = 0;
+                obj.max = 20;
+                obj.step = 0.1;
+                obj.value = 1;
+                break;
+            case"em":
+                obj.min = 0;
+                obj.max = 10;
+                obj.step = 0.1;
+                obj.value = 2.5;
+                break;
+            case"rem":
+                obj.min = 0;
+                obj.max = 10;
+                obj.step = 0.1;
+                obj.value = 2.5;
+                break;
+            case"thin":
+            case"medium":
+            case"thick":
+            case"inherit":
+            case"initial":
+                obj.min = 0;
+                obj.max = 0;
+                obj.step = 0;
+                obj.value = " ";
+
+                break;
+        }
+    }
+    
+    if (!State["BorderTopLeftRadiusH"])
+        State["BorderTopLeftRadiusH"] = new myWww("", Top = {
+            min: 0, max: 20, step: 1, value: 5, unit: "px",
+            sliderElem: "#sliderBox" + "BorderTopLeftRadiusH", boxProp: "#box" + "BorderTopLeftRadiusH"}
+
+        );
+    State["shortHandTopLeftRadius"].first = State["BorderTopLeftRadiusH"];
+
+    if (!State["BorderTopLeftRadiusV"])
+        State["BorderTopLeftRadiusV"] = new myWww("", Top = {
+            min: 0, max: 20, step: 1, value: 5, unit: "px",
+            sliderElem: "#sliderBox" + "BorderTopLeftRadiusV", boxProp: "#box" + "BorderTopLeftRadiusV"}
+
+        );
+    State["shortHandTopLeftRadius"].second = State["BorderTopLeftRadiusV"];
+    
+    State["BorderTopLeftRadiusH"]["paramsTop"].shortHand = State["shortHandTopLeftRadius"];
+    State["BorderTopLeftRadiusV"]["paramsTop"].shortHand = State["shortHandTopLeftRadius"];
+    
+   
+    seperatBorderWidth("border-top-left-radius", "BorderTopLeftRadiusH");
+    seperatBorderWidth("border-top-left-radius", "BorderTopLeftRadiusV");
+   
+/***********************************************************************************************/
+    if (!State["shortHandTopRightRadius"]) {
+        State["shortHandTopRightRadius"] = {
+            cssProp: "border-top-right-radius",
+            enable: true,
+            first: null,
+            second: null,
+            third: null,
+            forth: null
+        }
+    }
+    
+    var seperatBorderWidth = function (cssProp, nameProp) {
+
+        
+
+          State[nameProp].sliderTop();
+
+
+        var currentUnitBTW = "#select" + nameProp + " option[value='" + State[nameProp]["paramsTop"]["unit"] + "']";
+
+        $("#select" + nameProp).find('option:selected').removeAttr("selected");
+        $(currentUnitBTW).attr("selected", "selected");
+
+
+        $("#select" + nameProp).selectmenu({
+            change: function (event, data) {
+                var objD = {};
+                var units = data.item.value;
+
+
+                borderSwitch(units, State[nameProp].paramsTop);
+
+                State[nameProp].paramsTop.unit = units;
+                $("#sliderBox" + nameProp).slider("option",
+                        {min: State[nameProp]["paramsTop"].min,
+                            max: State[nameProp]["paramsTop"].max,
+                            step: State[nameProp]["paramsTop"].step,
+                            value: State[nameProp]["paramsTop"].value});
+                $("#sliderBox" + nameProp).trigger("slidechange");
+                seeProperty.call(State[nameProp].paramsTop, cssProp);
+
+            }
+        });
+
+    }
+
+    var borderSwitch = function (unit, obj) {
+
+        switch (unit) {
+            case"px":
+                obj.min = 0;
+                obj.max = 40;
+                obj.step = 1;
+                obj.value = 20;
+                break;
+            case"cm":
+                obj.min = 0;
+                obj.max = 2;
+                obj.step = 0.01;
+                obj.value = 1;
+                break;
+            case"mm":
+                obj.min = 0;
+                obj.max = 20;
+                obj.step = 0.1;
+                obj.value = 1;
+                break;
+            case"em":
+                obj.min = 0;
+                obj.max = 10;
+                obj.step = 0.1;
+                obj.value = 2.5;
+                break;
+            case"rem":
+                obj.min = 0;
+                obj.max = 10;
+                obj.step = 0.1;
+                obj.value = 2.5;
+                break;
+            case"thin":
+            case"medium":
+            case"thick":
+            case"inherit":
+            case"initial":
+                obj.min = 0;
+                obj.max = 0;
+                obj.step = 0;
+                obj.value = " ";
+
+                break;
+        }
+    }
+    
+    if (!State["BorderTopRightRadiusH"])
+        State["BorderTopRightRadiusH"] = new myWww("", Top = {
+            min: 0, max: 20, step: 1, value: 5, unit: "px",
+            sliderElem: "#sliderBox" + "BorderTopRightRadiusH", boxProp: "#box" + "BorderTopRightRadiusH"}
+
+        );
+    State["shortHandTopRightRadius"].first = State["BorderTopRightRadiusH"];
+
+    if (!State["BorderTopRightRadiusV"])
+        State["BorderTopRightRadiusV"] = new myWww("", Top = {
+            min: 0, max: 20, step: 1, value: 5, unit: "px",
+            sliderElem: "#sliderBox" + "BorderTopRightRadiusV", boxProp: "#box" + "BorderTopRightRadiusV"}
+
+        );
+    State["shortHandTopRightRadius"].second = State["BorderTopRightRadiusV"];
+    
+    State["BorderTopRightRadiusH"]["paramsTop"].shortHand = State["shortHandTopRightRadius"];
+    State["BorderTopRightRadiusV"]["paramsTop"].shortHand = State["shortHandTopRightRadius"];
+    
+   
+    seperatBorderWidth("border-top-right-radius", "BorderTopRightRadiusH");
+    seperatBorderWidth("border-top-right-radius", "BorderTopRightRadiusV");
+   
+/***********************************************************************************************/
+    if (!State["shortHandBottomRightRadius"]) {
+        State["shortHandBottomRightRadius"] = {
+            cssProp: "border-bottom-right-radius",
+            enable: true,
+            first: null,
+            second: null,
+            third: null,
+            forth: null
+        }
+    }
+    
+    var seperatBorderWidth = function (cssProp, nameProp) {
+
+        
+
+          State[nameProp].sliderTop();
+
+
+        var currentUnitBTW = "#select" + nameProp + " option[value='" + State[nameProp]["paramsTop"]["unit"] + "']";
+
+        $("#select" + nameProp).find('option:selected').removeAttr("selected");
+        $(currentUnitBTW).attr("selected", "selected");
+
+
+        $("#select" + nameProp).selectmenu({
+            change: function (event, data) {
+                var objD = {};
+                var units = data.item.value;
+
+
+                borderSwitch(units, State[nameProp].paramsTop);
+
+                State[nameProp].paramsTop.unit = units;
+                $("#sliderBox" + nameProp).slider("option",
+                        {min: State[nameProp]["paramsTop"].min,
+                            max: State[nameProp]["paramsTop"].max,
+                            step: State[nameProp]["paramsTop"].step,
+                            value: State[nameProp]["paramsTop"].value});
+                $("#sliderBox" + nameProp).trigger("slidechange");
+                seeProperty.call(State[nameProp].paramsTop, cssProp);
+
+            }
+        });
+
+    }
+
+    var borderSwitch = function (unit, obj) {
+
+        switch (unit) {
+            case"px":
+                obj.min = 0;
+                obj.max = 40;
+                obj.step = 1;
+                obj.value = 20;
+                break;
+            case"cm":
+                obj.min = 0;
+                obj.max = 2;
+                obj.step = 0.01;
+                obj.value = 1;
+                break;
+            case"mm":
+                obj.min = 0;
+                obj.max = 20;
+                obj.step = 0.1;
+                obj.value = 1;
+                break;
+            case"em":
+                obj.min = 0;
+                obj.max = 10;
+                obj.step = 0.1;
+                obj.value = 2.5;
+                break;
+            case"rem":
+                obj.min = 0;
+                obj.max = 10;
+                obj.step = 0.1;
+                obj.value = 2.5;
+                break;
+            case"thin":
+            case"medium":
+            case"thick":
+            case"inherit":
+            case"initial":
+                obj.min = 0;
+                obj.max = 0;
+                obj.step = 0;
+                obj.value = " ";
+
+                break;
+        }
+    }
+    
+    if (!State["BorderBottomRightRadiusH"])
+        State["BorderBottomRightRadiusH"] = new myWww("", Top = {
+            min: 0, max: 20, step: 1, value: 5, unit: "px",
+            sliderElem: "#sliderBox" + "BorderBottomRightRadiusH", boxProp: "#box" + "BorderBottomRightRadiusH"}
+
+        );
+    State["shortHandBottomRightRadius"].first = State["BorderBottomRightRadiusH"];
+
+    if (!State["BorderBottomRightRadiusV"])
+        State["BorderBottomRightRadiusV"] = new myWww("", Top = {
+            min: 0, max: 20, step: 1, value: 5, unit: "px",
+            sliderElem: "#sliderBox" + "BorderBottomRightRadiusV", boxProp: "#box" + "BorderBottomRightRadiusV"}
+
+        );
+    State["shortHandBottomRightRadius"].second = State["BorderBottomRightRadiusV"];
+    
+    State["BorderBottomRightRadiusH"]["paramsTop"].shortHand = State["shortHandBottomRightRadius"];
+    State["BorderBottomRightRadiusV"]["paramsTop"].shortHand = State["shortHandBottomRightRadius"];
+    
+   
+    seperatBorderWidth("border-bottom-right-radius", "BorderBottomRightRadiusH");
+    seperatBorderWidth("border-bottom-right-radius", "BorderBottomRightRadiusV");
+   
+/***********************************************************************************************/
+    if (!State["shortHandBottomLeftRadius"]) {
+        State["shortHandBottomLeftRadius"] = {
+            cssProp: "border-bottom-left-radius",
+            enable: true,
+            first: null,
+            second: null,
+            third: null,
+            forth: null
+        }
+    }
+    
+    var seperatBorderWidth = function (cssProp, nameProp) {
+
+        
+
+          State[nameProp].sliderTop();
+
+
+        var currentUnitBTW = "#select" + nameProp + " option[value='" + State[nameProp]["paramsTop"]["unit"] + "']";
+
+        $("#select" + nameProp).find('option:selected').removeAttr("selected");
+        $(currentUnitBTW).attr("selected", "selected");
+
+
+        $("#select" + nameProp).selectmenu({
+            change: function (event, data) {
+                var objD = {};
+                var units = data.item.value;
+
+
+                borderSwitch(units, State[nameProp].paramsTop);
+
+                State[nameProp].paramsTop.unit = units;
+                $("#sliderBox" + nameProp).slider("option",
+                        {min: State[nameProp]["paramsTop"].min,
+                            max: State[nameProp]["paramsTop"].max,
+                            step: State[nameProp]["paramsTop"].step,
+                            value: State[nameProp]["paramsTop"].value});
+                $("#sliderBox" + nameProp).trigger("slidechange");
+                seeProperty.call(State[nameProp].paramsTop, cssProp);
+
+            }
+        });
+
+    }
+
+    var borderSwitch = function (unit, obj) {
+
+        switch (unit) {
+            case"px":
+                obj.min = 0;
+                obj.max = 40;
+                obj.step = 1;
+                obj.value = 20;
+                break;
+            case"cm":
+                obj.min = 0;
+                obj.max = 2;
+                obj.step = 0.01;
+                obj.value = 1;
+                break;
+            case"mm":
+                obj.min = 0;
+                obj.max = 20;
+                obj.step = 0.1;
+                obj.value = 1;
+                break;
+            case"em":
+                obj.min = 0;
+                obj.max = 10;
+                obj.step = 0.1;
+                obj.value = 2.5;
+                break;
+            case"rem":
+                obj.min = 0;
+                obj.max = 10;
+                obj.step = 0.1;
+                obj.value = 2.5;
+                break;
+            case"thin":
+            case"medium":
+            case"thick":
+            case"inherit":
+            case"initial":
+                obj.min = 0;
+                obj.max = 0;
+                obj.step = 0;
+                obj.value = " ";
+
+                break;
+        }
+    }
+    
+    if (!State["BorderBottomLeftRadiusH"])
+        State["BorderBottomLeftRadiusH"] = new myWww("", Top = {
+            min: 0, max: 20, step: 1, value: 5, unit: "px",
+            sliderElem: "#sliderBox" + "BorderBottomLeftRadiusH", boxProp: "#box" + "BorderBottomLeftRadiusH"}
+
+        );
+    State["shortHandBottomLeftRadius"].first = State["BorderBottomLeftRadiusH"];
+
+    if (!State["BorderBottomLeftRadiusV"])
+        State["BorderBottomLeftRadiusV"] = new myWww("", Top = {
+            min: 0, max: 20, step: 1, value: 5, unit: "px",
+            sliderElem: "#sliderBox" + "BorderBottomLeftRadiusV", boxProp: "#box" + "BorderBottomLeftRadiusV"}
+
+        );
+    State["shortHandBottomLeftRadius"].second = State["BorderBottomLeftRadiusV"];
+    
+    State["BorderBottomLeftRadiusH"]["paramsTop"].shortHand = State["shortHandBottomLeftRadius"];
+    State["BorderBottomLeftRadiusV"]["paramsTop"].shortHand = State["shortHandBottomLeftRadius"];
+    
+   
+    seperatBorderWidth("border-bottom-left-radius", "BorderBottomLeftRadiusH");
+    seperatBorderWidth("border-bottom-left-radius", "BorderBottomLeftRadiusV");
+   
+
+</script>

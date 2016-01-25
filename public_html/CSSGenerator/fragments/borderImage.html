@@ -1,0 +1,187 @@
+<label  for="selectBorderImageSource" style="display: inline">select image source:</label>
+
+<select name="radius" id="selectBorderImageSource" class="zeroMP" style=" width: 100px">
+    <option value="none" data-value="none" selected="selected" title="none">none</option>
+    <option value="url" data-value="url">url</option>
+    <option value="linear-gradient" data-value="linear-gradient">linear-gradient</option>
+
+</select>
+
+<label  for="selectBorderImageUrl" style="display: inline">border image url:</label>
+
+<select name="radius" id="selectBorderImageUrl" class="zeroMP" style=" width: 100px">
+    <option value="http://localhost:8383/myTutorSite/Examples/img/border1.png" data-value="colorPicker" selected="selected" title="none">image1</option>
+    <option value="http://localhost:8383/myTutorSite/Examples/img/border2.png" data-value="red">image2</option>
+    <option value="http://localhost:8383/myTutorSite/Examples/img/border3.png" data-value="green">image3</option>
+
+</select>
+
+<br>
+
+<label  for="selectBorderImageLGDirection" style="display:inline"> Linear gradient  direction:</label>
+
+<select name="radius" id="selectBorderImageLGDirection" class="zeroMP" style=" width: 100px">
+    <option value="angle" data-value="colorPicker" selected="selected" title="none">angle</option>
+    <option value="to left top" data-value="red">to left top</option>
+    <option value="to left right" data-value="green">to left right</option>
+
+</select>
+
+<label for="angle">Angle</label>
+<input type="range" min="0" max="100" value="50" id="angle" step="1">
+<output for="angle" id="volume">50</output>
+
+<br>
+
+<label  for="borderImgColStops" style="display:inline"> Number of color-stops:</label>
+<input type="number" id="borderImgColStops" value="0" min="0">
+
+<br>
+
+<div id="numStops">
+
+</div>
+
+
+
+<script>
+
+
+    var debug = true;
+    if (mainObject.borderImageSourceSliderValue) {
+
+        var currentUnitBTW = "#selectBorderImageSource option[value='" + mainObject.borderImageSourceSliderValue + "']";
+        $("#selectBorderImageSource").find('option:selected').removeAttr("selected");
+        $(currentUnitBTW).attr("selected", "selected");
+    }
+
+    $("#selectBorderImageSource").on('change', function () {
+        switch (this.value) {
+            case "none":
+                mainObject.borderImageSourceSliderValue = this.value;
+                break;
+            case "url":
+                mainObject.borderImageSourceSliderValue = "url(" + $("#selectBorderImageUrl").val() + ")";
+                break;
+        }// or $(this).val()
+        mainObject.processFullProp("border-image-source", mainObject.borderImageSourceSliderValue);
+    });
+    $("#selectBorderImageSource").trigger("change");
+    mainObject.processFullProp("border-image-source", mainObject.borderImageSourceSliderValue);
+    /******************************Select image source url*****************************************************/
+
+
+    if (mainObject.borderImageSourceSelectorUrl) {
+
+        var optionUrl = "#selectBorderImageUrl option[value='" + mainObject.borderImageSourceSelectorUrl + "']";
+        $("#selectBorderImageUrl").find('option:selected').removeAttr("selected");
+        $(optionUrl).attr("selected", "selected");
+    }
+
+    $("#selectBorderImageUrl").on('change', function () {
+
+        mainObject.borderImageSourceSelectorUrl = this.value;
+        $("#selectBorderImageSource").trigger("change");
+    });
+    $("#selectBorderImageUrl").trigger("change");
+    /******************************Select gradient direction*****************************************************/
+
+
+
+    if (mainObject.borderImageGradientDirectionValue) {
+
+        var gDirec = "#selectBorderImageLGDirection option[value='" + mainObject.borderImageGradientDirectionValue + "']";
+        $("#selectBorderImageLGDirection").find('option:selected').removeAttr("selected");
+        $(gDirec).attr("selected", "selected");
+    }
+
+    if (mainObject.borderImageGradientAngle) {
+        $("#angle").val(mainObject.borderImageGradientDirection);
+        $("#volume").val(mainObject.borderImageGradientDirection);
+    }
+
+
+    $("#selectBorderImageLGDirection").on('change', function () {
+
+        switch (this.value) {
+            case "angle":
+                mainObject.borderImageGradientDirection = $("#angle").val();
+                mainObject.borderImageGradientDirectionValue = this.value;
+                mainObject.borderImageGradientAngle = true;
+                break;
+            case "to left top":
+                mainObject.borderImageGradientDirection = this.value;
+                mainObject.borderImageGradientDirectionValue = this.value;
+                mainObject.borderImageGradientAngle = false;
+                break;
+            case "to left right":
+                mainObject.borderImageGradientDirection = this.value;
+                mainObject.borderImageGradientDirectionValue = this.value;
+                mainObject.borderImageGradientAngle = false;
+                break;
+        }
+
+        debug && mainObject.debug();
+    });
+    $("#selectBorderImageLGDirection").trigger("change");
+    $("#angle").on('input', function () {
+
+        if (mainObject.borderImageGradientAngle)
+            mainObject.borderImageGradientDirection = $("#angle").val();
+        $("#volume").val(this.value);
+        debug && mainObject.debug();
+    })
+
+    /***Number of stops**/
+
+    $("#borderImgColStops").on('input', function () {
+        
+ if(debug) debugger;
+        
+        mainObject.borderImgGradNumStops = this.value;
+        
+      // console.log("begin"+$("#numStops > .colStops").length);
+
+        
+        while (this.value > $("#numStops > .colStops").length) {
+            $("#numStops").append(
+                    '<div class="colStops colStop'+($("#numStops > .colStops").length+1)+'">\n\
+<label  for = "selBorderColStop1" style = "display: inline" > color stop '+($("#numStops > .colStops").length+1)+': </label>\n\
+<input type = "color" id = "colPic1">  \n\
+<select name = "radius" id = "selBorderColStop1" class = "zeroMP" style = " width: 100px">\n\
+<option value = "colorPicker" data - value = "colorPicker" selected = "selected" title = "none"> colorPicker </option>\n\
+<option value = "#ff0000" data - value = "red"> red </option>\n\
+<option value = "#008000" data - value = "green" > green </option>\n\
+</select>\n\
+</div>'
+             
+                    )
+          //  console.log("append"+$("#numStops > .colStops").length);
+
+        }
+        while (this.value < $("#numStops > .colStops").length) {
+            
+            $("#numStops > .colStops:last").remove();
+         //   console.log("remove" +$("#numStops > .colStops").length);
+        }
+        
+        debug && mainObject.debug();
+    })
+
+    // mainObject.borderImgGradNumStops = $("#numStops > .colStop").length;
+    /******************************Select colorStops Number*****************************************************/
+
+    if (mainObject.BorderImageLGColorStops) {
+        $("#selectBorderImageLGColorStops").val(mainObject.BorderImageLGColorStops)
+    }
+
+    $("#selectBorderImageLGColorStops").on('change', function () {
+
+        mainObject.BorderImageLGColorStops = this.value;
+    });
+    $("#selectBorderImageUrl").trigger("change");
+    /***************************************Debuger***********************************************************/
+
+
+
+</script>

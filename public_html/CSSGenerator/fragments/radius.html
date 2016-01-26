@@ -1,93 +1,148 @@
-<label  for="boxBorderTopLeftRadiusH" style="display: inline">border-top-left-radius:</label>
-<input type="text" id="boxBorderTopLeftRadiusH" readonly style="display: inline; width: 40px; border:0; color:#f6931f; font-weight:bold;">
-<select name="radius" id="selectBorderTopLeftRadiusH" class="zeroMP" style="display: inline; width: 50px;" >
-    <option value="px" selected="selected" title="px">px</option>
-    <option value="mm">mm</option>
-    <option value="cm">cm</option>
-    <option value="em">em</option>
-    <option value="rem">rem</option>
-    <option value="%">%</option>
-</select>
-<input type="text" id="boxBorderTopLeftRadiusV" readonly style="display: inline; width: 40px; border:0; color:#f6931f; font-weight:bold;">
-<select name="radius" id="selectBorderTopLeftRadiusV" class="zeroMP" style="display: inline; width: 50px;">
-    <option value="px" selected="selected" title="px">px</option>
-    <option value="mm">mm</option>
-    <option value="cm">cm</option>
-    <option value="em">em</option>
-    <option value="rem">rem</option>
-    <option value="%">%</option>
-</select>
-<div id="sliderBoxBorderTopLeftRadiusH" style="width: 100%" ></div>
-<div id="sliderBoxBorderTopLeftRadiusV" style="width: 100%" ></div>
 
-<!---------------------------------------------------------------------------------------->
-<label  for="boxBorderTopRightRadiusH" style="display: inline">border-top-left-radius:</label>
-<input type="text" id="boxBorderTopRightRadiusH" readonly style="display: inline; width: 40px; border:0; color:#f6931f; font-weight:bold;">
-<select name="radius" id="selectBorderTopRightRadiusH" class="zeroMP" style="display: inline; width: 50px;" >
-    <option value="px" selected="selected" title="px">px</option>
-    <option value="mm">mm</option>
-    <option value="cm">cm</option>
-    <option value="em">em</option>
-    <option value="rem">rem</option>
-    <option value="%">%</option>
-</select>
-<input type="text" id="boxBorderTopRightRadiusV" readonly style="display: inline; width: 40px; border:0; color:#f6931f; font-weight:bold;">
-<select name="radius" id="selectBorderTopRightRadiusV" class="zeroMP" style="display: inline; width: 50px;">
-    <option value="px" selected="selected" title="px">px</option>
-    <option value="mm">mm</option>
-    <option value="cm">cm</option>
-    <option value="em">em</option>
-    <option value="rem">rem</option>
-    <option value="%">%</option>
-</select>
-<div id="sliderBoxBorderTopRightRadiusH" style="width: 100%" ></div>
-<div id="sliderBoxBorderTopRightRadiusV" style="width: 100%" ></div>
+<h4>Border radius</h4>
+top-left
 
-<!---------------------------------------------------------------------------------------->
-<label  for="boxBorderBottomRightRadiusH" style="display: inline">border-top-left-radius:</label>
-<input type="text" id="boxBorderBottomRightRadiusH" readonly style="display: inline; width: 40px; border:0; color:#f6931f; font-weight:bold;">
-<select name="radius" id="selectBorderBottomRightRadiusH" class="zeroMP" style="display: inline; width: 50px;" >
-    <option value="px" selected="selected" title="px">px</option>
-    <option value="mm">mm</option>
-    <option value="cm">cm</option>
-    <option value="em">em</option>
-    <option value="rem">rem</option>
-    <option value="%">%</option>
-</select>
-<input type="text" id="boxBorderBottomRightRadiusV" readonly style="display: inline; width: 40px; border:0; color:#f6931f; font-weight:bold;">
-<select name="radius" id="selectBorderBottomRightRadiusV" class="zeroMP" style="display: inline; width: 50px;">
-    <option value="px" selected="selected" title="px">px</option>
-    <option value="mm">mm</option>
-    <option value="cm">cm</option>
-    <option value="em">em</option>
-    <option value="rem">rem</option>
-    <option value="%">%</option>
-</select>
-<div id="sliderBoxBorderBottomRightRadiusH" style="width: 100%" ></div>
-<div id="sliderBoxBorderBottomRightRadiusV" style="width: 100%" ></div>
+<div>
+    <label for="slidTLHoriz" style="display: inline; width: 15%">top</label>
+    <input type="range" min="0" max="10" value="5" id="slidTLHoriz" step="1" style="display: inline; width: 50%">
+    <output for="slidTLHoriz" id="outTLHoriz" style="display: inline; width: 15%">5</output>
 
+
+    <select name="radius" id="selTLHoriz" class="zeroMP" style="display: inline; width: 20%">
+        <option value="px" selected="selected" title="px">px</option>
+        <option id="mmW" value="mm">mm</option>
+        <option value="cm">cm</option>
+        <option value="em">em</option>
+        <option value="rem">rem</option>
+        <option value="%">%</option>
+    </select>
+
+    <label for="slidTLVert" style="display: inline; width: 15%">left</label>
+    <input type="range" min="0" max="10" value="5" id="slidTLVert" step="1" style="display: inline; width: 50%">
+    <output for="slidTLVertt" id="outTLVert" style="display: inline; width: 15%">5</output>
+
+
+    <select name="radius" id="selTLVert" class="zeroMP" style="display: inline; width: 20%">
+        <option value="px" selected="selected" title="px">px</option>
+        <option id="mmW" value="mm">mm</option>
+        <option value="cm">cm</option>
+        <option value="em">em</option>
+        <option value="rem">rem</option>
+        <option value="%">%</option>
+    </select>
+</div>
+<br>
 <!---------------------------------------------------------------------------------------->
-<label  for="boxBorderBottomLeftRadiusH" style="display: inline">border-top-left-radius:</label>
-<input type="text" id="boxBorderBottomLeftRadiusH" readonly style="display: inline; width: 40px; border:0; color:#f6931f; font-weight:bold;">
-<select name="radius" id="selectBorderBottomLeftRadiusH" class="zeroMP" style="display: inline; width: 50px;" >
-    <option value="px" selected="selected" title="px">px</option>
-    <option value="mm">mm</option>
-    <option value="cm">cm</option>
-    <option value="em">em</option>
-    <option value="rem">rem</option>
-    <option value="%">%</option>
-</select>
-<input type="text" id="boxBorderBottomLeftRadiusV" readonly style="display: inline; width: 40px; border:0; color:#f6931f; font-weight:bold;">
-<select name="radius" id="selectBorderBottomLeftRadiusV" class="zeroMP" style="display: inline; width: 50px;">
-    <option value="px" selected="selected" title="px">px</option>
-    <option value="mm">mm</option>
-    <option value="cm">cm</option>
-    <option value="em">em</option>
-    <option value="rem">rem</option>
-    <option value="%">%</option>
-</select>
-<div id="sliderBoxBorderBottomLeftRadiusH" style="width: 100%" ></div>
-<div id="sliderBoxBorderBottomLeftRadiusV" style="width: 100%" ></div>
+
+top-right
+
+<div>
+    <label for="slidTRHoriz" style="display: inline; width: 15%">top</label>
+    <input type="range" min="0" max="10" value="5" id="slidTRHoriz" step="1" style="display: inline; width: 50%">
+    <output for="slidTRHoriz" id="outTRHoriz" style="display: inline; width: 15%">5</output>
+
+
+    <select name="radius" id="selTRHoriz" class="zeroMP" style="display: inline; width: 20%">
+        <option value="px" selected="selected" title="px">px</option>
+        <option id="mmW" value="mm">mm</option>
+        <option value="cm">cm</option>
+        <option value="em">em</option>
+        <option value="rem">rem</option>
+        <option value="%">%</option>
+    </select>
+
+    <label for="slidTRVert" style="display: inline; width: 15%">left</label>
+    <input type="range" min="0" max="10" value="5" id="slidTRVert" step="1" style="display: inline; width: 50%">
+    <output for="slidTLVertt" id="outTRVert" style="display: inline; width: 15%">5</output>
+
+
+    <select name="radius" id="selTRVert" class="zeroMP" style="display: inline; width: 20%">
+        <option value="px" selected="selected" title="px">px</option>
+        <option id="mmW" value="mm">mm</option>
+        <option value="cm">cm</option>
+        <option value="em">em</option>
+        <option value="rem">rem</option>
+        <option value="%">%</option>
+    </select>
+</div>
+<br>
+<!---------------------------------------------------------------------------------------->
+bottom-left
+
+<div>
+    <label for="slidBLHoriz" style="display: inline; width: 15%">top</label>
+    <input type="range" min="0" max="10" value="5" id="slidBLHoriz" step="1" style="display: inline; width: 50%">
+    <output for="slidBLHoriz" id="outBLHoriz" style="display: inline; width: 15%">5</output>
+
+
+    <select name="radius" id="selBLHoriz" class="zeroMP" style="display: inline; width: 20%">
+        <option value="px" selected="selected" title="px">px</option>
+        <option id="mmW" value="mm">mm</option>
+        <option value="cm">cm</option>
+        <option value="em">em</option>
+        <option value="rem">rem</option>
+        <option value="%">%</option>
+    </select>
+
+    <label for="slidBLVert" style="display: inline; width: 15%">left</label>
+    <input type="range" min="0" max="10" value="5" id="slidBLVert" step="1" style="display: inline; width: 50%">
+    <output for="slidTLVertt" id="outBLVert" style="display: inline; width: 15%">5</output>
+
+
+    <select name="radius" id="selBLVert" class="zeroMP" style="display: inline; width: 20%">
+        <option value="px" selected="selected" title="px">px</option>
+        <option id="mmW" value="mm">mm</option>
+        <option value="cm">cm</option>
+        <option value="em">em</option>
+        <option value="rem">rem</option>
+        <option value="%">%</option>
+    </select>
+</div>
+<br>
+<!---------------------------------------------------------------------------------------->
+
+bottom-right
+
+<div>
+    <label for="slidBRHoriz" style="display: inline; width: 15%">top</label>
+    <input type="range" min="0" max="10" value="5" id="slidBRHoriz" step="1" style="display: inline; width: 50%">
+    <output for="slidTRHoriz" id="outBRHoriz" style="display: inline; width: 15%">5</output>
+
+
+    <select name="radius" id="selBRHoriz" class="zeroMP" style="display: inline; width: 20%">
+        <option value="px" selected="selected" title="px">px</option>
+        <option id="mmW" value="mm">mm</option>
+        <option value="cm">cm</option>
+        <option value="em">em</option>
+        <option value="rem">rem</option>
+        <option value="%">%</option>
+    </select>
+
+    <label for="slidBRVert" style="display: inline; width: 15%">left</label>
+    <input type="range" min="0" max="10" value="5" id="slidBRVert" step="1" style="display: inline; width: 50%">
+    <output for="slidTLVertt" id="outBRVert" style="display: inline; width: 15%">5</output>
+
+
+    <select name="radius" id="selBRVert" class="zeroMP" style="display: inline; width: 20%">
+        <option value="px" selected="selected" title="px">px</option>
+        <option id="mmW" value="mm">mm</option>
+        <option value="cm">cm</option>
+        <option value="em">em</option>
+        <option value="rem">rem</option>
+        <option value="%">%</option>
+    </select>
+</div>
+<br>
+
+<div  style="display: inline; width: 45%; padding-right: 5%;">
+    <label  for="shorthandRadius" style="display: inline">shorthand:</label>
+    <input type="checkbox" name="shorthandRadius" > 
+</div>
+
+<div  style="display: inline; width: 45%; padding-right: 5%;">
+    <label  for="separateRadius" style="display: inline">separate:</label>
+    <input type="checkbox" name="separateRadius" > 
+</div>
 
 
 
@@ -95,475 +150,255 @@
 
 
 <script>
-    
-//debugger;
+    var debug = true;
 
-    if (!State["shortHandTopLeftRadius"]) {
-        State["shortHandTopLeftRadius"] = {
-            cssProp: "border-top-left-radius",
-            enable: true,
-            first: null,
-            second: null,
-            third: null,
-            forth: null
+    $("input[name='separateRadius']").on("click", function () {
+        if ($(this).prop("checked")) {
+
+            mainObject.currentPropSet = mainObject.separatePropSet;
+
+
+            mainObject.displayProp();
+
+
+        } else {
+            mainObject.currentPropSet = mainObject.fullPropSet;
+            mainObject.displayProp();
         }
+    })
+
+    $("input[name='shorthandRadius']").on("click", function () {
+
+
+        if ($(this).prop("checked")) {
+
+
+            mainObject.addExeptPropSet("border-top-left-radius").addExeptPropSet("border-top-right-radius")
+                    .addExeptPropSet("border-bottom-left-radius").addExeptPropSet("border-bottom-right-radius")
+                    .removeExeptPropSet("border-radius");
+
+            mainObject.displayProp();
+
+
+
+
+        } else {
+            mainObject.removeExeptPropSet("border-top-left-radius").removeExeptPropSet("border-top-right-radius")
+                    .removeExeptPropSet("border-bottom-left-radius").removeExeptPropSet("border-bottom-right-radius")
+                    .addExeptPropSet("border-radius");
+
+            mainObject.displayProp();
+
+        }
+
+
+
+
+    });
+
+    mainObject.trig = function () {
+
+        mainObject.fullPropSet["border-radius"] =
+                (mainObject["tlhoriz" + "Val"] || '') + "" + (mainObject["tlhoriz" + "Unit"] || '') + " " +
+                (mainObject["trhoriz" + "Val"] || '') + "" + (mainObject["trhoriz" + "Unit"] || '') + " " +
+                (mainObject["blhoriz" + "Val"] || '') + "" + (mainObject["blhoriz" + "Unit"] || '') + " " +
+                (mainObject["brhoriz" + "Val"] || '') + "" + (mainObject["brhoriz" + "Unit"] || '') + " / " +
+                (mainObject["tlvert" + "Val"] || '') + "" + (mainObject["tlvert" + "Unit"] || '') + " " +
+                (mainObject["trvert" + "Val"] || '') + "" + (mainObject["trvert" + "Unit"] || '') + " " +
+                (mainObject["blvert" + "Val"] || '') + "" + (mainObject["blvert" + "Unit"] || '') + " " +
+                (mainObject["brvert" + "Val"] || '') + "" + (mainObject["brvert" + "Unit"] || '');
+
+        mainObject.separatePropSet["border-radius"] =
+                (mainObject["tlhoriz" + "Val"] || '') + "" + (mainObject["tlhoriz" + "Unit"] || '') + " " +
+                (mainObject["trhoriz" + "Val"] || '') + "" + (mainObject["trhoriz" + "Unit"] || '') + " " +
+                (mainObject["blhoriz" + "Val"] || '') + "" + (mainObject["blhoriz" + "Unit"] || '') + " " +
+                (mainObject["brhoriz" + "Val"] || '') + "" + (mainObject["brhoriz" + "Unit"] || '') + " / " +
+                (mainObject["tlvert" + "Val"] || '') + "" + (mainObject["tlvert" + "Unit"] || '') + " " +
+                (mainObject["trvert" + "Val"] || '') + "" + (mainObject["trvert" + "Unit"] || '') + " " +
+                (mainObject["blvert" + "Val"] || '') + "" + (mainObject["blvert" + "Unit"] || '') + " " +
+                (mainObject["brvert" + "Val"] || '') + "" + (mainObject["brvert" + "Unit"] || '');
+
     }
-    
-    var seperatBorderWidth = function (cssProp, nameProp) {
-
-        
-
-          State[nameProp].sliderTop();
 
 
-        var currentUnitBTW = "#select" + nameProp + " option[value='" + State[nameProp]["paramsTop"]["unit"] + "']";
-
-        $("#select" + nameProp).find('option:selected').removeAttr("selected");
-        $(currentUnitBTW).attr("selected", "selected");
 
 
-        $("#select" + nameProp).selectmenu({
-            change: function (event, data) {
-                var objD = {};
-                var units = data.item.value;
+    var propProc = function (prop) {
+
+        var p = prop.toLowerCase();
+
+        if (mainObject[p + "Unit"]) {
+            var curUnitW = "#sel" + prop + " option[value='" + mainObject[p + 'Unit'] + "']";
+            $("#sel" + prop).find('option:selected').removeAttr("selected");
+            $(curUnitW).attr("selected", "selected");
+        }
+
+        if (mainObject[p + "Val"]) {
+            $("#slid" + prop).val(mainObject[p + "Val"]);
+            $("#out" + prop).val(mainObject[p + "Val"]);
+        }
 
 
-                borderSwitch(units, State[nameProp].paramsTop);
+        mainObject[p + "Unit"] = $("#sel" + prop).val();
+        mainObject[p + "Val"] = $("#slid" + prop).val();
 
-                State[nameProp].paramsTop.unit = units;
-                $("#sliderBox" + nameProp).slider("option",
-                        {min: State[nameProp]["paramsTop"].min,
-                            max: State[nameProp]["paramsTop"].max,
-                            step: State[nameProp]["paramsTop"].step,
-                            value: State[nameProp]["paramsTop"].value});
-                $("#sliderBox" + nameProp).trigger("slidechange");
-                seeProperty.call(State[nameProp].paramsTop, cssProp);
+        processConerProp(prop);
 
+        $("#slid" + prop).on('input', function () {
+            // mainObject.slid = this.value;
+
+            mainObject[p + "Val"] = this.value
+            $("#out" + prop).val(this.value);
+            mainObject.trig();
+
+
+            processConerProp(prop);
+
+            debug && mainObject.debug();
+        })
+
+        $("#sel" + prop).on("change", function () {
+            switch (this.value) {
+                case"px":
+                    $("#slid" + prop).attr({
+                        min: 0,
+                        max: 20,
+                        step: 0.1,
+                        value: 10
+                    }).trigger("input");
+
+                    mainObject[p + "Unit"] = this.value;
+                    mainObject[p + "Val"] = $("#out" + prop).val();
+
+                    break;
+                case"cm":
+
+                    $("#slid" + prop).attr({
+                        min: "0",
+                        max: "2",
+                        step: "0.1",
+                        value: "1"
+                    }).trigger("input");
+
+                    mainObject[p + "Unit"] = this.value;
+                    mainObject[p + "Val"] = $("#out" + prop).val();
+
+                    break;
+                case"mm":
+                    $("#slid" + prop).attr({
+                        min: "0",
+                        max: "20",
+                        step: "0.1",
+                        value: "1"
+                    }).trigger("input");
+
+                    mainObject[p + "Unit"] = this.value;
+                    mainObject[p + "Val"] = $("#out" + prop).val();
+
+
+                    break;
+                case"em":
+                    $("#slid" + prop).attr({
+                        min: "0",
+                        max: "20",
+                        step: "0.1",
+                        value: "1"
+                    }).trigger("input");
+
+                    mainObject[p + "Unit"] = this.value;
+                    mainObject[p + "Val"] = $("#out" + prop).val();
+
+
+                    break;
+                case"rem":
+                    $("#slid" + prop).attr({
+                        min: "0",
+                        max: "2",
+                        step: "0.1",
+                        value: "1"
+                    }).trigger("input");
+
+                    mainObject[p + "Unit"] = this.value;
+                    mainObject[p + "Val"] = $("#out" + prop).val();
+
+
+
+                    break;
+                case"%":
+                    $("#slid" + prop).attr({
+                        min: 0,
+                        max: 20,
+                        step: 0.1,
+                        value: 10
+                    }).trigger("input");
+
+                    mainObject[p + "Unit"] = this.value;
+                    mainObject[p + "Val"] = $("#out" + prop).val();
+
+
+                    break;
             }
-        });
+
+
+            processConerProp(prop);
+
+            mainObject.trig();
+            debug && mainObject.debug();
+        })
 
     }
 
-    var borderSwitch = function (unit, obj) {
+    var processConerProp = function (name) {
 
-        switch (unit) {
-            case"px":
-                obj.min = 0;
-                obj.max = 40;
-                obj.step = 1;
-                obj.value = 20;
-                break;
-            case"cm":
-                obj.min = 0;
-                obj.max = 2;
-                obj.step = 0.01;
-                obj.value = 1;
-                break;
-            case"mm":
-                obj.min = 0;
-                obj.max = 20;
-                obj.step = 0.1;
-                obj.value = 1;
-                break;
-            case"em":
-                obj.min = 0;
-                obj.max = 10;
-                obj.step = 0.1;
-                obj.value = 2.5;
-                break;
-            case"rem":
-                obj.min = 0;
-                obj.max = 10;
-                obj.step = 0.1;
-                obj.value = 2.5;
-                break;
-            case"thin":
-            case"medium":
-            case"thick":
-            case"inherit":
-            case"initial":
-                obj.min = 0;
-                obj.max = 0;
-                obj.step = 0;
-                obj.value = " ";
+        switch (name) {
+            case "TLHoriz":
+            case "TLVert":
 
+                mainObject.processFullProp("border-top-left-radius",
+                        (mainObject["tlhoriz" + "Val"] || '') + "" +
+                        (mainObject["tlhoriz" + "Unit"] || '') + " " +
+                        (mainObject["tlvert" + "Val"] || '') + "" +
+                        (mainObject["tlvert" + "Unit"] || ''));
+                break;
+            case "TRHoriz":
+            case "TRVert":
+                mainObject.processFullProp("border-top-right-radius",
+                        (mainObject["trhoriz" + "Val"] || '') + "" +
+                        (mainObject["trhoriz" + "Unit"] || '') + " " +
+                        (mainObject["trvert" + "Val"] || '') + "" +
+                        (mainObject["trvert" + "Unit"]) || '');
+                break;
+            case "BLHoriz":
+            case "BLVert":
+                mainObject.processFullProp("border-bottom-left-radius",
+                        (mainObject["blhoriz" + "Val"] || '') + "" +
+                        (mainObject["blhoriz" + "Unit"] || '') + " " +
+                        (mainObject["blvert" + "Val"] || '') + "" +
+                        (mainObject["blvert" + "Unit"]) || '');
+                break;
+            case "BRHoriz":
+            case "BRVert":
+                mainObject.processFullProp("border-bottom-right-radius",
+                        (mainObject["brhoriz" + "Val"] || '') + "" +
+                        (mainObject["brhoriz" + "Unit"] || '') + " " +
+                        (mainObject["brvert" + "Val"] || '') + "" +
+                        (mainObject["brvert" + "Unit"] || ''));
                 break;
         }
     }
-    
-    if (!State["BorderTopLeftRadiusH"])
-        State["BorderTopLeftRadiusH"] = new myWww("", Top = {
-            min: 0, max: 20, step: 1, value: 5, unit: "px",
-            sliderElem: "#sliderBox" + "BorderTopLeftRadiusH", boxProp: "#box" + "BorderTopLeftRadiusH"}
-
-        );
-    State["shortHandTopLeftRadius"].first = State["BorderTopLeftRadiusH"];
-
-    if (!State["BorderTopLeftRadiusV"])
-        State["BorderTopLeftRadiusV"] = new myWww("", Top = {
-            min: 0, max: 20, step: 1, value: 5, unit: "px",
-            sliderElem: "#sliderBox" + "BorderTopLeftRadiusV", boxProp: "#box" + "BorderTopLeftRadiusV"}
-
-        );
-    State["shortHandTopLeftRadius"].second = State["BorderTopLeftRadiusV"];
-    
-    State["BorderTopLeftRadiusH"]["paramsTop"].shortHand = State["shortHandTopLeftRadius"];
-    State["BorderTopLeftRadiusV"]["paramsTop"].shortHand = State["shortHandTopLeftRadius"];
-    
-   
-    seperatBorderWidth("border-top-left-radius", "BorderTopLeftRadiusH");
-    seperatBorderWidth("border-top-left-radius", "BorderTopLeftRadiusV");
-   
-/***********************************************************************************************/
-    if (!State["shortHandTopRightRadius"]) {
-        State["shortHandTopRightRadius"] = {
-            cssProp: "border-top-right-radius",
-            enable: true,
-            first: null,
-            second: null,
-            third: null,
-            forth: null
-        }
-    }
-    
-    var seperatBorderWidth = function (cssProp, nameProp) {
-
-        
-
-          State[nameProp].sliderTop();
 
 
-        var currentUnitBTW = "#select" + nameProp + " option[value='" + State[nameProp]["paramsTop"]["unit"] + "']";
 
-        $("#select" + nameProp).find('option:selected').removeAttr("selected");
-        $(currentUnitBTW).attr("selected", "selected");
+    mainObject.clearSeparatePropSet();
+    mainObject.currentPropSet = mainObject.fullPropSet;
+    debugger
+    propProc("TLHoriz");
+    propProc("TLVert");
+    propProc("TRHoriz");
+    propProc("TRVert");
 
-
-        $("#select" + nameProp).selectmenu({
-            change: function (event, data) {
-                var objD = {};
-                var units = data.item.value;
-
-
-                borderSwitch(units, State[nameProp].paramsTop);
-
-                State[nameProp].paramsTop.unit = units;
-                $("#sliderBox" + nameProp).slider("option",
-                        {min: State[nameProp]["paramsTop"].min,
-                            max: State[nameProp]["paramsTop"].max,
-                            step: State[nameProp]["paramsTop"].step,
-                            value: State[nameProp]["paramsTop"].value});
-                $("#sliderBox" + nameProp).trigger("slidechange");
-                seeProperty.call(State[nameProp].paramsTop, cssProp);
-
-            }
-        });
-
-    }
-
-    var borderSwitch = function (unit, obj) {
-
-        switch (unit) {
-            case"px":
-                obj.min = 0;
-                obj.max = 40;
-                obj.step = 1;
-                obj.value = 20;
-                break;
-            case"cm":
-                obj.min = 0;
-                obj.max = 2;
-                obj.step = 0.01;
-                obj.value = 1;
-                break;
-            case"mm":
-                obj.min = 0;
-                obj.max = 20;
-                obj.step = 0.1;
-                obj.value = 1;
-                break;
-            case"em":
-                obj.min = 0;
-                obj.max = 10;
-                obj.step = 0.1;
-                obj.value = 2.5;
-                break;
-            case"rem":
-                obj.min = 0;
-                obj.max = 10;
-                obj.step = 0.1;
-                obj.value = 2.5;
-                break;
-            case"thin":
-            case"medium":
-            case"thick":
-            case"inherit":
-            case"initial":
-                obj.min = 0;
-                obj.max = 0;
-                obj.step = 0;
-                obj.value = " ";
-
-                break;
-        }
-    }
-    
-    if (!State["BorderTopRightRadiusH"])
-        State["BorderTopRightRadiusH"] = new myWww("", Top = {
-            min: 0, max: 20, step: 1, value: 5, unit: "px",
-            sliderElem: "#sliderBox" + "BorderTopRightRadiusH", boxProp: "#box" + "BorderTopRightRadiusH"}
-
-        );
-    State["shortHandTopRightRadius"].first = State["BorderTopRightRadiusH"];
-
-    if (!State["BorderTopRightRadiusV"])
-        State["BorderTopRightRadiusV"] = new myWww("", Top = {
-            min: 0, max: 20, step: 1, value: 5, unit: "px",
-            sliderElem: "#sliderBox" + "BorderTopRightRadiusV", boxProp: "#box" + "BorderTopRightRadiusV"}
-
-        );
-    State["shortHandTopRightRadius"].second = State["BorderTopRightRadiusV"];
-    
-    State["BorderTopRightRadiusH"]["paramsTop"].shortHand = State["shortHandTopRightRadius"];
-    State["BorderTopRightRadiusV"]["paramsTop"].shortHand = State["shortHandTopRightRadius"];
-    
-   
-    seperatBorderWidth("border-top-right-radius", "BorderTopRightRadiusH");
-    seperatBorderWidth("border-top-right-radius", "BorderTopRightRadiusV");
-   
-/***********************************************************************************************/
-    if (!State["shortHandBottomRightRadius"]) {
-        State["shortHandBottomRightRadius"] = {
-            cssProp: "border-bottom-right-radius",
-            enable: true,
-            first: null,
-            second: null,
-            third: null,
-            forth: null
-        }
-    }
-    
-    var seperatBorderWidth = function (cssProp, nameProp) {
-
-        
-
-          State[nameProp].sliderTop();
-
-
-        var currentUnitBTW = "#select" + nameProp + " option[value='" + State[nameProp]["paramsTop"]["unit"] + "']";
-
-        $("#select" + nameProp).find('option:selected').removeAttr("selected");
-        $(currentUnitBTW).attr("selected", "selected");
-
-
-        $("#select" + nameProp).selectmenu({
-            change: function (event, data) {
-                var objD = {};
-                var units = data.item.value;
-
-
-                borderSwitch(units, State[nameProp].paramsTop);
-
-                State[nameProp].paramsTop.unit = units;
-                $("#sliderBox" + nameProp).slider("option",
-                        {min: State[nameProp]["paramsTop"].min,
-                            max: State[nameProp]["paramsTop"].max,
-                            step: State[nameProp]["paramsTop"].step,
-                            value: State[nameProp]["paramsTop"].value});
-                $("#sliderBox" + nameProp).trigger("slidechange");
-                seeProperty.call(State[nameProp].paramsTop, cssProp);
-
-            }
-        });
-
-    }
-
-    var borderSwitch = function (unit, obj) {
-
-        switch (unit) {
-            case"px":
-                obj.min = 0;
-                obj.max = 40;
-                obj.step = 1;
-                obj.value = 20;
-                break;
-            case"cm":
-                obj.min = 0;
-                obj.max = 2;
-                obj.step = 0.01;
-                obj.value = 1;
-                break;
-            case"mm":
-                obj.min = 0;
-                obj.max = 20;
-                obj.step = 0.1;
-                obj.value = 1;
-                break;
-            case"em":
-                obj.min = 0;
-                obj.max = 10;
-                obj.step = 0.1;
-                obj.value = 2.5;
-                break;
-            case"rem":
-                obj.min = 0;
-                obj.max = 10;
-                obj.step = 0.1;
-                obj.value = 2.5;
-                break;
-            case"thin":
-            case"medium":
-            case"thick":
-            case"inherit":
-            case"initial":
-                obj.min = 0;
-                obj.max = 0;
-                obj.step = 0;
-                obj.value = " ";
-
-                break;
-        }
-    }
-    
-    if (!State["BorderBottomRightRadiusH"])
-        State["BorderBottomRightRadiusH"] = new myWww("", Top = {
-            min: 0, max: 20, step: 1, value: 5, unit: "px",
-            sliderElem: "#sliderBox" + "BorderBottomRightRadiusH", boxProp: "#box" + "BorderBottomRightRadiusH"}
-
-        );
-    State["shortHandBottomRightRadius"].first = State["BorderBottomRightRadiusH"];
-
-    if (!State["BorderBottomRightRadiusV"])
-        State["BorderBottomRightRadiusV"] = new myWww("", Top = {
-            min: 0, max: 20, step: 1, value: 5, unit: "px",
-            sliderElem: "#sliderBox" + "BorderBottomRightRadiusV", boxProp: "#box" + "BorderBottomRightRadiusV"}
-
-        );
-    State["shortHandBottomRightRadius"].second = State["BorderBottomRightRadiusV"];
-    
-    State["BorderBottomRightRadiusH"]["paramsTop"].shortHand = State["shortHandBottomRightRadius"];
-    State["BorderBottomRightRadiusV"]["paramsTop"].shortHand = State["shortHandBottomRightRadius"];
-    
-   
-    seperatBorderWidth("border-bottom-right-radius", "BorderBottomRightRadiusH");
-    seperatBorderWidth("border-bottom-right-radius", "BorderBottomRightRadiusV");
-   
-/***********************************************************************************************/
-    if (!State["shortHandBottomLeftRadius"]) {
-        State["shortHandBottomLeftRadius"] = {
-            cssProp: "border-bottom-left-radius",
-            enable: true,
-            first: null,
-            second: null,
-            third: null,
-            forth: null
-        }
-    }
-    
-    var seperatBorderWidth = function (cssProp, nameProp) {
-
-        
-
-          State[nameProp].sliderTop();
-
-
-        var currentUnitBTW = "#select" + nameProp + " option[value='" + State[nameProp]["paramsTop"]["unit"] + "']";
-
-        $("#select" + nameProp).find('option:selected').removeAttr("selected");
-        $(currentUnitBTW).attr("selected", "selected");
-
-
-        $("#select" + nameProp).selectmenu({
-            change: function (event, data) {
-                var objD = {};
-                var units = data.item.value;
-
-
-                borderSwitch(units, State[nameProp].paramsTop);
-
-                State[nameProp].paramsTop.unit = units;
-                $("#sliderBox" + nameProp).slider("option",
-                        {min: State[nameProp]["paramsTop"].min,
-                            max: State[nameProp]["paramsTop"].max,
-                            step: State[nameProp]["paramsTop"].step,
-                            value: State[nameProp]["paramsTop"].value});
-                $("#sliderBox" + nameProp).trigger("slidechange");
-                seeProperty.call(State[nameProp].paramsTop, cssProp);
-
-            }
-        });
-
-    }
-
-    var borderSwitch = function (unit, obj) {
-
-        switch (unit) {
-            case"px":
-                obj.min = 0;
-                obj.max = 40;
-                obj.step = 1;
-                obj.value = 20;
-                break;
-            case"cm":
-                obj.min = 0;
-                obj.max = 2;
-                obj.step = 0.01;
-                obj.value = 1;
-                break;
-            case"mm":
-                obj.min = 0;
-                obj.max = 20;
-                obj.step = 0.1;
-                obj.value = 1;
-                break;
-            case"em":
-                obj.min = 0;
-                obj.max = 10;
-                obj.step = 0.1;
-                obj.value = 2.5;
-                break;
-            case"rem":
-                obj.min = 0;
-                obj.max = 10;
-                obj.step = 0.1;
-                obj.value = 2.5;
-                break;
-            case"thin":
-            case"medium":
-            case"thick":
-            case"inherit":
-            case"initial":
-                obj.min = 0;
-                obj.max = 0;
-                obj.step = 0;
-                obj.value = " ";
-
-                break;
-        }
-    }
-    
-    if (!State["BorderBottomLeftRadiusH"])
-        State["BorderBottomLeftRadiusH"] = new myWww("", Top = {
-            min: 0, max: 20, step: 1, value: 5, unit: "px",
-            sliderElem: "#sliderBox" + "BorderBottomLeftRadiusH", boxProp: "#box" + "BorderBottomLeftRadiusH"}
-
-        );
-    State["shortHandBottomLeftRadius"].first = State["BorderBottomLeftRadiusH"];
-
-    if (!State["BorderBottomLeftRadiusV"])
-        State["BorderBottomLeftRadiusV"] = new myWww("", Top = {
-            min: 0, max: 20, step: 1, value: 5, unit: "px",
-            sliderElem: "#sliderBox" + "BorderBottomLeftRadiusV", boxProp: "#box" + "BorderBottomLeftRadiusV"}
-
-        );
-    State["shortHandBottomLeftRadius"].second = State["BorderBottomLeftRadiusV"];
-    
-    State["BorderBottomLeftRadiusH"]["paramsTop"].shortHand = State["shortHandBottomLeftRadius"];
-    State["BorderBottomLeftRadiusV"]["paramsTop"].shortHand = State["shortHandBottomLeftRadius"];
-    
-   
-    seperatBorderWidth("border-bottom-left-radius", "BorderBottomLeftRadiusH");
-    seperatBorderWidth("border-bottom-left-radius", "BorderBottomLeftRadiusV");
-   
-
+    propProc("BLHoriz");
+    propProc("BLVert");
+    propProc("BRHoriz");
+    propProc("BRVert");
 </script>

@@ -1,253 +1,183 @@
-<label  for="selectBorderTopColor" style="display: inline">border-top-color:</label>
+<h4>Border Color</h4>
 
-<input type="color" id="BorderTopColor">
+<div>
+    <label for="labBorder-top-color" style="display: inline; width: 15%">top</label>
+    <input type="color" id="slidBorder-top-color">
 
-<select name="radius" id="selectBorderTopColor" class="zeroMP" style=" width: 100px">
-    <option value="colorPicker" data-value="colorPicker" selected="selected" title="none">colorPicker</option>
-    <option value="#ff0000" data-value="red">red</option>
-    <option value="#008000" data-value="green">green</option>
+    <select name="radius" id="selBorder-top-color" class="zeroMP" style=" width: 100px">
+        <option value="colorPicker" data-value="colorPicker" selected="selected" title="none">colorPicker</option>
+        <option value="red" data-value="red">red</option>
+        <option value="green" data-value="green">green</option>
 
-</select>
+    </select>
+</div>
+<br>
+<!---------------------------------------------------------------------------------->
+<div>
+    <label for="labBorder-right-color" style="display: inline; width: 15%">right</label>
+    <input type="color" id="slidBorder-right-color">
 
+    <select name="radius" id="selBorder-right-color" class="zeroMP" style=" width: 100px">
+        <option value="colorPicker" data-value="colorPicker" selected="selected" title="none">colorPicker</option>
+        <option value="red" data-value="red">red</option>
+        <option value="green" data-value="green">green</option>
+
+    </select>
+</div>
+<br>
+<!---------------------------------------------------------------------------------->
+<div>
+    <label for="labBorder-bottom-color" style="display: inline; width: 15%">bottom</label>
+    <input type="color" id="slidBorder-bottom-color">
+
+    <select name="radius" id="selBorder-bottom-color" class="zeroMP" style=" width: 100px">
+        <option value="colorPicker" data-value="colorPicker" selected="selected" title="none">colorPicker</option>
+        <option value="red" data-value="red">red</option>
+        <option value="green" data-value="green">green</option>
+
+    </select>
+</div>
+<br>
+<!---------------------------------------------------------------------------------->
+<div>
+    <label for="labBorder-left-color" style="display: inline; width: 15%">left</label>
+    <input type="color" id="slidBorder-left-color">
+
+    <select name="radius" id="selBorder-left-color" class="zeroMP" style=" width: 100px">
+        <option value="colorPicker" data-value="colorPicker" selected="selected" title="none">colorPicker</option>
+        <option value="red" data-value="red">red</option>
+        <option value="green" data-value="green">green</option>
+
+    </select>
+</div>
 <br>
 
-
-<label  for="selectBorderRightColor" style="display: inline">border-right-color:</label>
-
-<input type="color" id="BorderRightColor">
-
-<select name="radius" id="selectBorderRightColor" class="zeroMP" style=" width: 100px">
-    <option value="colorPicker" data-value="colorPicker" selected="selected" title="none">colorPicker</option>
-    <option value="#ff0000" data-value="red">red</option>
-    <option value="#008000" data-value="green">green</option>
-
-</select>
-
-<br>
-
-<label  for="selectBorderBottomColor" style="display: inline">border-bottom-color:</label>
-
-<input type="color" id="BorderBottomColor" style="width: 35px;">
-
-<select name="radius" id="selectBorderBottomColor" class="zeroMP" style=" width: 100px">
-    <option value="colorPicker" data-value="colorPicker" selected="selected" title="none">colorPicker</option>
-    <option value="#ff0000" data-value="red">red</option>
-    <option value="#008000" data-value="green">green</option>
-
-</select>
-
-<br>
-
-<label  for="selectBorderLeftColor" style="display: inline">border-left-color:</label>
-
-<input type="color" id="BorderLeftColor">
-
-<select name="radius" id="selectBorderLeftColor" class="zeroMP" style=" width: 100px">
-    <option value="colorPicker" data-value="colorPicker" selected="selected" title="none">colorPicker</option>
-    <option value="#ff0000" data-value="red">red</option>
-    <option value="#008000" data-value="green">green</option>
-
-</select>
-
-<br>
-
-<div  style="padding-left: 0px;">
+<div  style="display: inline; width: 45%; padding-right: 5%;">
     <label  for="shorthandBorderColor" style="display: inline">shorthand:</label>
     <input type="checkbox" name="shorthandBorderColor" > 
 </div>
 
+<div  style="display: inline; width: 45%; padding-right: 5%;">
+    <label  for="separateBorderColor" style="display: inline">separate:</label>
+    <input type="checkbox" name="separateBorderColor" > 
+</div>
+
 
 <script>
-    
-      $("input[name='shorthandBorderColor']").on("click", function () {
+    var debug = true;
 
-    
+    $("input[name='separateBorderColor']").on("click", function () {
         if ($(this).prop("checked")) {
 
-            State["shortHandBorderColor"].enable = true;
-
-            if (boxCompProperties.hasOwnProperty("border-top-color")) {
-                delete boxCompProperties["border-top-color"];
-            }
-            if (boxCompProperties.hasOwnProperty("border-right-color")) {
-                delete boxCompProperties["border-right-color"];
-            }
-            if (boxCompProperties.hasOwnProperty("border-bottom-color")) {
-                delete boxCompProperties["border-bottom-color"];
-            }
-            if (boxCompProperties.hasOwnProperty("border-left-color")) {
-                delete boxCompProperties["border-left-color"];
-            }
+            mainObject.currentPropSet = mainObject.separatePropSet;
 
 
-            State["shortHandBorderColor"].first = State["BorderTopColor"];
+            mainObject.displayProp();
 
-
-            State["shortHandBorderColor"].second = State["BorderRightColor"];
-
-
-            State["shortHandBorderColor"].third = State["BorderBottomColor"];
-
-
-            State["shortHandBorderColor"].forth = State["BorderLeftColor"];
-
-            $("#passingborder-left-color").remove();
-            $("#passingborder-top-color").remove();
-            $("#passingborder-bottom-color").remove();
-            $("#passingborder-right-color").remove();
 
         } else {
-
-            State["shortHandBorderColor"].enable = false;
-
-            if (boxCompProperties.hasOwnProperty("border-color")) {
-                delete boxCompProperties["border-color"];
-            }
-
-            $("#passingborder-color").remove();
+            mainObject.currentPropSet = mainObject.fullPropSet;
+            mainObject.displayProp();
         }
+    })
 
-        seperatBorderColor("border-top-color", "BorderTopColor");
-        seperatBorderColor("border-right-color", "BorderRightColor");
-        seperatBorderColor("border-bottom-color", "BorderBottomColor");
-        seperatBorderColor("border-left-color", "BorderLeftColor");
+    $("input[name='shorthandBorderColor']").on("click", function () {
 
 
+        if ($(this).prop("checked")) {
+
+
+            mainObject.addExeptPropSet("border-top-color").addExeptPropSet("border-right-color")
+                    .addExeptPropSet("border-bottom-color").addExeptPropSet("border-left-color")
+                    .removeExeptPropSet("border-color");
+
+            mainObject.displayProp();
+        } else {
+            mainObject.removeExeptPropSet("border-top-color").removeExeptPropSet("border-right-color")
+                    .removeExeptPropSet("border-bottom-color").removeExeptPropSet("border-left-color")
+                    .addExeptPropSet("border-color");
+
+            mainObject.displayProp();
+
+        }
     });
 
+    mainObject.trig = function () {
 
-    if (!State["shortHandBorderColor"]) {
-        State["shortHandBorderColor"] = {
-            cssProp: "border-color",
-            enable: false,
-            first: null,
-            second: null,
-            third: null,
-            forth: null
-        }
+        mainObject.fullPropSet["border-color"] =
+                mainObject.fullPropSet["border-top-color"] + " "
+                + mainObject.fullPropSet["border-right-color"] + " "
+                + mainObject.fullPropSet["border-bottom-color"] + " "
+                + mainObject.fullPropSet["border-left-color"];
+        mainObject.separatePropSet["border-color"] =
+                mainObject.fullPropSet["border-top-color"] + " "
+                + mainObject.fullPropSet["border-right-color"] + " "
+                + mainObject.fullPropSet["border-bottom-color"] + " "
+                + mainObject.fullPropSet["border-left-color"];
+
     }
 
-    var seperatBorderColor = function (cssProp, nameProp) {
 
-        if (State[nameProp].paramsTop.dataValue != "colorPicker") {
 
-            var currentUnitBTW = "#select" + nameProp + " option[data-value='" + State[nameProp]["paramsTop"]["unit"] + "']";
 
-            $("#select" + nameProp).find('option:selected').removeAttr("selected");
-            $(currentUnitBTW).attr("selected", "selected");
+    var propProc = function (prop) {
 
-           // $("#select" + nameProp).selectmenu("refresh");
+        var p = prop.toLowerCase();
 
-            $("#" + nameProp).val($(currentUnitBTW).val());
+        if (mainObject[p + "Unit"]) {
+            var curUnitW = "#sel" + prop + " option[value='" + mainObject[p + 'Unit'] + "']";
+            $("#sel" + prop).find('option:selected').removeAttr("selected");
+            $(curUnitW).attr("selected", "selected");
+        }
 
+
+        if ($("#sel" + prop).val() != "colorPicker") {
+            mainObject[p + "Unit"] = $("#sel" + prop).val();
         } else {
-            $("#" + nameProp).val(State[nameProp].paramsTop.unit);
-
+            mainObject[p + "Unit"] = $("#slid" + prop).val();
         }
-
-        seeProperty.call(State[nameProp].paramsTop, cssProp);
-
-
-        $("#select" + nameProp).selectmenu({
-            change: function (event, data) {
-                var objD = {};
-              
-                var colorKeyword = data.item.value;
-                
-                if (colorKeyword != "colorPicker") {
-
-                    State[nameProp].paramsTop.unit = data.item.label;
-                    State[nameProp].paramsTop.value = "";
-                    State[nameProp].paramsTop.dataValue = "";
-                    $("#" + nameProp).val(colorKeyword).trigger("change", {selector: true});
+        mainObject.processFullProp(p, mainObject[p + "Unit"]);
 
 
-                } else {
-                    State[nameProp].paramsTop.unit = $("#" + nameProp).val();
-                    State[nameProp].paramsTop.value = "";
-                    State[nameProp].paramsTop.dataValue = "colorPicker";
+        $("#slid" + prop).on('input', function () {
+            // mainObject.slid = this.value;
 
-                }
+            mainObject[p + "Unit"] = this.value
 
-                seeProperty.call(State[nameProp].paramsTop, cssProp);
+            mainObject.trig();
+
+            mainObject.processFullProp(p, mainObject[p + "Unit"]);
+        })
+
+        $("#sel" + prop).on("change", function () {
+            switch (this.value) {
+                case"colorPicker":
+
+                    mainObject[p + "Unit"] = $("#slid" + prop).val();
+                    break;
+                default:
+                    mainObject[p + "Unit"] = this.value;
+                    break;
 
             }
-        });
-
-        $("#" + nameProp).on("change", function (e, data) {
-            
-            
-           
-            State[nameProp].paramsTop.value = "";
-            if (data) {
-                State[nameProp].paramsTop.dataValue = "";
-            } else {
-                State[nameProp].paramsTop.dataValue = "colorPicker";
-                 State[nameProp].paramsTop.unit = $("#" + nameProp).val();
-            }
-            seeProperty.call(State[nameProp].paramsTop, cssProp);
-        });
-
-        $("#" + nameProp).on("click", function () {
-
-   //         debugger
-            var selectColorPicker = "#select" + nameProp + " option[data-value='colorPicker']";
-
-            $("#select" + nameProp).find('option:selected').removeAttr("selected");
-            $(selectColorPicker).attr("selected", "selected");
-            $("#select" + nameProp).selectmenu("refresh");
 
 
-        });
+
+            mainObject.processFullProp(p, mainObject[p + "Unit"]);
+
+            mainObject.trig();
+
+        })
 
     }
 
+    mainObject.clearSeparatePropSet();
+    mainObject.currentPropSet = mainObject.fullPropSet;
 
-    if (!State["BorderTopColor"])
-        State["BorderTopColor"] = new myWww("", Top = {
-            min: 0, max: 20, step: 1, value: "", unit: $("#BorderTopColor").val(),
-            sliderElem: "", boxProp: "", dataValue: "colorPicker"}
-
-        );
-    State["shortHandBorderColor"].first = State["BorderTopColor"];
-    State["BorderTopColor"]["paramsTop"].shortHand = State["shortHandBorderColor"];
-
-
-    seperatBorderColor("border-top-color", "BorderTopColor");
-    
-    if (!State["BorderRightColor"])
-        State["BorderRightColor"] = new myWww("", Top = {
-            min: 0, max: 20, step: 1, value: "", unit: $("#BorderRightColor").val(),
-            sliderElem: "", boxProp: "", dataValue: "colorPicker"}
-
-        );
-    State["shortHandBorderColor"].second = State["BorderRightColor"];
-    State["BorderRightColor"]["paramsTop"].shortHand = State["shortHandBorderColor"];
-
-
-    seperatBorderColor("border-right-color", "BorderRightColor");
-
-    if (!State["BorderBottomColor"])
-        State["BorderBottomColor"] = new myWww("", Top = {
-            min: 0, max: 20, step: 1, value: "", unit: $("#BorderBottomColor").val(),
-            sliderElem: "", boxProp: "", dataValue: "colorPicker"}
-
-        );
-    State["shortHandBorderColor"].third = State["BorderBottomColor"];
-    State["BorderBottomColor"]["paramsTop"].shortHand = State["shortHandBorderColor"];
-
-
-    seperatBorderColor("border-bottom-color", "BorderBottomColor");
-    
-        if (!State["BorderLeftColor"])
-        State["BorderLeftColor"] = new myWww("", Top = {
-            min: 0, max: 20, step: 1, value: "", unit: $("#BorderLeftColor").val(),
-            sliderElem: "", boxProp: "", dataValue: "colorPicker"}
-
-        );
-    State["shortHandBorderColor"].forth = State["BorderLeftColor"];
-    State["BorderLeftColor"]["paramsTop"].shortHand = State["shortHandBorderColor"];
-
-
-    seperatBorderColor("border-left-color", "BorderLeftColor");
+    propProc("Border-top-color");
+    propProc("Border-right-color");
+    propProc("Border-bottom-color");
+    propProc("Border-left-color");
 </script>
+
+

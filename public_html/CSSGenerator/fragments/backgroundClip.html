@@ -1,0 +1,107 @@
+<h4>Background Clip</h4>
+
+<div>
+    <label for="labBackground-clip" style="display: inline; width: 15%">clip</label>
+
+    <select name="radius" id="selBackground-clip" class="zeroMP" style="display: inline; width: 20%">
+        <option value="border-box" selected="selected">border-box</option>
+        <option value="padding-box">padding-box</option>
+        <option value="content-box">content-box</option>
+        <option value="inherit">inherit</option>
+        <option value="initial">initial</option>
+        <option value="default">default</option>
+    </select>
+</div>
+
+<!------------------------------------------------------------------------------------------------------->
+<h4>Background Origin</h4>
+
+<div>
+    <label for="labBackground-origin" style="display: inline; width: 15%">clip</label>
+
+    <select name="radius" id="selBackground-origin" class="zeroMP" style="display: inline; width: 20%">
+        <option value="border-box" selected="selected">border-box</option>
+        <option value="padding-box">padding-box</option>
+        <option value="content-box">content-box</option>
+        <option value="inherit">inherit</option>
+        <option value="initial">initial</option>
+        <option value="default">default</option>
+    </select>
+</div>
+
+<!------------------------------------------------------------------------------------------------------->
+<h4>Background Attachment</h4>
+
+<div>
+    <label for="labBackground-attachment" style="display: inline; width: 15%">clip</label>
+
+    <select name="radius" id="selBackground-attachment" class="zeroMP" style="display: inline; width: 20%">
+        <option value="scroll" selected="selected">scroll</option>
+        <option value="fixed">fixed</option>
+        <option value="local">local</option>
+        <option value="inherit">inherit</option>
+        <option value="initial">initial</option>
+        <option value="default">default</option>
+    </select>
+</div>
+
+
+
+
+<div  style="padding-left: 0px;">
+    <label  for="separateWH" style="display: inline">separate:</label>
+    <input type="checkbox" name="separateWH" > 
+</div>
+
+<script>
+
+
+    $("input[name='separateWH']").on("click", function () {
+        if ($(this).prop("checked")) {
+
+            mainObject.currentPropSet = mainObject.separatePropSet;
+            mainObject.displayProp();
+
+        } else {
+            mainObject.currentPropSet = mainObject.fullPropSet;
+            mainObject.displayProp();
+        }
+    })
+
+
+
+    var propProc = function (prop) {
+
+        var p = prop.toLowerCase();
+
+        if (mainObject[p + "Unit"]) {
+            var curUnitW = "#sel" + prop + " option[value='" + mainObject[p + 'Unit'] + "']";
+            $("#sel" + prop).find('option:selected').removeAttr("selected");
+            $(curUnitW).attr("selected", "selected");
+        }
+
+        
+        mainObject[p + "Unit"] = $("#sel" + prop).val();
+        
+         mainObject.processFullProp(p,  mainObject[p + "Unit"]);
+
+
+        $("#sel" + prop).on("change", function () {
+
+            mainObject[p + "Unit"] = this.value;
+            
+
+            mainObject.processFullProp(p,  mainObject[p + "Unit"]);
+
+
+        })
+
+    }
+    mainObject.trig = function () {};
+    mainObject.clearSeparatePropSet();
+    mainObject.currentPropSet = mainObject.fullPropSet;
+    propProc("Background-clip");
+    propProc("Background-origin");
+    propProc("Background-attachment");
+    
+</script>

@@ -27,18 +27,69 @@
 
 </select>
 
-<label for="angle">Angle</label>
-<input type="range" min="0" max="100" value="50" id="angle" step="1">
-<output for="angle" id="volume">50</output>
+
+<div>
+    <label for="Angle" style="display: inline; width: 15%">angle</label>
+    <input type="range" min="0" max="100" value="5" id="angle" step="1" style="display: inline; width: 50%">
+    <output for="outStop1" id="volume" style="display: inline; width: 15%">5</output>
+
+</div>
 
 <br>
 
 <label  for="borderImgColStops" style="display:inline"> Number of color-stops:</label>
-<input type="number" id="borderImgColStops" value="0" min="0">
+<input type="number" id="borderImgColStops" value="2" min="0" max="2">
 
 <br>
 
 <div id="numStops">
+    <div class="colStops colStop1" style="display: block;">
+        <label  for = "selBorderColStop1" style = "display: inline" > color stop1': </label>
+        <input type = "color" id = "slidBorderColStop1"> 
+
+        <select name = "radius" id = "selBorderColStop1" class = "zeroMP" style = " width: 100px">
+            <option value = "colorPicker" data-value = "colorPicker" selected = "selected" title = "none"> colorPicker </option>
+            <option value = "red" data-value = "red"> red </option>
+            <option value = "green" data-value = "green" > green </option>
+        </select>
+        <div>
+            <label for="labStop1" style="display: inline; width: 15%">Stop1 position</label>
+            <input type="range" min="0" max="10" value="5" id="slidStop1" step="1" style="display: inline; width: 50%">
+            <output for="outStop1" id="outStop1" style="display: inline; width: 15%">5</output>
+            <select name="radius" id="selStop1" class="zeroMP" style="display: inline; width: 20%">
+                <option value="px" selected="selected" title="px">px</option>
+                <option id="mmW" value="mm">mm</option>
+                <option value="cm">cm</option>
+                <option value="em">em</option>
+                <option value="rem">rem</option>
+                <option value="%">%</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="colStops colStop2" style="display: block;">
+        <label  for = "selBorderColStop2" style = "display: inline" > color stop2': </label>
+        <input type = "color" id = "slidBorderColStop2"> 
+
+        <select name = "radius" id = "selBorderColStop2" class = "zeroMP" style = " width: 100px">
+            <option value = "colorPicker" data-value = "colorPicker" selected = "selected" title = "none"> colorPicker </option>
+            <option value = "red" data-value = "red"> red </option>
+            <option value = "green" data-value = "green" > green </option>
+        </select>
+        <div>
+            <label for="labStop2" style="display: inline; width: 15%">Stop1 position</label>
+            <input type="range" min="0" max="10" value="5" id="slidStop2" step="1" style="display: inline; width: 50%">
+            <output for="outStop1" id="outStop2" style="display: inline; width: 15%">5</output>
+            <select name="radius" id="selStop2" class="zeroMP" style="display: inline; width: 20%">
+                <option value="px" selected="selected" title="px">px</option>
+                <option id="mmW" value="mm">mm</option>
+                <option value="cm">cm</option>
+                <option value="em">em</option>
+                <option value="rem">rem</option>
+                <option value="%">%</option>
+            </select>
+        </div>
+    </div>
 
 </div>
 
@@ -48,6 +99,215 @@
 
 
     var debug = true;
+
+    mainObject["trig"] = function () {};
+
+    var lenearGrad = function () {
+
+        var stops = [];
+        for (var myI = 1; myI <= $("#borderImgColStops").val(); myI++) {
+            stops.push((mainObject["bordercolstop" + myI + "Unit"] || "blue") + " "
+                    + (mainObject["stop" + myI + "Val"] || "")
+                    + (mainObject["stop" + myI + "Unit"] || ""))
+        }
+
+        return "linear-gradient(" + (mainObject.borderImageGradientDirection || "0") + "deg, " + stops.join() + ")"
+    }
+
+    /******************************** Function for colorPiker************************************/
+    var propProcColPic = function (prop) {
+
+        var p = prop.toLowerCase();
+
+        if (mainObject[p + "Unit"]) {
+            var curUnitW = "#sel" + prop + " option[value='" + mainObject[p + 'Unit'] + "']";
+            $("#sel" + prop).find('option:selected').removeAttr("selected");
+            $(curUnitW).attr("selected", "selected");
+        }
+
+
+        if ($("#sel" + prop).val() != "colorPicker") {
+            mainObject[p + "Unit"] = $("#sel" + prop).val();
+        } else {
+            mainObject[p + "Unit"] = $("#slid" + prop).val();
+        }
+
+        lenearGrad();
+
+        $("#slid" + prop).on('input', function () {
+            // mainObject.slid = this.value;
+
+            mainObject[p + "Unit"] = this.value
+            mainObject.processFullProp("border-image-source", lenearGrad());
+
+
+            //        mainObject.processFullProp(p, mainObject[p + "Unit"]);
+        })
+
+        $("#sel" + prop).on("change", function () {
+            switch (this.value) {
+                case"colorPicker":
+
+                    mainObject[p + "Unit"] = $("#slid" + prop).val();
+                    break;
+                default:
+                    mainObject[p + "Unit"] = this.value;
+                    break;
+
+            }
+
+
+            mainObject.processFullProp("border-image-source", lenearGrad());
+            // mainObject.processFullProp(p, mainObject[p + "Unit"]);
+
+
+
+        })
+
+    }
+
+    /**********************************Function for lenth************************************************/
+    var propProcLength = function (prop) {
+
+        var p = prop.toLowerCase();
+
+        if (mainObject[p + "Unit"]) {
+            var curUnitW = "#sel" + prop + " option[value='" + mainObject[p + 'Unit'] + "']";
+            $("#sel" + prop).find('option:selected').removeAttr("selected");
+            $(curUnitW).attr("selected", "selected");
+        }
+
+        if (mainObject[p + "Val"]) {
+            $("#slid" + prop).val(mainObject[p + "Val"]);
+            $("#out" + prop).val(mainObject[p + "Val"]);
+        }
+
+
+        mainObject[p + "Unit"] = $("#sel" + prop).val();
+        mainObject[p + "Val"] = $("#slid" + prop).val();
+
+        lenearGrad();
+
+        $("#slid" + prop).on('input', function () {
+            // mainObject.slid = this.value;
+
+            mainObject[p + "Val"] = this.value
+            $("#out" + prop).val(this.value);
+            mainObject.trig();
+
+            mainObject.processFullProp("border-image-source", lenearGrad());
+
+
+        })
+
+        $("#sel" + prop).on("change", function () {
+            switch (this.value) {
+                case"px":
+                    $("#slid" + prop).attr({
+                        min: 0,
+                        max: 20,
+                        step: 0.1,
+                        value: 10
+                    }).trigger("input");
+
+                    mainObject[p + "Unit"] = this.value;
+                    mainObject[p + "Val"] = $("#out" + prop).val();
+
+                    break;
+                case"cm":
+
+                    $("#slid" + prop).attr({
+                        min: "0",
+                        max: "2",
+                        step: "0.1",
+                        value: "1"
+                    }).trigger("input");
+
+                    mainObject[p + "Unit"] = this.value;
+                    mainObject[p + "Val"] = $("#out" + prop).val();
+
+                    break;
+                case"mm":
+                    $("#slid" + prop).attr({
+                        min: "0",
+                        max: "20",
+                        step: "0.1",
+                        value: "1"
+                    }).trigger("input");
+
+                    mainObject[p + "Unit"] = this.value;
+                    mainObject[p + "Val"] = $("#out" + prop).val();
+
+
+                    break;
+                case"em":
+                    $("#slid" + prop).attr({
+                        min: "0",
+                        max: "20",
+                        step: "0.1",
+                        value: "1"
+                    }).trigger("input");
+
+                    mainObject[p + "Unit"] = this.value;
+                    mainObject[p + "Val"] = $("#out" + prop).val();
+
+
+                    break;
+                case"rem":
+                    $("#slid" + prop).attr({
+                        min: "0",
+                        max: "2",
+                        step: "0.1",
+                        value: "1"
+                    }).trigger("input");
+
+                    mainObject[p + "Unit"] = this.value;
+                    mainObject[p + "Val"] = $("#out" + prop).val();
+
+
+
+                    break;
+                case"%":
+                    $("#slid" + prop).attr({
+                        min: 0,
+                        max: 20,
+                        step: 0.1,
+                        value: 10
+                    }).trigger("input");
+
+                    mainObject[p + "Unit"] = this.value;
+                    mainObject[p + "Val"] = $("#out" + prop).val();
+
+
+                    break;
+            }
+
+
+            mainObject.processFullProp("border-image-source", lenearGrad());
+
+        })
+
+    }
+
+    /***********************************Color stop processing*********************************************/
+    debugger
+
+    var numberColPic = function () {
+        for (var myI = 1; myI <= $("#borderImgColStops").val(); myI++) {
+            propProcColPic("BorderColStop" + myI);
+            propProcLength("Stop" + myI)
+        }
+    }
+
+
+    mainObject.currentPropSet = mainObject.fullPropSet;
+    numberColPic();
+    var gradi = lenearGrad();
+    mainObject.processFullProp("border-image-source", lenearGrad());
+
+    /***************************************************************************************************/
+
+
     if (mainObject.borderImageSourceSliderValue) {
 
         var currentUnitBTW = "#selectBorderImageSource option[value='" + mainObject.borderImageSourceSliderValue + "']";
@@ -56,12 +316,16 @@
     }
 
     $("#selectBorderImageSource").on('change', function () {
+
         switch (this.value) {
             case "none":
                 mainObject.borderImageSourceSliderValue = this.value;
                 break;
             case "url":
                 mainObject.borderImageSourceSliderValue = "url(" + $("#selectBorderImageUrl").val() + ")";
+                break;
+            case "linear-gradient":
+                mainObject.borderImageSourceSliderValue = lenearGrad();
                 break;
         }// or $(this).val()
         mainObject.processFullProp("border-image-source", mainObject.borderImageSourceSliderValue);
@@ -84,6 +348,7 @@
         $("#selectBorderImageSource").trigger("change");
     });
     $("#selectBorderImageUrl").trigger("change");
+
     /******************************Select gradient direction*****************************************************/
 
 
@@ -121,67 +386,24 @@
                 break;
         }
 
-        debug && mainObject.debug();
+        mainObject.processFullProp("border-image-source", mainObject.borderImageSourceSliderValue);
+
     });
     $("#selectBorderImageLGDirection").trigger("change");
+
+
     $("#angle").on('input', function () {
 
         if (mainObject.borderImageGradientAngle)
             mainObject.borderImageGradientDirection = $("#angle").val();
         $("#volume").val(this.value);
-        debug && mainObject.debug();
+
     })
 
-    /***Number of stops**/
+    /********************************************************borderImgColStops******************************************/
 
-    $("#borderImgColStops").on('input', function () {
-        
- if(debug) debugger;
-        
-        mainObject.borderImgGradNumStops = this.value;
-        
-      // console.log("begin"+$("#numStops > .colStops").length);
 
-        
-        while (this.value > $("#numStops > .colStops").length) {
-            $("#numStops").append(
-                    '<div class="colStops colStop'+($("#numStops > .colStops").length+1)+'">\n\
-<label  for = "selBorderColStop1" style = "display: inline" > color stop '+($("#numStops > .colStops").length+1)+': </label>\n\
-<input type = "color" id = "colPic1">  \n\
-<select name = "radius" id = "selBorderColStop1" class = "zeroMP" style = " width: 100px">\n\
-<option value = "colorPicker" data - value = "colorPicker" selected = "selected" title = "none"> colorPicker </option>\n\
-<option value = "#ff0000" data - value = "red"> red </option>\n\
-<option value = "#008000" data - value = "green" > green </option>\n\
-</select>\n\
-</div>'
-             
-                    )
-          //  console.log("append"+$("#numStops > .colStops").length);
-
-        }
-        while (this.value < $("#numStops > .colStops").length) {
-            
-            $("#numStops > .colStops:last").remove();
-         //   console.log("remove" +$("#numStops > .colStops").length);
-        }
-        
-        debug && mainObject.debug();
-    })
-
-    // mainObject.borderImgGradNumStops = $("#numStops > .colStop").length;
-    /******************************Select colorStops Number*****************************************************/
-
-    if (mainObject.BorderImageLGColorStops) {
-        $("#selectBorderImageLGColorStops").val(mainObject.BorderImageLGColorStops)
-    }
-
-    $("#selectBorderImageLGColorStops").on('change', function () {
-
-        mainObject.BorderImageLGColorStops = this.value;
-    });
-    $("#selectBorderImageUrl").trigger("change");
-    /***************************************Debuger***********************************************************/
-
+    /******************************************************************************************************************/
 
 
 </script>

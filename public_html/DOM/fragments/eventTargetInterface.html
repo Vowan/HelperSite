@@ -1,0 +1,30 @@
+eventTarget
+
+<button id="www">Run</button>
+
+<div id="qqq">
+
+    <span style="color: #0000cd"> document</span>
+    <span style="color: #c12e2a">.getElementById(</span>
+    <span style="color: #c12e2a">"div1"</span>
+    <span style="color: #c12e2a">)</span>
+    <span style="color: #c12e2a">.addEventListener(</span>
+    <span style="color: #c12e2a">'click'</span>
+    <span style="color: #c12e2a">,</span>
+    <span style="color: #c12e2a">function(){$("#console").text("Hello");}</span>
+    <span style="color: #c12e2a">,</span>
+    <span style="color: #c12e2a">false</span>
+    <span style="color: #c12e2a">);</span>
+
+
+</div>
+
+
+
+<script>
+
+    $("#www").on("click", function () {
+        eval($("#qqq").text());
+    })
+
+</script>

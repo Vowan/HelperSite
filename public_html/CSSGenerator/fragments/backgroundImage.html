@@ -1,0 +1,328 @@
+<h4>Background image</h4>
+
+<div>
+
+
+    <select name="radius" id="selBackground-image" class="zeroMP" style="display: inline; width: 20%">
+        <option value="none" selected="selected">none</option>
+        <option value="image1">image1</option>
+        <option value="image2">image2</option>
+        <option value="image3">image3</option>
+        <option value="linear-gradient">linear-gradient</option>
+
+    </select>
+</div>
+
+<div>
+    <label  for="selBgroundDirection" style="display:inline"> Linear gradient  direction:</label>
+
+    <select name="radius" id="selBgroundDirection" class="zeroMP" style=" width: 100px">
+        <option value="angle" data-value="colorPicker" selected="selected" title="none">angle</option>
+        <option value="to left top" data-value="red">to left top</option>
+        <option value="to left bottom" data-value="green">to left bottom</option>
+        <option value="to right top" data-value="red">to right top</option>
+        <option value="to right bottom" data-value="green">to right bottom</option>
+
+    </select>
+</div>
+
+<div>
+    <label for="angle" style="display: inline; width: 15%">angle</label>
+    <input type="range" min="0" max="360" value="5" id="angle" step="1" style="display: inline; width: 50%">
+    <output for="outStop1" id="volume" style="display: inline; width: 15%">5</output>
+
+</div>
+
+
+<div>
+    <label  for = "selBGroundColStart" style = "display: inline" > color start: </label>
+    <input type = "color" id = "slidBGroundColStart"> 
+
+    <select name = "radius" id = "selBGroundColStart" class = "zeroMP" style = " width: 100px">
+        <option value = "colorPicker" data-value = "colorPicker" selected = "selected" title = "none"> colorPicker </option>
+        <option value = "red" data-value = "red"> red </option>
+        <option value = "green" data-value = "green" > green </option>
+    </select>
+
+</div>
+
+<div>
+    <label  for = "selBGroundColEnd" style = "display: inline" > color end: </label>
+    <input type = "color" id = "slidBGroundColEnd"> 
+
+    <select name = "radius" id = "selBGroundColEnd" class = "zeroMP" style = " width: 100px">
+        <option value = "colorPicker" data-value = "colorPicker" selected = "selected" title = "none"> colorPicker </option>
+        <option value = "red" data-value = "red"> red </option>
+        <option value = "green" data-value = "green" > green </option>
+    </select>
+
+</div>
+
+
+
+/***************************************************************************************************/
+
+
+<div  style="display: inline; width: 45%; padding-right: 5%;">
+    <label  for="separateBgroundImg" style="display: inline">separate:</label>
+    <input type="checkbox" name="separateBgroundImg" > 
+</div>
+
+<script>
+    var debug = true;
+
+    $("input[name='separateBgroundImg']").on("click", function () {
+        if ($(this).prop("checked")) {
+
+            mainObject.currentPropSet = mainObject.separatePropSet;
+
+
+            mainObject.displayProp();
+
+
+        } else {
+            mainObject.currentPropSet = mainObject.fullPropSet;
+            mainObject.displayProp();
+        }
+    })
+
+
+    mainObject.trig = function () {
+
+        mainObject.fullPropSet["background-image"] = mainObject["background-image" + "Val"];
+        mainObject.separatePropSet["background-image"] = mainObject["background-image" + "Val"];
+        ;
+
+    }
+
+
+
+
+    var propProc = function (prop) {
+
+        var p = prop.toLowerCase();
+
+        if (mainObject[p + "Unit"]) {
+            var curUnitW = "#sel" + prop + " option[value='" + mainObject[p + 'Unit'] + "']";
+            $("#sel" + prop).find('option:selected').removeAttr("selected");
+            $(curUnitW).attr("selected", "selected");
+        }
+
+
+
+        switch ($("#sel" + prop).val()) {
+            case"none":
+
+                mainObject[p + "Val"] = "";
+
+                break;
+            case"image1":
+                mainObject[p + "Val"] = "url(http://localhost:8383/myTutorSite/Examples/img/bimg1.jpg)";
+
+                break;
+            case"image2":
+                mainObject[p + "Val"] = "url(http://localhost:8383/myTutorSite/Examples/img/bimg2.jpg)";
+                break;
+            case"image3":
+                mainObject[p + "Val"] = "url(http://localhost:8383/myTutorSite/Examples/img/bimg3.jpg)";
+                break;
+            case"linear-gradient":
+                linearGradient();
+                break;
+
+        }
+
+        mainObject.displayProp();
+
+
+
+        $("#sel" + prop).on("change", function () {
+            switch (this.value) {
+                case"none":
+
+                    mainObject[p + "Unit"] = this.value;
+                    mainObject[p + "Val"] = "";
+
+                    break;
+                case"image1":
+                    mainObject[p + "Unit"] = this.value;
+                    mainObject[p + "Val"] = "url(http://localhost:8383/myTutorSite/Examples/img/bimg1.jpg)";
+
+                    break;
+                case"image2":
+
+                    mainObject[p + "Unit"] = this.value;
+                    mainObject[p + "Val"] = "url(http://localhost:8383/myTutorSite/Examples/img/bimg2.jpg)";
+                    break;
+                case"image3":
+                    mainObject[p + "Unit"] = this.value;
+                    mainObject[p + "Val"] = "url(http://localhost:8383/myTutorSite/Examples/img/bimg3.jpg)";
+
+
+                    break;
+                case"linear-gradient":
+
+                    mainObject[p + "Unit"] = this.value;
+                    linearGradient();
+                    break;
+
+            }
+
+            mainObject.displayProp();
+
+
+        })
+
+    }
+
+
+    // mainObject[p + "Unit"] - value of selector
+    // mainObject[p + "Val"]- value of input ColorPicker
+
+    var propProcStartEnd = function (prop) {
+
+        var p = prop.toLowerCase();
+
+        if (mainObject[p + "Unit"] != "") {
+            var curUnitW = "#sel" + prop + " option[value='" + mainObject[p + 'Unit'] + "']";
+            $("#sel" + prop).find('option:selected').removeAttr("selected");
+            $(curUnitW).attr("selected", "selected");
+        }
+
+        if (mainObject[p + "Val"] != "") {
+            $("#slid" + prop).val(mainObject[p + "Val"]);
+        }
+
+
+        if ($("#sel" + prop).val() != "colorPicker") {
+            mainObject[p + "Unit"] = $("#sel" + prop).val();
+            mainObject[p + "Val"] = ""
+        } else {
+            mainObject[p + "Val"] = $("#slid" + prop).val();
+            mainObject[p + "Unit"] = "";
+        }
+
+
+        mainObject.colorSource = $("#sel" + prop).val();
+
+
+        $("#slid" + prop).on('input', function () {
+
+            debugger
+
+            if (mainObject.colorSource == "colorPicker")
+                mainObject[p + "Val"] = this.value
+
+            if ($("#selBackground-image").val() == "linear-gradient")
+                linearGradient();
+
+            mainObject.displayProp();
+        })
+
+        $("#sel" + prop).on("change", function () {
+            switch (this.value) {
+                case"colorPicker":
+
+                    mainObject[p + "Val"] = $("#slid" + prop).val();
+                    mainObject[p + "Unit"] = "";
+                    mainObject.colorSource = this.value;
+                    break;
+                default:
+                    mainObject[p + "Unit"] = this.value;
+                    mainObject[p + "Val"] = "";
+                    mainObject.colorSource = this.value;
+                    break;
+
+            }
+
+            linearGradient();
+            mainObject.displayProp();
+
+        })
+
+    }
+
+    /******************************Select gradient direction*****************************************************/
+
+
+
+    if (mainObject.borderImageGradientDirectionValue) {
+
+        var gDirec = "#selBgroundDirection option[value='" + mainObject.borderImageGradientDirectionValue + "']";
+        $("#selBgroundDirection").find('option:selected').removeAttr("selected");
+        $(gDirec).attr("selected", "selected");
+    }
+
+    if (mainObject.borderImageGradientAngle) {
+        $("#angle").val(mainObject["gradAngle"]);
+        $("#volume").val(mainObject["gradAngle"]);
+    }
+
+    if ($("#selBgroundDirection").val() == "angle") {
+
+        mainObject["gradAngle"] = $("#angle").val();
+        mainObject.borderImageGradientDirectionValue = $("#selBgroundDirection").val();
+        mainObject.borderImageGradientAngle = true;
+    }
+
+
+    $("#selBgroundDirection").on('change', function () {
+
+        switch (this.value) {
+            case "angle":
+                mainObject["gradAngle"] = $("#angle").val();
+                mainObject.borderImageGradientDirectionValue = this.value;
+                mainObject.borderImageGradientAngle = true;
+                break;
+            
+            default:
+                mainObject["gradAngle"] = this.value;
+                mainObject.borderImageGradientDirectionValue = this.value;
+                mainObject.borderImageGradientAngle = false;
+                break;
+        }
+
+       
+
+        if ($("#selBackground-image").val() == "linear-gradient") {
+
+            linearGradient();
+            mainObject.displayProp();
+        }
+
+    });
+
+
+    $("#angle").on('input', function () {
+
+        if (mainObject.borderImageGradientAngle)
+            mainObject["gradAngle"] = $("#angle").val() + "deg";
+        $("#volume").val(this.value);
+
+        if ($("#selBackground-image").val() == "linear-gradient") {
+            linearGradient();
+            mainObject.displayProp();
+        }
+
+    })
+
+    var linearGradient = function () {
+
+        var grad = "linear-gradient(" + (mainObject["gradAngle"] || "45deg") + ", "
+                + mainObject["bgroundcolstartVal"] + mainObject["bgroundcolstartUnit"] + ", "
+                + mainObject["bgroundcolendVal"] + mainObject["bgroundcolendUnit"]
+                + ")"
+        mainObject["background-image" + "Val"] = grad;
+
+    }
+
+    mainObject.clearSeparatePropSet();
+    mainObject.currentPropSet = mainObject.fullPropSet;
+
+
+
+    propProc("Background-image");
+    propProcStartEnd("BGroundColStart");
+    propProcStartEnd("BGroundColEnd");
+
+</script>

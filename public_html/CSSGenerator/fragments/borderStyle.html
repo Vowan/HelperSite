@@ -1,228 +1,181 @@
-<label  for="selectBorderTopStyle" style="display: inline">border-top-style:</label>
+<h4>Border Style</h4>
 
-<select name="radius" id="selectBorderTopStyle" class="zeroMP" style=" width: 100px">
-    <option value="none" selected="selected" title="none">none</option>
-    <option value="hidden">hidden</option>
-    <option value="dotted">dotted</option>
-    <option value="dashed">dashed</option>
-    <option value="solid">solid</option>
-    <option value="double">double</option>
-    <option value="groove">groove</option>
-    <option value="ridge">ridge</option>
-    <option value="inset">inset</option>
-    <option value="inset">outset</option>
-</select>
+<div>
+    <label for="labBorder-left-style" style="display: inline; width: 15%">left</label>
 
-<!------------------------------------------------------------------------------------------------------->
-<label  for="selectBorderRightStyle" style="display: inline">border-right-style:</label>
 
-<select name="radius" id="selectBorderRightStyle" class="zeroMP" style=" width: 100px">
-    <option value="none" selected="selected" title="none">none</option>
-    <option value="hidden">hidden</option>
-    <option value="dotted">dotted</option>
-    <option value="dashed">dashed</option>
-    <option value="solid">solid</option>
-    <option value="double">double</option>
-    <option value="groove">groove</option>
-    <option value="ridge">ridge</option>
-    <option value="inset">inset</option>
-    <option value="inset">outset</option>
-</select>
+    <select name="radius" id="selBorder-left-style" class="zeroMP" style="display: inline; width: 20%">
+        <option value="none" selected="selected" title="none">none</option>
+        <option value="hidden">hidden</option>
+        <option value="dotted">dotted</option>
+        <option value="dashed">dashed</option>
+        <option value="solid">solid</option>
+        <option value="double">double</option>
+        <option value="groove">groove</option>
+        <option value="ridge">ridge</option>
+        <option value="inset">inset</option>
+        <option value="outset">outset</option>
+    </select>
+</div>
+
 
 <!------------------------------------------------------------------------------------------------------->
-<label  for="selectBorderBottomStyle" style="display: inline">border-bottom-style:</label>
+<div>
+    <label for="labBorder-top-style" style="display: inline; width: 15%">top</label>
 
-<select name="radius" id="selectBorderBottomStyle" class="zeroMP" style=" width: 100px">
-    <option value="none" selected="selected" title="none">none</option>
-    <option value="hidden">hidden</option>
-    <option value="dotted">dotted</option>
-    <option value="dashed">dashed</option>
-    <option value="solid">solid</option>
-    <option value="double">double</option>
-    <option value="groove">groove</option>
-    <option value="ridge">ridge</option>
-    <option value="inset">inset</option>
-    <option value="inset">outset</option>
-</select>
+
+    <select name="radius" id="selBorder-top-style" class="zeroMP" style="display: inline; width: 20%">
+        <option value="none" selected="selected" title="none">none</option>
+        <option value="hidden">hidden</option>
+        <option value="dotted">dotted</option>
+        <option value="dashed">dashed</option>
+        <option value="solid">solid</option>
+        <option value="double">double</option>
+        <option value="groove">groove</option>
+        <option value="ridge">ridge</option>
+        <option value="inset">inset</option>
+        <option value="outset">outset</option>
+    </select>
+</div>
 
 <!------------------------------------------------------------------------------------------------------->
-<label  for="selectBorderLeftStyle" style="display: inline">border-left-style:</label>
+<div>
+    <label for="labBorder-right-style" style="display: inline; width: 15%">right</label>
 
-<select name="radius" id="selectBorderLeftStyle" class="zeroMP" style=" width: 100px">
-    <option value="none" selected="selected" title="none">none</option>
-    <option value="hidden">hidden</option>
-    <option value="dotted">dotted</option>
-    <option value="dashed">dashed</option>
-    <option value="solid">solid</option>
-    <option value="double">double</option>
-    <option value="groove">groove</option>
-    <option value="ridge">ridge</option>
-    <option value="inset">inset</option>
-    <option value="inset">outset</option>
-</select>
 
-<div  style="padding-left: 0px;">
+    <select name="radius" id="selBorder-right-style" class="zeroMP" style="display: inline; width: 20%">
+        <option value="none" selected="selected" title="none">none</option>
+        <option value="hidden">hidden</option>
+        <option value="dotted">dotted</option>
+        <option value="dashed">dashed</option>
+        <option value="solid">solid</option>
+        <option value="double">double</option>
+        <option value="groove">groove</option>
+        <option value="ridge">ridge</option>
+        <option value="inset">inset</option>
+        <option value="outset">outset</option>
+    </select>
+</div>
+
+<!------------------------------------------------------------------------------------------------------->
+<div>
+    <label for="labBorder-bottom-style" style="display: inline; width: 15%">bottom</label>
+
+
+    <select name="radius" id="selBorder-bottom-style" class="zeroMP" style="display: inline; width: 20%">
+        <option value="none" selected="selected" title="none">none</option>
+        <option value="hidden">hidden</option>
+        <option value="dotted">dotted</option>
+        <option value="dashed">dashed</option>
+        <option value="solid">solid</option>
+        <option value="double">double</option>
+        <option value="groove">groove</option>
+        <option value="ridge">ridge</option>
+        <option value="inset">inset</option>
+        <option value="outset">outset</option>
+    </select>
+</div>
+
+<div  style="display: inline; width: 45%; padding-right: 5%;">
     <label  for="shorthandBorderStyle" style="display: inline">shorthand:</label>
     <input type="checkbox" name="shorthandBorderStyle" > 
 </div>
 
+<div  style="display: inline; width: 45%; padding-right: 5%;">
+    <label  for="separateBorderStyle" style="display: inline">separate:</label>
+    <input type="checkbox" name="separateBorderStyle" > 
+</div>
 
 <script>
-    /*********************************BorderTopStyle******************************************************/
-    
-     /*******************shorhand" ************************/
-     
-//debugger;
+    var debug = true;
+
+    $("input[name='separateBorderStyle']").on("click", function () {
+        if ($(this).prop("checked")) {
+
+            mainObject.currentPropSet = mainObject.separatePropSet;
+
+
+            mainObject.displayProp();
+
+
+        } else {
+            mainObject.currentPropSet = mainObject.fullPropSet;
+            mainObject.displayProp();
+        }
+    })
 
     $("input[name='shorthandBorderStyle']").on("click", function () {
 
-     // debugger;
 
         if ($(this).prop("checked")) {
 
-            State["shortHandBorderStyle"].enable = true;
 
-            if (boxCompProperties.hasOwnProperty("border-top-style")) {
-                delete boxCompProperties["border-top-style"];
-            }
-            if (boxCompProperties.hasOwnProperty("border-right-style")) {
-                delete boxCompProperties["border-right-style"];
-            }
-            if (boxCompProperties.hasOwnProperty("border-bottom-style")) {
-                delete boxCompProperties["border-bottom-style"];
-            }
-            if (boxCompProperties.hasOwnProperty("border-left-style")) {
-                delete boxCompProperties["border-left-style"];
-            }
+            mainObject.addExeptPropSet("border-top-style").addExeptPropSet("border-right-style")
+                    .addExeptPropSet("border-bottom-style").addExeptPropSet("border-left-style")
+                    .removeExeptPropSet("border-style");
 
-
-            State["shortHandBorderStyle"].first = State["BorderTopStyle"];
-
-
-            State["shortHandBorderStyle"].second = State["BorderRightStyle"];
-
-
-            State["shortHandBorderStyle"].third = State["BorderBottomStyle"];
-
-
-            State["shortHandBorderStyle"].forth = State["BorderLeftStyle"];
-
-            $("#passingborder-left-style").remove();
-            $("#passingborder-top-style").remove();
-            $("#passingborder-bottom-style").remove();
-            $("#passingborder-right-style").remove();
-
+            mainObject.displayProp();
         } else {
+            mainObject.removeExeptPropSet("border-top-style").removeExeptPropSet("border-right-style")
+                    .removeExeptPropSet("border-bottom-style").removeExeptPropSet("border-left-style")
+                    .addExeptPropSet("border-style");
 
-            State["shortHandBorderStyle"].enable = false;
+            mainObject.displayProp();
 
-            if (boxCompProperties.hasOwnProperty("border-style")) {
-                delete boxCompProperties["border-style"];
-            }
-
-            $("#passingborder-style").remove();
         }
-
-        seperatBorderStyle("border-top-style", "BorderTopStyle");
-        seperatBorderStyle("border-right-style", "BorderRightStyle");
-        seperatBorderStyle("border-bottom-style", "BorderBottomStyle");
-        seperatBorderStyle("border-left-style", "BorderLeftStyle");
-
-
     });
 
+    mainObject.trig = function () {
+
+        mainObject.fullPropSet["border-style"] =
+                mainObject.fullPropSet["border-top-style"] + " "
+                + mainObject.fullPropSet["border-right-style"] + " "
+                + mainObject.fullPropSet["border-bottom-style"] + " "
+                + mainObject.fullPropSet["border-left-style"];
+        mainObject.separatePropSet["border-style"] =
+                mainObject.fullPropSet["border-top-style"] + " "
+                + mainObject.fullPropSet["border-right-style"] + " "
+                + mainObject.fullPropSet["border-bottom-style"] + " "
+                + mainObject.fullPropSet["border-left-style"];
+
+    }
 
 
-    if (!State["shortHandBorderStyle"]) {
-        State["shortHandBorderStyle"] = {
-            cssProp: "border-style",
-            enable: false,
-            first: null,
-            second: null,
-            third: null,
-            forth: null
+
+
+    var propProc = function (prop) {
+
+        var p = prop.toLowerCase();
+
+        if (mainObject[p + "Unit"]) {
+            var curUnitW = "#sel" + prop + " option[value='" + mainObject[p + 'Unit'] + "']";
+            $("#sel" + prop).find('option:selected').removeAttr("selected");
+            $(curUnitW).attr("selected", "selected");
         }
-    }
 
-    var seperatBorderStyle = function (cssProp, nameProp) {
-
-        var currentUnitBTW = "#select" + nameProp + " option[value='" + State[nameProp]["paramsTop"]["unit"] + "']";
-
-        $("#select" + nameProp).find('option:selected').removeAttr("selected");
-        $(currentUnitBTW).attr("selected", "selected");
-        
-         seeProperty.call(State[nameProp].paramsTop, cssProp);
+        mainObject[p + "Unit"] = $("#sel" + prop).val();
+        mainObject.processFullProp(p, mainObject[p + "Unit"]);
 
 
-        $("#select" + nameProp).selectmenu({
-            change: function (event, data) {
-                var objD = {};
-                var units = data.item.value;
-
-                State[nameProp].paramsTop.unit = units;
-                State[nameProp].paramsTop.value = " ";
 
 
-                seeProperty.call(State[nameProp].paramsTop, cssProp);
+        $("#sel" + prop).on("change", function () {
 
-            }
-        });
+            mainObject[p + "Unit"] = this.value;
+
+            mainObject.processFullProp(p, mainObject[p + "Unit"]);
+
+            mainObject.trig();
+
+        })
 
     }
 
-    if (!State["BorderTopStyle"])
-        State["BorderTopStyle"] = new myWww("", Top = {
-            min: 0, max: 20, step: 1, value: "", unit: "hidden",
-            sliderElem: "", boxProp: ""}
+    mainObject.clearSeparatePropSet();
+    mainObject.currentPropSet = mainObject.fullPropSet;
 
-        );
-    State["shortHandBorderStyle"].first = State["BorderTopStyle"];
-    State["BorderTopStyle"]["paramsTop"].shortHand = State["shortHandBorderStyle"];
-
-
-    seperatBorderStyle("border-top-style", "BorderTopStyle");
-    
-    /**************************************************************************************/
-
-    if (!State["BorderRightStyle"])
-        State["BorderRightStyle"] = new myWww("", Top = {
-            min: 0, max: 20, step: 1, value: "", unit: "hidden",
-            sliderElem: "", boxProp: ""}
-
-        );
-    State["shortHandBorderStyle"].second = State["BorderRightStyle"];
-    State["BorderRightStyle"]["paramsTop"].shortHand = State["shortHandBorderStyle"];
-
-
-    seperatBorderStyle("border-right-style", "BorderRightStyle");
-
- /**************************************************************************************/
-
-    if (!State["BorderBottomStyle"])
-        State["BorderBottomStyle"] = new myWww("", Top = {
-            min: 0, max: 20, step: 1, value: "", unit: "hidden",
-            sliderElem: "", boxProp: ""}
-
-        );
-    State["shortHandBorderStyle"].third = State["BorderBottomStyle"];
-    State["BorderBottomStyle"]["paramsTop"].shortHand = State["shortHandBorderStyle"];
-
-
-    seperatBorderStyle("border-bottom-style", "BorderBottomStyle");
-
- /**************************************************************************************/
-
-    if (!State["BorderLeftStyle"])
-        State["BorderLeftStyle"] = new myWww("", Top = {
-            min: 0, max: 20, step: 1, value: "", unit: "hidden",
-            sliderElem: "", boxProp: ""}
-
-        );
-    State["shortHandBorderStyle"].forth = State["BorderLeftStyle"];
-    State["BorderLeftStyle"]["paramsTop"].shortHand = State["shortHandBorderStyle"];
-
-
-    seperatBorderStyle("border-left-style", "BorderLeftStyle");
-
-
+    propProc("Border-top-style");
+    propProc("Border-right-style");
+    propProc("Border-bottom-style");
+    propProc("Border-left-style");
 </script>

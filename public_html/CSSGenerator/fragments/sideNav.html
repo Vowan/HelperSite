@@ -2,8 +2,8 @@
     <li><a href="#section1">Dimensions</a></li>
     <li><a href="#section2">Padding</a></li>
     <li><a href="#section3">Margin</a></li>
-   
-    
+
+
     <li class="dropdown">
         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Border <span class="caret"></span></a>
         <ul class="dropdown-menu">
@@ -11,12 +11,48 @@
             <li><a href="#section42">radius</a></li>   
             <li><a href="#section43">style</a></li> 
             <li><a href="#section44">color</a></li>
-            <li><a href="#section45">image</a></li>
+
+
+            <li>
+
+                <a href="#">image <span class="caret"></span></a>
+                <ul >
+                    <li><a href="#section451">source</a></li>
+                    <li><a href="#section452">slice/repeat</a></li>   
+                    <li><a href="#section453">width</a></li> 
+                    <li><a href="#section454">outset</a></li>
+                    <li><a href="#section455">shorthand</a></li>
+                </ul>
+            </li>
+
+
+
         </ul>
     </li>
-    
-    <li><a href="#section5">Background</a></li>
-    <li><a href="#section6">Text</a></li>
+
+    <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Background <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+            <li><a href="#section51">image</a></li>
+            <li><a href="#section52">clip</a></li>     
+            <li><a href="#section53">size</a></li> 
+            <li><a href="#section54">repeat</a></li> 
+        </ul>
+    </li>
+    <li class="dropdown">
+
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Text <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+            <li><a href="#section61">align</a></li>
+            <li><a href="#section62">indent</a></li>     
+            <li><a href="#section63">letter-spacing</a></li> 
+            <li><a href="#section64">white-space</a></li> 
+            <li><a href="#section65">word-break</a></li> 
+            <li><a href="#section66">word-spacing</a></li> 
+            <li><a href="#section67">word-spacing</a></li> 
+        </ul>
+
+    </li>
     <li><a href="#section7">Font</a></li>
     <!--
     <li><a href="#section3">Опции</a></li>
@@ -34,52 +70,118 @@
 
         $("[href='#section1']").click(function (e) {
             e.preventDefault();
-            
+
             $("#control").load("http://localhost:8383/myTutorSite/CSSGenerator/fragments/dimensions.html");
         });
-        
+
         $("[href='#section2']").click(function (e) {
             e.preventDefault();
-          //  console.log("side")
+            //  console.log("side")
             $("#control").load("http://localhost:8383/myTutorSite/CSSGenerator/fragments/padding.html");
         });
-        
+
         $("[href='#section3']").click(function (e) {
             e.preventDefault();
-          //  console.log("side")
+            //  console.log("side")
             $("#control").load("http://localhost:8383/myTutorSite/CSSGenerator/fragments/margin.html");
         });
-        
+
         $("[href='#section41']").click(function (e) {
             e.preventDefault();
-          //  console.log("side")
+            //  console.log("side")
             $("#control").load("http://localhost:8383/myTutorSite/CSSGenerator/fragments/border.html");
         });
         $("[href='#section42']").click(function (e) {
             e.preventDefault();
-          //  console.log("side")
+            //  console.log("side")
             $("#control").load("http://localhost:8383/myTutorSite/CSSGenerator/fragments/radius.html");
         });
         $("[href='#section43']").click(function (e) {
             e.preventDefault();
-          //  console.log("side")
+            //  console.log("side")
             $("#control").load("http://localhost:8383/myTutorSite/CSSGenerator/fragments/borderStyle.html");
         });
         $("[href='#section44']").click(function (e) {
             e.preventDefault();
-          //  console.log("side")
+            //  console.log("side")
             $("#control").load("http://localhost:8383/myTutorSite/CSSGenerator/fragments/borderColor.html");
         });
-        $("[href='#section45']").click(function (e) {
+        $("[href='#section451']").click(function (e) {
             e.preventDefault();
-          //  console.log("side")
+            //  console.log("side")
             $("#control").load("http://localhost:8383/myTutorSite/CSSGenerator/fragments/borderImage.html");
         });
-        
-        $("[href='#section5']").click(function (e) {
+        $("[href='#section452']").click(function (e) {
             e.preventDefault();
-          //  console.log("side")
-            $("#control").load("http://localhost:8383/myTutorSite/CSSGenerator/fragments/background.html");
+            //  console.log("side")
+            $("#control").load("http://localhost:8383/myTutorSite/CSSGenerator/fragments/borderImageSlice.html");
+        });
+        $("[href='#section453']").click(function (e) {
+            e.preventDefault();
+            //  console.log("side")
+            $("#control").load("http://localhost:8383/myTutorSite/CSSGenerator/fragments/borderImageWidth.html");
+        });
+        $("[href='#section454']").click(function (e) {
+            e.preventDefault();
+            //  console.log("side")
+            $("#control").load("http://localhost:8383/myTutorSite/CSSGenerator/fragments/borderImageOutset.html");
+        });
+        $("[href='#section455']").click(function (e) {
+            e.preventDefault();
+            //  console.log("side")
+            $("#control").load("http://localhost:8383/myTutorSite/CSSGenerator/fragments/borderImageShorthand.html");
+        });
+
+        $("[href='#section51']").click(function (e) {
+            e.preventDefault();
+            //  console.log("side")
+            $("#control").load("http://localhost:8383/myTutorSite/CSSGenerator/fragments/backgroundImage.html");
+        });
+
+        $("[href='#section52']").click(function (e) {
+            e.preventDefault();
+            //  console.log("side")
+            $("#control").load("http://localhost:8383/myTutorSite/CSSGenerator/fragments/backgroundClip.html");
+        });
+        $("[href='#section53']").click(function (e) {
+            e.preventDefault();
+            //  console.log("side")
+            $("#control").load("http://localhost:8383/myTutorSite/CSSGenerator/fragments/backgroundSize.html");
+        });
+        $("[href='#section54']").click(function (e) {
+            e.preventDefault();
+            //  console.log("side")
+            $("#control").load("http://localhost:8383/myTutorSite/CSSGenerator/fragments/backgroundRepeat.html");
+        });
+        $("[href='#section61']").click(function (e) {
+            e.preventDefault();
+            //  console.log("side")
+            $("#control").load("http://localhost:8383/myTutorSite/CSSGenerator/fragments/textAlign.html");
+        });
+        $("[href='#section62']").click(function (e) {
+            e.preventDefault();
+            //  console.log("side")
+            $("#control").load("http://localhost:8383/myTutorSite/CSSGenerator/fragments/textIndent.html");
+        });
+        $("[href='#section63']").click(function (e) {
+            e.preventDefault();
+            //  console.log("side")
+            $("#control").load("http://localhost:8383/myTutorSite/CSSGenerator/fragments/letterSpacing.html");
+        });
+        $("[href='#section64']").click(function (e) {
+            e.preventDefault();
+            //  console.log("side")
+            $("#control").load("http://localhost:8383/myTutorSite/CSSGenerator/fragments/whiteSpace.html");
+        });
+        $("[href='#section65']").click(function (e) {
+            e.preventDefault();
+            //  console.log("side")
+            $("#control").load("http://localhost:8383/myTutorSite/CSSGenerator/fragments/wordBreak.html");
+        });
+        $("[href='#section66']").click(function (e) {
+            e.preventDefault();
+            //  console.log("side")
+            $("#control").load("http://localhost:8383/myTutorSite/CSSGenerator/fragments/wordSpacing.html");
         });
     });
 </script> 

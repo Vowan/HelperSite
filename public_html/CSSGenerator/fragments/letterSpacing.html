@@ -1,63 +1,52 @@
-
-<br>
-<br>
+<h4>Letter Spacing</h4>
 
 <div>
-    <label for="labWidth" style="display: inline; width: 15%">width</label>
-    <input type="range" min="0" max="200" value="100" id="slidWidth" step="1" style="display: inline; width: 50%">
-    <output for="slidWidth" id="outWidth" style="display: inline; width: 15%">100</output>
+    <label for="slidLetter-spacing" style="display: inline; width: 15%">top</label>
+    <input type="range" min="0" max="10" value="5" id="slidLetter-spacing" step="1" style="display: inline; width: 50%">
+    <output for="slidLetter-spacing" id="outLetter-spacing" style="display: inline; width: 15%">5</output>
 
 
-    <select name="radius" id="selWidth" class="zeroMP" style="display: inline; width: 20%">
+    <select name="radius" id="selLetter-spacing" class="zeroMP" style="display: inline; width: 20%">
         <option value="px" selected="selected" title="px">px</option>
-        <option id="mmW" value="mm">mm</option>
+        <option value="mm">mm</option>
         <option value="cm">cm</option>
         <option value="em">em</option>
         <option value="rem">rem</option>
-        <option value="%">%</option>
+       
+        <option value="normal">normal</option>
+        <option value="inherit">inherit</option>
+        <option value="initial">initial</option>
     </select>
 </div>
-
-<br>
 <br>
 
-<div>
-    <label for="labHeight" style="display: inline; width: 15%">height</label>
-    <input type="range" min="0" max="100" value="50" id="slidHeight" step="1" style="display: inline; width: 50%">
-    <output for="slidHeight" id="outHeight" style="display: inline; width: 15%">50</output>
-
-
-    <select name="radius" id="selHeight" class="zeroMP" style="display: inline; width: 20%">
-        <option value="px" selected="selected" title="px">px</option>
-        <option id="mmW" value="mm">mm</option>
-        <option value="cm">cm</option>
-        <option value="em">em</option>
-        <option value="rem">rem</option>
-        <option value="%">%</option>
-    </select>
+<div  style="display: inline; width: 45%; padding-right: 5%;">
+    <label  for="separateLetter-spacing" style="display: inline">separate:</label>
+    <input type="checkbox" name="separateLetter-spacing" > 
 </div>
 
-<br>
-
-<div  style="padding-left: 0px;">
-    <label  for="separateWH" style="display: inline">separate:</label>
-    <input type="checkbox" name="separateWH" > 
-</div>
 
 <script>
-    
 
-    $("input[name='separateWH']").on("click", function () {
+
+    $("input[name='separateLetter-spacing']").on("click", function () {
         if ($(this).prop("checked")) {
 
             mainObject.currentPropSet = mainObject.separatePropSet;
+
+
             mainObject.displayProp();
+
 
         } else {
             mainObject.currentPropSet = mainObject.fullPropSet;
             mainObject.displayProp();
         }
     })
+
+   
+    mainObject.trig = function () { }
+
 
 
 
@@ -81,7 +70,6 @@
         mainObject[p + "Val"] = $("#slid" + prop).val();
 
 
-
         mainObject.processFullProp(p, mainObject[p + "Val"] + "" + mainObject[p + "Unit"]);
 
 
@@ -91,10 +79,12 @@
             mainObject[p + "Val"] = this.value
             $("#out" + prop).val(this.value);
 
+
+
             mainObject.processFullProp(p, mainObject[p + "Val"] + "" + mainObject[p + "Unit"]);
 
 
-           
+
         })
 
         $("#sel" + prop).on("change", function () {
@@ -102,9 +92,9 @@
                 case"px":
                     $("#slid" + prop).attr({
                         min: 0,
-                        max: 200,
+                        max: 20,
                         step: 0.1,
-                        value: 100
+                        value: 10
                     }).trigger("input");
 
                     mainObject[p + "Unit"] = this.value;
@@ -115,7 +105,7 @@
 
                     $("#slid" + prop).attr({
                         min: "0",
-                        max: "20",
+                        max: "2",
                         step: "0.1",
                         value: "1"
                     }).trigger("input");
@@ -127,7 +117,7 @@
                 case"mm":
                     $("#slid" + prop).attr({
                         min: "0",
-                        max: "100",
+                        max: "20",
                         step: "0.1",
                         value: "1"
                     }).trigger("input");
@@ -142,7 +132,7 @@
                         min: "0",
                         max: "20",
                         step: "0.1",
-                        value: "10"
+                        value: "1"
                     }).trigger("input");
 
                     mainObject[p + "Unit"] = this.value;
@@ -153,41 +143,43 @@
                 case"rem":
                     $("#slid" + prop).attr({
                         min: "0",
-                        max: "20",
+                        max: "2",
                         step: "0.1",
-                        value: "10"
+                        value: "1"
                     }).trigger("input");
 
                     mainObject[p + "Unit"] = this.value;
                     mainObject[p + "Val"] = $("#out" + prop).val();
-
-
-
                     break;
-                case"%":
+                
+                case"normal":
+                case"inherit":
+                case"initial":
                     $("#slid" + prop).attr({
-                        min: "0",
-                        max: "100",
-                        step: "0.1",
-                        value: "10"
+                        min: 0,
+                        max: 0,
+                        step: 0,
+                        value: 0
                     }).trigger("input");
 
                     mainObject[p + "Unit"] = this.value;
-                    mainObject[p + "Val"] = $("#out" + prop).val();
-
-
+                    mainObject[p + "Val"] = "";
                     break;
             }
 
+
+
             mainObject.processFullProp(p, mainObject[p + "Val"] + "" + mainObject[p + "Unit"]);
 
-            
+
+
         })
 
     }
-    mainObject.trig = function(){};
+
     mainObject.clearSeparatePropSet();
     mainObject.currentPropSet = mainObject.fullPropSet;
-    propProc("Width");
-    propProc("Height");
+
+    propProc("Letter-spacing");
+
 </script>

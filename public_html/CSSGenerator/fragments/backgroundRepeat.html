@@ -1,0 +1,158 @@
+
+<h4>Background repeat</h4>
+
+<div>
+    <label for="labBackground-repeat-syntax" style="display: inline; width: 15%">syntax</label>
+
+    <select name="radius" id="selBackground-repeat-syntax" class="zeroMP" style="display: inline; width: 20%">
+        <option value="one" selected="selected">One-value syntax</option>
+        <option value="two">Two-value syntax</option>
+
+    </select>
+
+
+</div>
+
+<div>
+    <label for="labBackground-repeat-hor" style="display: inline; width: 15%">horizontal</label>
+
+    <select name="radius" id="selBackground-repeat-hor" class="zeroMP" style="display: inline; width: 20%">
+        <option value="repeat" selected="selected">repeat</option>
+        <option value="repeat-x" style="display: none">repeat-x</option>
+        <option value="repeat-y" style="display: none">repeat-y</option>
+        <option value="space">space</option>
+        <option value="round">round</option>
+        <option value="no-repeat">no-repeat</option>
+
+
+    </select>
+</div>
+<br>
+<div>
+    <label for="labBackground-repeat-ver" style="display: inline; width: 15%">vertical</label>
+
+    <select name="radius" id="selBackground-repeat-ver" class="zeroMP" style="display: inline; width: 20%">
+        <option value="repeat" selected="selected">repeat</option>
+        <option value="repeat-x" style="display: none">repeat-x</option>
+        <option value="repeat-y" style="display: none">repeat-y</option>
+        <option value="space">space</option>
+        <option value="round">round</option>
+        <option value="no-repeat">no-repeat</option>
+
+
+    </select>
+</div>
+<br>
+
+<div  style="padding-left: 0px;">
+    <label  for="separateBgroundRepeat" style="display: inline">separate:</label>
+    <input type="checkbox" name="separateBgroundRepeat" > 
+</div>
+
+<script>
+
+
+    $("input[name='separateBgroundRepeat']").on("click", function () {
+        if ($(this).prop("checked")) {
+
+            mainObject.currentPropSet = mainObject.separatePropSet;
+
+
+            mainObject.displayProp();
+
+
+        } else {
+            mainObject.currentPropSet = mainObject.fullPropSet;
+            mainObject.displayProp();
+        }
+    })
+
+
+    mainObject.trig = function () {
+        mainObject.fullPropSet["background-repeat"] = mainObject["background-repeat-horUnit"];
+        mainObject.separatePropSet["background-repeat"] = mainObject["background-repeat-horUnit"];
+    }
+
+
+
+
+
+    var propProc = function (prop) {
+
+        var p = prop.toLowerCase();
+
+        if (mainObject[p + "Unit"]) {
+            var curUnitW = "#sel" + prop + " option[value='" + mainObject[p + 'Unit'] + "']";
+            $("#sel" + prop).find('option:selected').removeAttr("selected");
+            $(curUnitW).attr("selected", "selected");
+        }
+
+
+
+        mainObject[p + "Unit"] = $("#sel" + prop).val();
+
+        mainObject.displayProp();
+
+        $("#sel" + prop).on("change", function () {
+
+            mainObject[p + "Unit"] = this.value;
+
+            mainObject.displayProp();
+
+
+        })
+
+    }
+
+
+    if (mainObject.syntaxValue) {
+
+        var gDirec = "#Background-repeat-syntax option[value='" + mainObject.syntaxValue + "']";
+        $("#Background-repeat-syntax").find('option:selected').removeAttr("selected");
+        $(gDirec).attr("selected", "selected");
+    }
+
+
+    $("#selBackground-repeat-syntax").on('change', function () {
+
+        switch (this.value) {
+            case "one":
+                mainObject.syntaxValue = this.value;
+
+                mainObject.trig = function () {
+                    mainObject.fullPropSet["background-repeat"] = mainObject["background-repeat-horUnit"];
+                    mainObject.separatePropSet["background-repeat"] = mainObject["background-repeat-horUnit"];
+                }
+
+                break;
+
+            case "two":
+                mainObject.syntaxValue = this.value;
+
+                mainObject.trig = function () {
+                    mainObject.fullPropSet["background-repeat"] =
+                            mainObject["background-repeat-horUnit"] + " " + mainObject["background-repeat-verUnit"];
+                    mainObject.separatePropSet["background-repeat"] =
+                            mainObject["background-repeat-horUnit"] + " " + mainObject["background-repeat-verUnit"];
+                }
+
+                break;
+
+
+        }
+
+
+
+
+        mainObject.displayProp();
+
+
+    });
+
+    mainObject.clearSeparatePropSet();
+    mainObject.currentPropSet = mainObject.fullPropSet;
+
+    propProc("Background-repeat-hor");
+    propProc("Background-repeat-ver");
+
+</script>

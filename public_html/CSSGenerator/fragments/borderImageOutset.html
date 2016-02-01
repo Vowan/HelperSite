@@ -1,0 +1,285 @@
+<h4>Border Image Outset</h4>
+
+<div>
+    <label for="labBorder-image-outset-top" style="display: inline; width: 15%">top</label>
+    <input type="range" min="0" max="10" value="5" id="slidBorder-image-outset-top" step="1" style="display: inline; width: 50%">
+    <output for="outWidth" id="outBorder-image-outset-top" style="display: inline; width: 15%">5</output>
+
+
+    <select name="radius" id="selBorder-image-outset-top" class="zeroMP" style="display: inline; width: 20%">
+        <option value="px" selected="selected" title="px">px</option>
+        <option value="mm">mm</option>
+        <option value="cm">cm</option>
+        <option value="em">em</option>
+        <option value="rem">rem</option>
+        <option value="number">number</option>
+        <option value="%">%</option>
+    </select>
+</div>
+<br>
+<!-----------------------------------------Right------------------------------------------------->
+<div>
+    <label for="labBorder-image-outset-right" style="display: inline; width: 15%">right</label>
+    <input type="range" min="0" max="10" value="5" id="slidBorder-image-outset-right" step="1" style="display: inline; width: 50%">
+    <output for="outWidth" id="outBorder-image-outset-right" style="display: inline; width: 15%">5</output>
+
+
+    <select name="radius" id="selBorder-image-outset-right" class="zeroMP" style="display: inline; width: 20%">
+        <option value="px" selected="selected" title="px">px</option>
+        <option value="mm">mm</option>
+        <option value="cm">cm</option>
+        <option value="em">em</option>
+        <option value="rem">rem</option>
+        <option value="number">number</option>
+        <option value="%">%</option>
+    </select>
+</div>
+<br>
+<!-----------------------------------------bottom------------------------------------------------->
+<div>
+    <label for="labBorder-image-outset-bottom" style="display: inline; width: 15%">bottom</label>
+    <input type="range" min="0" max="10" value="5" id="slidBorder-image-outset-bottom" step="1" style="display: inline; width: 50%">
+    <output for="outWidth" id="outBorder-image-outset-bottom" style="display: inline; width: 15%">5</output>
+
+
+    <select name="radius" id="selBorder-image-outset-bottom" class="zeroMP" style="display: inline; width: 20%">
+        <option value="px" selected="selected" title="px">px</option>
+        <option value="mm">mm</option>
+        <option value="cm">cm</option>
+        <option value="em">em</option>
+        <option value="rem">rem</option>
+        <option value="number">number</option>
+        <option value="%">%</option>
+    </select>
+</div>
+<br>
+<!-----------------------------------------left------------------------------------------------->
+<div>
+    <label for="labBorder-image-outset-left" style="display: inline; width: 15%">left</label>
+    <input type="range" min="0" max="10" value="5" id="slidBorder-image-outset-left" step="1" style="display: inline; width: 50%">
+    <output for="outWidth" id="outBorder-image-outset-left" style="display: inline; width: 15%">5</output>
+
+
+    <select name="radius" id="selBorder-image-outset-left" class="zeroMP" style="display: inline; width: 20%">
+        <option value="px" selected="selected" title="px">px</option>
+        <option value="mm">mm</option>
+        <option value="cm">cm</option>
+        <option value="em">em</option>
+        <option value="rem">rem</option>
+        <option value="number">number</option>
+        <option value="%">%</option>
+    </select>
+</div>
+<br>
+
+
+
+
+<div  style="display: inline; width: 45%; padding-right: 5%;">
+    <label  for="separateBorder-image-outset" style="display: inline">separate:</label>
+    <input type="checkbox" name="separateBorder-image-outset" > 
+</div>
+
+<script>
+
+
+    $("input[name='separateBorder-image-outset']").on("click", function () {
+        if ($(this).prop("checked")) {
+
+            mainObject.currentPropSet = mainObject.separatePropSet;
+
+
+            mainObject.displayProp();
+
+
+        } else {
+            mainObject.currentPropSet = mainObject.fullPropSet;
+            mainObject.displayProp();
+        }
+    })
+
+
+    mainObject.trig = function () {
+
+        mainObject.fullPropSet["border-image-outset"] =
+                mainObject["border-image-outset-topVal"] + mainObject["border-image-outset-topUnit"] + " "
+                + mainObject["border-image-outset-rightVal"] + mainObject["border-image-outset-rightUnit"] + " "
+                + mainObject["border-image-outset-bottomVal"] + mainObject["border-image-outset-bottomUnit"] + " "
+                + mainObject["border-image-outset-leftVal"] + mainObject["border-image-outset-leftUnit"];
+        mainObject.separatePropSet["border-image-outset"] =
+                mainObject["border-image-outset-topVal"] + mainObject["border-image-outset-topUnit"] + " "
+                + mainObject["border-image-outset-rightVal"] + mainObject["border-image-outset-rightUnit"] + " "
+                + mainObject["border-image-outset-bottomVal"] + mainObject["border-image-outset-bottomUnit"] + " "
+                + mainObject["border-image-outset-leftVal"] + mainObject["border-image-outset-leftUnit"];
+
+
+
+
+    }
+
+
+
+
+    var propProc = function (prop) {
+
+        var p = prop.toLowerCase();
+
+        if (mainObject[p + "Unit"]) {
+            var curUnitW = "#sel" + prop + " option[value='" + mainObject[p + 'Unit'] + "']";
+            $("#sel" + prop).find('option:selected').removeAttr("selected");
+            $(curUnitW).attr("selected", "selected");
+        }
+
+        if (mainObject[p + "Val"]) {
+            $("#slid" + prop).val(mainObject[p + "Val"]);
+            $("#out" + prop).val(mainObject[p + "Val"]);
+        }
+
+
+        if ($("#sel" + prop).val() != "number") {
+            mainObject[p + "Unit"] = $("#sel" + prop).val();
+        } else {
+            mainObject[p + "Unit"] = "";
+        }
+
+        if ($("#sel" + prop).val() != "auto") {
+            mainObject[p + "Val"] = $("#slid" + prop).val();
+        } else {
+            mainObject[p + "Val"] = "";
+        }
+
+
+        mainObject.displayProp();
+
+        $("#slid" + prop).on('input', function () {
+            // mainObject.slid = this.value;
+
+            mainObject[p + "Val"] = this.value
+            $("#out" + prop).val(this.value);
+
+
+
+            mainObject.displayProp();
+
+
+        })
+
+        $("#sel" + prop).on("change", function () {
+            switch (this.value) {
+                case"px":
+                    $("#slid" + prop).attr({
+                        min: 0,
+                        max: 20,
+                        step: 0.1,
+                        value: 10
+                    }).trigger("input");
+
+                    mainObject[p + "Unit"] = this.value;
+                    mainObject[p + "Val"] = $("#out" + prop).val();
+
+                    break;
+                case"cm":
+
+                    $("#slid" + prop).attr({
+                        min: "0",
+                        max: "2",
+                        step: "0.1",
+                        value: "1"
+                    }).trigger("input");
+
+                    mainObject[p + "Unit"] = this.value;
+                    mainObject[p + "Val"] = $("#out" + prop).val();
+
+                    break;
+                case"mm":
+                    $("#slid" + prop).attr({
+                        min: "0",
+                        max: "20",
+                        step: "0.1",
+                        value: "1"
+                    }).trigger("input");
+
+                    mainObject[p + "Unit"] = this.value;
+                    mainObject[p + "Val"] = $("#out" + prop).val();
+
+
+                    break;
+                case"em":
+                    $("#slid" + prop).attr({
+                        min: "0",
+                        max: "20",
+                        step: "0.1",
+                        value: "1"
+                    }).trigger("input");
+
+                    mainObject[p + "Unit"] = this.value;
+                    mainObject[p + "Val"] = $("#out" + prop).val();
+
+
+                    break;
+                case"rem":
+                    $("#slid" + prop).attr({
+                        min: "0",
+                        max: "2",
+                        step: "0.1",
+                        value: "1"
+                    }).trigger("input");
+
+                    mainObject[p + "Unit"] = this.value;
+                    mainObject[p + "Val"] = $("#out" + prop).val();
+                    break;
+                case"%":
+                    $("#slid" + prop).attr({
+                        min: "0",
+                        max: "100",
+                        step: "0.1",
+                        value: "10"
+                    }).trigger("input");
+
+                    mainObject[p + "Unit"] = this.value;
+                    mainObject[p + "Val"] = $("#out" + prop).val();
+                    break;
+                case"number":
+                    $("#slid" + prop).attr({
+                        min: 0,
+                        max: 20,
+                        step: 0.1,
+                        value: 10
+                    }).trigger("input");
+
+                    mainObject[p + "Unit"] = "";
+                    mainObject[p + "Val"] = $("#out" + prop).val();
+
+                    break;
+                
+                case"inherit":
+                case"initial":
+                    $("#slid" + prop).attr({
+                        min: 0,
+                        max: 0,
+                        step: 0,
+                        value: 0
+                    }).trigger("input");
+
+                    mainObject[p + "Unit"] = this.value;
+                    mainObject[p + "Val"] = "";
+                            break;
+            }
+
+
+
+            mainObject.displayProp();
+
+
+        })
+
+    }
+
+    mainObject.clearSeparatePropSet();
+    mainObject.currentPropSet = mainObject.fullPropSet;
+
+    propProc("Border-image-outset-top");
+    propProc("Border-image-outset-right");
+    propProc("Border-image-outset-bottom");
+    propProc("Border-image-outset-left");
+</script>

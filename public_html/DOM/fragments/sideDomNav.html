@@ -1,0 +1,35 @@
+<ul id="fix" class="nav nav-pills nav-stacked" >
+    <li><a href="#section1">Events</a></li>
+    <li><a href="#section2">---</a></li>
+    <li><a href="#section3">----</a></li>
+   
+    
+    <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Border <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+            <li><a href="#section41">-----</a></li>
+            <li><a href="#section42">-----</a></li>   
+            <li><a href="#section43">-----</a></li> 
+            <li><a href="#section44">-----</a></li>
+            <li><a href="#section45">-----</a></li>
+        </ul>
+    </li>
+    
+    <li><a href="#section5">------</a></li>
+    <li><a href="#section6">------</a></li>
+    <li><a href="#section7">------</a></li>
+    
+</ul>
+
+<script>
+    $(function () {
+
+        $("[href='#section1']").click(function (e) {
+            e.preventDefault();
+            
+            $("#control").load("http://localhost:8383/myTutorSite/DOM/fragments/eventTargetInterface.html");
+        });
+        
+        
+    });
+</script> 

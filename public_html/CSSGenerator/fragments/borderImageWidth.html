@@ -1,0 +1,297 @@
+<h4>Border Image Width</h4>
+
+<div>
+    <label for="labBorder-image-width-top" style="display: inline; width: 15%">top</label>
+    <input type="range" min="0" max="10" value="5" id="slidBorder-image-width-top" step="1" style="display: inline; width: 50%">
+    <output for="outWidth" id="outBorder-image-width-top" style="display: inline; width: 15%">5</output>
+
+
+    <select name="radius" id="selBorder-image-width-top" class="zeroMP" style="display: inline; width: 20%">
+        <option value="px" selected="selected" title="px">px</option>
+        <option value="mm">mm</option>
+        <option value="cm">cm</option>
+        <option value="em">em</option>
+        <option value="rem">rem</option>
+        <option value="number">number</option>
+        <option value="%">%</option>
+        <option value="auto">auto</option>
+
+    </select>
+</div>
+<br>
+<!-----------------------------------------Right------------------------------------------------->
+
+<div>
+    <label for="labBorder-image-width-right" style="display: inline; width: 15%">right</label>
+    <input type="range" min="0" max="10" value="5" id="slidBorder-image-width-right" step="1" style="display: inline; width: 50%">
+    <output for="outWidth" id="outBorder-image-width-right" style="display: inline; width: 15%">5</output>
+
+
+    <select name="radius" id="selBorder-image-width-right" class="zeroMP" style="display: inline; width: 20%">
+        <option value="px" selected="selected" title="px">px</option>
+        <option value="mm">mm</option>
+        <option value="cm">cm</option>
+        <option value="em">em</option>
+        <option value="rem">rem</option>
+        <option value="number">number</option>
+        <option value="%">%</option>
+        <option value="auto">auto</option>
+
+    </select>
+</div>
+<br>
+<!-----------------------------------------Bottom------------------------------------------------->
+
+<div>
+    <label for="labBorder-image-width-bottom" style="display: inline; width: 15%">bottom</label>
+    <input type="range" min="0" max="10" value="5" id="slidBorder-image-width-bottom" step="1" style="display: inline; width: 50%">
+    <output for="outWidth" id="outBorder-image-width-bottom" style="display: inline; width: 15%">5</output>
+
+
+    <select name="radius" id="selBorder-image-width-bottom" class="zeroMP" style="display: inline; width: 20%">
+        <option value="px" selected="selected" title="px">px</option>
+        <option value="mm">mm</option>
+        <option value="cm">cm</option>
+        <option value="em">em</option>
+        <option value="rem">rem</option>
+        <option value="number">number</option>
+        <option value="%">%</option>
+        <option value="auto">auto</option>
+
+    </select>
+</div>
+<br>
+<!-----------------------------------------Left------------------------------------------------->
+
+<div>
+    <label for="labBorder-image-width-left" style="display: inline; width: 15%">bottom</label>
+    <input type="range" min="0" max="10" value="5" id="slidBorder-image-width-left" step="1" style="display: inline; width: 50%">
+    <output for="outWidth" id="outBorder-image-width-left" style="display: inline; width: 15%">5</output>
+
+
+    <select name="radius" id="selBorder-image-width-left" class="zeroMP" style="display: inline; width: 20%">
+        <option value="px" selected="selected" title="px">px</option>
+        <option value="mm">mm</option>
+        <option value="cm">cm</option>
+        <option value="em">em</option>
+        <option value="rem">rem</option>
+        <option value="number">number</option>
+        <option value="%">%</option>
+        <option value="auto">auto</option>
+    </select>
+</div>
+<br>
+
+<!------------------------------------------------------------------------------------------>
+
+
+
+
+<div  style="display: inline; width: 45%; padding-right: 5%;">
+    <label  for="separateBorder-image-width" style="display: inline">separate:</label>
+    <input type="checkbox" name="separateBorder-image-width" > 
+</div>
+
+<script>
+
+
+    $("input[name='separateBorder-image-width']").on("click", function () {
+        if ($(this).prop("checked")) {
+
+            mainObject.currentPropSet = mainObject.separatePropSet;
+
+
+            mainObject.displayProp();
+
+
+        } else {
+            mainObject.currentPropSet = mainObject.fullPropSet;
+            mainObject.displayProp();
+        }
+    })
+
+
+    mainObject.trig = function () {
+
+        mainObject.fullPropSet["border-image-width"] =
+                mainObject["border-image-width-topVal"] + mainObject["border-image-width-topUnit"] + " "
+                + mainObject["border-image-width-rightVal"] + mainObject["border-image-width-rightUnit"] + " "
+                + mainObject["border-image-width-bottomVal"] + mainObject["border-image-width-bottomUnit"] + " "
+                + mainObject["border-image-width-leftVal"] + mainObject["border-image-width-leftUnit"];
+        mainObject.separatePropSet["border-image-width"] =
+                mainObject["border-image-width-topVal"] + mainObject["border-image-width-topUnit"] + " "
+                + mainObject["border-image-width-rightVal"] + mainObject["border-image-width-rightUnit"] + " "
+                + mainObject["border-image-width-bottomVal"] + mainObject["border-image-width-bottomUnit"] + " "
+                + mainObject["border-image-width-leftVal"] + mainObject["border-image-width-leftUnit"];
+
+
+
+
+    }
+
+
+
+
+    var propProc = function (prop) {
+
+        var p = prop.toLowerCase();
+
+        if (mainObject[p + "Unit"]) {
+            var curUnitW = "#sel" + prop + " option[value='" + mainObject[p + 'Unit'] + "']";
+            $("#sel" + prop).find('option:selected').removeAttr("selected");
+            $(curUnitW).attr("selected", "selected");
+        }
+
+        if (mainObject[p + "Val"]) {
+            $("#slid" + prop).val(mainObject[p + "Val"]);
+            $("#out" + prop).val(mainObject[p + "Val"]);
+        }
+
+
+        if ($("#sel" + prop).val() != "number") {
+            mainObject[p + "Unit"] = $("#sel" + prop).val();
+        } else {
+            mainObject[p + "Unit"] = "";
+        }
+
+        if ($("#sel" + prop).val() != "auto") {
+            mainObject[p + "Val"] = $("#slid" + prop).val();
+        } else {
+            mainObject[p + "Val"] = "";
+        }
+
+
+        mainObject.displayProp();
+
+        $("#slid" + prop).on('input', function () {
+            // mainObject.slid = this.value;
+
+            mainObject[p + "Val"] = this.value
+            $("#out" + prop).val(this.value);
+
+
+
+            mainObject.displayProp();
+
+
+        })
+
+        $("#sel" + prop).on("change", function () {
+            switch (this.value) {
+                case"px":
+                    $("#slid" + prop).attr({
+                        min: 0,
+                        max: 20,
+                        step: 0.1,
+                        value: 10
+                    }).trigger("input");
+
+                    mainObject[p + "Unit"] = this.value;
+                    mainObject[p + "Val"] = $("#out" + prop).val();
+
+                    break;
+                case"cm":
+
+                    $("#slid" + prop).attr({
+                        min: "0",
+                        max: "2",
+                        step: "0.1",
+                        value: "1"
+                    }).trigger("input");
+
+                    mainObject[p + "Unit"] = this.value;
+                    mainObject[p + "Val"] = $("#out" + prop).val();
+
+                    break;
+                case"mm":
+                    $("#slid" + prop).attr({
+                        min: "0",
+                        max: "20",
+                        step: "0.1",
+                        value: "1"
+                    }).trigger("input");
+
+                    mainObject[p + "Unit"] = this.value;
+                    mainObject[p + "Val"] = $("#out" + prop).val();
+
+
+                    break;
+                case"em":
+                    $("#slid" + prop).attr({
+                        min: "0",
+                        max: "20",
+                        step: "0.1",
+                        value: "1"
+                    }).trigger("input");
+
+                    mainObject[p + "Unit"] = this.value;
+                    mainObject[p + "Val"] = $("#out" + prop).val();
+
+
+                    break;
+                case"rem":
+                    $("#slid" + prop).attr({
+                        min: "0",
+                        max: "2",
+                        step: "0.1",
+                        value: "1"
+                    }).trigger("input");
+
+                    mainObject[p + "Unit"] = this.value;
+                    mainObject[p + "Val"] = $("#out" + prop).val();
+                    break;
+                case"%":
+                    $("#slid" + prop).attr({
+                        min: "0",
+                        max: "100",
+                        step: "0.1",
+                        value: "10"
+                    }).trigger("input");
+
+                    mainObject[p + "Unit"] = this.value;
+                    mainObject[p + "Val"] = $("#out" + prop).val();
+                    break;
+                case"number":
+                    $("#slid" + prop).attr({
+                        min: 0,
+                        max: 20,
+                        step: 0.1,
+                        value: 10
+                    }).trigger("input");
+
+                    mainObject[p + "Unit"] = "";
+                    mainObject[p + "Val"] = $("#out" + prop).val();
+
+                    break;
+                case"auto":
+                case"inherit":
+                case"initial":
+                    $("#slid" + prop).attr({
+                        min: 0,
+                        max: 0,
+                        step: 0,
+                        value: 0
+                    }).trigger("input");
+
+                    mainObject[p + "Unit"] = this.value;
+                    mainObject[p + "Val"] = "";
+                            break;
+            }
+
+
+
+            mainObject.displayProp();
+
+
+        })
+
+    }
+
+    mainObject.clearSeparatePropSet();
+    mainObject.currentPropSet = mainObject.fullPropSet;
+
+    propProc("Border-image-width-top");
+    propProc("Border-image-width-right");
+    propProc("Border-image-width-bottom");
+    propProc("Border-image-width-left");
+</script>

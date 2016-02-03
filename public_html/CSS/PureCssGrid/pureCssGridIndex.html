@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Pure CSS Grid System</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <style>
+
+            * {
+                box-sizing: content-box;
+                background-clip: content-box;
+            }
+
+            .header {
+                background-color: #9933cc;
+                color: #ffffff;
+                padding: 15px;
+                margin: 10px;
+            }
+            /******************************************Grid*****************************************************/
+
+            .row:after {
+                content: "";
+                clear: both;
+                display: block;
+                border: 2px solid red;
+            }
+
+            [class*="col-"] {
+                float: left;
+                padding: 15px;
+            }
+            .col-1 {width: 8.33%;}
+            .col-2 {width: 16.66%;}
+            .col-3 {width: 25%;}
+            .col-4 {width: 33.33%;}
+            .col-5 {width: 41.66%;}
+            .col-6 {width: 50%;}
+            .col-7 {width: 58.33%;}
+            .col-8 {width: 66.66%;}
+            .col-9 {width: 75%;}
+            .col-10 {width: 83.33%;}
+            .col-11 {width: 91.66%;}
+            .col-12 {width: 100%;}
+
+            /******************************************Side Nac*****************************************************/
+            .menu ul {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+            }
+            .menu li {
+                padding: 8px;
+                margin-bottom: 7px;
+                background-color :#33b5e5;
+                color: #ffffff;
+                box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+            }
+            .menu li:hover {
+                background-color: #0099cc;
+            }
+
+
+            /******************************************Modal*****************************************************/
+            .modalDialog {
+                position: fixed;
+                font-family: Arial, Helvetica, sans-serif;
+                height: 20%;
+                right: 10px;
+                bottom: 0;
+                left: 10px;
+                background: rgba(255, 255, 255, 0.8);
+                z-index: 99999;
+                opacity:0;
+                -webkit-transition: opacity 400ms ease-in;
+                -moz-transition: opacity 400ms ease-in;
+                transition: opacity 400ms ease-in;
+                pointer-events: none;
+
+                border: 2px solid red;
+                padding: 0;
+            }
+            .modalDialog:target {
+                opacity:0.8;
+                pointer-events: auto;
+            }
+            .modalDialog > div {
+                width: 100%;
+                height: 10px;
+                position: relative;
+                margin: 0 auto;
+                padding: 0;
+                border-radius: 10px;
+                background: #fff;
+                background: -moz-linear-gradient(#fff, #999);
+                background: -webkit-linear-gradient(#fff, #999);
+                background: -o-linear-gradient(#fff, #999);
+            }
+            .close {
+                background: #606061;
+                color: #FFFFFF;
+                line-height: 25px;
+                position: absolute;
+                right: -12px;
+                text-align: center;
+                top: -10px;
+                width: 24px;
+                text-decoration: none;
+                font-weight: bold;
+                -webkit-border-radius: 12px;
+                -moz-border-radius: 12px;
+                border-radius: 12px;
+                -moz-box-shadow: 1px 1px 3px #000;
+                -webkit-box-shadow: 1px 1px 3px #000;
+                box-shadow: 1px 1px 3px #000;
+            }
+            .close:hover {
+                background: #00d9ff;
+            }
+
+
+            /*****************************************Visual boxes************************************************/
+
+            #margin {
+                background-color: yellow;
+                position: fixed;
+                z-index: 100;
+                opacity: 0.5;
+                display: none;
+            }
+
+            #padding {
+                background-color: greenyellow;
+                position: fixed;
+                z-index: 200;
+                opacity: 0.5;
+                display: none;
+            }
+
+            /***********************************************************************************************/
+
+
+        </style>
+
+    </head>
+    <body>
+
+        <div class="header">
+            <h1>Chania</h1>
+        </div>
+
+        <div class="row">
+            <div class="col-3 menu">
+                <ul>
+                    <li>The Flight</li>
+                    <li>The City</li>
+                    <li>The Island</li>
+                    <li>The Food</li>
+                </ul>
+            </div>
+
+            <div class="col-8">
+                <h1>The City</h1>
+                <p>Chania is the capital of the Chania region on the island of Crete. The city can be divided in two parts, the old town and the modern city.</p>
+                <p>Resize the browser window to see how the content respond to the resizing.</p>
+                <p>Chania is the capital of the Chania region on the island of Crete. The city can be divided in two parts, the old town and the modern city.</p>
+                <p>Resize the browser window to see how the content respond to the resizing.</p>
+                <p>Chania is the capital of the Chania region on the island of Crete. The city can be divided in two parts, the old town and the modern city.</p>
+                <p>Resize the browser window to see how the content respond to the resizing.</p>
+                <p>Chania is the capital of the Chania region on the island of Crete. The city can be divided in two parts, the old town and the modern city.</p>
+                <p>Resize the browser window to see how the content respond to the resizing.</p>
+                <p>Chania is the capital of the Chania region on the island of Crete. The city can be divided in two parts, the old town and the modern city.</p>
+                <p>Resize the browser window to see how the content respond to the resizing.</p>
+            </div>
+
+            <div class="col-6">
+
+            </div>
+        </div>
+
+        <!-------------------------------------       Modal     -------------------------------------------------->
+        <div id="openModal" class="modalDialog notClick">
+            <a href="#close" title="Close" class="close notClick">X</a>
+            <span id="element" class="notClick"></span>
+            <input id="inputMargin" class="notClick" type="range"  value="10" min="-10" step="0.1" max="40">
+            <input id="inputPadding" class="notClick" type="range"  value="10" min="-10" step="0.1" max="40">
+
+        </div>
+        <!-----------------------------------------Helping margin/padding boxes----------------------------------->
+
+        <div id="margin" class="notClick">
+
+        </div>
+
+        <div id="padding" class="notClick">
+
+        </div>
+        <!---------------------------------------------------------------------------------------->
+
+        <!---------------------------------------------------------------------------------------->
+
+        <script src="../../bower_components/jquery/dist/jquery.js"></script>
+        <!-- <script src="../../bower_components/jqueryMobil/jquery.mobile-1.4.5.js"></script>-->
+        <script>
+            var boxVisual = function (jqElem) {
+                $("#margin").offset({top: 0, left: 0});
+                var offset = jqElem.offset();
+                var height = jqElem.outerHeight(true);
+                var width = jqElem.outerWidth(true);
+                var marginTop = parseFloat(jqElem.css("margin-top"));
+                var marginLeft = parseFloat(jqElem.css("margin-left"));
+                //console.log("left  " + offset.left + " top " + offset.top);
+                $("#margin").css("display", "block");
+                $("#margin").height(0).width(0);
+                $("#margin").offset({top: offset.top - marginTop, left: offset.left - marginLeft});
+                $("#margin").height(height).width(width);
+
+            };
+
+            var boxVisualP = function (jqElem) {
+                $("#padding").offset({top: 0, left: 0});
+                var offset = jqElem.offset();
+                var height = jqElem.innerHeight();
+                var width = jqElem.innerWidth();
+                var paddingTop = parseFloat(jqElem.css("padding-top"));
+                var paddingLeft = parseFloat(jqElem.css("padding-left"));
+                //console.log("left  " + offset.left + " top " + offset.top);
+                $("#padding").css("display", "block");
+                $("#padding").height(0).width(0);
+                $("#padding").offset({top: offset.top, left: offset.left});
+                $("#padding").height(height).width(width);
+
+            };
+
+
+            $(function () {
+                window.location.hash = "";
+
+                var that = ""
+
+                $("body").on("click", function (e) {
+
+                    debugger
+                    if (!$(e.target).hasClass("notClick")) {
+                        that = $(e.target);
+                        boxVisual($(e.target));
+                        boxVisualP($(e.target));
+                        //event.preventDefault();
+                        window.location.hash = "openModal";
+                        $("#element").text(e.target.localName + " " + e.target.className);
+                    } else {
+                        if ($(e.target).hasClass("close")) {
+                            $("#margin").css("display", "none");
+                            $("#padding").css("display", "none");
+                        }
+                    }
+
+
+                });
+
+                $("#inputMargin").on('input', function () {
+                    console.log(that + " " + this.value);
+                    that.css("margin", this.value + "px")
+                    boxVisual(that);
+                    boxVisualP(that);
+
+                });
+
+                $("#inputPadding").on('input', function () {
+                    console.log(that + " " + this.value);
+                    that.css("padding", this.value + "px")
+                    boxVisual(that);
+                    boxVisualP(that);
+
+                });
+
+                $(window).on("scroll resize", function () {
+                    boxVisual(that);
+                    boxVisualP(that);
+                });
+
+
+            });
+        </script>
+    </body>
+</html>

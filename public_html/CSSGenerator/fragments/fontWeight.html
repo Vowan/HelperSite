@@ -1,0 +1,80 @@
+
+<h5>Font Weight</h5>
+
+<div>
+    <label for="labFont-weight" style="display: inline; width: 15%">font-weight</label>
+
+    <select name="radius" id="selFont-weight" class="zeroMP" style="display: inline; width: 20%">
+        <option value="normal" selected="selected">normal</option>
+        <option value="bold">bold</option>
+        <option value="bolder">bolder</option>
+        <option value="lighter">lighter</option>
+        <option value="100">100</option>
+        <option value="200">200</option>
+        <option value="300">300</option>
+        <option value="400">400</option>
+        <option value="500">500</option>
+        <option value="600">600</option>
+        <option value="700">700</option>
+        <option value="800">800</option>
+        <option value="900">900</option>       
+    </select>
+</div>
+
+
+<div  style="padding-left: 0px;">
+    <label  for="separateWH" style="display: inline">separate:</label>
+    <input type="checkbox" name="separateWH" > 
+</div>
+
+<script>
+
+
+    $("input[name='separateWH']").on("click", function () {
+        if ($(this).prop("checked")) {
+
+            mainObject.currentPropSet = mainObject.separatePropSet;
+            mainObject.displayProp();
+
+        } else {
+            mainObject.currentPropSet = mainObject.fullPropSet;
+            mainObject.displayProp();
+        }
+    })
+
+
+
+    var propProc = function (prop) {
+
+        var p = prop.toLowerCase();
+
+        if (mainObject[p + "Unit"]) {
+            var curUnitW = "#sel" + prop + " option[value='" + mainObject[p + 'Unit'] + "']";
+            $("#sel" + prop).find('option:selected').removeAttr("selected");
+            $(curUnitW).attr("selected", "selected");
+        }
+
+
+        mainObject[p + "Unit"] = $("#sel" + prop).val();
+
+        mainObject.processFullProp(p, mainObject[p + "Unit"]);
+
+
+        $("#sel" + prop).on("change", function () {
+
+            mainObject[p + "Unit"] = this.value;
+
+
+            mainObject.processFullProp(p, mainObject[p + "Unit"]);
+
+
+        })
+
+    }
+    mainObject.trig = function () {};
+    mainObject.clearSeparatePropSet();
+    mainObject.currentPropSet = mainObject.fullPropSet;
+    propProc("Font-weight");
+
+
+</script>

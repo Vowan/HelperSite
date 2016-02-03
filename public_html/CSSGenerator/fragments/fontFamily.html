@@ -1,0 +1,102 @@
+<h5>Font Family</h5>
+
+<div>
+    <label for="labFont-family" style="display: inline; width: 15%">transform</label>
+
+    <select name="radius" id="selFont-family" class="zeroMP" style="display: inline; width: 20%">
+        <option value="Georgia" selected="selected">Georgia</option>
+        <option value="'Palatino Linotype'">Palatino Linotype</option>
+        <option value="Arial">Arial</option>
+        <option value="'Courier New'">Courier New</option>
+        <option value="Courier">Courier</option>
+
+    </select>
+</div>
+
+<div  style="padding-left: 0px;">
+    <label  for="separateWH" style="display: inline">separate:</label>
+    <input type="checkbox" name="separateWH" > 
+</div>
+
+<script>
+
+
+    $("input[name='separateWH']").on("click", function () {
+        if ($(this).prop("checked")) {
+
+            mainObject.currentPropSet = mainObject.separatePropSet;
+            mainObject.displayProp();
+
+        } else {
+            mainObject.currentPropSet = mainObject.fullPropSet;
+            mainObject.displayProp();
+        }
+    })
+
+
+
+    var propProc = function (prop) {
+
+        var p = prop.toLowerCase();
+
+        if (mainObject[p + "Unit"]) {
+            var curUnitW = "#sel" + prop + " option[value='" + mainObject[p + 'Unit'] + "']";
+            $("#sel" + prop).find('option:selected').removeAttr("selected");
+            $(curUnitW).attr("selected", "selected");
+        }
+
+        
+
+        mainObject[p + "Unit"] = mainObject[p + "Unit"] || "serif";
+        mainObject[p + "Val"] = mainObject[p + "Val"] || "Georgia";
+
+
+
+        mainObject.processFullProp(p, mainObject[p + "Val"] + ", " + mainObject[p + "Unit"]);
+
+
+        
+
+        $("#sel" + prop).on("change", function () {
+            switch (this.value) {
+                case"Georgia":
+
+                    mainObject[p + "Unit"] = "serif";
+                    mainObject[p + "Val"] = this.value;
+
+                    break;
+                case"'Palatino Linotype'":
+                    mainObject[p + "Unit"] = "serif";
+                    mainObject[p + "Val"] = this.value;
+
+                    break;
+                case"Arial":
+                    mainObject[p + "Unit"] = "sans-serif";
+                    mainObject[p + "Val"] = this.value;
+
+                    break;
+                case"'Courier New'":
+                    mainObject[p + "Unit"] = "monospace";
+                    mainObject[p + "Val"] = this.value;
+                    break;
+                case"Courier":
+
+                    mainObject[p + "Unit"] = "monospace";
+                    mainObject[p + "Val"] = this.value;
+
+                    break;
+                
+            }
+
+            mainObject.processFullProp(p, mainObject[p + "Val"] + ", " + mainObject[p + "Unit"]);
+
+
+        })
+
+    }
+    mainObject.trig = function () {};
+    mainObject.clearSeparatePropSet();
+    mainObject.currentPropSet = mainObject.fullPropSet;
+    propProc("Font-family");
+   
+</script>

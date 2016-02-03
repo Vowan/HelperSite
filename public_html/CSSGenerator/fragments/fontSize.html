@@ -1,19 +1,32 @@
-<h5>Word Spacing</h5>
+<h5>Font Size</h5>
 
 <div>
-    <label for="labWord-spacing" style="display: inline; width: 15%">width</label>
-    <input type="range" min="0" max="200" value="100" id="slidWord-spacing" step="1" style="display: inline; width: 50%">
-    <output for="slidWord-spacing" id="outWord-spacing" style="display: inline; width: 15%">100</output>
+    <label for="labFont-size" style="display: inline; width: 15%">width</label>
+    <input type="range" min="0" max="200" value="100" id="slidFont-size" step="1" style="display: inline; width: 50%">
+    <output for="slidFont-size" id="outFont-size" style="display: inline; width: 15%">100</output>
 
 
-    <select name="radius" id="selWord-spacing" class="zeroMP" style="display: inline; width: 20%">
-        <option value="px" selected="selected">px</option>
+    <select name="radius" id="selFont-size" class="zeroMP" style="display: inline; width: 20%">
+        <option value="medium" selected="selected">medium</option>
+        <option value="xx-small">xx-small</option>
+        <option value="x-small">x-small</option>
+        <option value="small">small</option>
+        <option value="large">large</option>
+        <option value="x-large">x-large</option>
+        <option value="xx-large">xx-large</option>
+        <option value="larger">larger</option>
+        <option value="smaller">smaller</option>
+        <option value="initial">initial</option>
+        <option value="inherit">inherit</option>
+
+
+        <option value="px">px</option>
         <option id="mmW" value="mm">mm</option>
         <option value="cm">cm</option>
         <option value="em">em</option>
         <option value="rem">rem</option>
         <option value="%">%</option>
-        <option value="normal">normal</option>
+
     </select>
 </div>
 
@@ -155,7 +168,17 @@
 
 
                     break;
+
+                case"xx-small":
+                case"x-small":
+                case"small":
                 case"normal":
+                case"medium":
+                case"large":
+                case"x-large":
+                case"xx-large":
+                case"larger":
+                case"smaller":
                 case"inherit":
                 case"initial":
                     $("#slid" + prop).attr({
@@ -179,6 +202,6 @@
     mainObject.trig = function () {};
     mainObject.clearSeparatePropSet();
     mainObject.currentPropSet = mainObject.fullPropSet;
-    propProc("Word-spacing");
+    propProc("Font-size");
 
 </script>

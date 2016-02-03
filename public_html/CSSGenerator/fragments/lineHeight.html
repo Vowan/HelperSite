@@ -1,41 +1,51 @@
-<h5>Word Spacing</h5>
+<h4>Line Height</h4>
 
 <div>
-    <label for="labWord-spacing" style="display: inline; width: 15%">width</label>
-    <input type="range" min="0" max="200" value="100" id="slidWord-spacing" step="1" style="display: inline; width: 50%">
-    <output for="slidWord-spacing" id="outWord-spacing" style="display: inline; width: 15%">100</output>
+    <label for="labLine-height" style="display: inline; width: 15%">top</label>
+    <input type="range" min="0" max="10" value="5" id="slidLine-height" step="1" style="display: inline; width: 50%">
+    <output for="outWidth" id="outLine-height" style="display: inline; width: 15%">5</output>
 
 
-    <select name="radius" id="selWord-spacing" class="zeroMP" style="display: inline; width: 20%">
-        <option value="px" selected="selected">px</option>
-        <option id="mmW" value="mm">mm</option>
+    <select name="radius" id="selLine-height" class="zeroMP" style="display: inline; width: 20%">
+        <option value="px" selected="selected" title="px">px</option>
+        <option value="mm">mm</option>
         <option value="cm">cm</option>
         <option value="em">em</option>
         <option value="rem">rem</option>
+        <option value="number">number</option>
         <option value="%">%</option>
         <option value="normal">normal</option>
+
     </select>
 </div>
+<br>
 
-<div  style="padding-left: 0px;">
-    <label  for="separateWH" style="display: inline">separate:</label>
-    <input type="checkbox" name="separateWH" > 
+<div  style="display: inline; width: 45%; padding-right: 5%;">
+    <label  for="separateBorder-image-width" style="display: inline">separate:</label>
+    <input type="checkbox" name="separateBorder-image-width" > 
 </div>
 
 <script>
 
 
-    $("input[name='separateWH']").on("click", function () {
+    $("input[name='separateBorder-image-width']").on("click", function () {
         if ($(this).prop("checked")) {
 
             mainObject.currentPropSet = mainObject.separatePropSet;
+
+
             mainObject.displayProp();
+
 
         } else {
             mainObject.currentPropSet = mainObject.fullPropSet;
             mainObject.displayProp();
         }
     })
+
+
+    mainObject.trig = function () { }
+
 
 
 
@@ -55,13 +65,20 @@
         }
 
 
-        mainObject[p + "Unit"] = $("#sel" + prop).val();
-        mainObject[p + "Val"] = $("#slid" + prop).val();
+        if ($("#sel" + prop).val() != "number") {
+            mainObject[p + "Unit"] = $("#sel" + prop).val();
+        } else {
+            mainObject[p + "Unit"] = "";
+        }
+
+        if ($("#sel" + prop).val() != "auto") {
+            mainObject[p + "Val"] = $("#slid" + prop).val();
+        } else {
+            mainObject[p + "Val"] = "";
+        }
 
 
-
-        mainObject.processFullProp(p, mainObject[p + "Val"] + "" + mainObject[p + "Unit"]);
-
+        mainObject.displayProp();
 
         $("#slid" + prop).on('input', function () {
             // mainObject.slid = this.value;
@@ -69,8 +86,9 @@
             mainObject[p + "Val"] = this.value
             $("#out" + prop).val(this.value);
 
-            mainObject.processFullProp(p, mainObject[p + "Val"] + "" + mainObject[p + "Unit"]);
 
+
+mainObject.processFullProp(p, mainObject[p + "Val"] + "" + mainObject[p + "Unit"]);
 
 
         })
@@ -80,9 +98,9 @@
                 case"px":
                     $("#slid" + prop).attr({
                         min: 0,
-                        max: 200,
+                        max: 20,
                         step: 0.1,
-                        value: 100
+                        value: 10
                     }).trigger("input");
 
                     mainObject[p + "Unit"] = this.value;
@@ -93,7 +111,7 @@
 
                     $("#slid" + prop).attr({
                         min: "0",
-                        max: "20",
+                        max: "2",
                         step: "0.1",
                         value: "1"
                     }).trigger("input");
@@ -105,7 +123,7 @@
                 case"mm":
                     $("#slid" + prop).attr({
                         min: "0",
-                        max: "100",
+                        max: "20",
                         step: "0.1",
                         value: "1"
                     }).trigger("input");
@@ -120,7 +138,7 @@
                         min: "0",
                         max: "20",
                         step: "0.1",
-                        value: "10"
+                        value: "1"
                     }).trigger("input");
 
                     mainObject[p + "Unit"] = this.value;
@@ -131,16 +149,13 @@
                 case"rem":
                     $("#slid" + prop).attr({
                         min: "0",
-                        max: "20",
+                        max: "2",
                         step: "0.1",
-                        value: "10"
+                        value: "1"
                     }).trigger("input");
 
                     mainObject[p + "Unit"] = this.value;
                     mainObject[p + "Val"] = $("#out" + prop).val();
-
-
-
                     break;
                 case"%":
                     $("#slid" + prop).attr({
@@ -152,7 +167,17 @@
 
                     mainObject[p + "Unit"] = this.value;
                     mainObject[p + "Val"] = $("#out" + prop).val();
+                    break;
+                case"number":
+                    $("#slid" + prop).attr({
+                        min: 0,
+                        max: 20,
+                        step: 0.1,
+                        value: 10
+                    }).trigger("input");
 
+                    mainObject[p + "Unit"] = "";
+                    mainObject[p + "Val"] = $("#out" + prop).val();
 
                     break;
                 case"normal":
@@ -167,18 +192,21 @@
 
                     mainObject[p + "Unit"] = this.value;
                     mainObject[p + "Val"] = "";
-                    break;
+                            break;
             }
 
-            mainObject.processFullProp(p, mainObject[p + "Val"] + "" + mainObject[p + "Unit"]);
+
+
+mainObject.processFullProp(p, mainObject[p + "Val"] + "" + mainObject[p + "Unit"]);
 
 
         })
 
     }
-    mainObject.trig = function () {};
+
     mainObject.clearSeparatePropSet();
     mainObject.currentPropSet = mainObject.fullPropSet;
-    propProc("Word-spacing");
 
+    propProc("Line-height");
+   
 </script>

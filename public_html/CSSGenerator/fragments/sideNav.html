@@ -49,20 +49,25 @@
             <li><a href="#section64">white-space</a></li> 
             <li><a href="#section65">word-break</a></li> 
             <li><a href="#section66">word-spacing</a></li> 
-            <li><a href="#section67">word-spacing</a></li> 
+            
         </ul>
 
     </li>
-    <li><a href="#section7">Font</a></li>
-    <!--
-    <li><a href="#section3">Опции</a></li>
     <li class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Section 4 <span class="caret"></span></a>
+
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Font <span class="caret"></span></a>
         <ul class="dropdown-menu">
-            <li><a href="#section41">Section 4-1</a></li>
-            <li><a href="#section42">Section 4-2</a></li>                     
+            <li><a href="#section71">family</a></li>
+            <li><a href="#section72">style</a></li>     
+            <li><a href="#section73">kerning</a></li> 
+            <li><a href="#section74">size</a></li> 
+            <li><a href="#section75">weight</a></li> 
+            <li><a href="#section76">line-height</a></li> 
+            <li><a href="#section77">----</a></li> 
         </ul>
-    </li>-->
+
+    </li>
+    
 </ul>
 
 <script>
@@ -182,6 +187,36 @@
             e.preventDefault();
             //  console.log("side")
             $("#control").load("http://localhost:8383/myTutorSite/CSSGenerator/fragments/wordSpacing.html");
+        });
+        $("[href='#section71']").click(function (e) {
+            e.preventDefault();
+            //  console.log("side")
+            $("#control").load("http://localhost:8383/myTutorSite/CSSGenerator/fragments/fontFamily.html");
+        });
+        $("[href='#section72']").click(function (e) {
+            e.preventDefault();
+            //  console.log("side")
+            $("#control").load("http://localhost:8383/myTutorSite/CSSGenerator/fragments/fontStyle.html");
+        });
+        $("[href='#section73']").click(function (e) {
+            e.preventDefault();
+            //  console.log("side")
+            $("#control").load("http://localhost:8383/myTutorSite/CSSGenerator/fragments/fontKerning.html");
+        });
+        $("[href='#section74']").click(function (e) {
+            e.preventDefault();
+            //  console.log("side")
+            $("#control").load("http://localhost:8383/myTutorSite/CSSGenerator/fragments/fontSize.html");
+        });
+        $("[href='#section75']").click(function (e) {
+            e.preventDefault();
+            //  console.log("side")
+            $("#control").load("http://localhost:8383/myTutorSite/CSSGenerator/fragments/fontWeight.html");
+        });
+        $("[href='#section76']").click(function (e) {
+            e.preventDefault();
+            //  console.log("side")
+            $("#control").load("http://localhost:8383/myTutorSite/CSSGenerator/fragments/lineHeight.html");
         });
     });
 </script> 
